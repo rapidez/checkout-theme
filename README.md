@@ -1,4 +1,4 @@
-# Checkout theme
+# Checkout theme - In development...
 
 An checkout theme including the checkout, cart and accounts views.
 
