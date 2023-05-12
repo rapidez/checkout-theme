@@ -1,0 +1,37 @@
+{
+    "name": "rapidez/checkout-theme",
+    "description": "Rapidez Checkout Theme",
+    "keywords": [
+        "rapidez"
+    ],
+    "homepage": "https://rapidez.io",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Roy Duineveld",
+            "email": "royduineveld@gmail.com",
+            "homepage": "https://royduineveld.nl",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.0|^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rapidez\\CheckoutTheme\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rapidez\\CheckoutTheme\\ServiceProvider"
+            ]
+        }
+    }
+}
