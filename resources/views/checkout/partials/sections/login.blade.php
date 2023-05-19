@@ -1,6 +1,6 @@
 <login v-slot="{ email, password, go, loginInputChange, emailAvailable }">
     <section>
-        <form class="grid gap-5 md:grid-cols-2" v-on:submit.prevent="go()">
+        <form id="login" class="grid gap-5 md:grid-cols-2" v-on:submit.prevent="go()">
 
             <x-rapidez-ct::input
                 label="E-mailaddress"
@@ -22,8 +22,8 @@
                 required
             />
 
-            <p v-if="!emailAvailable" class="text-sm self-end">Je hebt al een account met dit e-mailadres. Login om verder te gaan</p>
-            <p else class="text-sm self-end">Naar dit e-mailadres sturen wij uw bestelling bevestiging. Ook controleren we of u al een account hebt zodat u sneller kunt afrekenen.</p>
+            <p v-if="!emailAvailable" class="self-end">Je hebt al een account met dit e-mailadres. Login om verder te gaan</p>
+            <p else class="self-end">Naar dit e-mailadres sturen wij uw bestelling bevestiging. Ook controleren we of u al een account hebt zodat u sneller kunt afrekenen.</p>
 
             <x-rapidez-ct::button.accent v-if="!emailAvailable" type="submit" dusk="continue">
                 @lang('Login')

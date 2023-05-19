@@ -7,19 +7,24 @@
 @section('content')
     <checkout v-cloak v-slot="{ checkout, cart, hasItems, save, goToStep }">
         <div class="container">
-            <div class="flex flex-wrap space-x-[35px]">
+            <div class="flex max-md:flex-col text-sm text-primary">
                 <div class="flex-1">
-                    <div v-if="checkout.step == 1 && hasItems">
+                    <template v-if="checkout.step == 1 && hasItems">
                         @include('rapidez-ct::checkout.steps.credentials')
-                    </div>
+                    </template>
 
-                    <div v-if="checkout.step == 2">
+                    <template v-if="checkout.step == 2">
                         @include('rapidez-ct::checkout.steps.payment')
-                    </div>
+                    </template>
+
+                    <template v-if="checkout.step == 3">
+                        @include('rapidez-ct::checkout.steps.success')
+                    </template>
                 </div>
-                <div class="w-full lg:w-[370px]">
-                    @include('rapidez-ct::checkout.partials.sidebar')
-                </div>
+
+                <x-rapidez-ct::sidebar>
+                    @include('rapidez-ct::checkout.partials.sidebar.sidebar')
+                </x-rapidez-ct::sidebar>
             </div>
         </div>
     </checkout>

@@ -5,10 +5,10 @@
         @lang('Billing address')
     @endif
 </p>
-<div class="grid gap-5 md:grid-cols-4">
+<div class="grid gap-5 sm:grid-cols-4">
     @if(Rapidez::config('customer/address/company_show', 'opt'))
         <x-rapidez-ct::input
-            class="md:col-span-2"
+            class="sm:col-span-2"
             name="{{ $type }}_country"
             label="Country"
             v-model="checkout.{{ $type }}_address.country_id"
@@ -16,7 +16,7 @@
         />
     @endif
     <x-rapidez-ct::input
-        class="md:col-span-2"
+        class="sm:col-span-2"
         name="{{ $type }}_company"
         label="Company"
         v-model.lazy="checkout.{{ $type }}_address.company"
@@ -36,7 +36,7 @@
         />
     @endif
     <x-rapidez-ct::input
-        class="md:col-span-2"
+        class="sm:col-span-2"
         name="{{ $type }}_lastname"
         label="Lastname"
         v-model.lazy="checkout.{{ $type }}_address.lastname"
@@ -72,14 +72,14 @@
         />
     @endif
     <x-rapidez-ct::input
-        class="md:col-span-2"
+        class="sm:col-span-2"
         name="{{ $type }}_street"
         label="Street"
         v-model.lazy="checkout.{{ $type }}_address.street[0]"
         required
     />
     <x-rapidez-ct::input
-        class="md:col-span-2"
+        class="sm:col-span-2"
         name="{{ $type }}_city"
         label="City"
         v-model.lazy="checkout.{{ $type }}_address.city"
@@ -89,7 +89,7 @@
 
 @if($type == 'shipping')
     <div class="mt-5">
-        <x-rapidez-ct::input.checkbox class="mt-5" v-model="checkout.hide_billing">
+        <x-rapidez-ct::input.checkbox v-model="checkout.hide_billing">
             @lang('My billing and shipping address are the same')
         </x-rapidez-ct::input.checkbox>
     </div>
