@@ -8,13 +8,13 @@
     @foreach(['Cart', 'Credentials', 'Payment', 'Confirmation'] as $stepTitle)
         @if($checkout)
             <div
-                v-on:click="goToStep({{ $stepTitle == 'Credentials' ? 2 : $loop->index }})"
+                v-on:click="goToStep({{ $stepTitle == 'Credentials' ? 3 : $loop->index }})"
                 class="hover:cursor-pointer"
                 :class="{'w-[12px] h-[12px] bg-accent': {{ $loop->index + 1 }} <= checkout.step, 'w-[12px] h-[12px] bg-border': {{ $loop->index + 1 }} > checkout.step, 'w-[20px] h-[20px] border-[4px] border-blue-110': {{ $loop->index + 1 }} === checkout.step}">
             </div>
         @else
         <div
-            v-on:click="goToStep({{ $stepTitle == 'Credentials' ? 2 : $loop->index }})"
+            v-on:click="goToStep({{ $stepTitle == 'Credentials' ? 3 : $loop->index }})"
             class="w-[12px] h-[12px] bg-blue w-[20px] h-[20px] border-[4px] border-blue-110 hover:cursor-pointer"
             >
             </div>
