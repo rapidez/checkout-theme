@@ -13,8 +13,7 @@
         'name' => $name,
         'type' => $type,
         'dusk' => $attributes->get('v-bind:dusk') ? null : $name,
-        'class'=> 'rounded border border-border bg-white h-[52px] py-[11px] px-[20px] text-sm outline-none !ring-0 transition-all placeholder:text-inactive focus:border-primary disabled:bg-inactive-100 disabled:text-inactive',
+        'class' => 'rounded border border-border bg-ct-white h-[52px] py-[11px] px-[20px] text-sm outline-none !ring-0 transition-all placeholder:text-inactive focus:border-primary disabled:bg-ct-inactive-100 disabled:text-inactive',
     ]) }}>
     {{ $slot }}
 </label>
-

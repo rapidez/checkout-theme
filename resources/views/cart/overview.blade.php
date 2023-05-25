@@ -7,7 +7,7 @@
 @section('content')
     <cart v-cloak>
         <div class="container" v-if="hasItems" slot-scope="{ cart, hasItems, changeQty, remove }">
-            <div class="flex max-md:flex-col text-sm text-primary">
+            <div class="flex max-md:flex-col text-sm text-primary flex-wrap gap-x-8">
                 <div class="flex-1">
                     @include('rapidez-ct::cart.cart')
                 </div>
