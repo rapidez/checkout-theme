@@ -1,27 +1,37 @@
-@props(['shipping' => false, 'billing' => false])
+@props(['shipping' => false, 'billing' => false, 'dynamicType' => false, 'check' => false])
 
 <address-card
     {{ $attributes->whereStartsWith('v-') }}
-    :shipping="{{ var_export($shipping) }}"
-    :billing="{{ var_export($billing) }}"
+    @if(!$dynamicType)
+        :shipping="{{ var_export($shipping) }}"
+        :billing="{{ var_export($billing) }}"
+    @endif
     v-slot="{ address, billing, shipping, isEmpty }"
 >
-    <x-rapidez-ct::card {{ $attributes->whereDoesntStartWith('v-') }} v-if="!isEmpty">
-        <x-rapidez-ct::title.lg class="mb-4">
-            <template v-if="billing && shipping">@lang('Shipping & billing address')</template>
-            <template v-else-if="shipping">@lang('Shipping address')</template>
-            <template v-else-if="billing">@lang('Billing address')</template>
-            <template v-else>@lang('Address')</template>
-        </x-rapidez-ct::title.lg>
-        <div class="flex flex-wrap justify-between">
-            <ul class="[&>*+*]:mt-1">
-                <li v-for="data in address" v-text="data"></li>
-            </ul>
-            @isset($button)
-                <button {{ $button->attributes->merge(['class' => 'underline text-inactive self-end']) }} >
-                    {{ $button }}
-                </button>
-            @endisset
+    <div {{ $attributes->whereDoesntStartWith('v-')->class('relative bg-white border px-8 py-6 rounded max-w-[400px]') }} v-if="!isEmpty">
+        <div class="h-full flex flex-col">
+            @if($check)
+                <template v-if="{{ $check }}">
+                    <div class="absolute w-1 left-0 inset-y-0 rounded-l bg-accent"></div>
+                    <x-heroicon-s-check class="absolute w-5 right-7 top-7 text-accent"/>
+                </template>
+            @endif
+            <x-rapidez-ct::title.lg class="mb-4 pr-8">
+                <template v-if="billing && shipping">@lang('Shipping & billing address')</template>
+                <template v-else-if="shipping">@lang('Shipping address')</template>
+                <template v-else-if="billing">@lang('Billing address')</template>
+                <template v-else>@lang('Address')</template>
+            </x-rapidez-ct::title.lg>
+            <div class="flex flex-wrap justify-between h-full">
+                <ul class="flex flex-col gap-1">
+                    <li v-for="data in address" v-text="data"></li>
+                </ul>
+                @if(!empty($slot))
+                    <div class="flex flex-col mt-auto self-end">
+                        {{ $slot }}
+                    </div>
+                @endif
+            </div>
         </div>
-    </x-rapidez-ct::card>
+    </div>
 </address-card>
