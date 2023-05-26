@@ -1,5 +1,5 @@
 @props(['name', 'type' => 'text', 'label' => '', 'dusk'])
-<label {{ $attributes->only('class')->merge(['class' => 'relative flex flex-col gap-y-2 text-sm']) }}>
+<label {{ $attributes->only(['v-if', 'v-else', 'v-else-if'])->merge(['class' => 'relative flex flex-col gap-y-2 text-sm']) }}>
     @if (isset($label) && $label)
         <div class="flex">
             <span class="text-inactive">{{ $label }}</span>
@@ -8,7 +8,7 @@
             @endif
         </div>
     @endif
-    <input {{ $attributes->except('class')->merge([
+    <input {{ $attributes->except(['v-if', 'v-else', 'v-else-if'])->merge([
         'id' => $name,
         'name' => $name,
         'type' => $type,
