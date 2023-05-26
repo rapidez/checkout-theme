@@ -1,4 +1,4 @@
-<div class="mt-5 flex flex-wrap justify-between">
+<div class="mt-5 flex flex-wrap justify-between gap-3">
     <x-rapidez-ct::button.outline href="/">
         @lang('Continue shopping')
     </x-rapidez-ct::button.outline>
