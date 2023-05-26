@@ -1,43 +1,47 @@
-<div class="bg-ct-white mb-3 rounded-lg border sm:w-80">
-    <div class="p-3">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">
-            @lang('Apply coupon code')
-        </h3>
-        <coupon v-slot="{ cart, removeCoupon, couponCode, inputEvents, applyCoupon }">
-            <div>
-                <form
-                    class="mt-5 flex"
-                    @submit.prevent="applyCoupon"
-                >
-                    <x-rapidez::input
-                        name="couponCode"
-                        :label="false"
-                        placeholder="Coupon code"
-                        v-on="inputEvents"
-                        v-bind:value="couponCode"
-                        v-bind:disabled="$root.loading"
-                    />
-
-                    <x-rapidez::button
-                        class="ml-3 sm:text-sm"
-                        type="submit"
-                    >
-                        @lang('Apply')
-                    </x-rapidez::button>
-                </form>
-
-                <div
-                    class="relative rounded-md"
-                    v-if="cart.discount_name && cart.discount_amount < 0"
-                >
-                    <div class="flex items-center">
-                        <button v-on:click="removeCoupon">
-                            <x-heroicon-s-x class="text-black-400 h-4 w-4" />
-                        </button>
-                        @lang('Discount'): @{{ cart.discount_name }}
+<toggler>
+    <div slot-scope="{ isOpen, toggle }">
+        <div
+            class="w-full sm:w-auto"
+            v-show="isOpen"
+        >
+            <coupon v-slot="{ cart, removeCoupon, couponCode, inputEvents, applyCoupon, submitError }">
+                <form @submit.prevent="applyCoupon">
+                    <div class="flex w-full flex-row space-x-[10px]">
+                        <x-rapidez-ct::input
+                            class="h-full text-ct-primary"
+                            name="couponCode"
+                            :placeholder="__('Enter code') . '...'"
+                            v-on="inputEvents"
+                            v-bind:value="couponCode"
+                            v-bind:disabled="$root.loading"
+                        ></x-rapidez-ct::input>
+                        <x-rapidez-ct::button.outline type="submit">@lang('Apply')</x-rapidez-ct::button.outline>
                     </div>
-                </div>
-            </div>
-        </coupon>
+                    <div class="mt-1 flex max-w-[360px] flex-col text-sm">
+                        <div
+                            class="flex items-center gap-x-2 text-ct-inactive"
+                            v-if="cart.discount_name && cart.discount_amount < 0"
+                        >
+                            <button v-on:click="removeCoupon">
+                                <x-heroicon-s-x class="h-4 w-4" />
+                            </button>
+                            @lang('Discount'): @{{ cart.discount_name }}
+                        </div>
+                        <div
+                            class="mt-1 italic text-ct-error"
+                            v-if="submitError"
+                        >
+                            @{{ submitError }}
+                        </div>
+                    </div>
+                </form>
+            </coupon>
+        </div>
+        <x-rapidez-ct::button.outline
+            v-show="!isOpen"
+            @click="toggle"
+        >
+            @lang('Coupon code')
+        </x-rapidez-ct::button.outline>
     </div>
-</div>
+</toggler>
