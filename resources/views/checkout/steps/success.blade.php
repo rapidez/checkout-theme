@@ -1,9 +1,6 @@
-<div class="flex items-baseline justify-between">
-    <x-rapidez-ct::title>
-        @lang('Thank you for your order')
-    </x-rapidez-ct::title>
-    <x-rapidez-ct::progress-bar />
-</div>
+<x-rapidez-ct::title-progressbar>
+    @lang('Thank you for your order')
+</x-rapidez-ct::title-progressbar>
 
 <x-rapidez-ct::sections class="[&>*]:!bg-ct-accent [&>*]:!bg-ct-opacity-20">
     @include('rapidez-ct::checkout.partials.sections.order-completed-note')

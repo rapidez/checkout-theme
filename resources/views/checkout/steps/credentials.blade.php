@@ -1,9 +1,6 @@
-<div class="flex justify-between items-baseline">
-    <x-rapidez-ct::title>
-        @lang('Credentials')
-    </x-rapidez-ct::title>
-    <x-rapidez-ct::progress-bar />
-</div>
+<x-rapidez-ct::title-progressbar>
+    @lang('Credentials')
+</x-rapidez-ct::title-progressbar>
 
 <x-rapidez-ct::sections>
     @include('rapidez-ct::checkout.partials.sections.login')
@@ -11,6 +8,11 @@
     @include('rapidez-ct::checkout.partials.sections.shipping')
 </x-rapidez-ct::sections>
 
-<x-rapidez-ct::button.enhanced form="credentials">
-    @lang('Next')
-</x-rapidez-ct::button.enhanced>
+<div class="mt-5 flex flex-wrap justify-between gap-3">
+    <x-rapidez-ct::button.outline href="/cart">
+        @lang('Back to cart')
+    </x-rapidez-ct::button.outline>
+    <x-rapidez-ct::button.enhanced form="credentials">
+        @lang('Next')
+    </x-rapidez-ct::button.enhanced>
+</div>
