@@ -45,7 +45,7 @@
 
         computed: {
             useCards() {
-                return this.loggedIn && this.addresses.length
+                return this.$root.loggedIn && this.addresses.length
             },
 
             addresses() {
