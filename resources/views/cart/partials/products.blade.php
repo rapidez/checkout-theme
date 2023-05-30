@@ -1,3 +1,4 @@
+@props(['maxQuantity' => 20])
 <div class="bg-ct-inactive-100 text-14 mt-5 rounded py-4">
     <div class="text-13 flex w-full items-center gap-x-6 pr-6">
         <div class="w-0 sm:w-[150px]"></div>
@@ -60,7 +61,7 @@
                     v-on:change="changeQty(item)"
                 >
                     <option
-                        v-for="i in 10"
+                        v-for="i in {{ $maxQuantity }}"
                         v-bind:value="i"
                         v-if="i >= item.min_sale_qty"
                     >
