@@ -6,7 +6,7 @@
         >
             <coupon v-slot="{ cart, removeCoupon, couponCode, inputEvents, applyCoupon, submitError }">
                 <form @submit.prevent="applyCoupon">
-                    <div class="flex w-full flex-row space-x-[10px]">
+                    <div class="flex w-full flex-row gap-x-3">
                         <x-rapidez-ct::input
                             class="h-full text-ct-primary"
                             name="couponCode"
@@ -17,7 +17,7 @@
                         ></x-rapidez-ct::input>
                         <x-rapidez-ct::button.outline type="submit">@lang('Apply')</x-rapidez-ct::button.outline>
                     </div>
-                    <div class="mt-1 flex max-w-[360px] flex-col text-sm">
+                    <div class="mt-1 flex flex-col text-sm">
                         <div
                             class="flex items-center gap-x-2 text-ct-inactive"
                             v-if="cart.discount_name && cart.discount_amount < 0"

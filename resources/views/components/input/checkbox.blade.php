@@ -6,12 +6,12 @@
     {{ $attributes->merge(['class' => 'peer hidden']) }}
 />
 <label
-    class="text-14 text-primary group relative flex cursor-pointer select-none flex-wrap items-center gap-x-[12px]"
+    class="group relative flex cursor-pointer select-none flex-wrap items-center gap-x-3 text-14 text-primary"
     for="{{ $id }}"
 >
-    <div class="bg-ct-white group-peer-checked:border-accent group-peer-checked:bg-ct-accent h-[24px] w-[24px] rounded border transition-all">
+    <div class="h-6 w-6 rounded border bg-ct-white transition-all group-peer-checked:border-accent group-peer-checked:bg-ct-accent">
     </div>
-    <x-icon-check class="group-peer-checked:block absolute left-[5px] top-[6px] hidden text-white" />
+    <x-icon-check class="absolute left-3 top-3 hidden -translate-x-1/2 -translate-y-1/2 text-white group-peer-checked:block" />
     @isset($slot)
         <span>{{ $slot }}</span>
     @endisset
