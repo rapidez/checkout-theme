@@ -1,4 +1,3 @@
-@props(['maxQuantity' => 20])
 <div class="bg-ct-inactive-100 text-14 mt-5 rounded py-4">
     <div class="text-13 flex w-full items-center gap-x-6 pr-6">
         <div class="w-0 sm:w-[150px]"></div>
@@ -55,19 +54,20 @@
                         @{{ item.price | price }}
                     </div>
                 </div>
-                <x-rapidez-ct::input.select-number
+                <x-rapidez-ct::input.select
                     name="qty"
                     v-model="item.qty"
                     v-on:change="changeQty(item)"
+                    class="w-[72px]"
                 >
                     <option
-                        v-for="i in {{ $maxQuantity }}"
+                        v-for="i in 20"
                         v-bind:value="i"
                         v-if="i >= item.min_sale_qty"
                     >
                         @{{ i }}
                     </option>
-                </x-rapidez-ct::input.select-number>
+                </x-rapidez-ct::input.select>
                 <div class="text-14 min-w-[60px] font-medium">
                     @{{ item.total | price }}
                 </div iv>
