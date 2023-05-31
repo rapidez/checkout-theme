@@ -16,7 +16,7 @@
                         v-on="inputEvents"
                         v-bind:value="couponCode"
                         v-bind:disabled="$root.loading"
-                    ></x-rapidez-ct::input>
+                    />
                     <x-rapidez-ct::button.outline type="submit">@lang('Apply')</x-rapidez-ct::button.outline>
                 </div>
                 <div
