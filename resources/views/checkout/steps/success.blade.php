@@ -1,6 +1,6 @@
-<x-rapidez-ct::title-progressbar>
+<x-rapidez-ct::title-progress-bar>
     @lang('Thank you for your order')
-</x-rapidez-ct::title-progressbar>
+</x-rapidez-ct::title-progress-bar>
 
 <x-rapidez-ct::sections class="[&>*]:!bg-ct-accent [&>*]:!bg-ct-opacity-20">
     @include('rapidez-ct::checkout.partials.sections.order-completed-note')

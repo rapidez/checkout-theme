@@ -1,6 +1,6 @@
-<x-rapidez-ct::title-progressbar>
+<x-rapidez-ct::title-progress-bar>
     @lang('Credentials')
-</x-rapidez-ct::title-progressbar>
+</x-rapidez-ct::title-progress-bar>
 
 <x-rapidez-ct::sections>
     @include('rapidez-ct::checkout.partials.sections.login')
