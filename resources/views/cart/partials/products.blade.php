@@ -30,10 +30,7 @@
                 />
             </div>
             <div class="flex w-[150px] max-w-[268px] flex-1 flex-col items-start">
-                <a
-                    :href="item.url"
-                    dusk="cart-item-name"
-                >@{{ item.name }}</a>
+                <a :href="item.url" dusk="cart-item-name">@{{ item.name }}</a>
                 <div v-for="(optionValue, option) in item.options">
                     @{{ option }}: @{{ optionValue }}
                 </div>
