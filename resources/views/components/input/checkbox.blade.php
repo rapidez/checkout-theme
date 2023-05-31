@@ -1,6 +1,6 @@
 @props(['name' => '', 'id' => uniqid('checkbox-')])
 <label
-    class="text-14 text-primary relative flex cursor-pointer select-none flex-wrap items-center gap-x-3"
+    class="text-sm text-primary relative flex cursor-pointer select-none flex-wrap items-center gap-x-3"
     for="{{ $id }}"
 >
     <input

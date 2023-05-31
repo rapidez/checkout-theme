@@ -1,6 +1,6 @@
-<div class="bg-ct-inactive-100 text-14 mt-5 rounded py-4">
-    <div class="text-13 flex w-full items-center gap-x-6 pr-6">
-        <div class="w-0 sm:w-[150px]"></div>
+<div class="bg-ct-inactive-100 text-sm mt-5 rounded py-4">
+    <div class="text-xs flex w-full items-center gap-x-6 pr-6">
+        <div class="sm:w-[150px]"></div>
         <div class="max-w-[268px] flex-1 sm:min-w-[150px]">@lang('Product')</div>
         <div class="ml-auto flex items-center gap-10 max-md:hidden">
             <div class="min-w-[60px]">@lang('Price')</div>
@@ -15,7 +15,7 @@
         class="flex border-b py-5"
         v-for="(item, productId, index) in cart.items"
     >
-        <div class="text-14 flex w-full flex-wrap gap-y-3 gap-x-6 pr-6 md:items-center">
+        <div class="text-sm flex w-full flex-wrap gap-y-3 gap-x-6 pr-6 md:items-center">
             <div class="flex h-[100px] w-[150px] items-center justify-center">
                 <img
                     class="max-h-[100px] max-w-[150px]"
@@ -38,7 +38,7 @@
                     @{{ option }}: @{{ optionValue }}
                 </div>
                 <button
-                    class="text-13 text-ct-inactive mt-1 hover:underline"
+                    class="text-xs text-ct-inactive mt-1 hover:underline"
                     @click="remove(item)"
                     :dusk="'item-delete-' + index"
                 >
@@ -46,11 +46,11 @@
                 </button>
             </div>
             <div class="flex items-center gap-10 sm:ml-auto">
-                <div class="text-14 flex min-w-[60px] flex-col gap-px font-medium">
+                <div class="text-sm flex min-w-[60px] flex-col gap-px font-medium">
                     <div v-if="item.specialPrice">
                         @{{ item.specialPrice | price }}
                     </div>
-                    <div :class="{ 'line-through text-13 text-ct-inactive font-normal': item.specialPrice }">
+                    <div :class="{ 'line-through text-xs text-ct-inactive font-normal': item.specialPrice }">
                         @{{ item.price | price }}
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         @{{ i }}
                     </option>
                 </x-rapidez-ct::input.select>
-                <div class="text-14 min-w-[60px] font-medium">
+                <div class="text-sm min-w-[60px] font-medium">
                     @{{ item.total | price }}
                 </div iv>
             </div>

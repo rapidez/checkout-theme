@@ -1,6 +1,6 @@
 @props(['checkout' => true])
 <div
-    class="flex items-center space-x-[18px] text-13"
+    class="flex items-center space-x-[18px] text-xs"
     v-cloak
 >
     <span class="whitespace-nowrap font-medium text-ct-inactive">
