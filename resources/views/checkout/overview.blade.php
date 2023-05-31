@@ -10,8 +10,9 @@
         v-slot="{ checkout, cart, hasItems, save, goToStep }"
     >
         <div class="container">
-            <div class="text-sm flex flex-wrap gap-x-8 text-primary max-md:flex-col">
-                <div class="flex-1">
+            <x-rapidez-ct::overview>
+                <x-slot:main>
+
                     <template v-if="checkout.step == 1 && hasItems">
                         @include('rapidez-ct::checkout.steps.credentials')
                     </template>
@@ -23,12 +24,13 @@
                     <template v-if="checkout.step == 3">
                         @include('rapidez-ct::checkout.steps.success')
                     </template>
-                </div>
+                </x-slot:main>
 
-                <x-rapidez-ct::sidebar>
+                <x-slot:sidebar>
+
                     @include('rapidez-ct::checkout.partials.sidebar.sidebar')
-                </x-rapidez-ct::sidebar>
-            </div>
+                </x-slot:sidebar>
+            </x-rapidez-ct::overview>
         </div>
     </checkout>
 @endsection
