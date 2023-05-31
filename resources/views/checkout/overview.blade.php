@@ -11,20 +11,18 @@
     >
         <div class="container">
             <x-rapidez-ct::overview>
-                <x-slot:main>
 
-                    <template v-if="checkout.step == 1 && hasItems">
-                        @include('rapidez-ct::checkout.steps.credentials')
-                    </template>
+                <template v-if="checkout.step == 1 && hasItems">
+                    @include('rapidez-ct::checkout.steps.credentials')
+                </template>
 
-                    <template v-if="checkout.step == 2">
-                        @include('rapidez-ct::checkout.steps.payment')
-                    </template>
+                <template v-if="checkout.step == 2">
+                    @include('rapidez-ct::checkout.steps.payment')
+                </template>
 
-                    <template v-if="checkout.step == 3">
-                        @include('rapidez-ct::checkout.steps.success')
-                    </template>
-                </x-slot:main>
+                <template v-if="checkout.step == 3">
+                    @include('rapidez-ct::checkout.steps.success')
+                </template>
 
                 <x-slot:sidebar>
 
