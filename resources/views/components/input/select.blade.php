@@ -1,7 +1,7 @@
 @props(['name', 'type' => 'text', 'label' => '', 'dusk'])
-<label {{ $attributes->only(['v-if', 'v-else', 'v-else-if', 'class'])->merge([
-    'class' => 'relative flex flex-col gap-y-2 text-sm line-clamp-1',
-]) }}>
+<label {{ $attributes
+    ->only(['v-if', 'v-else', 'v-else-if', 'class'])
+    ->class('relative flex flex-col gap-y-2 text-sm line-clamp-1') }}>
     @if (isset($label) && $label)
         <div class="flex">
             <span class="text-inactive">{{ $label }}</span>
