@@ -35,7 +35,7 @@
                 >
                     @{{ agreement.checkbox_text }}
                 </label>
-                <div v-else>
+                <template v-else>
                     <x-rapidez-ct::input.checkbox
                         name="agreement_ids[]"
                         v-bind:value="agreement.agreement_id"
@@ -50,7 +50,7 @@
                             @{{ agreement.checkbox_text }}
                         </label>
                     </x-rapidez-ct::input.checkbox>
-                </div>
+                </template>
                 <x-rapidez-ct::slideover id="agreement.checkbox_text">
                     <x-slot name="title">
                         @{{ agreement.name }}

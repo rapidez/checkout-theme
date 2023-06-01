@@ -2,7 +2,7 @@
     @lang('Thank you for your order')
 </x-rapidez-ct::title-progress-bar>
 
-<x-rapidez-ct::sections class="[&>*]:!bg-ct-accent [&>*]:!bg-ct-opacity-20">
+<x-rapidez-ct::sections class="[&>*]:!bg-ct-accent-100">
     @include('rapidez-ct::checkout.partials.sections.order-completed-note')
 </x-rapidez-ct::sections>
 
