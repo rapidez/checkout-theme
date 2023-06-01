@@ -8,7 +8,7 @@
     <div class="relative aspect-square w-6 shrink-0 rounded-full border bg-white transition-all after:absolute after:inset-1 after:rounded-full after:bg-ct-accent after:opacity-0 after:transition-all after:peer-checked:opacity-100 peer-disabled:bg-ct-inactive-100">
     </div>
     @isset($slot)
-        <div class="flex w-full flex-wrap justify-between gap-x-3">
+        <div class="flex w-full flex-wrap justify-between items-center gap-x-3">
             {{ $slot }}
         </div>
     @endisset

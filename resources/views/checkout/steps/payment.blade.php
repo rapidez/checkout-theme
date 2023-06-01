@@ -6,10 +6,15 @@
     @include('rapidez-ct::checkout.partials.sections.payment')
 </x-rapidez-ct::sections>
 
-<x-rapidez-ct::button.enhanced
-    form="payment"
-    type="submit"
-    dusk="continue"
->
-    @lang('Place order')
-</x-rapidez-ct::button.enhanced>
+<div class="mt-5 flex flex-wrap justify-between gap-3">
+    <x-rapidez-ct::button.outline v-on:click.prevent="goToStep(1)">
+        @lang('Back to credentials')
+    </x-rapidez-ct::button.outline>
+    <x-rapidez-ct::button.enhanced
+        form="payment"
+        type="submit"
+        dusk="continue"
+    >
+        @lang('Place order')
+    </x-rapidez-ct::button.enhanced>
+</div>
