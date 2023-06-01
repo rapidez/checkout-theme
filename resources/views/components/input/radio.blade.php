@@ -1,7 +1,7 @@
 <label class="relative flex w-full cursor-pointer items-center justify-start gap-x-3 rounded border bg-white p-7 text-sm text-ct-primary">
     <input
         type="radio"
-        {{ $attributes->merge(['class' => 'peer hidden']) }}
+        {{ $attributes->class('peer hidden') }}
     />
     <div class="absolute -inset-y-px -left-px w-1 rounded-l bg-ct-accent opacity-0 transition-all peer-checked:opacity-100">
     </div>
