@@ -34,6 +34,7 @@
                 <div class="h-[52px] px-4 flex items-center rounded border border-border bg-inactive-200">
                     <x-heroicon-o-user-circle class="h-[24px] mr-[10px]"/>
                     <span v-text="$root.user?.email"></span>
+                    <x-heroicon-o-lock-closed class="h-[24px] ml-auto text-primary-400"/>
                 </div>
                 <div>
                     <x-rapidez-ct::title.sm>@lang('Welcome back') @{{ $root.user?.firstname }}!</x-rapidez-ct::title.sm>
