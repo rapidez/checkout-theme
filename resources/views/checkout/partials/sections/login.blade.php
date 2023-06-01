@@ -1,4 +1,4 @@
-<login v-slot="{ email, password, go, loginInputChange, emailAvailable }">
+<login v-slot="{ email, password, go, loginInputChange, emailAvailable, logout }">
     <section>
         <div class="grid gap-5 md:grid-cols-2">
             <template v-if="!loggedIn">
@@ -37,7 +37,11 @@
                 </div>
                 <div>
                     <x-rapidez-ct::title.sm>@lang('Welcome back') @{{ $root.user?.firstname }}!</x-rapidez-ct::title.sm>
-                    @lang('Blah blah blah something something')
+                    <span>
+                        @lang('Is this not your account?')
+                        <span class="underline cursor-pointer" v-on:click="logout('/')">@lang('Log out')</span>
+                        @lang('and use a different e-mail address.')
+                    </span>
                 </div>
             </template>
         </div>
