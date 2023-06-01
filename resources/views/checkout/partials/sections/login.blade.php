@@ -40,7 +40,7 @@
                     <x-rapidez-ct::title.sm>@lang('Welcome back') @{{ $root.user?.firstname }}!</x-rapidez-ct::title.sm>
                     <span>
                         @lang('Is this not your account?')
-                        <span class="underline cursor-pointer" v-on:click="logout('/')">@lang('Log out')</span>
+                        <span class="underline cursor-pointer" v-on:click="logout('/login')">@lang('Log out')</span>
                         @lang('and use a different e-mail address.')
                     </span>
                 </div>
