@@ -51,13 +51,13 @@
                         @{{ item.specialPrice | price }}
                     </div>
                     <div :class="{ 'line-through text-xs text-ct-inactive font-normal': item.specialPrice }">
-                        @{{ item.price +9999 | price }}
+                        @{{ item.price | price }}
                     </div>
                 </div>
                 <x-rapidez-ct::input.quantity />
                 <div class="sm:w-[60px] text-sm">
-                    @{{ item.total + 9999 | price }}
-                </div iv>
+                    @{{ item.total | price }}
+                </div>
             </div>
         </div>
     </li>
