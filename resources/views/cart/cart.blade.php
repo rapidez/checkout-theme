@@ -1,10 +1,6 @@
-<div class="flex justify-between items-baseline">
-    <x-rapidez-ct::title>
-        @lang('Credentials')
-    </x-rapidez-ct::title>
-    <x-rapidez-ct::progress-bar />
-</div>
+<x-rapidez-ct::title-progress-bar>
+    @lang('Cart')
+</x-rapidez-ct::title-progress-bar>
 
 @include('rapidez-ct::cart.partials.products')
 @include('rapidez-ct::cart.partials.bottom-bar')
-

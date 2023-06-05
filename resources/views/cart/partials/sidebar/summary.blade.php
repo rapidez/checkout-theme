@@ -11,17 +11,19 @@
             <span>@lang('Tax')</span>
             <span>@{{ cart.tax | price }}</span>
         </li>
-        <li v-if="cart.shipping_amount > 0">
+        <li>
             <span>@lang('Shipping')</span>
-            <span>@{{ cart.shipping_amount | price }}</span>
-            <small class="w-full mt-1">@{{ cart.shipping_description }}</small>
+            <span v-if="cart.shipping_amount > 0">@{{ cart.shipping_amount | price }}</span>
+            <span
+                class="font-medium text-ct-enhanced"
+                v-else
+            >
+                @lang('Free')
+            </span>
+            <small class="mt-1 w-full">@{{ cart.shipping_description }}</small>
         </li>
-        <li v-if="cart.discount_name && cart.discount_amount < 0">
-            <span>@lang('Discount'):</span>
-            <span>@{{ cart.discount_name }}</span>
-        </li>
-        <li v-if="!cart.discount_name && cart.discount_amount < 0">
-            <span>@lang('Discount')</span>
+        <li v-if="cart.discount_name">
+            <span>@lang('Discount') (@{{ cart.discount_name }})</span>
             <span>@{{ cart.discount_amount | price }}</span>
         </li>
         <li class="font-medium">
@@ -30,11 +32,17 @@
         </li>
     </x-rapidez-ct::summary>
 
-    <x-rapidez-ct::button.enhanced class="w-full mt-5" href="/checkout" dusk="checkout">
-        @lang('Checkout')
+    <x-rapidez-ct::button.enhanced
+        class="flex w-full items-center justify-center gap-1"
+        href="/checkout"
+        dusk="checkout"
+    >
+        @lang('To checkout')
+        <x-heroicon-o-arrow-right class="h-4" />
     </x-rapidez-ct::button.enhanced>
 
-    <div class="text-sm mt-4 text-center">
+    <div class="mt-4 flex items-center justify-center gap-1 text-center text-sm">
+        <x-heroicon-o-check class="h-5 text-ct-accent" />
         @lang('Ordered within 2 minutes')
     </div>
 </x-rapidez-ct::card>

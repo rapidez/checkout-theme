@@ -1,11 +1,8 @@
-<div class="flex justify-between items-baseline">
-    <x-rapidez-ct::title>
-        @lang('Thank you for your order')
-    </x-rapidez-ct::title>
-    <x-rapidez-ct::progress-bar />
-</div>
+<x-rapidez-ct::title-progress-bar>
+    @lang('Thank you for your order')
+</x-rapidez-ct::title-progress-bar>
 
-<x-rapidez-ct::sections class="[&>*]:!bg-accent [&>*]:!bg-opacity-20">
+<x-rapidez-ct::sections class="[&>*]:!bg-ct-accent/20">
     @include('rapidez-ct::checkout.partials.sections.order-completed-note')
 </x-rapidez-ct::sections>
 
@@ -21,10 +18,18 @@
         <x-rapidez-ct::title.lg>
             @lang('Newsletter')
         </x-rapidez-ct::title.lg>
+        <x-rapidez-ct::newsletter class="mt-5" />
     </section>
-    <section>
+    <section v-if="!$root.loggedIn">
         <x-rapidez-ct::title.lg>
             @lang('Create account')
         </x-rapidez-ct::title.lg>
+        <x-rapidez-ct::input
+            name="email"
+            type="email"
+            label="E-mailaddress"
+            v-bind:value="email"
+            disabled
+        />
     </section>
 </x-rapidez-ct::sections>

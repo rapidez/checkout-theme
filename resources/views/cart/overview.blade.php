@@ -6,18 +6,26 @@
 
 @section('content')
     <cart v-cloak>
-        <div class="container" v-if="hasItems" slot-scope="{ cart, hasItems, changeQty, remove }">
-            <div class="flex max-md:flex-col text-sm text-primary">
-                <div class="flex-1">
-                    @include('rapidez-ct::cart.cart')
-                </div>
-                <x-rapidez-ct::sidebar>
+        <div
+            class="container"
+            v-if="hasItems"
+            slot-scope="{ cart, hasItems, changeQty, remove }"
+        >
+            <x-rapidez-ct::overview class="!mt-0">
+                @include('rapidez-ct::cart.cart')
+                <x-slot:sidebar>
                     @include('rapidez-ct::cart.partials.sidebar.sidebar')
-                </x-rapidez-ct::sidebar>
-            </div>
+                </x-slot:sidebar>
+            </x-rapidez-ct::overview>
         </div>
-        <div class="container" v-else>
-            @lang('You don\'t have anything in your cart.')
+        <div
+            class="container"
+            v-else
+        >
+            <p>@lang('You don\'t have anything in your cart.')</p>
+            <x-rapidez-ct::button.outline class="mt-3">
+                @lang('Return to home')
+            </x-rapidez-ct::button.outline>
         </div>
     </cart>
 @endsection
