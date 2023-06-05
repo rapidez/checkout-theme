@@ -46,6 +46,9 @@ class ServiceProvider extends BaseServiceProvider
         $this->publishes([
             __DIR__.'/../config/rapidez-checkout-theme.php' => config_path('rapidez-checkout-theme.php'),
         ], 'config');
+        $this->publishes([
+            __DIR__.'/../resources/payment-icons' => public_path('payment-icons'),
+        ], 'payment-icons');
 
         return $this;
     }

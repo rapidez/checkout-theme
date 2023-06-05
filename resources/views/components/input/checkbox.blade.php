@@ -1,18 +1,19 @@
 @props(['name' => '', 'id' => uniqid('checkbox-')])
-<input
-    id="{{ $id }}"
-    type="checkbox"
-    name="{{ $name }}"
-    {{ $attributes->merge(['class' => 'peer hidden']) }}
-/>
 <label
     for="{{ $id }}"
-    class="group relative flex cursor-pointer select-none flex-wrap items-center gap-x-[12px] text-14 text-primary"
+    {{ $attributes->only('class')->class('text-ct-primary relative flex cursor-pointer select-none flex-wrap items-center gap-x-3 text-sm') }}
 >
-    <div class="h-[24px] w-[24px] bg-white rounded border transition-all group-peer-checked:border-accent group-peer-checked:bg-accent">
+    <input
+        class="peer hidden"
+        id="{{ $id }}"
+        name="{{ $name }}"
+        type="checkbox"
+        {{ $attributes->except('class') }}
+    />
+    <div class="peer-checked:border-ct-accent peer-checked:bg-ct-accent h-6 w-6 rounded border bg-white transition-all">
     </div>
-    <x-icon-check class="absolute left-[5px] top-[6px] text-white hidden group-peer-checked:block" />
+    <x-icon-check class="absolute left-3 top-3 hidden -translate-x-1/2 -translate-y-1/2 text-white peer-checked:block" />
     @isset($slot)
-        <span>{{ $slot }}</span>
+        <span {{ $slot->attributes ?? '' }}>{{ $slot }}</span>
     @endisset
 </label>

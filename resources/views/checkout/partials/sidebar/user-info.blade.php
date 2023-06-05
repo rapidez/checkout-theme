@@ -17,9 +17,8 @@
                 @{{ checkout?.shipping_address?.country_id }}
             </li>
         </ul>
-        <span class="underline text-inactive cursor-pointer self-end" v-if="checkout.step == 2" v-on:click="goToStep(1)" >
+        <span class="underline text-ct-inactive cursor-pointer self-end" v-if="checkout.step == 2" v-on:click="goToStep(1)" >
             @lang('Edit')
         </span>
     </div>
 </x-rapidez-ct::card>
-
