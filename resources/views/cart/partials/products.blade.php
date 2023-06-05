@@ -15,7 +15,7 @@
         class="flex border-b py-5"
         v-for="(item, productId, index) in cart.items"
     >
-        <div class="flex w-full flex-wrap gap-y-3 gap-x-6 pr-6 text-sm md:items-center">
+        <div class="flex w-full flex-wrap gap-y-3 gap-x-3 sm:gap-x-6 sm:pr-6 text-sm md:items-center">
             <div class="flex h-[100px] w-[150px] items-center justify-center">
                 <img
                     class="max-h-[100px] max-w-[150px]"
@@ -29,7 +29,7 @@
                     v-else
                 />
             </div>
-            <div class="flex w-[150px] max-w-[268px] flex-1 flex-col items-start">
+            <div class="flex w-[150px] flex-1 flex-col items-start">
                 <a
                     :href="item.url"
                     dusk="cart-item-name"
@@ -45,18 +45,18 @@
                     @lang('Remove')
                 </button>
             </div>
-            <div class="flex items-center gap-10 sm:ml-auto font-medium">
-                <div class="flex w-[60px] flex-col gap-px text-sm">
+            <div class="flex items-center gap-10 sm:ml-auto font-medium max-sm:flex-1 justify-between">
+                <div class="flex sm:w-[60px] flex-col gap-px text-sm">
                     <div v-if="item.specialPrice">
                         @{{ item.specialPrice | price }}
                     </div>
                     <div :class="{ 'line-through text-xs text-ct-inactive font-normal': item.specialPrice }">
-                        @{{ item.price | price }}
+                        @{{ item.price +9999 | price }}
                     </div>
                 </div>
                 <x-rapidez-ct::input.quantity />
-                <div class="w-[60px] text-sm">
-                    @{{ item.total | price }}
+                <div class="sm:w-[60px] text-sm">
+                    @{{ item.total + 9999 | price }}
                 </div iv>
             </div>
         </div>
