@@ -16,7 +16,7 @@
             :class="{
                 'bg-ct-accent': {{ $loop->index + 1 }} <= checkout.step,
                 'bg-ct-border': {{ $loop->index + 1 }} > checkout.step,
-                'outline-4 outline outline-ct-accent-100': {{ $loop->index + 1 }} === checkout.step
+                'outline-4 outline outline-ct-accent/20': {{ $loop->index + 1 }} === checkout.step
             }"
         >
         </div>

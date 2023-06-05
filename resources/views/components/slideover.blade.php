@@ -5,7 +5,7 @@
     v-bind:id="{{ $id }}"
 />
 <label
-    class="pointer-events-none fixed inset-0 z-50 cursor-pointer bg-primary/60 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
+    class="pointer-events-none fixed inset-0 z-50 cursor-pointer bg-ct-primary/60 opacity-0 transition peer-checked:pointer-events-auto peer-checked:opacity-100"
     v-bind:for="{{ $id }}"
 ></label>
 <div class="pointer-events-none fixed top-0 -right-full z-50 flex h-screen w-full max-w-md flex-col bg-white transition-[right] duration-300 peer-checked:pointer-events-auto peer-checked:right-0">

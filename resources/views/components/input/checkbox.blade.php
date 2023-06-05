@@ -10,7 +10,7 @@
         type="checkbox"
         {{ $attributes->except('class') }}
     />
-    <div class="peer-checked:border-accent peer-checked:bg-ct-accent h-6 w-6 rounded border bg-white transition-all">
+    <div class="peer-checked:border-ct-accent peer-checked:bg-ct-accent h-6 w-6 rounded border bg-white transition-all">
     </div>
     <x-icon-check class="absolute left-3 top-3 hidden -translate-x-1/2 -translate-y-1/2 text-white peer-checked:block" />
     @isset($slot)
