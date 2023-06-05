@@ -22,7 +22,10 @@
             class="container"
             v-else
         >
-            @lang('You don\'t have anything in your cart.')
+            <p>@lang('You don\'t have anything in your cart.')</p>
+            <x-rapidez-ct::button.outline class="mt-3">
+                @lang('Return to home')
+            </x-rapidez-ct::button.outline>
         </div>
     </cart>
 @endsection
