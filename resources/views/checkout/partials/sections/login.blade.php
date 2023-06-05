@@ -23,18 +23,22 @@
                     required
                 />
 
-                <p v-if="!emailAvailable" class="self-end">Je hebt al een account met dit e-mailadres. Login om verder te gaan</p>
-                <p v-else class="self-end">Naar dit e-mailadres sturen wij uw bestelling bevestiging. Ook controleren we of u al een account hebt zodat u sneller kunt afrekenen.</p>
+                <p v-if="!emailAvailable" class="self-end">
+                    @lang('You already have an account with this e-mail address. Please log in to continue.')
+                </p>
+                <p v-else class="self-end">
+                    @lang('We will send your order confirmation to this e-mail address. We will also check if you already have an account so you can checkout more efficiently.')
+                </p>
 
                 <x-rapidez-ct::button.accent v-if="!emailAvailable" dusk="continue" v-on:click.prevent="go">
                     @lang('Login')
                 </x-rapidez-ct::button.accent>
             </template>
             <template v-else>
-                <div class="h-[52px] px-4 flex items-center rounded border border-border bg-inactive-200">
+                <div class="h-[52px] px-4 flex items-center rounded border border-border bg-ct-inactive-200">
                     <x-heroicon-o-user-circle class="h-[24px] mr-[10px]"/>
                     <span v-text="$root.user?.email"></span>
-                    <x-heroicon-o-lock-closed class="h-[24px] ml-auto text-primary-400"/>
+                    <x-heroicon-o-lock-closed class="h-[24px] ml-auto text-ct-primary-400"/>
                 </div>
                 <div>
                     <x-rapidez-ct::title.sm>@lang('Welcome back') @{{ $root.user?.firstname }}!</x-rapidez-ct::title.sm>
