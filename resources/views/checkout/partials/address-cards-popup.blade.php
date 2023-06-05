@@ -7,7 +7,7 @@
             <x-heroicon-o-x/>
         </label>
 
-        <div class="grid grid-cols-2 gap-5 p-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 p-3">
             <x-rapidez-ct::card.address
                 v-for="userAddress in $root.user.addresses"
                 v-bind:key="userAddress.id"
@@ -16,7 +16,7 @@
                 v-bind:shipping="isType('shipping', userAddress)"
                 dynamic-type
                 check="isType('billing', userAddress) || isType('shipping', userAddress)"
-                class="min-w-[350px]"
+                class="w-full sm:min-w-[350px]"
             >
                 <x-rapidez-ct::button.link v-if="!isType('shipping', userAddress)" v-on:click.prevent="select('shipping', userAddress)">
                     @lang('Select as shipping')

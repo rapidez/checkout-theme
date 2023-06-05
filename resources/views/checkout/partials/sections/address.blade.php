@@ -6,7 +6,7 @@
                 @lang('Use a new address')
             </x-rapidez-ct::button.accent>
             <label for="popup" class="cursor-pointer">
-                <x-rapidez-ct::button.outline type="div">
+                <x-rapidez-ct::button.outline component="div">
                     @lang('My addresses')
                 </x-rapidez-ct::button.outline>
             </label>

@@ -8,7 +8,7 @@
     @endif
     v-slot="{ address, billing, shipping, isEmpty }"
 >
-    <div {{ $attributes->whereDoesntStartWith('v-')->class('relative bg-ct-white border px-8 py-6 rounded max-w-[400px]') }} v-if="!isEmpty">
+    <div {{ $attributes->whereDoesntStartWith('v-')->class('relative bg-ct-white border px-8 py-6 rounded') }} v-if="!isEmpty">
         <div class="h-full flex flex-col">
             @if($check)
                 <template v-if="{{ $check }}">
