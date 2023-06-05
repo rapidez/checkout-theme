@@ -2,8 +2,8 @@
     class="fixed inset-0 opacity-0 transition z-50 flex justify-center items-center"
     :class="{ 'opacity-100': popup, 'pointer-events-none': !popup }"
 >
-    <div class="absolute inset-0 bg-primary/60" v-on:click="togglePopup"></div>
-    <div class="bg-inactive-100 p-3 rounded z-10 relative">
+    <div class="absolute inset-0 bg-ct-primary/60" v-on:click="togglePopup"></div>
+    <div class="bg-ct-inactive-100 p-3 rounded z-10 relative">
         <x-rapidez-ct::title class="text-24 p-3">@lang('My addresses')</x-rapidez-ct::title>
         <x-heroicon-o-x v-on:click="togglePopup" class="absolute top-7 right-7 w-5 h-5 cursor-pointer"></x-heroicon-o-x>
 

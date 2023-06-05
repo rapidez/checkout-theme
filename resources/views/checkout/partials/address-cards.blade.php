@@ -7,7 +7,7 @@
         </x-rapidez-ct::card.address>
         <button
             v-on:click.prevent="toggleEdit"
-            class="h-full flex flex-col items-center justify-center gap-y-2 font-medium bg-border rounded"
+            class="h-full flex flex-col items-center justify-center gap-y-2 font-medium bg-ct-border rounded"
         >
             <span>+</span>
             <span>@lang('Add new address')</span>

@@ -7,7 +7,7 @@
 @section('content')
     <checkout v-cloak v-slot="{ checkout, cart, hasItems, save, goToStep }" :set="checkout.step = Math.max(checkout.step, 2)">
         <div class="container">
-            <div class="flex max-md:flex-col text-sm text-primary">
+            <div class="flex max-md:flex-col text-sm text-ct-primary">
                 <div class="flex-1">
                     <template v-if="checkout.step == 2 && hasItems">
                         @include('rapidez-ct::checkout.steps.credentials')

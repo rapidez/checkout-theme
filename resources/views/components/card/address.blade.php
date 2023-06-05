@@ -8,12 +8,12 @@
     @endif
     v-slot="{ address, billing, shipping, isEmpty }"
 >
-    <div {{ $attributes->whereDoesntStartWith('v-')->class('relative bg-white border px-8 py-6 rounded max-w-[400px]') }} v-if="!isEmpty">
+    <div {{ $attributes->whereDoesntStartWith('v-')->class('relative bg-ct-white border px-8 py-6 rounded max-w-[400px]') }} v-if="!isEmpty">
         <div class="h-full flex flex-col">
             @if($check)
                 <template v-if="{{ $check }}">
-                    <div class="absolute w-1 left-0 inset-y-0 rounded-l bg-accent"></div>
-                    <x-heroicon-s-check class="absolute w-5 right-7 top-7 text-accent"/>
+                    <div class="absolute w-1 left-0 inset-y-0 rounded-l bg-ct-accent"></div>
+                    <x-heroicon-s-check class="absolute w-5 right-7 top-7 text-ct-accent"/>
                 </template>
             @endif
             <x-rapidez-ct::title.lg class="mb-4 pr-8">
