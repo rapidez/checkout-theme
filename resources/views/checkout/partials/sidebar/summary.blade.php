@@ -1,5 +1,7 @@
 <x-rapidez-ct::card class="relative">
-    <x-rapidez-ct::logo class="absolute bottom-full max-h-20 -translate-y-6 object-contain" />
+    <div class="absolute inset-x-0 bottom-full -translate-y-6 max-md:hidden [&>*]:h-auto [&>*]:max-h-20 [&>*]:w-full [&>*]:object-contain">
+        <x-rapidez-ct::logo />
+    </div>
     <x-rapidez-ct::title.lg class="mb-4">
         @lang('Order overview')
     </x-rapidez-ct::title.lg>
