@@ -45,8 +45,8 @@
                     @lang('Remove')
                 </button>
             </div>
-            <div class="flex items-center gap-10 sm:ml-auto">
-                <div class="flex w-[60px] flex-col gap-px text-sm font-medium">
+            <div class="flex items-center gap-10 sm:ml-auto font-medium">
+                <div class="flex w-[60px] flex-col gap-px text-sm">
                     <div v-if="item.specialPrice">
                         @{{ item.specialPrice | price }}
                     </div>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <x-rapidez-ct::input.quantity />
-                <div class="w-[60px] text-sm font-medium">
+                <div class="w-[60px] text-sm">
                     @{{ item.total | price }}
                 </div iv>
             </div>

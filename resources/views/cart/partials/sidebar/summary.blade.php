@@ -22,12 +22,8 @@
             </span>
             <small class="mt-1 w-full">@{{ cart.shipping_description }}</small>
         </li>
-        <li v-if="cart.discount_name && cart.discount_amount < 0">
-            <span>@lang('Discount')</span>
-            <span>@{{ cart.discount_name }}</span>
-        </li>
-        <li v-if="!cart.discount_name && cart.discount_amount < 0">
-            <span>@lang('Discount')</span>
+        <li v-if="cart.discount_name">
+            <span>@lang('Discount') (@{{ cart.discount_name }})</span>
             <span>@{{ cart.discount_amount | price }}</span>
         </li>
         <li class="font-medium">

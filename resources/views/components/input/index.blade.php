@@ -13,7 +13,10 @@
         'name' => $name,
         'type' => $type,
         'dusk' => $attributes->get('v-bind:dusk') ? null : $name,
-        'class' => 'rounded border border-border bg-white py-4 px-5 text-sm outline-none !ring-0 transition-all placeholder:text-inactive focus:border-primary disabled:bg-ct-inactive-100 disabled:text-inactive',
+        'class' => 'rounded border border-border bg-white py-4 px-5 text-sm outline-none !ring-0 transition-all placeholder:text-inactive focus:border-primary disabled:bg-ct-inactive-200 disabled:text-inactive',
     ]) }}>
     {{ $slot }}
+    @if ($attributes['disabled'])
+        <x-heroicon-o-lock-closed class="absolute right-5 bottom-4 h-5" />
+    @endif
 </label>

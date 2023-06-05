@@ -11,7 +11,6 @@
     >
         <div class="container">
             <x-rapidez-ct::overview>
-
                 <template v-if="checkout.step == 1 && hasItems">
                     @include('rapidez-ct::checkout.steps.credentials')
                 </template>
@@ -25,7 +24,6 @@
                 </template>
 
                 <x-slot:sidebar>
-
                     @include('rapidez-ct::checkout.partials.sidebar.sidebar')
                 </x-slot:sidebar>
             </x-rapidez-ct::overview>

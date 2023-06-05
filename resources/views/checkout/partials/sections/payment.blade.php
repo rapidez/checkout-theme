@@ -29,7 +29,7 @@
             <div v-for="agreement in data.checkoutAgreements">
 
                 <label
-                    class="cursor-pointer text-sm text-primary underline"
+                    class="text-ct-primary cursor-pointer text-sm underline"
                     v-bind:for="agreement.checkbox_text"
                     v-if="agreement.mode == 'AUTO'"
                 >
@@ -44,7 +44,7 @@
                         required
                     >
                         <label
-                            class="cursor-pointer text-sm text-primary underline"
+                            class="text-ct-primary cursor-pointer text-sm underline"
                             v-bind:for="agreement.checkbox_text"
                         >
                             @{{ agreement.checkbox_text }}

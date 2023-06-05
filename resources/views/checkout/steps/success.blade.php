@@ -18,10 +18,18 @@
         <x-rapidez-ct::title.lg>
             @lang('Newsletter')
         </x-rapidez-ct::title.lg>
+        <x-rapidez-ct::newsletter class="mt-5" />
     </section>
-    <section>
+    <section v-if="!$root.loggedIn">
         <x-rapidez-ct::title.lg>
             @lang('Create account')
         </x-rapidez-ct::title.lg>
+        <x-rapidez-ct::input
+            name="email"
+            type="email"
+            label="E-mailaddress"
+            v-bind:value="email"
+            disabled
+        />
     </section>
 </x-rapidez-ct::sections>
