@@ -33,7 +33,7 @@
     </x-rapidez-ct::summary>
 
     <x-rapidez-ct::button.enhanced
-        class="mt-5 flex w-full items-center justify-center gap-1"
+        class="flex w-full items-center justify-center gap-1"
         href="/checkout"
         dusk="checkout"
     >

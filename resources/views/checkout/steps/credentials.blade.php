@@ -8,7 +8,7 @@
     @include('rapidez-ct::checkout.partials.sections.shipping')
 </x-rapidez-ct::sections>
 
-<div class="mt-5 flex flex-wrap justify-between gap-3">
+<div class="flex flex-wrap justify-between gap-3">
     <x-rapidez-ct::button.outline href="/cart">
         @lang('Back to cart')
     </x-rapidez-ct::button.outline>
