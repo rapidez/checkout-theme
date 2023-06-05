@@ -22,7 +22,7 @@
                 <template v-else-if="billing">@lang('Billing address')</template>
                 <template v-else>@lang('Address')</template>
             </x-rapidez-ct::title.lg>
-            <div class="flex flex-wrap justify-between h-full">
+            <div class="flex flex-wrap flex-1 justify-between">
                 <ul class="flex flex-col gap-1">
                     <li v-for="data in address" v-text="data"></li>
                 </ul>

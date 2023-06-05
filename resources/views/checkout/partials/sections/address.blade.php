@@ -5,11 +5,9 @@
             <x-rapidez-ct::button.accent v-on:click.prevent="toggleEdit">
                 @lang('Use a new address')
             </x-rapidez-ct::button.accent>
-            <label for="popup" class="cursor-pointer">
-                <x-rapidez-ct::button.outline component="div">
-                    @lang('My addresses')
-                </x-rapidez-ct::button.outline>
-            </label>
+            <x-rapidez-ct::button.outline component="label" for="popup" class="cursor-pointer">
+                @lang('My addresses')
+            </x-rapidez-ct::button.outline>
         </div>
     </section>
 

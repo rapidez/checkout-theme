@@ -1,3 +1,3 @@
-<button {{ $attributes->merge(['class' => 'underline text-ct-inactive text-ct-start']) }}>
+<button {{ $attributes->merge(['class' => 'underline text-ct-inactive text-right']) }}>
     {{ $slot }}
 </button>
