@@ -3,7 +3,6 @@
         data() {
             return {
                 editing: false,
-                popup: false,
             }
         },
 
@@ -11,9 +10,7 @@
             return this.$scopedSlots.default({
                 useCards: this.useCards,
                 editing: this.editing,
-                popup: this.popup,
                 toggleEdit: this.toggleEdit,
-                togglePopup: this.togglePopup,
                 hideBilling: this.hideBilling,
                 isType: this.isType,
                 select: this.select,
@@ -23,10 +20,6 @@
         methods: {
             toggleEdit() {
                 this.editing = !this.editing
-            },
-
-            togglePopup() {
-                this.popup = !this.popup
             },
 
             isType(type, address) {

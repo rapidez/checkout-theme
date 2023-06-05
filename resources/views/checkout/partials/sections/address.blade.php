@@ -1,13 +1,15 @@
-<checkout-address v-slot="{ useCards, editing, popup, toggleEdit, togglePopup, hideBilling, isType, select }">
+<checkout-address v-slot="{ useCards, editing, toggleEdit, hideBilling, isType, select }">
     <section v-if="useCards && !editing">
         @include('rapidez-ct::checkout.partials.address-cards')
         <div class="mt-5">
             <x-rapidez-ct::button.accent v-on:click.prevent="toggleEdit">
                 @lang('Use a new address')
             </x-rapidez-ct::button.accent>
-            <x-rapidez-ct::button.outline v-on:click.prevent="togglePopup">
-                @lang('My addresses')
-            </x-rapidez-ct::button.outline>
+            <label for="popup" class="cursor-pointer">
+                <x-rapidez-ct::button.outline type="div">
+                    @lang('My addresses')
+                </x-rapidez-ct::button.outline>
+            </label>
         </div>
     </section>
 
