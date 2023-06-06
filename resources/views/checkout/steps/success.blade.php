@@ -10,18 +10,10 @@
             @include('rapidez-ct::checkout.partials.sections.success.order-completed-note')
         </x-rapidez-ct::sections>
         <x-rapidez-ct::sections>
-            <section>
-                @include('rapidez-ct::checkout.partials.sections.success.order-info')
-            </section>
-            <section>
-                @include('rapidez-ct::checkout.partials.sections.success.products')
-            </section>
-            <section>
-                @include('rapidez-ct::checkout.partials.sections.success.newsletter')
-            </section>
-            <section v-if="!$root.loggedIn">
-                @include('rapidez-ct::checkout.partials.sections.success.create-account')
-            </section>
+            @include('rapidez-ct::checkout.partials.sections.success.order-info')
+            @include('rapidez-ct::checkout.partials.sections.success.products')
+            @include('rapidez-ct::checkout.partials.sections.success.newsletter')
+            @include('rapidez-ct::checkout.partials.sections.success.create-account')
         </x-rapidez-ct::sections>
     </div>
 </checkout-success>

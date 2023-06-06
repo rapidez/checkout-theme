@@ -1,1 +1,3 @@
-Hier komen de gekochte producten
+<section>
+    Hier komen de gekochte producten
+</section>
