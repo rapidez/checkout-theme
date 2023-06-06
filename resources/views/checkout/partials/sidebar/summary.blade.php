@@ -10,8 +10,9 @@
             <span>@{{ item.qty }}x @{{ item.name }}</span>
         </li>
         <li
-            class="last:font-medium"
+            class="flex justify-between last:font-medium [&>*]:flex-1 last:[&>*]:text-right"
             v-for="segment in checkout.totals.total_segments"
+            v-if="segment.title"
         >
             <span>@{{ segment.title }}</span>
             <span v-if="segment.code !== 'shipping'">@{{ segment.value | price }}</span>
