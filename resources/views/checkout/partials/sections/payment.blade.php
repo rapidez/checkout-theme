@@ -15,7 +15,7 @@
             <img
                 class="max-h-10"
                 alt=""
-                v-bind:src="`/payment-icons/${method.code}.svg`"
+                v-bind:src="`/vendor/payment-icons/${method.code}.svg`"
                 onerror="this.onerror=null;this.src='/payment-icons/creditcard.svg'"
             />
         </x-rapidez-ct::input.radio>
