@@ -1,7 +1,7 @@
 <toggler>
     <div
         class="relative"
-        slot-scope="{ isOpen, toggle, close }"
+        slot-scope="{ isOpen, toggle }"
     >
         <x-rapidez-ct::input
             class="[&>input]:pr-12"
