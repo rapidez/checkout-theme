@@ -1,4 +1,4 @@
-<section v-if="!$root.loggedIn">
+<x-rapidez-ct::card.inactive v-if="!$root.loggedIn">
     <x-rapidez-ct::title.lg>
         @lang('Create account')
     </x-rapidez-ct::title.lg>
@@ -9,4 +9,4 @@
         v-bind:value="email"
         disabled
     />
-</section>
+</x-rapidez-ct::card.inactive>

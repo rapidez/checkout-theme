@@ -1,4 +1,4 @@
-<section>
+<x-rapidez-ct::card.inactive>
     <x-rapidez-ct::title.lg>
         @lang('Shipping method')
     </x-rapidez-ct::title.lg>
@@ -28,4 +28,4 @@
             </div>
         </x-rapidez-ct::input.radio>
     </div>
-</section>
+</x-rapidez-ct::card.inactive>

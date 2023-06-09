@@ -11,7 +11,7 @@
         :set="checkout.step = Math.max(checkout.step, 2)"
     >
         <div class="container">
-            <x-rapidez-ct::overview>
+            <x-rapidez-ct::layout>
                 <template v-if="checkout.step == 2 && hasItems">
                     @include('rapidez-ct::checkout.steps.credentials')
                 </template>
@@ -27,7 +27,7 @@
                 <x-slot:sidebar>
                     @include('rapidez-ct::checkout.partials.sidebar.sidebar')
                 </x-slot:sidebar>
-            </x-rapidez-ct::overview>
+            </x-rapidez-ct::layout>
         </div>
     </checkout>
 @endsection

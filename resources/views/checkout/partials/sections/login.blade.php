@@ -1,5 +1,5 @@
 <login v-slot="{ email, password, go, loginInputChange, emailAvailable, logout }">
-    <section>
+    <x-rapidez-ct::card.inactive>
         <div class="grid gap-5 md:grid-cols-2">
             <template v-if="!loggedIn">
                 <x-rapidez-ct::input
@@ -50,5 +50,5 @@
                 </div>
             </template>
         </div>
-    </section>
+    </x-rapidez-ct::card.inactive>
 </login>

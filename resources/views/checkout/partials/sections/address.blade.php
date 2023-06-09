@@ -1,5 +1,5 @@
 <checkout-address v-slot="{ useCards, editing, toggleEdit, hideBilling, isType, select }">
-    <section v-if="useCards && !editing">
+    <x-rapidez-ct::card.inactive v-if="useCards && !editing">
         @include('rapidez-ct::checkout.partials.address-cards')
         <div class="mt-5">
             <x-rapidez-ct::button.accent v-on:click.prevent="toggleEdit">
@@ -9,9 +9,9 @@
                 @lang('My addresses')
             </x-rapidez-ct::button.outline>
         </div>
-    </section>
+    </x-rapidez-ct::card.inactive>
 
-    <section v-else>
+    <x-rapidez-ct::card.inactive v-else>
         @include('rapidez-ct::checkout.partials.shipping-billing-fields', ['type' => 'shipping'])
 
         <div class="mt-9 pt-7 border-t-2 border-white" v-if="!checkout.hide_billing">
@@ -21,5 +21,5 @@
         <x-rapidez-ct::button.accent class="mt-9" v-if="useCards" v-on:click.prevent="toggleEdit">
             @lang('Save address')
         </x-rapidez-ct::button.accent>
-    </section>
+    </x-rapidez-ct::card.inactive>
 </checkout-address>
