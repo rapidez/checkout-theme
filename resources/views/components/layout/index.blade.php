@@ -2,7 +2,7 @@
     <div class="flex-1">
         {{ $slot }}
     </div>
-    <x-rapidez-ct::sidebar>
+    <x-rapidez-ct::layout.sidebar>
         {{ $sidebar }}
-    </x-rapidez-ct::sidebar>
+    </x-rapidez-ct::layout.sidebar>
 </div>

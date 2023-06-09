@@ -1,3 +1,3 @@
-<section>
+<x-rapidez-ct::card.inactive>
     Hier komen de gekochte producten
-</section>
+</x-rapidez-ct::card.inactive>

@@ -6,7 +6,7 @@
         'name' => $name,
         'type' => $type,
         'dusk' => $attributes->get('v-bind:dusk') ? null : $name,
-        'class' => 'rounded border border-border bg-white py-4 px-5 text-sm outline-none !ring-0 transition-all placeholder:text-ct-inactive focus:border-ct-primary disabled:bg-ct-inactive-200 disabled:text-ct-inactive disabled:pr-12',
+        'class' => 'rounded border border-border bg-white py-4 px-5 text-sm outline-none !ring-0 transition-all placeholder:text-ct-inactive focus:border-ct-primary disabled:bg-ct-inactive-200 disabled:text-ct-inactive font-medium disabled:pr-12',
     ]) }}>
     {{ $slot }}
     @if ($attributes['disabled'])

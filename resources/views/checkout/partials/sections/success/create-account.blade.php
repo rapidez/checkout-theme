@@ -1,4 +1,4 @@
-<section v-if="!$root.loggedIn">
+<x-rapidez-ct::card.inactive v-if="!$root.loggedIn">
     <x-rapidez-ct::title.lg>
         @lang('Create account')
     </x-rapidez-ct::title.lg>
@@ -39,4 +39,4 @@
             </x-rapidez-ct::button.accent>
         </form>
     </graphql-mutation>
-</section>
+</x-rapidez-ct::card.inactive>

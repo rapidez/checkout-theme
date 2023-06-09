@@ -4,7 +4,7 @@
     <select
         name="{{ $name }}"
         {{ $attributes->except(['v-if', 'v-else', 'v-else-if', 'class'])->merge([
-            'class' => 'cursor-pointer border-ct-border py-4 px-5 text-sm focus:border-ct-primary rounded border bg-white outline-none !ring-0 transition-all disabled:bg-ct-inactive-100',
+            'class' => 'cursor-pointer border-ct-border py-4 px-5 text-sm focus:border-ct-primary font-medium rounded border bg-white outline-none !ring-0 transition-all disabled:bg-ct-inactive-100',
         ]) }}
     >
         @isset($slot)
