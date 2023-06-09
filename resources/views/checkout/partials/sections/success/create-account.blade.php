@@ -25,7 +25,7 @@
                 v-bind:value="order.customer_email"
                 disabled
             />
-            <div class="text-sm text-ct-primary">
+            <div class="text-sm">
                 @lang('No account yet? Create an account and benefit instantly from repeat orders, order statuses and easy returns!')
             </div>
             <x-rapidez-ct::input.password
@@ -34,7 +34,7 @@
                 v-model="variables.password"
                 required
             />
-            <x-rapidez-ct::button.accent class="justify-self-start mt-auto">
+            <x-rapidez-ct::button.accent class="self-end justify-self-start">
                 @lang('Create account')
             </x-rapidez-ct::button.accent>
         </form>
