@@ -6,11 +6,11 @@
 
 @section('account-content')
     <graphql query="@include('rapidez::account.partials.queries.overview')" :callback="sortOrdersCallback">
-        <div v-if="data" slot-scope="{ data }">
+        <div v-if="data" slot-scope="{ data, runQuery }">
            <x-rapidez-ct::sections>
-                @include('rapidez-ct::checkout.partials.sections.address')
-                @include('rapidez-ct::components.newsletter')
-                @include('rapidez-ct::account.partials.edit.password')
+                @include('rapidez-ct::account.partials.sections.edit.addresses')
+                @include('rapidez-ct::account.partials.sections.edit.newsletter')
+                @include('rapidez-ct::account.partials.sections.edit.password')
            </x-rapidez-ct::sections>
            <x-rapidez-ct::button.outline href="/account">
                 @lang('Back to dashboard')

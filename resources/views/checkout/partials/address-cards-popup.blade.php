@@ -14,7 +14,6 @@
                     v-bind:address="userAddress"
                     v-bind:billing="isType('billing', userAddress)"
                     v-bind:shipping="isType('shipping', userAddress)"
-                    dynamic-type
                     check="isType('billing', userAddress) || isType('shipping', userAddress)"
                     class="w-full sm:min-w-[350px]"
                 >
