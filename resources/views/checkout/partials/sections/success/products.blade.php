@@ -1,51 +1,49 @@
-<x-rapidez-ct::card.inactive>
-    <div class="bg-ct-inactive-100 mt-5 rounded py-4 text-sm">
-        <div class="flex w-full items-center gap-x-6 pr-6 text-xs">
-            <div class="sm:w-[150px]"></div>
-            <div class="flex-1 sm:w-[150px]">@lang('Product')</div>
-            <div class="ml-auto flex items-center gap-10 max-md:hidden">
-                <div class="w-16 text-center">@lang('Amount')</div>
-            </div>
+<div class="mt-5 rounded bg-ct-inactive-100 py-4 text-sm">
+    <div class="flex w-full items-center gap-x-6 pr-6 text-xs">
+        <div class="sm:w-[150px]"></div>
+        <div class="flex-1 sm:w-[150px]">@lang('Product')</div>
+        <div class="ml-auto flex items-center gap-10 max-md:hidden">
+            <div class="w-16 text-center">@lang('Amount')</div>
         </div>
     </div>
+</div>
 
-    <ul>
-        <li
-            class="flex border-b py-5"
-            v-for="(item, productId, index) in order.sales_order_items"
-        >
-            <div class="flex w-full flex-wrap gap-y-3 gap-x-3 text-sm sm:gap-x-6 sm:pr-6 md:items-center">
-                <div class="flex h-[100px] w-[150px] items-center justify-center">
-                    <img
-                        class="max-h-[100px] max-w-[150px]"
-                        :alt="item.name"
-                        :src="'/storage/resizes/200/magento/catalog/product' + item.image"
-                        height="100"
-                        v-if="item.image"
-                    >
-                    <x-rapidez::no-image
-                        class="h-[100px] w-[150px]"
-                        v-else
-                    />
-                </div>
-                <div class="flex w-[150px] flex-1 flex-col items-start">
-                    <a
-                        :href="item.url"
-                        dusk="cart-item-name"
-                    >@{{ item.name }}</a>
-                    <div v-for="(optionValue, option) in item.options">
-                        @{{ option }}: @{{ optionValue }}
-                    </div>
-                </div>
-                <div class="flex items-center justify-between gap-10 font-medium max-sm:flex-1 sm:ml-auto">
-                    <input
-                        class="w-16 px-0 text-center border-border text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                        type="number"
-                        disabled
-                        v-bind:value="Math.round(item.qty_ordered)"
-                    />
+<ul class="flex flex-col divide-y">
+    <li
+        class="flex py-5"
+        v-for="(item, productId, index) in order.sales_order_items"
+    >
+        <div class="flex w-full flex-wrap gap-y-3 gap-x-3 text-sm sm:gap-x-6 sm:pr-6 md:items-center">
+            <div class="flex h-[100px] w-[150px] items-center justify-center">
+                <img
+                    class="max-h-[100px] max-w-[150px]"
+                    :alt="item.name"
+                    :src="'/storage/resizes/200/magento/catalog/product' + item.image"
+                    height="100"
+                    v-if="item.image"
+                >
+                <x-rapidez::no-image
+                    class="h-[100px] w-[150px]"
+                    v-else
+                />
+            </div>
+            <div class="flex w-[150px] flex-1 flex-col items-start">
+                <a
+                    :href="item.url"
+                    dusk="cart-item-name"
+                >@{{ item.name }}</a>
+                <div v-for="(optionValue, option) in item.options">
+                    @{{ option }}: @{{ optionValue }}
                 </div>
             </div>
-        </li>
-    </ul>
-</x-rapidez-ct::card.inactive>
+            <div class="flex items-center justify-between gap-10 font-medium max-sm:flex-1 sm:ml-auto">
+                <input
+                    class="w-16 h-14 border-border px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                    type="number"
+                    disabled
+                    v-bind:value="Math.round(item.qty_ordered)"
+                />
+            </div>
+        </div>
+    </li>
+</ul>
