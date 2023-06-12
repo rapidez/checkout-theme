@@ -50,7 +50,6 @@
             >
                 <x-rapidez-ct::title.lg class="mb-4 pr-8">
                     @lang('Delivery method')
-
                 </x-rapidez-ct::title.lg>
                 <div class="flex flex-1 flex-wrap justify-between">
                     <ul class="flex flex-col gap-1">
