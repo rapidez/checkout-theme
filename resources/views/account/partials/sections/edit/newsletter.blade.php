@@ -1,1 +1,1 @@
-@include('rapidez-ct::components.newsletter')
+<x-rapidez-ct::newsletter/>
