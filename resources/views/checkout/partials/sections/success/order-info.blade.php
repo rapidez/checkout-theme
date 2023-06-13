@@ -1,5 +1,5 @@
 <x-rapidez-ct::card.inactive>
-    <div class="flex -space-x-px">
+    <div class="flex -space-x-px max-sm:-space-y-px flex-wrap">
         <div class="flex flex-1 flex-col -space-y-px">
             <template v-if="checkout.hide_billing || checkout.shipping_address?.customer_address_id == checkout.billing_address?.customer_address_id">
                 <x-rapidez-ct::card.address
