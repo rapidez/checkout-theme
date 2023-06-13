@@ -37,12 +37,10 @@
                 </div>
             </div>
             <div class="flex items-center justify-between gap-10 font-medium max-sm:flex-1 sm:ml-auto">
-                <input
-                    class="h-14 w-16 border-border px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                    type="number"
-                    disabled
-                    v-bind:value="Math.round(item.qty_ordered)"
-                />
+                <div
+                    class="h-14 w-16 border flex items-center justify-center text-sm"
+                    v-text="Math.round(item.qty_ordered)"
+                ></div>
             </div>
         </div>
     </li>
