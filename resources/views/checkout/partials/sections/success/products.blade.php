@@ -2,8 +2,8 @@
     <div class="flex w-full items-center gap-x-6 pr-6 text-xs">
         <div class="sm:w-[150px]"></div>
         <div class="flex-1 sm:w-[150px]">@lang('Product')</div>
-        <div class="ml-auto flex items-center gap-10 max-md:hidden">
-            <div class="w-16 text-center">@lang('Amount')</div>
+        <div class="ml-auto w-16 text-center max-md:hidden">
+            @lang('Amount')
         </div>
     </div>
 </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="flex items-center justify-between gap-10 font-medium max-sm:flex-1 sm:ml-auto">
                 <input
-                    class="w-16 h-14 border-border px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                    class="h-14 w-16 border-border px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                     type="number"
                     disabled
                     v-bind:value="Math.round(item.qty_ordered)"
