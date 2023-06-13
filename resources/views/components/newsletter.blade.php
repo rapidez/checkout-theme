@@ -15,7 +15,7 @@
                 <span class="text-sm font-medium text-ct-primary">@lang('Yes, I want to subscribe to the newsletter')</span>
                 <span class="text-xs font-normal text-ct-inactive">@lang('You will receive this newsletter approximately 2x a year')</span>
                 <div class="-translate-y-1/2 absolute right-0 top-1/2">
-                    <x-rapidez-ct::newsletter_visual />
+                    <x-rapidez-ct::newsletter-visual />
                 </div>
             </x-slot:slot>
         </x-rapidez-ct::input.checkbox>
