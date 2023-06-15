@@ -1,4 +1,4 @@
-<div class="flex text-inactive">
+<div class="text-inactive">
     {{ $slot }}
     @if ($required ?? false)
         <span>*</span>

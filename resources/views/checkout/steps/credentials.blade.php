@@ -1,4 +1,4 @@
-<x-rapidez-ct::title-progress-bar>
+<x-rapidez-ct::title-progress-bar href="/cart">
     @lang('Credentials')
 </x-rapidez-ct::title-progress-bar>
 
