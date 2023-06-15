@@ -1,7 +1,3 @@
-@props(['tag' => 'p'])
-<component
-    is="{{ $tag }}"
-    {{ $attributes->class('text-lg font-medium') }}
->
+<x-rapidez-ct::title.base {{ $attributes->class('text-lg') }}>
     {{ $slot }}
-</component>
+</x-rapidez-ct::title.base>

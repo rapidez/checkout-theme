@@ -32,10 +32,9 @@
                 v-model="variables.email"
                 required
             />
-            <x-rapidez-ct::input
+            <x-rapidez-ct::input.password
                 name="password"
                 Label="Password"
-                type="password"
                 v-model="variables.password"
                 required
             />

@@ -7,7 +7,7 @@
 @section('content')
     <div class="container">
         <x-rapidez-ct::layout.two-column>
-            <x-rapidez-ct::title>
+            <x-rapidez-ct::title href="/login">
                 @lang('Login')
             </x-rapidez-ct::title>
             <x-slot:columns>

@@ -1,4 +1,7 @@
-<x-rapidez-ct::title-progress-bar>
+<x-rapidez-ct::title-progress-bar
+    href="#"
+    v-on:click.prevent="goToStep(1)"
+>
     @lang('Payment')
 </x-rapidez-ct::title-progress-bar>
 
