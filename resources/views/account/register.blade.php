@@ -14,18 +14,19 @@
             <x-rapidez-ct::sections>
                 @include('rapidez-ct::account.partials.register-account')
                 @include('rapidez-ct::components.newsletter')
-                <div class="!mt-5 flex flex-wrap justify-between gap-2">
-                    <x-rapidez-ct::button.outline href="/login">
-                        @lang('Back to login')
-                    </x-rapidez-ct::button.outline>
-                    <x-rapidez-ct::button.accent
-                        form="register"
-                        type="submit"
-                    >
-                        @lang('Register')
-                    </x-rapidez-ct::button.accent>
-                </div>
             </x-rapidez-ct::sections>
+
+            <x-rapidez-ct::toolbar>
+                <x-rapidez-ct::button.outline href="/login">
+                    @lang('Back to login')
+                </x-rapidez-ct::button.outline>
+                <x-rapidez-ct::button.accent
+                    form="register"
+                    type="submit"
+                >
+                    @lang('Register')
+                </x-rapidez-ct::button.accent>
+            </x-rapidez-ct::toolbar>
 
             <x-slot:sidebar>
                 @include('rapidez-ct::account.partials.account-features')
