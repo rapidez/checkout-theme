@@ -14,7 +14,7 @@
         :callback="registerCallback"
     >
         <form
-            class="mt-5 grid grid-cols-2 items-end gap-5"
+            class="mt-5 grid items-end gap-5 sm:grid-cols-2"
             slot-scope="{ mutate, variables, mutating }"
             v-on:submit="mutate"
         >
@@ -25,7 +25,7 @@
                 v-bind:value="order.customer_email"
                 disabled
             />
-            <div class="text-sm">
+            <div class="text-sm max-sm:order-first">
                 @lang('No account yet? Create an account and benefit instantly from repeat orders, order statuses and easy returns!')
             </div>
             <x-rapidez-ct::input.password

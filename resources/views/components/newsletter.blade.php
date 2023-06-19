@@ -19,7 +19,7 @@
                 {{ $attributes->class('flex bg-white p-7 cursor-pointer relative rounded border') }}
             >
                 <x-rapidez-ct::input.checkbox
-                    class="!items-start"
+                    class="w-full !items-start"
                     id="{{ $id }}"
                     v-model="{{ $vModel ?? 'variables.is_subscribed'}}"
                     v-on:change="{{ isset($vModel) ?: 'mutate();$root.user.extension_attributes.is_subscribed=variables.is_subscribed' }}"

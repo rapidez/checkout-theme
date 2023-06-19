@@ -18,6 +18,7 @@
                 <x-heroicon-o-eye
                     class="h-5"
                     v-if="isOpen"
+                    v-cloak
                 />
                 <x-heroicon-o-eye-off
                     class="h-5"
