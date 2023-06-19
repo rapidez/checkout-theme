@@ -1,17 +1,33 @@
 @extends('rapidez::layouts.app')
 
 @section('title', __('Account'))
+@php
+    $showNavigation = !request()->is('account');
+    $backurl = match (true) {
+        request()->is('account') => null,
+        request()->is('account/order/*') => '/account/orders',
+        default => '/account',
+    };
+@endphp
 
 @section('content')
-    <div class="container" v-cloak>
+    <div
+        class="container"
+        v-cloak
+    >
         <template v-if="$root.user?.id">
             <x-rapidez-ct::layout>
-                <x-rapidez-ct::title>
-                    @yield('title')
-                </x-rapidez-ct::title>
+                <x-rapidez-ct::toolbar>
+                    <x-rapidez-ct::title :href="$backurl">
+                        @yield('title')
+                    </x-rapidez-ct::title>
+                    @yield('button')
+                </x-rapidez-ct::toolbar>
                 @yield('account-content')
                 <x-slot:sidebar>
-                    @include('rapidez-ct::account.partials.account-navigation')
+                    @includeUnless($showNavigation, 'rapidez-ct::account.partials.default-addresses')
+                    @includeUnless($showNavigation, 'rapidez-ct::account.partials.account-features')
+                    @includeWhen($showNavigation, 'rapidez-ct::account.partials.account-navigation')
                 </x-slot:sidebar>
             </x-rapidez-ct::layout>
         </template>

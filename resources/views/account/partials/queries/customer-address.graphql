@@ -1,0 +1,14 @@
+{
+  customer {
+    addresses {
+      firstname
+      lastname
+      street
+      city
+      postcode
+      country_code
+      default_billing
+      default_shipping
+    }
+  }
+}

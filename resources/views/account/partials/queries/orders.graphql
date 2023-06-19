@@ -1,0 +1,23 @@
+{
+  customer {
+    orders {
+      items {
+        number
+        order_date
+        status
+        shipping_address {
+          firstname
+          lastname
+        }
+        total {
+          grand_total {
+            value
+          }
+        }
+        items {
+          product_name
+        }
+      }
+    }
+  }
+}
