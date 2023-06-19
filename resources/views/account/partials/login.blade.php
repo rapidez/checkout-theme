@@ -1,29 +1,44 @@
-<login v-cloak :checkout-login="false" v-slot="{ email, password, go, loginInputChange }" redirect="{{ $redirect ?? '/account' }}">
+<login
+    v-cloak
+    :checkout-login="false"
+    v-slot="{ email, password, go, loginInputChange }"
+    redirect="{{ $redirect ?? '/account' }}"
+>
     <x-rapidez-ct::card.inactive>
-        <form class="space-y-5" v-on:submit.prevent="go()">
+        <form
+            class="space-y-5"
+            v-on:submit.prevent="go()"
+        >
             <x-rapidez-ct::input
-                label="Email"
                 name="email"
                 type="email"
+                label="Email"
                 v-bind:value="email"
                 v-on:input="loginInputChange"
                 required
             />
-            <x-rapidez-ct::input
-                label="Password"
+            <x-rapidez-ct::input.password
                 name="password"
-                type="password"
+                label="Password"
                 v-bind:value="password"
                 v-on:input="loginInputChange"
                 required
             />
-            <x-rapidez-ct::button.accent type="submit" class="w-full" dusk="continue">
-                @lang('Login')
-            </x-rapidez-ct::button.accent>
-             <div class="flex justify-center">
-                <a href="/forgotpassword" class="text-sm text-ct-inactive hover:underline">
+            <div class="flex items-center justify-between">
+                <a
+                    class="text-sm text-ct-inactive underline"
+                    href="/forgotpassword"
+                >
                     @lang('Forgot your password?')
                 </a>
+                <x-rapidez-ct::button.accent
+                    class="flex items-center gap-1"
+                    type="submit"
+                    dusk="continue"
+                >
+                    @lang('Login')
+                    <x-heroicon-o-arrow-right class="h-4" />
+                </x-rapidez-ct::button.accent>
             </div>
         </form>
     </x-rapidez-ct::card.inactive>
