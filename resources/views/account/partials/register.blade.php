@@ -1,11 +1,15 @@
-<x-rapidez-ct::card>
+<x-rapidez-ct::card class="md:w-auto">
     <x-rapidez-ct::title.lg class="mb-4">
         @lang('Register within 1 minute')
     </x-rapidez-ct::title.lg>
-    <p class="mb-5">
-        @lang('Nog geen account? Maak een account aan en profiteer van sneller bestellen, herhaalbestellingen, status van uw bestelling, eenvoudig retourneren en meer!')
+    <p class="mb-5 text-sm">
+        @lang('Don\'t have an account yet? Create an account and enjoy faster ordering, repeat orders, status of your order, easy returns and more!')
     </p>
-    <x-rapidez-ct::button.outline href="/register">
+    <x-rapidez-ct::button.outline
+        class="flex w-fit items-center gap-1"
+        href="/register"
+    >
         @lang('Register')
+        <x-heroicon-o-arrow-right class="h-4" />
     </x-rapidez-ct::button.outline>
 </x-rapidez-ct::card>
