@@ -1,6 +1,7 @@
 {
   customer {
     addresses {
+      company
       firstname
       lastname
       street

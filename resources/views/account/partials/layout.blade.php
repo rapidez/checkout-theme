@@ -26,7 +26,6 @@
                 @yield('account-content')
                 <x-slot:sidebar>
                     @includeUnless($showNavigation, 'rapidez-ct::account.partials.default-addresses')
-                    @includeUnless($showNavigation, 'rapidez-ct::account.partials.account-features')
                     @includeWhen($showNavigation, 'rapidez-ct::account.partials.account-navigation')
                 </x-slot:sidebar>
             </x-rapidez-ct::layout>

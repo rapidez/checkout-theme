@@ -12,8 +12,8 @@
     >
         @if ($check)
             <template v-if="{{ $check }}">
-                <div class="absolute inset-y-0 left-0 w-1 rounded-l bg-ct-accent"></div>
-                <x-heroicon-s-check class="absolute right-7 top-7 w-5 text-ct-accent" />
+                <div class="bg-ct-accent absolute inset-y-0 left-0 w-1 rounded-l"></div>
+                <x-heroicon-s-check class="text-ct-accent absolute right-7 top-7 w-5" />
             </template>
         @endif
         <x-rapidez-ct::title.lg class="mb-4 pr-8">
