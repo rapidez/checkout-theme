@@ -1,12 +1,10 @@
 @props(['item' => [], 'key' => ''])
 <component
-    href="{{ $item['href'] ?? '' }}"
-    is="{{ isset($item['href']) ? 'a' : 'button' }}"
-    {{ $attributes }}
-    @class([
-        '' => request()->is(substr($item['href'] ?? '/#', 1) . '*'),
-        'flex-1 text-left',
-    ])
+    {{ $attributes->merge([
+        'class' => 'flex-1 text-left',
+        'is' => isset($item['href']) ? 'a' : 'button',
+        'href' => $item['href'] ?? '',
+    ]) }}
 >
     @lang($item['heading'] ?? '')
     @if ($key === 'orders')
