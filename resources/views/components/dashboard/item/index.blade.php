@@ -16,12 +16,12 @@
                 {{ $item['heading'] }}
                 @if ($key === 'orders')
                     <graphql query="{customer{orders{items{number}}}}">
-                        <span
+                        <template
                             slot-scope="{ data }"
                             v-if="data"
                         >
                             (@{{ data.customer.orders.items.length ?? 0 }})
-                        </span>
+                        </template>
                     </graphql>
                 @endif
             </strong>
