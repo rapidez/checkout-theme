@@ -15,7 +15,7 @@
         class="container"
         v-cloak
     >
-        <template v-if="$root.loggedIn">
+        <template v-if="loggedIn">
             <x-rapidez-ct::layout>
                 <x-rapidez-ct::toolbar>
                     <x-rapidez-ct::title :href="$backurl">
