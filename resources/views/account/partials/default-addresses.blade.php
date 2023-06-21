@@ -1,4 +1,4 @@
-<graphql query="@include('rapidez-ct::account.partials.queries.customer-address')">
+<graphql query="@include('rapidez::account.partials.queries.overview')">
     <x-rapidez-ct::card
         slot-scope="{ data }"
         v-if="data?.customer"
