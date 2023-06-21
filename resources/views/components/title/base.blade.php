@@ -1,13 +1,13 @@
-@props(['tag' => 'p'])
-@php
-    $isAnchor = count(
-        $attributes
+@props([
+    'tag' => count(
+        $isAnchor = $attributes
             ->only('href', ':href', 'v-bind:href')
-            ->filter(fn($value) => isset($value))
+            ->filter(null)
             ->getAttributes(),
-    );
-    $tag = $isAnchor ? 'a' : $tag;
-@endphp
+    )
+        ? 'a'
+        : 'p',
+])
 <component
     is="{{ $tag }}"
     {{ $attributes->class('font-medium relative') }}
