@@ -3,6 +3,7 @@
 @section('title', __('Account'))
 @php
     $showNavigation = !request()->is('account');
+    $showOrderTotal = request()->is('account/order/*');
     $backurl = match (true) {
         request()->is('account') => null,
         request()->is('account/order/*') => '/account/orders',
@@ -27,6 +28,7 @@
                 <x-slot:sidebar>
                     @includeUnless($showNavigation, 'rapidez-ct::account.partials.default-addresses')
                     @includeWhen($showNavigation, 'rapidez-ct::account.partials.account-navigation')
+                    @includeWhen($showOrderTotal, 'rapidez-ct::account.partials.order.order-total')
                 </x-slot:sidebar>
             </x-rapidez-ct::layout>
         </template>
