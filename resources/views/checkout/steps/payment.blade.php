@@ -9,7 +9,7 @@
     @include('rapidez-ct::checkout.partials.sections.payment')
 </x-rapidez-ct::sections>
 
-<div class="mt-5 flex flex-wrap justify-between gap-3">
+<x-rapidez-ct::toolbar>
     <x-rapidez-ct::button.outline v-on:click.prevent="goToStep(1)">
         @lang('rapidez-ct::frontend.checkout.payment.back')
     </x-rapidez-ct::button.outline>
@@ -20,4 +20,4 @@
     >
         @lang('rapidez-ct::frontend.checkout.payment.order')
     </x-rapidez-ct::button.enhanced>
-</div>
+</x-rapidez-ct::toolbar>

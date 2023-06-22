@@ -1,6 +1,6 @@
-<div {{ $attributes->class('flex flex-col mx-auto max-w-4xl w-full') }}>
+<div {{ $attributes->class('flex flex-col mx-auto max-w-5xl w-full') }}>
     {{ $slot }}
-    <div class="grid sm:grid-cols-2 gap-8 mt-5 items-start content-center">
+    <div class="mt-5 grid content-center items-start gap-8 sm:grid-cols-2">
         {{ $columns }}
     </div>
 </div>

@@ -2,7 +2,10 @@
     @lang('rapidez-ct::frontend.checkout.credentials.credentials')
 </x-rapidez-ct::title-progress-bar>
 
-<form id="credentials" v-on:submit.prevent="save(['credentials'], 3)">
+<form
+    id="credentials"
+    v-on:submit.prevent="save(['credentials'], 3)"
+>
     <x-rapidez-ct::sections>
         @include('rapidez-ct::checkout.partials.sections.login')
         @include('rapidez-ct::checkout.partials.sections.address')
@@ -10,11 +13,11 @@
     </x-rapidez-ct::sections>
 </form>
 
-<div class="flex flex-wrap justify-between gap-3">
+<x-rapidez-ct::toolbar>
     <x-rapidez-ct::button.outline href="/cart">
         @lang('rapidez-ct::frontend.checkout.credentials.back')
     </x-rapidez-ct::button.outline>
     <x-rapidez-ct::button.enhanced form="credentials">
         @lang('rapidez-ct::frontend.checkout.credentials.next')
     </x-rapidez-ct::button.enhanced>
-</div>
+</x-rapidez-ct::toolbar>
