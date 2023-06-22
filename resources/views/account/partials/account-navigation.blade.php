@@ -2,21 +2,13 @@
     <x-rapidez-ct::title.lg class="mb-5">
         @lang('rapidez-ct::frontend.account.dashboard.dashboard')
     </x-rapidez-ct::title.lg>
-    <x-rapidez-ct::seperated-listing class="font-medium">
-        <li>
-            <a href="/account/edit">
-                @lang('rapidez-ct::frontend.account.dashboard.settings')
-            </a>
-        </li>
-        <li>
-            <a href="/account/orders">
-                @lang('rapidez-ct::frontend.account.dashboard.orders')
-            </a>
-        </li>
-        <li>
-            <button>
-                @lang('rapidez-ct::frontend.account.logout')
-            </button>
-        </li>
-    </x-rapidez-ct::seperated-listing>
+    <x-rapidez-ct::separated-listing
+        class="font-medium"
+        tag="div"
+    >
+        @foreach (config('rapidez-checkout-theme.account.navigation') as $key => $item)
+            @includeFirst(['rapidez-ct::components.dashboard.sidebar-item.' . $key, 'rapidez-ct::components.dashboard.sidebar-item.index'])
+        @endforeach
+    </x-rapidez-ct::separated-listing>
+
 </x-rapidez-ct::card>

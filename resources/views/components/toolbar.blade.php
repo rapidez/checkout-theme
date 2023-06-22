@@ -1,3 +1,3 @@
-<div {{ $attributes->class('flex flex-wrap justify-between gap-2') }}>
+<div {{ $attributes->class('flex flex-wrap justify-between items-center gap-2') }}>
     {{ $slot }}
 </div>

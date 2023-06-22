@@ -5,7 +5,7 @@
     <x-rapidez-ct::title.lg class="mb-4">
         @lang('rapidez-ct::frontend.checkout.order_overview')
     </x-rapidez-ct::title.lg>
-    <x-rapidez-ct::seperated-listing>
+    <x-rapidez-ct::separated-listing>
         <li v-for="item in cart.items">
             <span>@{{ item.qty }}x @{{ item.name }}</span>
         </li>
@@ -18,5 +18,5 @@
             <span v-if="segment.code !== 'shipping'">@{{ segment.value | price }}</span>
             <span v-else>@{{ (checkout.totals.shipping_incl_tax - checkout.totals.shipping_tax_amount) | price }}</span>
         </li>
-    </x-rapidez-ct::seperated-listing>
+    </x-rapidez-ct::separated-listing>
 </x-rapidez-ct::card>

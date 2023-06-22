@@ -2,7 +2,7 @@
     <x-rapidez-ct::title.lg class="mb-4">
         @lang('rapidez-ct::frontend.cart.order_overview')
     </x-rapidez-ct::title.lg>
-    <x-rapidez-ct::seperated-listing>
+    <x-rapidez-ct::separated-listing>
         <li>
             <span>@lang('rapidez-ct::frontend.subtotal')</span>
             <span>@{{ cart.subtotal | price }}</span>
@@ -30,7 +30,7 @@
             <span>@lang('rapidez-ct::frontend.total')</span>
             <span>@{{ cart.total | price }}</span>
         </li>
-    </x-rapidez-ct::seperated-listing>
+    </x-rapidez-ct::separated-listing>
 
     <x-rapidez-ct::button.enhanced
         class="flex w-full items-center justify-center gap-1 mt-6"
