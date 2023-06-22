@@ -1,6 +1,6 @@
 @extends('rapidez-ct::account.partials.layout')
 
-@section('title', __('Account settings'))
+@section('title', __('rapidez-ct::frontend.account.dashboard.settings'))
 
 @section('robots', 'NOINDEX,NOFOLLOW')
 
@@ -13,7 +13,7 @@
                 @include('rapidez-ct::account.partials.edit.password')
            </x-rapidez-ct::sections>
            <x-rapidez-ct::button.outline href="/account">
-                @lang('Back to dashboard')
+                @lang('rapidez-ct::frontend.account.dashboard.back')
            </x-rapidez-ct::button.outline>
         </div>
     </graphql>

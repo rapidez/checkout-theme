@@ -1,6 +1,6 @@
 @extends('rapidez-ct::account.partials.layout')
 
-@section('title', __('Orders'))
+@section('title', __('rapidez-ct::frontend.account.dashboard.orders'))
 
 @section('robots', 'NOINDEX,NOFOLLOW')
 

@@ -1,6 +1,6 @@
 <x-rapidez-ct::card.inactive>
     <x-rapidez-ct::title.lg>
-        @lang('Shipping method')
+        @lang('rapidez-ct::frontend.checkout.shipping.method')
     </x-rapidez-ct::title.lg>
 
     <div
@@ -23,7 +23,7 @@
                     class="text-green"
                     v-else
                 >
-                    @lang('Free')
+                    @lang('rapidez-ct::frontend.free')
                 </div>
             </div>
         </x-rapidez-ct::input.radio>

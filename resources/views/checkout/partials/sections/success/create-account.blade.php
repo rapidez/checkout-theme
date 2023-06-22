@@ -1,6 +1,6 @@
 <x-rapidez-ct::card.inactive v-if="!$root.loggedIn">
     <x-rapidez-ct::title.lg>
-        @lang('Create account')
+        @lang('rapidez-ct::frontend.account.create')
     </x-rapidez-ct::title.lg>
     <graphql-mutation
         v-cloak
@@ -26,7 +26,7 @@
                 disabled
             />
             <div class="text-sm max-sm:order-first">
-                @lang('No account yet? Create an account and benefit instantly from repeat orders, order statuses and easy returns!')
+                @lang('rapidez-ct::frontend.account.cta')
             </div>
             <x-rapidez-ct::input.password
                 name="password"
@@ -35,7 +35,7 @@
                 required
             />
             <x-rapidez-ct::button.accent class="self-end justify-self-start">
-                @lang('Create account')
+                @lang('rapidez-ct::frontend.account.create')
             </x-rapidez-ct::button.accent>
         </form>
     </graphql-mutation>

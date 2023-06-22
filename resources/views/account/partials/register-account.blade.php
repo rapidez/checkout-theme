@@ -8,7 +8,7 @@
 >
     <x-rapidez-ct::card.inactive slot-scope="{ mutate, variables }">
         <x-rapidez-ct::title.lg class="mb-5">
-            @lang('Register account')
+            @lang('rapidez-ct::frontend.account.register')
         </x-rapidez-ct::title.lg>
         <form id="register" class="grid gap-5 sm:grid-cols-2" v-on:submit.prevent="mutate">
             <x-rapidez-ct::input

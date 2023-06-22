@@ -3,7 +3,7 @@
         <x-rapidez-ct::logo />
     </div>
     <x-rapidez-ct::title.lg class="mb-4">
-        @lang('Order overview')
+        @lang('rapidez-ct::frontend.checkout.order_overview')
     </x-rapidez-ct::title.lg>
     <x-rapidez-ct::seperated-listing>
         <li v-for="item in cart.items">

@@ -1,9 +1,9 @@
 <div class="mt-5 rounded bg-ct-inactive-100 py-4 text-sm">
     <div class="flex w-full items-center gap-x-6 pr-6 text-xs">
         <div class="sm:w-[150px]"></div>
-        <div class="flex-1 sm:w-[150px]">@lang('Product')</div>
+        <div class="flex-1 sm:w-[150px]">@lang('rapidez-ct::frontend.product')</div>
         <div class="ml-auto w-16 text-center max-md:hidden">
-            @lang('Amount')
+            @lang('rapidez-ct::frontend.amount')
         </div>
     </div>
 </div>

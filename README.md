@@ -31,6 +31,14 @@ Publish the configuration file and have a look at the options `config/rapidez-ch
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=config
 ```
 
+## Translations
+
+This theme comes with a base set of translations:
+```
+php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=translations
+```
+This file contains all of the relevant translations for this package.
+
 ## Customizations
 
 If you want you *could* publish the views. But it's recommended to only publish and change the views you need so when there is an update you don't have to compare all views with the new version. Also keep in mind this is an opinionated theme, if you want/need to change a lot it's better to build your own in terms of upgradability.

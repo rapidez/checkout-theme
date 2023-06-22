@@ -3,7 +3,7 @@
     query="mutation reset($email: String!, $token: String!, $password: String!) { resetPassword ( email: $email, resetPasswordToken: $token, newPassword: $password ) }"
     :variables="{ token: '{{ request()->token }}' }"
     :clear="true"
-    :notify="{ message: '@lang('Your password has been changed, please login.')' }"
+    :notify="{ message: '@lang('rapidez-ct::frontend.notifications.password_reset.complete')' }"
 >
     <x-rapidez-ct::card.inactive slot-scope="{ mutate, variables }">
         <form class="space-y-5" v-on:submit.prevent="mutate">
@@ -28,7 +28,7 @@
                 required
             />
             <x-rapidez-ct::button.accent type="submit" class="w-full">
-                @lang('Change password')
+                @lang('rapidez-ct::frontend.account.change_password')
             </x-rapidez-ct::button.accent>
         </form>
     </x-rapidez-ct::card.inactive>

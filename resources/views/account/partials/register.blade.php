@@ -1,11 +1,11 @@
 <x-rapidez-ct::card>
     <x-rapidez-ct::title.lg class="mb-4">
-        @lang('Register within 1 minute')
+        @lang('rapidez-ct::frontend.account.create')
     </x-rapidez-ct::title.lg>
     <p class="mb-5">
-        @lang('Nog geen account? Maak een account aan en profiteer van sneller bestellen, herhaalbestellingen, status van uw bestelling, eenvoudig retourneren en meer!')
+        @lang('rapidez-ct::frontend.account.cta')
     </p>
     <x-rapidez-ct::button.outline href="/register">
-        @lang('Register')
+        @lang('rapidez-ct::frontend.account.register')
     </x-rapidez-ct::button.outline>
 </x-rapidez-ct::card>

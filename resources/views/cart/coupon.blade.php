@@ -12,12 +12,12 @@
                     <x-rapidez-ct::input
                         class="text-ct-primary h-full"
                         name="couponCode"
-                        :placeholder="__('Enter code') . '...'"
+                        :placeholder="__('rapidez-ct::frontend.cart.coupon.placeholder') . '...'"
                         v-on="inputEvents"
                         v-bind:value="couponCode"
                         v-bind:disabled="$root.loading"
                     />
-                    <x-rapidez-ct::button.outline type="submit">@lang('Apply')</x-rapidez-ct::button.outline>
+                    <x-rapidez-ct::button.outline type="submit">@lang('rapidez-ct::frontend.cart.coupon.apply')</x-rapidez-ct::button.outline>
                 </div>
                 <div
                     class="text-ct-inactive mt-1 flex items-center gap-x-2"
@@ -26,7 +26,7 @@
                     <button v-on:click="removeCoupon">
                         <x-heroicon-s-x class="h-4 w-4" />
                     </button>
-                    @lang('Discount'): @{{ cart.discount_name }}
+                    @lang('rapidez-ct::frontend.discount'): @{{ cart.discount_name }}
                 </div>
                 <div
                     class="text-ct-error mt-1 italic"
@@ -40,7 +40,7 @@
             v-show="!isOpen"
             @click="toggle"
         >
-            @lang('Coupon code')
+            @lang('rapidez-ct::frontend.cart.coupon.code')
         </x-rapidez-ct::button.outline>
     </div>
 </toggler>

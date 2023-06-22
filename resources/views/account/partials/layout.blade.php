@@ -1,6 +1,6 @@
 @extends('rapidez::layouts.app')
 
-@section('title', __('Account'))
+@section('title', __('rapidez-ct::frontend.account.account'))
 
 @section('content')
     <div class="container" v-cloak>
@@ -19,7 +19,7 @@
         <template v-else>
             <x-rapidez-ct::layout.two-column>
                 <x-rapidez-ct::title>
-                    @lang('Login')
+                    @lang('rapidez-ct::frontend.account.login')
                 </x-rapidez-ct::title>
                 <x-slot:columns>
                     @include('rapidez-ct::account.partials.login', ['redirect' => false])

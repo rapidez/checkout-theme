@@ -28,7 +28,7 @@
                 check
             >
                 <x-rapidez-ct::title.lg class="mb-4 pr-8">
-                    @lang('Payment method')
+                    @lang('rapidez-ct::frontend.checkout.payment.method')
                 </x-rapidez-ct::title.lg>
                 <div class="flex flex-1 flex-wrap justify-between">
                     <ul class="flex flex-col gap-1">
@@ -49,7 +49,7 @@
                 check
             >
                 <x-rapidez-ct::title.lg class="mb-4 pr-8">
-                    @lang('Delivery method')
+                    @lang('rapidez-ct::frontend.checkout.shipping.method')
                 </x-rapidez-ct::title.lg>
                 <div class="flex flex-1 flex-wrap justify-between">
                     <ul class="flex flex-col gap-1">

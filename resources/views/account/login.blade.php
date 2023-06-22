@@ -1,6 +1,6 @@
 @extends('rapidez::layouts.app')
 
-@section('title', __('Login'))
+@section('title', __('rapidez-ct::frontend.account.login'))
 
 @section('robots', 'NOINDEX,NOFOLLOW')
 
@@ -8,7 +8,7 @@
     <div class="container">
         <x-rapidez-ct::layout.two-column>
             <x-rapidez-ct::title>
-                @lang('Login')
+                @lang('rapidez-ct::frontend.account.login')
             </x-rapidez-ct::title>
             <x-slot:columns>
                 @include('rapidez-ct::account.partials.login')

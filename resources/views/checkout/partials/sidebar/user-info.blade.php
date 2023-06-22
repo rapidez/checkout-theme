@@ -3,7 +3,7 @@
         <x-rapidez-ct::card>
             <x-rapidez-ct::address v-bind:address="checkout.shipping_address" shipping billing>
                 <x-rapidez-ct::button.link v-if="checkout.step == 3" v-on:click="goToStep(2)">
-                    @lang('Edit')
+                    @lang('rapidez-ct::frontend.checkout.credentials.edit_address')
                 </x-rapidez-ct::button.link>
             </x-rapidez-ct::address>
         </x-rapidez-ct::card>
@@ -12,14 +12,14 @@
         <x-rapidez-ct::card>
             <x-rapidez-ct::address v-bind:address="checkout.shipping_address" shipping>
                 <x-rapidez-ct::button.link v-if="checkout.step == 3" v-on:click="goToStep(2)">
-                    @lang('Edit')
+                    @lang('rapidez-ct::frontend.checkout.credentials.edit_address')
                 </x-rapidez-ct::button.link>
             </x-rapidez-ct::address>
         </x-rapidez-ct::card>
         <x-rapidez-ct::card>
             <x-rapidez-ct::address v-bind:address="checkout.billing_address" billing>
                 <x-rapidez-ct::button.link v-if="checkout.step == 3" v-on:click="goToStep(2)">
-                    @lang('Edit')
+                    @lang('rapidez-ct::frontend.checkout.credentials.edit_address')
                 </x-rapidez-ct::button.link>
             </x-rapidez-ct::address>
         </x-rapidez-ct::card>

@@ -1,5 +1,5 @@
 <x-rapidez-ct::title-progress-bar>
-    @lang('Cart')
+    @lang('rapidez-ct::frontend.cart.cart')
 </x-rapidez-ct::title-progress-bar>
 
 @include('rapidez-ct::cart.partials.products')

@@ -16,6 +16,7 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this
             ->bootViews()
+            ->bootTranslations()
             ->bootPublishables();
     }
 
@@ -33,6 +34,13 @@ class ServiceProvider extends BaseServiceProvider
         return $this;
     }
 
+    public function bootTranslations(): self
+    {
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'rapidez-ct');
+
+        return $this;
+    }
+
     public function bootPublishables() : self
     {
         $this->publishes([
@@ -46,9 +54,14 @@ class ServiceProvider extends BaseServiceProvider
         $this->publishes([
             __DIR__.'/../config/rapidez-checkout-theme.php' => config_path('rapidez-checkout-theme.php'),
         ], 'config');
+
         $this->publishes([
             __DIR__.'/../resources/payment-icons' => public_path('vendor/payment-icons'),
         ], 'payment-icons');
+
+        $this->publishes([
+            __DIR__ . '/../resources/lang' => $this->app->langPath('vendor/rapidez-ct'),
+        ], 'translations');
 
         return $this;
     }

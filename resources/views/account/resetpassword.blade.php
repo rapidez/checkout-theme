@@ -1,6 +1,6 @@
 @extends('rapidez::layouts.app')
 
-@section('title', __('Reset password'))
+@section('title', __('rapidez-ct::frontend.reset_password'))
 
 @section('robots', 'NOINDEX,NOFOLLOW')
 
@@ -8,7 +8,7 @@
     <div class="container">
         <x-rapidez-ct::layout.two-column>
             <x-rapidez-ct::title>
-                @lang('Reset password')
+                @lang('rapidez-ct::frontend.account.reset_password')
             </x-rapidez-ct::title>
             <x-slot:columns>
                 @include('rapidez-ct::account.partials.resetpassword')

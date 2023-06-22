@@ -2,7 +2,7 @@
 <div class="fixed inset-0 opacity-0 transition z-50 flex justify-center items-center pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto">
     <x-rapidez-ct::sections class="relative z-10">
         <section>
-            <x-rapidez-ct::title class="mb-5">@lang('My addresses')</x-rapidez-ct::title>
+            <x-rapidez-ct::title class="mb-5">@lang('rapidez-ct::frontend.checkout.credentials.addresses')</x-rapidez-ct::title>
             <label class="absolute cursor-pointer top-7 right-7 w-5 h-5" for="popup">
                 <x-heroicon-o-x/>
             </label>
@@ -19,10 +19,10 @@
                     class="w-full sm:min-w-[350px]"
                 >
                     <x-rapidez-ct::button.link v-if="!isType('shipping', userAddress)" v-on:click.prevent="select('shipping', userAddress)">
-                        @lang('Select as shipping')
+                        @lang('rapidez-ct::frontend.checkout.credentials.select_shipping')
                     </x-rapidez-ct::button.link>
                     <x-rapidez-ct::button.link v-if="!isType('billing', userAddress)" v-on:click.prevent="select('billing', userAddress)">
-                        @lang('Select as billing')
+                        @lang('rapidez-ct::frontend.checkout.credentials.select_billing')
                     </x-rapidez-ct::button.link>
                 </x-rapidez-ct::card.address>
             </div>

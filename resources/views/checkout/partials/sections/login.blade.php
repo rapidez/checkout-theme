@@ -24,14 +24,14 @@
                 />
 
                 <p v-if="!emailAvailable" class="self-end">
-                    @lang('You already have an account with this e-mail address. Please log in to continue.')
+                    @lang('rapidez-ct::frontend.checkout.login.email_exists')
                 </p>
                 <p v-else class="self-end">
-                    @lang('We will send your order confirmation to this e-mail address. We will also check if you already have an account so you can checkout more efficiently.')
+                    @lang('rapidez-ct::frontend.checkout.login.login_text')
                 </p>
 
                 <x-rapidez-ct::button.accent v-if="!emailAvailable" dusk="continue" v-on:click.prevent="go">
-                    @lang('Login')
+                    @lang('rapidez-ct::frontend.account.login')
                 </x-rapidez-ct::button.accent>
             </template>
             <template v-else>
@@ -41,11 +41,11 @@
                     <x-heroicon-o-lock-closed class="h-[24px] ml-auto text-ct-primary"/>
                 </div>
                 <div>
-                    <x-rapidez-ct::title.sm>@lang('Welcome back') @{{ $root.user?.firstname }}!</x-rapidez-ct::title.sm>
+                    <x-rapidez-ct::title.sm>@lang('rapidez-ct::frontend.checkout.login.welcome_back') @{{ $root.user?.firstname }}!</x-rapidez-ct::title.sm>
                     <span>
-                        @lang('Is this not your account?')
-                        <button class="underline" v-on:click.prevent="logout('/login')">@lang('Log out')</button>
-                        @lang('and use a different e-mail address.')
+                        @lang('rapidez-ct::frontend.checkout.login.wrong_account.before')
+                        <button class="underline" v-on:click.prevent="logout('/login')">@lang('rapidez-ct::frontend.account.logout')</button>
+                        @lang('rapidez-ct::frontend.checkout.login.wrong_account.after')
                     </span>
                 </div>
             </template>

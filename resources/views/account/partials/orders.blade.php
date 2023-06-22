@@ -2,7 +2,7 @@
     <x-rapidez-ct::sections>
         <x-rapidez-ct::card.inactive class="flex-col" v-for="order in data.customer.orders.items">
             <x-rapidez-ct::title.lg>
-                @lang('Order') #@{{ order.number }}
+                @lang('rapidez-ct::frontend.order') #@{{ order.number }}
             </x-rapidez-ct::title.lg>
             <a :href="'/account/order/'+order.number">
 
@@ -14,7 +14,7 @@
 <template v-else>
     <x-rapidez-ct::sections>
         <x-rapidez-ct::card.inactive>
-            @lang('You do not have any orders yet.')
+            @lang('rapidez-ct::frontend.account.dashboard.no_orders')
         </x-rapidez-ct::card.inactive>
     </x-rapidez-ct::sections>
 </template>

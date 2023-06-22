@@ -17,10 +17,10 @@
             </template>
         @endif
         <x-rapidez-ct::title.lg class="mb-4 pr-8">
-            <template v-if="billing && shipping">@lang('Shipping & billing address')</template>
-            <template v-else-if="shipping">@lang('Shipping address')</template>
-            <template v-else-if="billing">@lang('Billing address')</template>
-            <template v-else>@lang('Address')</template>
+            <template v-if="billing && shipping">@lang('rapidez-ct::frontend.address.type.both')</template>
+            <template v-else-if="shipping">@lang('rapidez-ct::frontend.address.type.shipping')</template>
+            <template v-else-if="billing">@lang('rapidez-ct::frontend.address.type.billing')</template>
+            <template v-else>@lang('rapidez-ct::frontend.address.type.none')</template>
         </x-rapidez-ct::title.lg>
         <div class="flex flex-1 flex-wrap justify-between">
             <ul class="flex flex-col gap-1">

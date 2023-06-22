@@ -1,11 +1,11 @@
 <div class="mt-5 rounded bg-ct-inactive-100 py-4 text-sm">
     <div class="flex w-full items-center gap-x-6 pr-6 text-xs">
         <div class="sm:w-[150px]"></div>
-        <div class="flex-1 sm:w-[150px]">@lang('Product')</div>
+        <div class="flex-1 sm:w-[150px]">@lang('rapidez-ct::frontend.product')</div>
         <div class="ml-auto flex items-center gap-10 max-md:hidden">
-            <div class="w-[60px]">@lang('Price')</div>
-            <div class="w-20 text-center">@lang('Amount')</div>
-            <div class="w-[60px]">@lang('Subtotal')</div>
+            <div class="w-[60px]">@lang('rapidez-ct::frontend.price')</div>
+            <div class="w-20 text-center">@lang('rapidez-ct::frontend.amount')</div>
+            <div class="w-[60px]">@lang('rapidez-ct::frontend.subtotal')</div>
         </div>
     </div>
 </div>
@@ -42,7 +42,7 @@
                     @click="remove(item)"
                     :dusk="'item-delete-' + index"
                 >
-                    @lang('Remove')
+                    @lang('rapidez-ct::frontend.cart.remove')
                 </button>
             </div>
             <div class="flex items-center gap-10 sm:ml-auto font-medium max-sm:flex-1 justify-between">

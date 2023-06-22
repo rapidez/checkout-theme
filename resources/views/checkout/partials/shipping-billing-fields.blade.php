@@ -1,8 +1,8 @@
 <p class="mb-5 text-lg font-medium">
     @if ($type == 'shipping')
-        @lang('Shipping address')
+        @lang('rapidez-ct::frontend.address.type.shipping')
     @else
-        @lang('Billing address')
+        @lang('rapidez-ct::frontend.address.type.billing')
     @endif
 </p>
 <div class="grid gap-5 sm:grid-cols-4">
@@ -93,7 +93,7 @@
 @if ($type == 'shipping')
     <div class="mt-5">
         <x-rapidez-ct::input.checkbox v-model="checkout.hide_billing">
-            @lang('My billing and shipping address are the same')
+            @lang('rapidez-ct::frontend.checkout.credentials.hide_billing')
         </x-rapidez-ct::input.checkbox>
     </div>
 @endif

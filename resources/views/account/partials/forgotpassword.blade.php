@@ -2,12 +2,12 @@
     v-cloak
     query="mutation reset($email: String!) { requestPasswordResetEmail ( email: $email ) }"
     :clear="true"
-    :notify="{ message: '@lang('An email is send with a password reset link if an account exists with the provided email address.')' }"
+    :notify="{ message: '@lang('rapidez-ct::frontend.notifications.password_reset.request')' }"
 >
     <x-rapidez-ct::card.inactive slot-scope="{ mutate, variables }">
         <form v-on:submit.prevent="mutate">
             <x-rapidez-ct::title.lg>
-                @lang('Forgot Your Password?')
+                @lang('rapidez-ct::frontend.account.forgot_password')
             </x-rapidez-ct::title.lg>
             <x-rapidez-ct::input
                 name="email"
@@ -16,7 +16,7 @@
                 required
             />
             <x-rapidez-ct::button.accent type="submit">
-                @lang('Reset password')
+                @lang('rapidez-ct::frontend.account.reset_password')
             </x-rapidez-ct::button.accent>
         </form>
     </x-rapidez-ct::card.inactive>

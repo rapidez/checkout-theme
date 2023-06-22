@@ -1,6 +1,6 @@
 @extends('rapidez-ct::account.partials.layout')
 
-@section('title', __('Account overview'))
+@section('title', __('rapidez-ct::frontend.account.dashboard.overview'))
 
 @section('robots', 'NOINDEX,NOFOLLOW')
 
@@ -11,7 +11,7 @@
                 <x-heroicon-o-shopping-bag class="w-6"/>
                 <div class="flex flex-col space-y-1">
                     <strong class="font-medium">
-                        @lang('My orders')
+                        @lang('rapidez-ct::frontend.account.dashboard.orders')
                     </strong>
                     <p class="text-inactive">
                         @lang('Herhaalbestelling plaatsen / Bestellingen bekijken')
@@ -22,7 +22,7 @@
                 <x-heroicon-o-shopping-bag class="w-6"/>
                 <div class="flex flex-col space-y-1">
                     <strong class="font-medium">
-                        @lang('My orders')
+                        @lang('rapidez-ct::frontend.account.dashboard.orders')
                     </strong>
                     <p class="text-inactive">
                         @lang('Herhaalbestelling plaatsen / Bestellingen bekijken')
@@ -33,7 +33,7 @@
                 <x-heroicon-o-shopping-bag class="w-6"/>
                 <div class="flex flex-col space-y-1">
                     <strong class="font-medium">
-                        @lang('My orders')
+                        @lang('rapidez-ct::frontend.account.dashboard.orders')
                     </strong>
                     <p class="text-inactive">
                         @lang('Herhaalbestelling plaatsen / Bestellingen bekijken')

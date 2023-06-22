@@ -4,7 +4,7 @@
         dusk="checkout-success"
     >
         <x-rapidez-ct::title-progress-bar>
-            @lang('Thank you for your order')
+            @lang('rapidez-ct::frontend.checkout.success.title')
         </x-rapidez-ct::title-progress-bar>
         <x-rapidez-ct::sections>
             @include('rapidez-ct::checkout.partials.sections.success.order-completed-note')

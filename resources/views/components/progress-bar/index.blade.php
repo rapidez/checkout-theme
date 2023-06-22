@@ -4,7 +4,7 @@
     v-cloak
 >
     <span class="whitespace-nowrap font-medium text-ct-inactive">
-        @lang('Step :step out of :total', [
+        @lang('rapidez-ct::frontend.checkout.step', [
             'step' => '@{{ checkout.step }}',
             'total' => count(config('rapidez.checkout_steps.' . config('rapidez.store_code')) ?? config('rapidez.checkout_steps.default')) - 1,
         ])

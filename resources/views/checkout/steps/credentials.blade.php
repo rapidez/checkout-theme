@@ -1,5 +1,5 @@
 <x-rapidez-ct::title-progress-bar href="/cart">
-    @lang('Credentials')
+    @lang('rapidez-ct::frontend.checkout.credentials.credentials')
 </x-rapidez-ct::title-progress-bar>
 
 <form id="credentials" v-on:submit.prevent="save(['credentials'], 3)">
@@ -12,9 +12,9 @@
 
 <div class="flex flex-wrap justify-between gap-3">
     <x-rapidez-ct::button.outline href="/cart">
-        @lang('Back to cart')
+        @lang('rapidez-ct::frontend.checkout.credentials.back')
     </x-rapidez-ct::button.outline>
     <x-rapidez-ct::button.enhanced form="credentials">
-        @lang('Next')
+        @lang('rapidez-ct::frontend.checkout.credentials.next')
     </x-rapidez-ct::button.enhanced>
 </div>

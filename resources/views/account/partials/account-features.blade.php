@@ -1,6 +1,6 @@
 <x-rapidez-ct::card>
     <x-rapidez-ct::title.lg class="mb-5">
-        @lang('Account features')
+        @lang('rapidez-ct::frontend.account.dashboard.features')
     </x-rapidez-ct::title.lg>
     <ul class="space-y-5 [&>*]:pl-7 [&>*]:relative">
         <li>

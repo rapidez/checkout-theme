@@ -18,11 +18,11 @@
                 required
             />
             <x-rapidez-ct::button.accent type="submit" class="w-full" dusk="continue">
-                @lang('Login')
+                @lang('rapidez-ct::frontend.account.login')
             </x-rapidez-ct::button.accent>
              <div class="flex justify-center">
                 <a href="/forgotpassword" class="text-sm text-ct-inactive hover:underline">
-                    @lang('Forgot your password?')
+                    @lang('rapidez-ct::frontend.account.forgot_password')
                 </a>
             </div>
         </form>
