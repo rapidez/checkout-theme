@@ -1,9 +1,9 @@
-@props(['shipping' => false, 'billing' => false, 'dynamicType' => false, 'check' => false])
+@props(['shipping' => false, 'billing' => false, 'check' => false])
 
 <address-card
     {{ $attributes->whereStartsWith('v-') }}
-    @if (!$dynamicType) :shipping="{{ var_export($shipping) }}"
-        :billing="{{ var_export($billing) }}" @endif
+    @if (!$attributes->has('v-bind:shipping')) :shipping="{{ var_export($shipping) }}" @endif
+    @if (!$attributes->has('v-bind:billing')) :billing="{{ var_export($billing) }}" @endif
     v-slot="{ address, billing, shipping, isEmpty }"
 >
     <div

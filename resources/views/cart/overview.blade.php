@@ -23,7 +23,7 @@
             v-else
         >
             <p>@lang('You don\'t have anything in your cart.')</p>
-            <x-rapidez-ct::button.outline class="mt-3">
+            <x-rapidez-ct::button.outline class="mt-3" href="/">
                 @lang('Return to home')
             </x-rapidez-ct::button.outline>
         </div>
