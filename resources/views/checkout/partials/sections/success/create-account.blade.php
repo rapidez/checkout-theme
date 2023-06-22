@@ -40,3 +40,11 @@
         </form>
     </graphql-mutation>
 </x-rapidez-ct::card.inactive>
+<x-rapidez-ct::card.inactive v-else>
+    <x-rapidez-ct::title.lg>
+        @lang('Already logged in')
+    </x-rapidez-ct::title.lg>
+    <x-rapidez-ct::button.enhanced href="/account" class="mt-5">
+        @lang('Go to your account')
+    </x-rapidez-ct::button.enhanced>
+</x-rapidez-ct::card.inactive>
