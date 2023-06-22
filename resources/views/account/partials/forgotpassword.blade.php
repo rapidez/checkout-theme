@@ -10,7 +10,7 @@
                 @lang('rapidez-ct::frontend.account.forgot_password')
             </x-rapidez-ct::title.lg>
             <p class="mb-5 text-sm">
-                @lang('Enter your email address below, you will receive an email within minutes to reset the password.')
+                @lang('rapidez-ct::frontend.account.reset_password_cta')
             </p>
             <x-rapidez-ct::input
                 name="email"
@@ -24,14 +24,14 @@
                     class="text-sm text-ct-inactive underline"
                     href="/login"
                 >
-                    @lang('Back to login')
+                    @lang('rapidez-ct::frontend.account.back')
                 </a>
                 <x-rapidez-ct::button.accent
                     class="flex items-center gap-1"
                     type="submit"
                     dusk="continue"
                 >
-                    @lang('Send')
+                    @lang('rapidez-ct::frontend.send')
                     <x-heroicon-o-arrow-right class="h-4" />
                 </x-rapidez-ct::button.accent>
             </div>

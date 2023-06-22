@@ -11,9 +11,11 @@ return [
     'subtotal' => 'Subtotal',
     'total' => 'Total',
     'order' => 'Order',
+    'send' => 'Send',
 
     'account' => [
         'account' => 'Account',
+        'back' => 'Back to login',
         'register' => 'Register',
         'login' => 'Log in',
         'logout' => 'Log out',
@@ -22,6 +24,7 @@ return [
         'forgot_password' => 'Forgot your password?',
         'reset_password' => 'Reset password',
         'change_password' => 'Change password',
+        'reset_password_cta' => 'Enter your email address below, you will receive an email within minutes to reset the password.',
 
         'create' => 'Create account',
         'cta' => 'No account yet? Create an account and benefit instantly from repeat orders, order statuses and easy returns!',
