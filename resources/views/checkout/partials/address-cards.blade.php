@@ -1,4 +1,4 @@
-<div class="grid gap-5 grid-cols-1 sm:grid-cols-2">
+<div class="grid gap-5 sm:grid-cols-2">
     <template v-if="hideBilling">
         <x-rapidez-ct::card.address v-bind:address="checkout.shipping_address" shipping billing check>
             <x-rapidez-ct::button.link v-on:click.prevent="toggleEdit">
@@ -7,7 +7,7 @@
         </x-rapidez-ct::card.address>
         <button
             v-on:click.prevent="toggleEdit"
-            class="h-full flex flex-col items-center justify-center gap-y-2 font-medium bg-ct-border rounded max-sm:hidden"
+            class="h-full flex flex-col items-center justify-center gap-y-2 font-medium bg-ct-inactive-200 rounded max-sm:hidden"
         >
             <span>+</span>
             <span>@lang('Add new address')</span>
