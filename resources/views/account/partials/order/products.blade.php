@@ -2,7 +2,7 @@
     <div class="flex w-full flex-wrap gap-y-3 gap-x-3 text-sm sm:gap-x-6 sm:pr-6 md:items-center">
         <div class="sm:w-[150px]"></div>
         <div class="flex-1 sm:w-[150px]">@lang('Product')</div>
-        <div class="flex items-center justify-between gap-10 font-medium max-sm:flex-1 sm:ml-auto">
+        <div class="flex items-center justify-between gap-10 font-medium max-md:hidden max-sm:flex-1 sm:ml-auto">
             <div class="w-[60px]">@lang('Price')</div>
             <div class="w-16 text-center">@lang('Amount')</div>
             <div class="w-[60px]">@lang('Subtotal')</div>

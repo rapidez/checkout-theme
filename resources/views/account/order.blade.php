@@ -33,9 +33,11 @@
             v-if="data"
             slot-scope="{ data }"
         >
-            @include('rapidez-ct::account.partials.order.products')
-            @include('rapidez-ct::account.partials.order.order-info')
-            <x-rapidez-ct::toolbar class="mt-5">
+            <x-rapidez-ct::sections>
+                @include('rapidez-ct::account.partials.order.products')
+                @include('rapidez-ct::account.partials.order.order-info')
+            </x-rapidez-ct::sections>
+            <x-rapidez-ct::toolbar>
                 <x-rapidez-ct::button.outline>
                     @lang('Back to my orders')
                 </x-rapidez-ct::button.outline>
