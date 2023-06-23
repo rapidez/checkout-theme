@@ -1,8 +1,10 @@
 @props(['name', 'type' => 'text', 'label' => '', 'dusk', 'required' => false])
 <label {{ $attributes->only(['v-if', 'v-else', 'v-else-if', 'class'])->merge(['class' => 'relative flex flex-col gap-y-2 text-sm']) }}>
-    <x-rapidez-ct::input.label :$required>
-        @lang($label)
-    </x-rapidez-ct::input.label>
+    @if ($label)
+        <x-rapidez-ct::input.label :$required>
+            @lang($label)
+        </x-rapidez-ct::input.label>
+    @endif
     <input {{ $attributes->merge([
         'id' => $name,
         'name' => $name,

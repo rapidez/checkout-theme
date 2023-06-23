@@ -10,7 +10,7 @@
             >
                 <div class="flex w-full flex-row gap-x-3">
                     <x-rapidez-ct::input
-                        class="text-ct-primary h-full"
+                        class="text-ct-primary"
                         name="couponCode"
                         :placeholder="__('Enter code') . '...'"
                         v-on="inputEvents"
