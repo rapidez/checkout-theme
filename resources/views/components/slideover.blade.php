@@ -18,7 +18,7 @@
             <x-heroicon-o-x class="h-6" />
         </label>
     </div>
-    <div class="overflow-auto p-5">
+    <div class="overflow-y-auto overflow-x-hidden p-5">
         {{ $slot }}
     </div>
 </div>
