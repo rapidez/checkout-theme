@@ -1,12 +1,10 @@
 <x-rapidez-ct::card.inactive>
     <form
+        class="flex flex-col gap-2"
         id="payment"
         v-on:submit.prevent="save(['payment_method'], 4)"
     >
-        <div
-            class="my-2"
-            v-for="(method, index) in checkout.payment_methods"
-        >
+        <div v-for="(method, index) in checkout.payment_methods">
             <x-rapidez-ct::input.radio
                 v-bind:value="method.code"
                 v-bind:dusk="'method-'+index"
@@ -30,7 +28,7 @@
                 <div v-for="agreement in data.checkoutAgreements">
 
                     <label
-                        class="text-ct-primary cursor-pointer text-sm underline"
+                        class="cursor-pointer text-sm text-ct-primary underline"
                         v-bind:for="agreement.checkbox_text"
                         v-if="agreement.mode == 'AUTO'"
                     >
@@ -45,7 +43,7 @@
                             required
                         >
                             <label
-                                class="text-ct-primary cursor-pointer text-sm underline"
+                                class="cursor-pointer text-sm text-ct-primary underline"
                                 v-bind:for="agreement.checkbox_text"
                             >
                                 @{{ agreement.checkbox_text }}
