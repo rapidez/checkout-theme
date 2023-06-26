@@ -3,6 +3,7 @@
 namespace Rapidez\CheckoutTheme;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use Illuminate\View\ComponentAttributeBag;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -16,7 +17,8 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this
             ->bootViews()
-            ->bootPublishables();
+            ->bootPublishables()
+            ->bootMacros();
     }
 
     public function registerConfig() : self
@@ -50,6 +52,26 @@ class ServiceProvider extends BaseServiceProvider
             __DIR__.'/../resources/payment-icons' => public_path('vendor/payment-icons'),
         ], 'payment-icons');
 
+        return $this;
+    }
+    public function bootMacros() : self
+    {
+        ComponentAttributeBag::macro('hasAny', function ($key) {
+            /** @var ComponentAttributeBag $this */
+            if (! count($this->attributes)) {
+                return false;
+            }
+
+            $keys = is_array($key) ? $key : func_get_args();
+
+            foreach ($keys as $value) {
+                if ($this->has($value)) {
+                    return true;
+                }
+            }
+
+            return false;
+        });
         return $this;
     }
 }
