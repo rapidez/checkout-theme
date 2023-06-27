@@ -21,7 +21,7 @@
             <x-rapidez-ct::input
                 name="email"
                 type="email"
-                label="E-mailaddress"
+                label="Email"
                 v-bind:value="order.customer_email"
                 disabled
             />
@@ -44,7 +44,10 @@
     <x-rapidez-ct::title.lg>
         @lang('Already logged in')
     </x-rapidez-ct::title.lg>
-    <x-rapidez-ct::button.enhanced href="/account" class="mt-5">
+    <x-rapidez-ct::button.enhanced
+        class="mt-5"
+        href="/account"
+    >
         @lang('Go to your account')
     </x-rapidez-ct::button.enhanced>
 </x-rapidez-ct::card.inactive>

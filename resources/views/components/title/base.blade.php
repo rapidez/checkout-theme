@@ -1,12 +1,5 @@
 @props([
-    'tag' => count(
-        $isAnchor = $attributes
-            ->only('href', ':href', 'v-bind:href')
-            ->filter(null)
-            ->getAttributes(),
-    )
-        ? 'a'
-        : 'p',
+    'tag' => ($isAnchor = $attributes->filter(null)->hasAny('href', ':href', 'v-bind:href')) ? 'a' : 'p',
 ])
 <component
     is="{{ $tag }}"
