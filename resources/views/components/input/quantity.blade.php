@@ -4,7 +4,7 @@
         v-on:click="item.qty <= item.min_sale_qty ? item.qty = item.qty : item.qty = +item.qty - item.qty_increments;changeQty(item)"
     >-</button>
     <input
-        class="h-10 w-1/2 border-none px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        class="h-10 w-2/5 border-none px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         name="qty"
         type="number"
         {{ $attributes }}
