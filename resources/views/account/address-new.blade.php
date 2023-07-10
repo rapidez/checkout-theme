@@ -5,7 +5,7 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('account-content')
-    <div class="relative w-full">
+    <x-rapidez-ct::sections>
         <graphql-mutation
             query="@include('rapidez::account.partials.queries.address-create')"
             :variables="{ street: [] }"
@@ -14,5 +14,5 @@
         >
             @include('rapidez-ct::account.partials.address-form')
         </graphql-mutation>
-    </div>
+    </x-rapidez-ct::sections>
 @endsection

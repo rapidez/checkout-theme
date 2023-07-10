@@ -5,7 +5,7 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('account-content')
-    <div class="relative w-full">
+    <x-rapidez-ct::sections>
         <graphql
             query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone company default_billing default_shipping } } }"
             check="data?.customer?.addresses.find(a => a.id == {{ request()->id }})"
@@ -20,5 +20,5 @@
                 </graphql-mutation>
             </div>
         </graphql>
-    </div>
+    </x-rapidez-ct::sections>
 @endsection
