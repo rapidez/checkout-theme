@@ -17,7 +17,14 @@
         form="payment"
         type="submit"
         dusk="continue"
+        class="w-32 flex items-center justify-center"
     >
-        @lang('Place order')
+        <x-heroicon-o-refresh
+            class="mr-2 h-5 w-5 animate-spin"
+            v-if="$root.loading && checkout.payment_method"
+        />
+        <span v-else>
+            @lang('Place order')
+        </span>
     </x-rapidez-ct::button.enhanced>
 </x-rapidez-ct::toolbar>

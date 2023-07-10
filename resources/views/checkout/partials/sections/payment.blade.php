@@ -13,9 +13,9 @@
                 <div>@{{ method.title }}</div>
                 <img
                     class="max-h-10"
-                    alt=""
+                    v-bind:alt="method.code"
                     v-bind:src="`/vendor/payment-icons/${method.code}.svg`"
-                    onerror="this.onerror=null;this.src='/payment-icons/creditcard.svg'"
+                    onerror="this.onerror=null; this.src='/vendor/payment-icons/creditcard.svg'"
                 />
             </x-rapidez-ct::input.radio>
         </div>
@@ -28,7 +28,7 @@
                 <div v-for="agreement in data.checkoutAgreements">
 
                     <label
-                        class="cursor-pointer text-sm text-ct-primary underline"
+                        class="text-ct-primary cursor-pointer text-sm underline"
                         v-bind:for="agreement.checkbox_text"
                         v-if="agreement.mode == 'AUTO'"
                     >
@@ -43,7 +43,7 @@
                             required
                         >
                             <label
-                                class="cursor-pointer text-sm text-ct-primary underline"
+                                class="text-ct-primary cursor-pointer text-sm underline"
                                 v-bind:for="agreement.checkbox_text"
                             >
                                 @{{ agreement.checkbox_text }}
