@@ -14,16 +14,18 @@
         @lang('Back to credentials')
     </x-rapidez-ct::button.outline>
     <x-rapidez-ct::button.enhanced
+        class="relative"
         form="payment"
         type="submit"
         dusk="continue"
-        class="w-32 flex items-center justify-center"
     >
-        <x-heroicon-o-refresh
-            class="mr-2 h-5 w-5 animate-spin"
+        <div
+            class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
             v-if="$root.loading"
-        />
-        <span v-else>
+        >
+            <x-heroicon-o-refresh class="h-5 w-5 animate-spin" />
+        </div>
+        <span v-bind:class="{ 'invisible' : $root.loading }">
             @lang('Place order')
         </span>
     </x-rapidez-ct::button.enhanced>
