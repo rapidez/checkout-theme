@@ -12,7 +12,7 @@
             >
                 <div>@{{ method.title }}</div>
                 <img
-                    class="max-h-10"
+                    class="absolute right-7 top-1/2 max-h-10 -translate-y-1/2"
                     v-bind:alt="method.code"
                     v-bind:src="`/vendor/payment-icons/${method.code}.svg`"
                     onerror="this.onerror=null; this.src='/vendor/payment-icons/creditcard.svg'"
@@ -28,7 +28,7 @@
                 <div v-for="agreement in data.checkoutAgreements">
 
                     <label
-                        class="text-ct-primary cursor-pointer text-sm underline"
+                        class="cursor-pointer text-sm text-ct-primary underline"
                         v-bind:for="agreement.checkbox_text"
                         v-if="agreement.mode == 'AUTO'"
                     >
@@ -43,7 +43,7 @@
                             required
                         >
                             <label
-                                class="text-ct-primary cursor-pointer text-sm underline"
+                                class="cursor-pointer text-sm text-ct-primary underline"
                                 v-bind:for="agreement.checkbox_text"
                             >
                                 @{{ agreement.checkbox_text }}

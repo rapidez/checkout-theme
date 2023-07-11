@@ -20,7 +20,6 @@
             >
                 @lang('Free')
             </span>
-            <small class="mt-1 w-full">@{{ cart.shipping_description }}</small>
         </li>
         <li v-if="cart.discount_name">
             <span>@lang('Discount') (@{{ cart.discount_name }})</span>

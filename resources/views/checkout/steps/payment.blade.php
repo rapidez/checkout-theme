@@ -21,7 +21,7 @@
     >
         <x-heroicon-o-refresh
             class="mr-2 h-5 w-5 animate-spin"
-            v-if="$root.loading && checkout.payment_method"
+            v-if="$root.loading"
         />
         <span v-else>
             @lang('Place order')
