@@ -12,10 +12,10 @@
             >
                 <div>@{{ method.title }}</div>
                 <img
-                    class="max-h-10"
-                    alt=""
+                    class="absolute right-7 top-1/2 max-h-10 -translate-y-1/2"
+                    v-bind:alt="method.code"
                     v-bind:src="`/vendor/payment-icons/${method.code}.svg`"
-                    onerror="this.onerror=null;this.src='/payment-icons/creditcard.svg'"
+                    onerror="this.onerror=null; this.src='/vendor/payment-icons/creditcard.svg'"
                 />
             </x-rapidez-ct::input.radio>
         </div>

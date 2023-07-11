@@ -20,7 +20,7 @@
                     v-if="method.amount > 0"
                 >@{{ method.amount | price }}</div>
                 <div
-                    class="text-green"
+                    class="text-ct-enhanced"
                     v-else
                 >
                     @lang('Free')
