@@ -1,6 +1,7 @@
+@props(['required' => false])
 <div class="text-inactive">
     {{ $slot }}
-    @if ($required ?? false)
+    @if ($required)
         <span>*</span>
     @endif
 </div>

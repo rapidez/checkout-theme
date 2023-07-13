@@ -1,14 +1,12 @@
 <x-rapidez-ct::card.inactive>
-    <form
-        class="flex flex-col gap-2"
-        id="payment"
-        v-on:submit.prevent="save(['payment_method'], 4)"
-    >
+    <form id="payment" class="flex flex-col gap-2" v-on:submit.prevent="save(['payment_method'], 4)">
         <div v-for="(method, index) in checkout.payment_methods">
             <x-rapidez-ct::input.radio
                 v-bind:value="method.code"
                 v-bind:dusk="'method-'+index"
                 v-model="checkout.payment_method"
+                name="payment_method"
+                required
             >
                 <div>@{{ method.title }}</div>
                 <img
@@ -20,13 +18,8 @@
             </x-rapidez-ct::input.radio>
         </div>
         <graphql query="{ checkoutAgreements { agreement_id name checkbox_text content is_html mode } }">
-            <div
-                class="mt-5 flex flex-col gap-y-4"
-                v-if="data"
-                slot-scope="{ data }"
-            >
+            <div v-if="data" class="mt-5 flex flex-col gap-y-4" slot-scope="{ data }">
                 <div v-for="agreement in data.checkoutAgreements">
-
                     <label
                         class="cursor-pointer text-sm text-ct-primary underline"
                         v-bind:for="agreement.checkbox_text"
@@ -42,10 +35,7 @@
                             dusk="agreements"
                             required
                         >
-                            <label
-                                class="cursor-pointer text-sm text-ct-primary underline"
-                                v-bind:for="agreement.checkbox_text"
-                            >
+                            <label class="cursor-pointer text-sm text-ct-primary underline" v-bind:for="agreement.checkbox_text">
                                 @{{ agreement.checkbox_text }}
                             </label>
                         </x-rapidez-ct::input.checkbox>
@@ -54,15 +44,8 @@
                         <x-slot name="title">
                             @{{ agreement.name }}
                         </x-slot>
-                        <div
-                            v-if="agreement.is_html"
-                            v-html="agreement.content"
-                        ></div>
-                        <div
-                            class="whitespace-pre-wrap"
-                            v-else
-                            v-text="agreement.content"
-                        ></div>
+                        <div v-if="agreement.is_html" v-html="agreement.content"></div>
+                        <div v-else class="whitespace-pre-wrap" v-text="agreement.content"></div>
                     </x-rapidez-ct::slideover>
                 </div>
             </div>
