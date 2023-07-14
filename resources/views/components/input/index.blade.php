@@ -1,15 +1,14 @@
-@props(['name', 'type' => 'text', 'label' => '', 'dusk', 'required' => false])
+@props(['label' => false])
 <label {{ $attributes->only(['v-if', 'v-else', 'v-else-if', 'class'])->merge(['class' => 'relative flex flex-col gap-y-2 text-sm']) }}>
     @if ($label)
-        <x-rapidez-ct::input.label :$required>
+        <x-rapidez-ct::input.label :required="$attributes->get('required')">
             @lang($label)
         </x-rapidez-ct::input.label>
     @endif
     <input {{ $attributes->merge([
-        'id' => $name,
-        'name' => $name,
-        'type' => $type,
-        'dusk' => $attributes->get('v-bind:dusk') ? null : $name,
+        'id' => $attributes->get('name'),
+        'type' => 'text',
+        'dusk' => $attributes->get('v-bind:dusk') ? null : $attributes->get('name'),
         'class' => 'rounded peer border border-border bg-white py-4 px-5 text-sm outline-none !ring-0 transition-all placeholder:text-ct-inactive focus:border-ct-primary disabled:bg-ct-inactive-200 disabled:text-ct-inactive font-medium disabled:pr-12',
     ]) }}>
     {{ $slot }}
