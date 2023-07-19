@@ -14,9 +14,24 @@
             v-for="segment in checkout.totals.total_segments"
             v-if="segment.title"
         >
-            <span>@{{ segment.title }}</span>
-            <span v-if="segment.code !== 'shipping'">@{{ segment.value | price }}</span>
-            <span v-else>@{{ (checkout.totals.shipping_incl_tax - checkout.totals.shipping_tax_amount) | price }}</span>
+            <template v-if="segment.code !== 'shipping'">
+                <span>@{{ segment.title }}</span>
+                <span>
+                    @{{ segment.value | price }}
+                </span>
+            </template>
+            <template v-else>
+                <span>@lang('Shipping')</span>
+                <span v-if="shipping_total = (checkout.totals.shipping_incl_tax - checkout.totals.shipping_tax_amount) > 0">
+                    @{{ shipping_total | price }}
+                </span>
+                <span
+                    class="text-ct-enhanced font-medium"
+                    v-else
+                >
+                    @lang('Free')
+                </span>
+            </template>
         </li>
     </x-rapidez-ct::separated-listing>
 </x-rapidez-ct::card>
