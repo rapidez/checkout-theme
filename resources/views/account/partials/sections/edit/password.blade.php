@@ -1,5 +1,5 @@
 <x-rapidez-ct::card.inactive>
-    <graphql-mutation query="mutation email ($email: String!, $password: String!) { updateCustomerEmail ( email: $email, password: $password ) { customer { email } } }" :clear="true" :callback="refreshUserInfoCallback">
+    <graphql-mutation query="mutation email ($email: String!, $password: String!) { updateCustomerEmail ( email: $email, password: $password ) { customer { email } } }" :clear="true" :callback="refreshUserInfoCallback" :variables="{ email: user.email }">
             <form class="grid gap-5 grid-cols-2" slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate">
                 <x-rapidez-ct::title.lg class="col-span-2">
                     @lang('Change password')
