@@ -11,10 +11,7 @@
 </div>
 
 <ul>
-    <li
-        class="flex border-b py-5"
-        v-for="(item, productId, index) in cart.items"
-    >
+    <li v-for="(item, productId, index) in cart.items" class="flex border-b py-5">
         <div class="flex w-full flex-wrap gap-y-3 gap-x-3 sm:gap-x-6 sm:pr-6 text-sm md:items-center">
             <div class="flex h-[100px] w-[150px] items-center justify-center">
                 <img
@@ -24,16 +21,10 @@
                     height="100"
                     v-if="item.image"
                 >
-                <x-rapidez::no-image
-                    class="h-[100px] w-[150px]"
-                    v-else
-                />
+                <x-rapidez::no-image v-else class="h-[100px] w-[150px]"/>
             </div>
             <div class="flex w-[150px] flex-1 flex-col items-start">
-                <a
-                    :href="item.url"
-                    dusk="cart-item-name"
-                >@{{ item.name }}</a>
+                <a :href="item.url" dusk="cart-item-name">@{{ item.name }}</a>
                 <div v-for="(optionValue, option) in item.options">
                     @{{ option }}: @{{ optionValue }}
                 </div>

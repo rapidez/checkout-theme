@@ -5,10 +5,7 @@
     'is' => isset($item['href']) ? 'a' : 'button',
 ]) }}>
     @if ($item['icon'] ?? false)
-        <x-icon
-            class="h-6 stroke-[1.5px]"
-            name="{{ $item['icon'] }}"
-        />
+        <x-icon name="{{ $item['icon'] }}" class="h-6 stroke-[1.5px]"/>
     @endif
     <div class="flex flex-col gap-y-1">
         @if ($item['heading'] ?? false)
@@ -16,10 +13,7 @@
                 {{ $item['heading'] }}
                 @if ($key === 'orders')
                     <graphql query="{customer{orders{items{number}}}}">
-                        <template
-                            slot-scope="{ data }"
-                            v-if="data"
-                        >
+                        <template v-if="data" slot-scope="{ data }">
                             (@{{ data.customer.orders.items.length ?? 0 }})
                         </template>
                     </graphql>

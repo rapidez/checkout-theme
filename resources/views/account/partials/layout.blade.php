@@ -12,10 +12,7 @@
 @endphp
 
 @section('content')
-    <div
-        class="container"
-        v-cloak
-    >
+    <div v-cloak class="container">
         <template v-if="loggedIn">
             <x-rapidez-ct::layout>
                 <x-rapidez-ct::toolbar>

@@ -3,10 +3,7 @@
     check="data.customer.orders.items[0]"
     cache="orderdetail{{ $id }}"
 >
-    <x-rapidez-ct::card
-        v-if="data"
-        slot-scope="{ data }"
-    >
+    <x-rapidez-ct::card v-if="data" slot-scope="{ data }">
         <x-rapidez-ct::title.lg class="mb-4">
             @lang('Order overview')
         </x-rapidez-ct::title.lg>

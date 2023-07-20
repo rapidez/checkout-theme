@@ -1,7 +1,4 @@
-<x-rapidez-ct::title-progress-bar
-    href="#"
-    v-on:click.prevent="goToStep(1)"
->
+<x-rapidez-ct::title-progress-bar href="#" v-on:click.prevent="goToStep(1)">
     @lang('Payment')
 </x-rapidez-ct::title-progress-bar>
 
@@ -19,10 +16,7 @@
         type="submit"
         dusk="continue"
     >
-        <div
-            class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
-            v-if="$root.loading"
-        >
+        <div v-if="$root.loading" class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
             <x-heroicon-o-refresh class="h-5 w-5 animate-spin" />
         </div>
         <span v-bind:class="{ 'invisible' : $root.loading }">

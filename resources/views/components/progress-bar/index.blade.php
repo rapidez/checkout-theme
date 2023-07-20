@@ -1,8 +1,5 @@
 @props(['checkout' => true])
-<div
-    class="flex items-center space-x-[18px] text-xs"
-    v-cloak
->
+<div class="flex items-center space-x-[18px] text-xs" v-cloak>
     <span class="whitespace-nowrap font-medium text-ct-inactive">
         @lang('Step :step out of :total', [
             'step' => '@{{ checkout.step }}',
@@ -18,7 +15,6 @@
                 'bg-ct-border pointer-events-none': {{ $loop->index + 1 }} > checkout.step,
                 'outline-4 outline outline-ct-accent/20': {{ $loop->index + 1 }} === checkout.step
             }"
-        >
-        </div>
+        ></div>
     @endforeach
 </div>

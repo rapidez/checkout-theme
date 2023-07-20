@@ -6,11 +6,7 @@
 
 @section('content')
     <cart v-cloak>
-        <div
-            class="container"
-            v-if="hasItems"
-            slot-scope="{ cart, hasItems, changeQty, remove }"
-        >
+        <div v-if="hasItems" class="container" slot-scope="{ cart, hasItems, changeQty, remove }">
             <x-rapidez-ct::layout class="!mt-0">
                 @include('rapidez-ct::cart.cart')
                 <x-slot:sidebar>
@@ -18,10 +14,7 @@
                 </x-slot:sidebar>
             </x-rapidez-ct::layout>
         </div>
-        <div
-            class="container"
-            v-else
-        >
+        <div v-else class="container">
             <p>@lang('You don\'t have anything in your cart.')</p>
             <x-rapidez-ct::button.outline class="mt-3" href="/">
                 @lang('Return to home')

@@ -23,24 +23,14 @@
                     required
                 />
 
-                <p
-                    class="self-end"
-                    v-if="!emailAvailable"
-                >
+                <p v-if="!emailAvailable" class="self-end">
                     @lang('You already have an account with this e-mail address. Please log in to continue.')
                 </p>
-                <p
-                    class="self-end"
-                    v-else
-                >
+                <p v-else class="self-end">
                     @lang('We will send your order confirmation to this e-mail address. We will also check if you already have an account so you can checkout more efficiently.')
                 </p>
 
-                <x-rapidez-ct::button.accent
-                    v-if="!emailAvailable"
-                    dusk="continue"
-                    v-on:click.prevent="go"
-                >
+                <x-rapidez-ct::button.accent v-if="!emailAvailable" v-on:click.prevent="go" dusk="continue">
                     @lang('Login')
                 </x-rapidez-ct::button.accent>
             </template>
@@ -54,10 +44,7 @@
                     <x-rapidez-ct::title.sm>@lang('Welcome back') @{{ $root.user?.firstname }}!</x-rapidez-ct::title.sm>
                     <span>
                         @lang('Is this not your account?')
-                        <button
-                            class="underline"
-                            v-on:click.prevent="logout('/login')"
-                        >@lang('Log out')</button>
+                        <button class="underline" v-on:click.prevent="logout('/login')">@lang('Log out')</button>
                         @lang('and use a different e-mail address.')
                     </span>
                 </div>

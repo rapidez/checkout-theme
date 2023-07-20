@@ -29,7 +29,7 @@
     </template>
 </div>
 <div class="flex gap-5">
-    <x-rapidez-ct::button.accent href="/account/address/new">
+    <x-rapidez-ct::button.accent :href="route('account.address.create')">
         @lang('Add a new address')
     </x-rapidez-ct::button.accent>
     <x-rapidez-ct::button.outline component="label" for="popup">

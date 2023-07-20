@@ -10,7 +10,8 @@
             query="@include('rapidez::account.partials.queries.address-create')"
             :variables="{ street: [] }"
             :watch="false"
-            redirect="/account/edit"
+            :notify="{ 'message': '@lang('Address created successfully')' }"
+            redirect="{{ route('account.edit') }}"
         >
             @include('rapidez-ct::account.partials.address-form')
         </graphql-mutation>

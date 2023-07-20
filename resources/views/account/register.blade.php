@@ -7,7 +7,7 @@
 @section('content')
     <div class="container">
         <x-rapidez-ct::layout>
-            <x-rapidez-ct::title href="/login">
+            <x-rapidez-ct::title :href="route('account.login')">
                 @lang('Register')
             </x-rapidez-ct::title>
 
@@ -17,7 +17,7 @@
             </x-rapidez-ct::sections>
 
             <x-rapidez-ct::toolbar>
-                <x-rapidez-ct::button.outline href="/login">
+                <x-rapidez-ct::button.outline :href="route('account.login')">
                     @lang('Back to login')
                 </x-rapidez-ct::button.outline>
                 <x-rapidez-ct::button.accent
