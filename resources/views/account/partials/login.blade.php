@@ -1,4 +1,4 @@
-<login v-cloak :checkout-login="false" v-slot="{ email, password, go, loginInputChange }" redirect="{{ $redirect ?? route('account.overview') }}">
+<login :checkout-login="false" v-slot="{ email, password, go, loginInputChange }" redirect="{{ $redirect ?? route('account.overview') }}">
     <x-rapidez-ct::card.inactive>
         <form class="space-y-5" v-on:submit.prevent="go()">
             <x-rapidez-ct::input
@@ -24,6 +24,7 @@
                     class="flex items-center gap-1"
                     type="submit"
                     dusk="continue"
+                    loader
                 >
                     @lang('Login')
                     <x-heroicon-o-arrow-right class="h-4" />

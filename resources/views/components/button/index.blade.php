@@ -8,7 +8,7 @@
     v-bind:disabled="$root.loading"
 >
     @if($loader)
-        <div v-if="$root.loading" class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
+        <div v-if="$root.loading" class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" v-cloak>
             <x-heroicon-o-refresh class="h-5 w-5 animate-spin" />
         </div>
     @endif
