@@ -10,8 +10,11 @@
                         v-on="inputEvents"
                         v-bind:value="couponCode"
                         v-bind:disabled="$root.loading"
+                        required
                     />
-                    <x-rapidez-ct::button.outline type="submit">@lang('Apply')</x-rapidez-ct::button.outline>
+                    <x-rapidez-ct::button.outline type="submit" loader>
+                        @lang('Apply')
+                    </x-rapidez-ct::button.outline>
                 </div>
                 <div v-if="cart.discount_name && cart.discount_amount < 0" class="text-ct-inactive mt-1 flex items-center gap-x-2">
                     <button v-on:click="removeCoupon">

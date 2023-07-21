@@ -15,12 +15,8 @@
         form="payment"
         type="submit"
         dusk="continue"
+        loader
     >
-        <div v-if="$root.loading" class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
-            <x-heroicon-o-refresh class="h-5 w-5 animate-spin" />
-        </div>
-        <span v-bind:class="{ 'invisible' : $root.loading }">
-            @lang('Place order')
-        </span>
+        @lang('Place order')
     </x-rapidez-ct::button.enhanced>
 </x-rapidez-ct::toolbar>

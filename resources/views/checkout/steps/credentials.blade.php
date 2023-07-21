@@ -14,7 +14,7 @@
     <x-rapidez-ct::button.outline :href="route('cart')">
         @lang('Back to cart')
     </x-rapidez-ct::button.outline>
-    <x-rapidez-ct::button.enhanced form="credentials">
+    <x-rapidez-ct::button.enhanced form="credentials" loader>
         @lang('Next')
     </x-rapidez-ct::button.enhanced>
 </x-rapidez-ct::toolbar>

@@ -20,10 +20,7 @@
                 <x-rapidez-ct::button.outline :href="route('account.login')">
                     @lang('Back to login')
                 </x-rapidez-ct::button.outline>
-                <x-rapidez-ct::button.accent
-                    form="register"
-                    type="submit"
-                >
+                <x-rapidez-ct::button.accent type="submit" form="register" loader>
                     @lang('Register')
                 </x-rapidez-ct::button.accent>
             </x-rapidez-ct::toolbar>

@@ -11,7 +11,7 @@
 </div>
 
 <ul>
-    <li v-for="(item, productId, index) in cart.items" class="flex border-b py-5">
+    <li v-for="(item, itemId, index) in cart.items" class="flex border-b py-5">
         <div class="flex w-full flex-wrap gap-y-3 gap-x-3 sm:gap-x-6 sm:pr-6 text-sm md:items-center">
             <div class="flex h-[100px] w-[150px] items-center justify-center">
                 <img
@@ -24,15 +24,14 @@
                 <x-rapidez::no-image v-else class="h-[100px] w-[150px]"/>
             </div>
             <div class="flex w-[150px] flex-1 flex-col items-start">
-                <a :href="item.url" dusk="cart-item-name">@{{ item.name }}</a>
+                <a :href="item.url | url" dusk="cart-item-name">@{{ item.name }}</a>
                 <div v-for="(optionValue, option) in item.options">
                     @{{ option }}: @{{ optionValue }}
                 </div>
-                <button
-                    class="mt-1 text-xs text-ct-inactive hover:underline"
-                    @click="remove(item)"
-                    :dusk="'item-delete-' + index"
-                >
+                <div v-for="option in cart?.items2?.find((item) => item.item_id == itemId).options.filter((option) => !['info_buyRequest', 'option_ids'].includes(option.code))">
+                    @{{ option.label }}: @{{ option.value.title || option.value }}
+                </div>
+                <button class="mt-1 text-xs text-ct-inactive hover:underline" @click="remove(item)" :dusk="'item-delete-' + index">
                     @lang('Remove')
                 </button>
             </div>
