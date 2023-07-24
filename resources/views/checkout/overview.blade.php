@@ -5,11 +5,7 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('content')
-    <checkout
-        v-cloak
-        v-slot="{ checkout, cart, hasItems, save, goToStep }"
-        :set="checkout.step = Math.max(checkout.step, 2)"
-    >
+    <checkout v-slot="{ checkout, cart, hasItems, save, goToStep }" :set="checkout.step = Math.max(checkout.step, 2)" v-cloak>
         <div class="container">
             <x-rapidez-ct::layout class="mt-14">
                 <template v-if="checkout.step == 2 && hasItems">

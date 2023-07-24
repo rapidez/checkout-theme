@@ -6,10 +6,7 @@
     @if (!$attributes->has('v-bind:billing')) :billing="{{ var_export($billing) }}" @endif
     v-slot="{ address, billing, shipping, isEmpty }"
 >
-    <div
-        {{ $attributes->whereDoesntStartWith('v-')->class('flex flex-col') }}
-        v-if="!isEmpty"
-    >
+    <div v-if="!isEmpty" {{ $attributes->whereDoesntStartWith('v-')->class('flex flex-col') }}>
         @if ($check)
             <template v-if="{{ $check }}">
                 <div class="bg-ct-accent absolute inset-y-0 left-0 w-1 rounded-l"></div>
@@ -24,10 +21,9 @@
         </x-rapidez-ct::title.lg>
         <div class="flex flex-1 flex-wrap justify-between">
             <ul class="flex flex-col gap-1">
-                <li
-                    v-for="data in address"
-                    v-text="data"
-                ></li>
+                <li v-for="data in address">
+                    @{{ data }}
+                </li>
             </ul>
             @if (!empty($slot))
                 <div class="mt-auto flex flex-col self-end">

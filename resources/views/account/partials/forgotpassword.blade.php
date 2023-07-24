@@ -6,9 +6,7 @@
 >
     <x-rapidez-ct::card.inactive slot-scope="{ mutate, variables }">
         <form v-on:submit.prevent="mutate">
-            <x-rapidez-ct::title.lg
-                class="mb-4"
-            >
+            <x-rapidez-ct::title.lg class="mb-4">
                 @lang('Forgot Your Password?')
             </x-rapidez-ct::title.lg>
             <p class="mb-5 text-sm">
@@ -22,10 +20,7 @@
                 required
             />
             <div class="mt-5 flex items-center justify-between">
-                <a
-                    class="text-sm text-ct-inactive underline"
-                    href="/login"
-                >
+                <a href="{{ route('account.login') }}" class="text-sm text-ct-inactive underline">
                     @lang('Back to login')
                 </a>
                 <x-rapidez-ct::button.accent

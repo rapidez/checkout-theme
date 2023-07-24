@@ -1,8 +1,7 @@
 <x-rapidez::recaptcha location="customer_create"/>
 <graphql-mutation
-    v-cloak
     query="mutation customer ($firstname: String!, $lastname: String!, $email: String!, $password: String) { createCustomerV2 ( input: { firstname: $firstname, lastname: $lastname, email: $email, password: $password } ) { customer { email } } }"
-    redirect="/account"
+    redirect="{{ route('account.overview') }}"
     :callback="registerCallback"
     :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
 >

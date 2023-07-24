@@ -6,24 +6,13 @@
         v-bind:set-shipping="data.customer.shipping_address = data.customer.addresses.find(e => e.default_shipping)"
     >
         <x-rapidez-ct::separated-listing>
-
             <template v-if="data?.customer?.addresses">
                 <template v-if="data.customer.shipping_address?.default_billing || !data.customer.shipping_address || !data.customer.billing_address">
-                    <x-rapidez-ct::address
-                        v-bind:address="data.customer.shipping_address"
-                        shipping
-                        billing
-                    />
+                    <x-rapidez-ct::address v-bind:address="data.customer.shipping_address" shipping billing/>
                 </template>
                 <template v-else>
-                    <x-rapidez-ct::address
-                        v-bind:address="data.customer.shipping_address"
-                        shipping
-                    />
-                    <x-rapidez-ct::address
-                        v-bind:address="data.customer.billing_address"
-                        billing
-                    />
+                    <x-rapidez-ct::address v-bind:address="data.customer.shipping_address" shipping/>
+                    <x-rapidez-ct::address v-bind:address="data.customer.billing_address" billing/>
                 </template>
             </template>
             <div v-if="!data.customer.shipping_address && !data.customer.billing_address">
@@ -32,10 +21,7 @@
                 </x-rapidez-ct::title.lg>
                 @lang('No default address has been set yet.')
             </div>
-            <a
-                class="font-medium"
-                href="/account/edit"
-            >
+            <a href="{{ route('account.edit') }}" class="font-medium">
                 <span>@lang('Account settings')</span>
                 <x-heroicon-o-cog class="h-6 stroke-[1.5px]" />
             </a>

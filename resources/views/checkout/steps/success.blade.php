@@ -1,8 +1,5 @@
 <checkout-success>
-    <div
-        slot-scope="{ order }"
-        dusk="checkout-success"
-    >
+    <div slot-scope="{ order }" dusk="checkout-success">
         <x-rapidez-ct::title-progress-bar>
             @lang('Thank you for your order')
         </x-rapidez-ct::title-progress-bar>

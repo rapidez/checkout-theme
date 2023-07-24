@@ -13,7 +13,7 @@
                 @include('rapidez-ct::account.partials.sections.edit.password')
             </x-rapidez-ct::sections>
             <x-rapidez-ct::toolbar>
-                <x-rapidez-ct::button.outline href="/account">
+                <x-rapidez-ct::button.outline :href="route('account.overview')">
                     @lang('Back to dashboard')
                 </x-rapidez-ct::button.outline>
             </x-rapidez-ct::toolbar>

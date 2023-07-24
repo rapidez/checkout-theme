@@ -8,7 +8,7 @@
         </div>
 
         <div class="my-5 flex flex-col-reverse items-center justify-between sm:flex-row md:mb-0">
-            <x-rapidez-ct::button.outline class="w-full flex-1 sm:w-auto sm:flex-none" href="/account/edit">
+            <x-rapidez-ct::button.outline class="w-full flex-1 sm:w-auto sm:flex-none" :href="route('account.edit')">
                 @lang('Back to settings')
             </x-rapidez-ct::button.outline>
             <div class="mb-4 w-full sm:mb-0 sm:w-auto">

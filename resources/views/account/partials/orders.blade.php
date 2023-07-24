@@ -1,11 +1,7 @@
 <div>
     <template v-if="data.customer.orders.items.length">
         <x-rapidez-ct::sections>
-            <a
-                class="block"
-                v-for="order in data.customer.orders.items"
-                :href="'/account/order/' + order.number"
-            >
+            <a class="block" v-for="order in data.customer.orders.items" :href="'/account/order/' + order.number">
                 <x-rapidez-ct::card.inactive class="flex-col">
                     <x-rapidez-ct::title.lg>
                         @lang('Order') #@{{ order.number }}
@@ -38,7 +34,7 @@
         </x-rapidez-ct::sections>
     </template>
     <x-rapidez-ct::toolbar>
-        <x-rapidez-ct::button.outline href="/account">
+        <x-rapidez-ct::button.outline :href="route('account.overview')">
             @lang('Back to account')
         </x-rapidez-ct::button.outline>
     </x-rapidez-ct::toolbar>

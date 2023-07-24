@@ -1,7 +1,7 @@
 <x-rapidez-ct::card class="relative">
-    <div class="absolute inset-x-0 bottom-full -translate-y-6 max-md:hidden [&>*]:h-auto [&>*]:max-h-20 [&>*]:w-full [&>*]:object-contain">
+    <a href="{{ url('/') }}" class="absolute inset-x-0 bottom-full -translate-y-6 max-md:hidden [&>*]:h-auto [&>*]:max-h-20 [&>*]:w-full [&>*]:object-contain">
         <x-rapidez-ct::logo />
-    </div>
+    </a>
     <x-rapidez-ct::title.lg class="mb-4">
         @lang('Order overview')
     </x-rapidez-ct::title.lg>
@@ -14,9 +14,19 @@
             v-for="segment in checkout.totals.total_segments"
             v-if="segment.title"
         >
-            <span>@{{ segment.title }}</span>
-            <span v-if="segment.code !== 'shipping'">@{{ segment.value | price }}</span>
-            <span v-else>@{{ (checkout.totals.shipping_incl_tax - checkout.totals.shipping_tax_amount) | price }}</span>
+            <template v-if="segment.code !== 'shipping'">
+                <span>@{{ segment.title }}</span>
+                <span>@{{ segment.value | price }}</span>
+            </template>
+            <template v-else>
+                <span>@lang('Shipping')</span>
+                <span v-if="shipping_total = (checkout.totals.shipping_incl_tax - checkout.totals.shipping_tax_amount) > 0">
+                    @{{ shipping_total | price }}
+                </span>
+                <span v-else class="text-ct-enhanced font-medium">
+                    @lang('Free')
+                </span>
+            </template>
         </li>
     </x-rapidez-ct::separated-listing>
 </x-rapidez-ct::card>

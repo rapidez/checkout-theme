@@ -23,19 +23,15 @@
             </template>
         </div>
         <div class="flex flex-1 flex-col -space-y-px">
-            <x-rapidez-ct::card.white
-                class="flex-1"
-                check
-            >
+            <x-rapidez-ct::card.white class="flex-1" check>
                 <x-rapidez-ct::title.lg class="mb-4 pr-8">
                     @lang('Payment method')
                 </x-rapidez-ct::title.lg>
                 <div class="flex flex-1 flex-wrap justify-between">
                     <ul class="flex flex-col gap-1">
-                        <li
-                            v-for="data in data.customer.orders.items[0].payment_methods"
-                            v-text="data.name"
-                        ></li>
+                        <li v-for="data in data.customer.orders.items[0].payment_methods">
+                            @{{ data.name }}
+                        </li>
                     </ul>
                     @if (!empty($slot))
                         <div class="mt-auto flex flex-col self-end">
@@ -44,10 +40,7 @@
                     @endif
                 </div>
             </x-rapidez-ct::card.white>
-            <x-rapidez-ct::card.white
-                class="flex-1"
-                check
-            >
+            <x-rapidez-ct::card.white class="flex-1" check>
                 <x-rapidez-ct::title.lg class="mb-4 pr-8">
                     @lang('Delivery method')
                 </x-rapidez-ct::title.lg>

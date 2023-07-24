@@ -13,14 +13,12 @@
         </li>
         <li>
             <span>@lang('Shipping')</span>
-            <span v-if="cart.shipping_amount > 0">@{{ cart.shipping_amount | price }}</span>
-            <span
-                class="font-medium text-ct-enhanced"
-                v-else
-            >
+            <span v-if="cart.shipping_amount > 0">
+                @{{ cart.shipping_amount | price }}
+            </span>
+            <span v-else class="font-medium text-ct-enhanced">
                 @lang('Free')
             </span>
-            <small class="mt-1 w-full">@{{ cart.shipping_description }}</small>
         </li>
         <li v-if="cart.discount_name">
             <span>@lang('Discount') (@{{ cart.discount_name }})</span>
@@ -32,11 +30,7 @@
         </li>
     </x-rapidez-ct::separated-listing>
 
-    <x-rapidez-ct::button.enhanced
-        class="flex w-full items-center justify-center gap-1 mt-6"
-        href="/checkout"
-        dusk="checkout"
-    >
+    <x-rapidez-ct::button.enhanced :href="route('checkout')" class="flex w-full items-center justify-center gap-1 mt-6" dusk="checkout">
         @lang('To checkout')
         <x-heroicon-o-arrow-right class="h-4" />
     </x-rapidez-ct::button.enhanced>
