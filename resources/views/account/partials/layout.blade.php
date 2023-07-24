@@ -30,7 +30,7 @@
             </x-rapidez-ct::layout>
         </template>
 
-        <template v-else>
+        <template v-else-if="!$root.loading">
             <x-rapidez-ct::layout.two-column>
                 <x-rapidez-ct::title>
                     @lang('Login')
