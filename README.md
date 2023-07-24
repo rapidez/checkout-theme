@@ -24,6 +24,8 @@ enhanced: {
 }
 ```
 
+This package also requires the `SKU` functionality to be enabled in the image resizer, which is normally enabled by default.
+
 ## Configuration
 
 Publish the configuration file and have a look at the options `config/rapidez-checkout-theme.php`
