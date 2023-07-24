@@ -10,7 +10,7 @@
                 </x-rapidez-ct::button.link>
             </x-rapidez-ct::card.address>
         </template>
-        <a href="/account/address/new" class="h-full min-h-[180px] flex flex-col items-center justify-center gap-y-2 font-medium bg-ct-inactive-200 rounded max-sm:hidden">
+        <a href="/account/address/new" class="h-full min-h-[180px] flex flex-col items-center justify-center gap-y-2 font-medium bg-ct-disabled rounded max-sm:hidden">
             <span>+</span>
             <span>@lang('Add new address')</span>
         </a>
@@ -32,7 +32,7 @@
     <x-rapidez-ct::button.accent :href="route('account.address.create')">
         @lang('Add a new address')
     </x-rapidez-ct::button.accent>
-    <x-rapidez-ct::button.outline tag="label" for="popup">
+    <x-rapidez-ct::button.outline tag="label" for="popup" v-if="data?.customer?.addresses?.length">
         @lang('My addresses')
     </x-rapidez-ct::button.outline>
 </div>
