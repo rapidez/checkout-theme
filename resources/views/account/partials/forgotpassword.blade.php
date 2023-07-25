@@ -27,6 +27,7 @@
                     class="flex items-center gap-1"
                     type="submit"
                     dusk="continue"
+                    loader
                 >
                     @lang('Send')
                     <x-heroicon-o-arrow-right class="h-4" />
