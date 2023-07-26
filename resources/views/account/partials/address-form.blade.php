@@ -1,13 +1,6 @@
-<form
-    slot-scope="{ variables, mutate, mutated }"
-    v-on:submit.prevent="mutate"
->
+<form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate">
     <x-rapidez-ct::card.inactive class="mb-6">
-        <x-rapidez-ct::address-form
-            type="edit"
-            address="variables"
-            country-key="country_code"
-        />
+        <x-rapidez-ct::address-form type="edit" address="variables" country-key="country_code"/>
 
         <div class="flex gap-5 py-5">
             <x-rapidez-ct::input.checkbox v-model="variables.default_shipping">@lang('Default shipping address')</x-input.checkbox>
