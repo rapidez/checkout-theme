@@ -16,16 +16,16 @@
         v-for="(item, itemId, index) in cart.items"
     >
         <div class="flex w-full flex-wrap gap-x-3 gap-y-3 text-sm sm:gap-x-6 sm:pr-6 md:items-center">
-            <div class="h-h-24 flex w-40 items-center justify-center">
+            <div class="h-24 flex w-40 items-center justify-center">
                 <img
-                    class="h-h-24 w-40"
+                    class="h-24 w-40 object-contain"
                     :alt="item.name"
                     :src="'/storage/resizes/200/magento/catalog/product' + item.image + '.webp'"
                     height="100"
                     v-if="item.image"
                 >
                 <x-rapidez::no-image
-                    class="h-h-24 w-40"
+                    class="h-24 w-40"
                     v-else
                 />
             </div>
