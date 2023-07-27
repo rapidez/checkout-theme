@@ -10,7 +10,7 @@
                     v-on:input="loginInputChange"
                     v-on:blur="$root.guestEmail = email; if(!password) { go() }"
                     required
-                    placeholder="Enter your e-mail address"
+                    :placeholder="__('Enter your e-mail address')"
                 />
 
                 <x-rapidez-ct::input

@@ -10,7 +10,7 @@
     <div class="flex flex-col gap-y-1">
         @if ($item['heading'] ?? false)
             <strong class="font-medium">
-                {{ $item['heading'] }}
+                @lang($item['heading'])
                 @if ($key === 'orders')
                     <graphql query="{customer{orders{items{number}}}}">
                         <template v-if="data" slot-scope="{ data }">
@@ -22,7 +22,7 @@
         @endif
         @if ($item['subheading'] ?? false)
             <p class="text-inactive">
-                {{ $item['subheading'] }}
+                @lang($item['subheading'])
             </p>
         @endif
     </div>

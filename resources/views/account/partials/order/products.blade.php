@@ -16,7 +16,7 @@
                 <img
                     class="max-h-[100px] max-w-[150px]"
                     :alt="item.name"
-                    :src="'/storage/resizes/200/magento/catalog/product' + item.image"
+                    :src="'/storage/resizes/200/magento/catalog/product' + item.image + '.webp'"
                     height="100"
                     v-if="item.image"
                 >
