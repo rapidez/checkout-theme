@@ -20,7 +20,7 @@
                 <img
                     class="h-24 w-40 object-contain"
                     :alt="item.name"
-                    :src="'/storage/resizes/200/magento/catalog/product' + item.image + '.webp'"
+                    :src="'/storage/{{ config('rapidez.store') }}/resizes/200/magento/catalog/product' + item.image + '.webp'"
                     height="100"
                     v-if="item.image"
                 >

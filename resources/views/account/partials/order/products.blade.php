@@ -16,7 +16,7 @@
                 <img
                     class="max-h-[100px] max-w-[150px]"
                     :alt="item.name"
-                    :src="`/storage/${$root.config.store}/resizes/200/sku/${item.sku}`"
+                    :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${item.sku}`"
                     height="100"
                     v-if="item.sku"
                 >
