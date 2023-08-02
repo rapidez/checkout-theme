@@ -15,9 +15,9 @@
                 <img
                     class="max-h-[100px] max-w-[150px]"
                     :alt="item.name"
-                    :src="'/storage/resizes/200/magento/catalog/product' + item.image + '.webp'"
+                    :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${item.sku}`"
                     height="100"
-                    v-if="item.image"
+                    v-if="item.sku"
                 >
                 <x-rapidez::no-image v-else class="h-[100px] w-[150px]"/>
             </div>
