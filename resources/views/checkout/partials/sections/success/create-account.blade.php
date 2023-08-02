@@ -34,7 +34,7 @@
                 v-model="variables.password"
                 required
             />
-            <x-rapidez-ct::button.accent class="self-end justify-self-start">
+            <x-rapidez-ct::button.accent class="self-end justify-self-start" loader>
                 @lang('Create account')
             </x-rapidez-ct::button.accent>
         </form>
