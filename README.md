@@ -33,6 +33,13 @@ Publish the configuration file and have a look at the options `config/rapidez-ch
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=config
 ```
 
+## Payment-icons
+
+We have provided a set of payment icons for your convenience. To integrate these icons into your project and enable the functionality of adding or modifying icons, please execute the following command.
+```
+php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=payment-icons
+```
+
 ## Customizations
 
 If you want you *could* publish the views. But it's recommended to only publish and change the views you need so when there is an update you don't have to compare all views with the new version. Also keep in mind this is an opinionated theme, if you want/need to change a lot it's better to build your own in terms of upgradability.
