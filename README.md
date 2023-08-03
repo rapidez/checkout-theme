@@ -50,7 +50,7 @@ php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --
 
 ## Payment-icons
 
-We have provided a set of payment icons for your convenience. To integrate these icons into your project and enable the functionality of adding or modifying icons, please execute the following command.
+We have provided a set of payment icons for your convenience. To integrate these icons into your project and enable the functionality of adding or modifying icons, please execute the following command:
 ```
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=payment-icons
 ```
