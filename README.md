@@ -1,6 +1,6 @@
 # Checkout theme - In development...
 
-An checkout theme including the checkout, cart and accounts views.
+A checkout theme including the checkout, cart and accounts views.
 
 Screenshots...
 
@@ -10,18 +10,33 @@ Screenshots...
 composer require rapidez/checkout-theme
 ```
 
-And publish the "core overwrite views" so the views from this package are used instead of the default ones:
+To use the views from this package instead of the default ones, you'll need to publish the "core overwrite views" with the following command:
 ```
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=core-overwrites
 ```
 
-Add these colors to your `tailwind.config.js`
+Add these colors to your `tailwind.config.js` and modify them to your liking:
 ```
-primary: colors.green[700],
-secondary: colors.gray[400],
-enhanced: {
-    ...
-}
+colors: {
+    ct: {
+        enhanced: {
+            DEFAULT: '#40C42A',
+        },
+        inactive: {
+            DEFAULT: '#8A8275',
+            100: '#F6F4EE',
+        },
+        disabled: '#EBE8DE',
+        accent: {
+            DEFAULT: '#FEAB05',
+        },
+        primary: {
+            DEFAULT: '#625B50',
+        },
+        border: '#EAE7DC',
+        error: '#DF241D',
+    },
+},
 ```
 
 This package also requires the `SKU` functionality to be enabled in the image resizer, which is normally enabled by default.
@@ -31,6 +46,13 @@ This package also requires the `SKU` functionality to be enabled in the image re
 Publish the configuration file and have a look at the options `config/rapidez-checkout-theme.php`
 ```
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=config
+```
+
+## Payment-icons
+
+We have provided a set of payment icons for your convenience. To integrate these icons into your project and enable the functionality of adding or modifying icons, please execute the following command:
+```
+php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=payment-icons
 ```
 
 ## Customizations

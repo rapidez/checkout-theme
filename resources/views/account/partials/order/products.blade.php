@@ -16,9 +16,9 @@
                 <img
                     class="max-h-[100px] max-w-[150px]"
                     :alt="item.name"
-                    :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${item.sku}`"
+                    :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${item.product_sku}`"
                     height="100"
-                    v-if="item.sku"
+                    v-if="item.product_sku"
                 >
                 <x-rapidez::no-image v-else class="h-[100px] w-[150px]"/>
             </div>
