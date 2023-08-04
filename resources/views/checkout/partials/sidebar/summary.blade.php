@@ -20,8 +20,8 @@
             </template>
             <template v-else>
                 <span>@lang('Shipping')</span>
-                <span v-if="shipping_total = (checkout.totals.shipping_incl_tax - checkout.totals.shipping_tax_amount) > 0">
-                    @{{ shipping_total | price }}
+                <span v-if="checkout.totals.shipping_amount > 0">
+                    @{{ checkout.totals.shipping_amount | price }}
                 </span>
                 <span v-else class="text-ct-enhanced font-medium">
                     @lang('Free')
