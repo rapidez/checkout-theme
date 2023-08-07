@@ -1,6 +1,5 @@
-{{-- To do: this causes a blank page on the register layout --}}
+@props(['id' => uniqId('newsletter-'), 'vModel'])
 
-{{-- @props(['id' => uniqId('newsletter-'), 'vModel'])
 <x-rapidez-ct::card.inactive>
     <x-rapidez-ct::title.lg class="mb-5">
         @lang('Newsletter')
@@ -32,4 +31,3 @@
         </graphql-mutation>
     @endif
 </x-rapidez-ct::card.inactive>
- --}}
