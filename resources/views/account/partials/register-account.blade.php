@@ -42,6 +42,6 @@
             </form>
         </x-rapidez-ct::card.inactive>
 
-        @include('rapidez-ct::components.newsletter', ['vModel' => 'variables.is_subscribed'])
+        <x-rapidez-ct::newsletter v-model="variables.is_subscribed"/>
     </x-rapidez-ct::sections>
 </graphql-mutation>
