@@ -2,20 +2,21 @@
     <form id="payment" class="flex flex-col gap-2" v-on:submit.prevent="save(['payment_method'], 4)">
         <div v-for="(method, index) in checkout.payment_methods">
             <x-rapidez-ct::input.radio
-                class="min-h-[40px]"
                 name="payment_method"
                 v-bind:value="method.code"
                 v-bind:dusk="'method-'+index"
                 v-model="checkout.payment_method"
                 required
             >
-                <div>@{{ method.title }}</div>
-                <img
-                    class="max-h-10"
-                    v-bind:alt="method.code"
-                    v-bind:src="`/vendor/payment-icons/${method.code}.svg`"
-                    onerror="this.onerror=null; this.src='/vendor/payment-icons/creditcard.svg'"
-                />
+                <x-slot:wrapper class="min-h-[40px]">
+                    <div>@{{ method.title }}</div>
+                    <img
+                        class="max-h-10"
+                        v-bind:alt="method.code"
+                        v-bind:src="`/vendor/payment-icons/${method.code}.svg`"
+                        onerror="this.onerror=null; this.src='/vendor/payment-icons/creditcard.svg'"
+                    />
+                </x-slot:wrapper>
             </x-rapidez-ct::input.radio>
         </div>
         <graphql query="{ checkoutAgreements { agreement_id name checkbox_text content is_html mode } }">
