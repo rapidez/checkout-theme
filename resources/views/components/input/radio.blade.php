@@ -6,9 +6,7 @@
     <div class="absolute -inset-y-px -left-px w-1 rounded-l bg-ct-accent opacity-0 transition-all peer-checked:opacity-100"></div>
     {{-- TODO: Check if we can't just style the radio? --}}
     <div class="relative aspect-square w-6 shrink-0 rounded-full border bg-white transition-all after:absolute after:inset-1 after:rounded-full after:bg-ct-accent after:opacity-0 after:transition-all after:peer-checked:opacity-100 peer-disabled:bg-ct-inactive-100"></div>
-    @if(!$wrapper->isEmpty() || isset($slot))
-        <div class="flex w-full flex-wrap items-center justify-between gap-x-3">
-            {{ $wrapper->isEmpty() ? $slot : $wrapper }}
-        </div>
-    @endif
+    <div class="flex w-full flex-wrap items-center justify-between gap-x-3">
+        {!! $wrapper->toHtml() ?: $slot !!}
+    </div>
 </label>
