@@ -8,7 +8,7 @@
                 v-model="checkout.payment_method"
                 required
             >
-                <x-slot:wrapper class="min-h-[40px]">
+                <x-slot:slot class="min-h-[40px]">
                     <div>@{{ method.title }}</div>
                     <img
                         class="max-h-10"
@@ -16,7 +16,7 @@
                         v-bind:src="`/vendor/payment-icons/${method.code}.svg`"
                         onerror="this.onerror=null; this.src='/vendor/payment-icons/creditcard.svg'"
                     />
-                </x-slot:wrapper>
+                </x-slot:slot>
             </x-rapidez-ct::input.radio>
         </div>
         <graphql query="{ checkoutAgreements { agreement_id name checkbox_text content is_html mode } }">
