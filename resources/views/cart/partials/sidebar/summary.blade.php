@@ -7,18 +7,18 @@
             <span>@lang('Subtotal')</span>
             <span>@{{ cart.subtotal | price }}</span>
         </li>
-        <li v-if="cart.tax > 0">
-            <span>@lang('Tax')</span>
-            <span>@{{ cart.tax | price }}</span>
-        </li>
         <li>
             <span>@lang('Shipping')</span>
-            <span v-if="cart.shipping_amount > 0">
-                @{{ cart.shipping_amount | price }}
+            <span v-if="cart.shipping_amount_excl_tax > 0">
+                @{{ cart.shipping_amount_excl_tax | price }}
             </span>
             <span v-else class="font-medium text-ct-enhanced">
                 @lang('Free')
             </span>
+        </li>
+        <li v-if="cart.tax > 0">
+            <span>@lang('Tax')</span>
+            <span>@{{ cart.tax | price }}</span>
         </li>
         <li v-if="cart.discount_name">
             <span>@lang('Discount') (@{{ cart.discount_name }})</span>
