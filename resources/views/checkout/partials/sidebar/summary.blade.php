@@ -9,12 +9,8 @@
         <li v-for="item in cart.items">
             <span>@{{ item.qty }}x @{{ item.name }}</span>
         </li>
-        <li
-            class="flex justify-between last:font-medium [&>*]:flex-1 last:[&>*]:text-right"
-            v-for="segment in checkout.totals.total_segments"
-            v-if="segment.title"
-        >
+        <template v-for="segment in checkout.totals.total_segments" v-if="segment.title">
             @include('rapidez-ct::checkout.partials.sidebar.segment')
-        </li>
+        </template>
     </x-rapidez-ct::separated-listing>
 </x-rapidez-ct::card>
