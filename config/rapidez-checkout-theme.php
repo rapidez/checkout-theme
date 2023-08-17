@@ -22,4 +22,7 @@ return [
             ],
         ],
     ],
+    'checkout' => [
+        'checkout_success_register' => false,
+    ],
 ];
