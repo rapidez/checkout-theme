@@ -1,14 +1,18 @@
 <x-rapidez-ct::card.inactive>
     <div class="flex flex-wrap -space-x-px max-sm:-space-y-px">
-        <div class="flex flex-1 flex-col -space-y-px">
-            <template v-if="checkout.hide_billing || (checkout.shipping_address?.customer_address_id == checkout.billing_address?.customer_address_id && checkout.shipping_address?.customer_address_id)">
-                <x-rapidez-ct::card.address v-bind:address="checkout.shipping_address" shipping billing check/>
-            </template>
-            <template v-else>
-                <x-rapidez-ct::card.address v-bind:address="checkout.shipping_address" shipping check/>
-                <x-rapidez-ct::card.address v-bind:address="checkout.billing_address" billing check/>
-            </template>
-        </div>
+        <checkout-success-addresses :order="order">
+            <div slot-scope="{ addresses }" class="flex flex-1 flex-col -space-y-px">
+                <template v-for="address, key in addresses">
+                    <x-rapidez-ct::card.address
+                        v-bind:address="address"
+                        v-bind:shipping="key.includes('shipping')"
+                        v-bind:billing="key.includes('billing')"
+                        v-bind:custom-title="key.includes('pickup') ? '{{ __('Pickup address') }}' : ''"
+                        check
+                    />
+                </template>
+            </div>
+        </checkout-success-addresses>
         <div class="flex flex-1 flex-col -space-y-px">
             <x-rapidez-ct::card.white class="flex-1" check>
                 <x-rapidez-ct::title.lg class="mb-4 pr-8">
