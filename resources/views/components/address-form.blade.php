@@ -1,6 +1,6 @@
 @props(['type' => 'shipping', 'address' => 'checkout.'.$type.'_address', 'countryKey' => 'country_id'])
 
-<div class="grid gap-5 sm:grid-cols-4">
+<div class="grid gap-4 sm:gap-5 sm:grid-cols-4">
     @if (Rapidez::config('customer/address/company_show', 'opt'))
         <x-rapidez-ct::input.country-select
             class="sm:col-span-2"

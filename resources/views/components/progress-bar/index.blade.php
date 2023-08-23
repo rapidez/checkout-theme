@@ -1,5 +1,5 @@
 @props(['checkout' => true])
-<div class="flex items-center space-x-[18px] text-xs" v-cloak>
+<div class="flex items-center space-x-3.5 sm:space-x-[18px] text-xs" v-cloak>
     <span class="whitespace-nowrap font-medium text-ct-inactive">
         @lang('Step :step out of :total', [
             'step' => '@{{ checkout.step }}',

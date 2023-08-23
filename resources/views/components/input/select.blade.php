@@ -1,5 +1,5 @@
 @props(['label' => false])
-<label {{ $attributes->only(['v-if', 'v-else', 'v-else-if', 'class'])->class('relative flex flex-col gap-y-2 text-sm line-clamp-1') }}>
+<label {{ $attributes->only(['v-if', 'v-else', 'v-else-if', 'class'])->class('relative flex flex-col gap-y-1.5 sm:gap-y-2 text-sm line-clamp-1') }}>
     <x-rapidez-ct::input.label :required="$attributes->get('required')">
         @lang($label)
     </x-rapidez-ct::input.label>
