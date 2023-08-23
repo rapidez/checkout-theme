@@ -4,7 +4,7 @@
         <x-rapidez-ct::card.inactive>
             <x-rapidez-ct::title class="mb-5">@lang('My addresses')</x-rapidez-ct::title>
             <label class="absolute cursor-pointer top-7 right-7 w-5 h-5" for="popup">
-
+                <x-heroicon-o-x/>
             </label>
 
             <div class="grid sm:grid-cols-2 gap-5">
