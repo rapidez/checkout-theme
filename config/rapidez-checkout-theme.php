@@ -23,6 +23,8 @@ return [
         ],
     ],
     'checkout' => [
-        'checkout_success_register' => false,
+        'success' => [
+            'register' => false
+        ],
     ],
 ];
