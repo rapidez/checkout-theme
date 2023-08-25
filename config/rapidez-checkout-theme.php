@@ -24,6 +24,7 @@ return [
     ],
     'checkout' => [
         'success' => [
+            // Show the account registration on the success page?
             'register' => false
         ],
     ],
