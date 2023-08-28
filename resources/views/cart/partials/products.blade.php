@@ -49,13 +49,8 @@
                 </button>
             </div>
             <div class="flex items-center justify-between gap-10 font-medium max-sm:flex-1 sm:ml-auto">
-                <div class="flex flex-col gap-px text-sm sm:w-16">
-                    <div v-if="item.specialPrice">
-                        @{{ item.specialPrice | price }}
-                    </div>
-                    <div :class="{ 'line-through text-xs text-ct-inactive font-normal': item.specialPrice }">
-                        @{{ item.price | price }}
-                    </div>
+                <div class="text-sm sm:w-16">
+                    @{{ item.price | price }}
                 </div>
                 <div class="flex w-32 items-center justify-center">
                     <x-rapidez-ct::input.quantity />
