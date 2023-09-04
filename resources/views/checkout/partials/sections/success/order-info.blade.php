@@ -1,14 +1,15 @@
 <x-rapidez-ct::card.inactive>
     <div class="flex flex-wrap -space-x-px max-sm:-space-y-px">
-        <div class="flex flex-1 flex-col -space-y-px">
-            <template v-if="checkout.hide_billing || (checkout.shipping_address?.customer_address_id == checkout.billing_address?.customer_address_id && checkout.shipping_address?.customer_address_id)">
-                <x-rapidez-ct::card.address v-bind:address="checkout.shipping_address" shipping billing check/>
-            </template>
-            <template v-else>
-                <x-rapidez-ct::card.address v-bind:address="checkout.shipping_address" shipping check/>
-                <x-rapidez-ct::card.address v-bind:address="checkout.billing_address" billing check/>
-            </template>
-        </div>
+        <checkout-success-addresses :order="order">
+            <div slot-scope="{ hideBilling, shipping, billing, pickup }" class="flex flex-1 flex-col -space-y-px">
+                <template v-if="hideBilling">
+                    <x-rapidez-ct::card.address v-bind:address="shipping" shipping billing check/>
+                </template>
+                <x-rapidez-ct::card.address v-bind:address="pickup" custom-title="Pickup address" check/>
+                <x-rapidez-ct::card.address v-if="!hideBilling && shipping" v-bind:address="shipping" shipping check/>
+                <x-rapidez-ct::card.address v-if="!hideBilling && billing" v-bind:address="billing" billing check/>
+            </div>
+        </checkout-success-addresses>
         <div class="flex flex-1 flex-col -space-y-px">
             <x-rapidez-ct::card.white class="flex-1" check>
                 <x-rapidez-ct::title.lg class="mb-4 pr-8">
