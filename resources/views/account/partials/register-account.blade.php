@@ -37,17 +37,17 @@
                 v-model="variables.password"
                 required
             />
-            <toggler>
-                <div slot-scope="{ toggle, isOpen }" class="contents">
-                    <x-rapidez-ct::input.checkbox
-                        id="isb2b"
-                        name="isb2b"
-                        v-model="isOpen"
-                        v-on:click="toggle"
-                    >
-                        @lang('This is a business account')
-                    </x-rapidez-ct::input.checkbox>
-                    @if(config('customer/create_account/vat_frontend_visibility', 0))
+            @if(config('customer/create_account/vat_frontend_visibility', 0))
+                <toggler>
+                    <div slot-scope="{ toggle, isOpen }" class="contents">
+                        <x-rapidez-ct::input.checkbox
+                            id="isb2b"
+                            name="isb2b"
+                            v-model="isOpen"
+                            v-on:click="toggle"
+                        >
+                            @lang('This is a business account')
+                        </x-rapidez-ct::input.checkbox>
                         <x-rapidez-ct::input
                             v-cloak
                             v-if="isOpen"
@@ -57,9 +57,9 @@
                             v-model="variables.taxvat"
                             required
                         />
-                    @endif
-                </div>
-            </toggler>
+                        </div>
+                    </toggler>
+                @endif
         </form>
     </x-rapidez-ct::card.inactive>
 </graphql-mutation>
