@@ -15,26 +15,33 @@
         },
 
         computed: {
-            formattedAddress() {
+            company() {
+                return this.address.company ?? '';
+            },
+
+            street() {
                 let street = this.address.street
                 if (Array.isArray(street)) {
-                    street = street?.filter(Boolean).join(' ') ?? ''
+                    return street?.filter(Boolean).join(' ') ?? ''
                 } else {
-                    street = street.replace('\n', ' ')
+                    return street.replace('\n', ' ')
                 }
+            },
 
-                let data = {
-                    company: this.address.company ?? '',
-                    name: [this.address.firstname, this.address.middlename, this.address.lastname].filter(Boolean).join(' '),
-                    street: street,
-                    city: [this.address.postcode, this.address.city].filter(Boolean).join(' '),
-                    country: this.address.country_id ?? this.address.country_code ?? '',
-                }
-                return Object.fromEntries(Object.entries(data).filter(([key, value]) => value))
+            name() {
+                return [this.address.firstname, this.address.middlename, this.address.lastname].filter(Boolean).join(' ');
+            },
+
+            city() {
+                return [this.address.postcode, this.address.city].filter(Boolean).join(' ')
+            },
+
+            country() {
+                return this.address.country_id ?? this.address.country_code ?? ''
             },
 
             isEmpty() {
-                return Object.keys(this.formattedAddress).filter(key => key != 'country').length == 0
+                return [this.company, this.street, this.name, this.city].filter(Boolean).length == 0
             }
         }
     }

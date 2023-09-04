@@ -4,7 +4,7 @@
     {{ $attributes->whereStartsWith('v-') }}
     @if (!$attributes->has('v-bind:shipping')) :shipping="{{ var_export($shipping) }}" @endif
     @if (!$attributes->has('v-bind:billing')) :billing="{{ var_export($billing) }}" @endif
-    v-slot="{ formattedAddress, billing, shipping, isEmpty, customTitle }"
+    v-slot="{ company, name, street, city, country, billing, shipping, isEmpty, customTitle }"
 >
     <div v-if="!isEmpty" {{ $attributes->whereDoesntStartWith('v-')->class('flex flex-col') }}>
         @if ($check)
@@ -22,9 +22,11 @@
         </x-rapidez-ct::title.lg>
         <div class="flex flex-1 flex-wrap justify-between">
             <ul class="flex flex-col gap-1">
-                <li v-for="data in formattedAddress">
-                    @{{ data }}
-                </li>
+                <li v-if="company">@{{ company }}</li>
+                <li v-if="name">@{{ name }}</li>
+                <li v-if="street">@{{ street }}</li>
+                <li v-if="city">@{{ city }}</li>
+                <li v-if="country">@{{ country }}</li>
             </ul>
             @if (!empty($slot))
                 <div class="mt-auto flex flex-col self-end">
