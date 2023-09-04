@@ -27,34 +27,36 @@
         },
 
         computed: {
-            addresses() {
+            hideBilling() {
+                return this.shipping && this.billing && this.sameAddress(this.shipping, this.billing);
+            },
+
+            shipping() {
                 if(!this.order?.sales_order_addresses) {
-                    return {}
+                    return null;
                 }
-                let addresses = {}
 
                 let shipping = this.order.sales_order_addresses.filter(e => e.address_type == 'shipping')
-                let billing = this.order.sales_order_addresses.filter(e => e.address_type == 'billing')
-
-                let pickup_address = shipping.length > 1 ? shipping[0] : null;
-                let same_billing = this.sameAddress(shipping.at(-1), billing.at(-1))
-
-                if(pickup_address) {
-                    addresses['pickup'] = pickup_address
-                    addresses['billing'] = billing.at(-1)
-                    return addresses
-                }
-
-                if(!same_billing) {
-                    addresses['shipping'] = shipping.at(-1)
-                    addresses['billing'] = billing.at(-1)
-                    return addresses
-                }
-                
-                addresses['shipping_billing'] = shipping.at(-1)
-
-                return addresses
+                return shipping.length > 1 ? null : shipping.at(-1)
             },
+
+            billing() {
+                if(!this.order?.sales_order_addresses) {
+                    return null;
+                }
+
+                let billing = this.order.sales_order_addresses.filter(e => e.address_type == 'billing')
+                return billing.at(-1)
+            },
+
+            pickup() {
+                if(!this.order?.sales_order_addresses) {
+                    return null;
+                }
+
+                let shipping = this.order.sales_order_addresses.filter(e => e.address_type == 'shipping')
+                return shipping.length > 1 ? shipping[0] : null
+            }
         }
     }
 </script>

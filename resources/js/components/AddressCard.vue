@@ -4,10 +4,6 @@
             address: Object,
             shipping: Boolean,
             billing: Boolean,
-            customTitle: {
-                type: String,
-                default: '',
-            }
         },
 
         render() {
