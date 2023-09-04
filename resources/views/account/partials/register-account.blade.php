@@ -37,7 +37,7 @@
                 v-model="variables.password"
                 required
             />
-            @if(config('customer/create_account/vat_frontend_visibility', 0))
+            @if(Rapidez::config('customer/create_account/vat_frontend_visibility', 0))
                 <toggler>
                     <div slot-scope="{ toggle, isOpen }" class="contents">
                         <x-rapidez-ct::input.checkbox
