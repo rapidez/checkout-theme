@@ -1,13 +1,13 @@
 @extends('rapidez::layouts.app')
 
-@section('title', 'Cart')
+@section('title', __('Checkout'))
 
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('content')
     <checkout v-slot="{ checkout, cart, hasItems, save, goToStep }" :set="checkout.step = Math.max(checkout.step, 2)" v-cloak>
         <div class="container">
-            <x-rapidez-ct::layout class="mt-14">
+            <x-rapidez-ct::layout class="mt-8 sm:mt-14">
                 <template v-if="checkout.step == 2 && hasItems">
                     @include('rapidez-ct::checkout.steps.credentials')
                 </template>
