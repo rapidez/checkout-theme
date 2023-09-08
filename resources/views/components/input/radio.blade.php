@@ -1,10 +1,12 @@
 @props(['name'])
-<label {{ $attributes->only('class')->class("relative flex w-full cursor-pointer items-center justify-start gap-x-3 rounded border bg-white px-5 sm:px-7 py-7 text-sm text-ct-primary") }}>
-    <input name="{{ $name }}" type="radio" {{ $attributes->except('class') }} class="peer text-ct-accent w-6 h-6 focus:ring-offset-0 focus:ring-0 border-ct-border transition"/>
-    <div class="absolute -inset-y-px -left-px w-1 rounded-l bg-ct-accent opacity-0 transition-all peer-checked:opacity-100"></div>
+<label {{ $attributes->only('class')->class('relative flex w-full cursor-pointer items-center justify-start gap-x-3 rounded border bg-white px-5 sm:px-7 py-7 text-ct-sm text-ct-primary') }}>
+    <span class="flex aspect-square h-6 w-6 items-center justify-center rounded-full border bg-ct-white">
+        <input name="{{ $name }}" type="radio" {{ $attributes->except('class') }} class="peer h-3 w-3 border-none text-ct-accent transition checked:bg-none focus:ring-0 focus:ring-offset-0" />
+        <span class="absolute -inset-y-px -left-px w-1 rounded-l bg-ct-accent opacity-0 transition-all peer-checked:opacity-100"></span>
+    </span>
     @isset($slot)
-        <div class="flex w-full flex-wrap items-center justify-between gap-x-3">
+        <span class="flex w-full flex-wrap items-center justify-between gap-x-3">
             {{ $slot }}
-        </div>
+        </span>
     @endisset
 </label>
