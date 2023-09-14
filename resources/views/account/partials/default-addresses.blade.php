@@ -5,7 +5,7 @@
         v-bind:set-billing="data.customer.billing_address = data.customer.addresses.find(e => e.default_billing)"
         v-bind:set-shipping="data.customer.shipping_address = data.customer.addresses.find(e => e.default_shipping)"
     >
-        <x-rapidez-ct::separated-listing>
+        <x-rapidez-ct::list>
             <template v-if="data.customer.addresses.length">
                 <template v-if="data.customer.shipping_address?.default_billing || !data.customer.shipping_address || !data.customer.billing_address">
                     <x-rapidez-ct::address v-bind:address="data.customer.shipping_address" shipping billing/>
@@ -25,6 +25,6 @@
                 <span>@lang('Account settings')</span>
                 <x-heroicon-o-cog class="h-6 stroke-[1.5px]" />
             </a>
-        </x-rapidez-ct::separated-listing>
+        </x-rapidez-ct::list>
     </x-rapidez-ct::card>
 </graphql>

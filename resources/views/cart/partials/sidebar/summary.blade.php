@@ -2,7 +2,7 @@
     <x-rapidez-ct::title.lg class="mb-4">
         @lang('Order overview')
     </x-rapidez-ct::title.lg>
-    <x-rapidez-ct::separated-listing>
+    <x-rapidez-ct::list tag="ul">
         <li>
             <span>@lang('Subtotal')</span>
             <span>@{{ cart.subtotal | price }}</span>
@@ -28,7 +28,7 @@
             <span>@lang('Total')</span>
             <span>@{{ cart.total | price }}</span>
         </li>
-    </x-rapidez-ct::separated-listing>
+    </x-rapidez-ct::list>
 
     <x-rapidez-ct::button.enhanced :href="route('checkout')" class="flex w-full items-center justify-center gap-1 mt-6" dusk="checkout">
         @lang('To checkout')
