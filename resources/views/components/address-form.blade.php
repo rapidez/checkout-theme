@@ -90,6 +90,7 @@
             name="{{ $type }}_housenumber"
             label="Housenumber"
             v-model.lazy="{{ $address }}.street[1]"
+            type="{{ Rapidez::config('customer/address/street_lines', 3) == 3 ? 'number' : 'text' }}"
             required
         />
     @endif
