@@ -85,20 +85,12 @@
         v-model.lazy="{{ $address }}.postcode"
         required
     />
-    @if (Rapidez::config('customer/address/street_lines', 3) == 2)
+    @if (Rapidez::config('customer/address/street_lines', 3) >=2)
         <x-rapidez-ct::input
             name="{{ $type }}_housenumber"
             label="Housenumber"
             v-model.lazy="{{ $address }}.street[1]"
-            required
-        />
-    @endif
-    @if (Rapidez::config('customer/address/street_lines', 3) > 2)
-        <x-rapidez-ct::input
-            name="{{ $type }}_housenumber"
-            label="Housenumber"
-            type="number"
-            v-model.lazy="{{ $address }}.street[1]"
+            type="{{ Rapidez::config('customer/address/street_lines', 3) == 3 ? 'number' : 'text' }}"
             required
         />
     @endif
