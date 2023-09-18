@@ -1,64 +1,49 @@
-<div class="bg-ct-inactive-100 mt-5 rounded py-4 text-sm">
-    <div class="flex w-full items-center gap-x-6 pr-6 text-xs">
-        <div class="sm:w-40"></div>
-        <div class="sm:w-40">@lang('Product')</div>
-        <div class="ml-auto flex items-center gap-10 max-md:hidden">
-            <div class="w-16">@lang('Price')</div>
-            <div class="w-32 text-center">@lang('Amount')</div>
-            <div class="w-16">@lang('Subtotal')</div>
-        </div>
-    </div>
-</div>
-
-<ul>
-    <li
-        class="flex border-b py-5"
-        v-for="(item, itemId, index) in cart.items"
-    >
-        <div class="flex w-full flex-wrap gap-x-3 gap-y-3 text-sm sm:gap-x-6 sm:pr-6 md:items-center">
-            <div class="h-24 flex w-40 items-center justify-center">
-                <img
-                    class="h-24 w-40 object-contain"
-                    :alt="item.name"
-                    :src="'/storage/{{ config('rapidez.store') }}/resizes/200/magento/catalog/product' + item.image + '.webp'"
-                    height="100"
-                    v-if="item.image"
-                >
-                <x-rapidez::no-image
-                    class="h-24 w-40"
-                    v-else
-                />
-            </div>
-            <div class="flex w-40 flex-col items-start sm:flex-1">
-                <a
-                    :href="item.url | url"
-                    dusk="cart-item-name"
-                >@{{ item.name }}</a>
-                <div v-for="(optionValue, option) in item.options">
-                    @{{ option }}: @{{ optionValue }}
+<table class="my-5 w-full border-b">
+    <thead class="bg-ct-inactive-100 mt-5 flex rounded md:table-header-group">
+        <tr class="text-xs [&>*]:py-4 [&>*]:text-left [&>*]:font-normal md:[&>*]:px-5">
+            <th class="!pl-0 max-md:hidden"></th>
+            <th>@lang('Product')</th>
+            <th class="max-md:hidden">@lang('Price')</th>
+            <th class="!text-center max-md:hidden">@lang('Amount')</th>
+            <th class="max-md:hidden">@lang('Subtotal')</th>
+        </tr>
+    </thead>
+    <tbody class="divide-y">
+        <tr v-for="(item, itemId, index) in cart.items" class="flex flex-wrap gap-y-5 py-5 md:table-row [&>*]:text-left md:[&>*]:p-5">
+            <td class="h-24 w-40 !pl-0 max-md:flex max-md:w-1/2">
+                <img v-if="item.image" class="object-contain" :alt="item.name" :src="'/storage/{{ config('rapidez.store') }}/resizes/200/magento/catalog/product' + item.image + '.webp'">
+                <x-rapidez::no-image v-else />
+            </td>
+            <td class="flex max-md:w-1/2 max-md:w-full md:table-cell">
+                <div class="flex flex-col items-start">
+                    <a :href="item.url | url">
+                        <div dusk="cart-item-name">@{{ item.name }}</div>
+                        <div v-for="(optionValue, option) in item.options">
+                            @{{ option }}: @{{ optionValue }}
+                        </div>
+                        <div v-for="option in cart?.items2?.find((item) => item.item_id == itemId).options.filter((option) => !['info_buyRequest', 'option_ids'].includes(option.code) && option.label)">
+                            @{{ option.label }}: @{{ option.value.title || option.value }}
+                        </div>
+                    </a>
+                    <button v-on:click="remove(item)" class="text-ct-inactive mt-1 text-xs hover:underline" :dusk="'item-delete-' + index">
+                        @lang('Remove')
+                    </button>
                 </div>
-                <div v-for="option in cart?.items2?.find((item) => item.item_id == itemId).options.filter((option) => !['info_buyRequest', 'option_ids'].includes(option.code) && option.label)">
-                    @{{ option.label }}: @{{ option.value.title || option.value }}
+            </td>
+            <td class="flex items-center font-medium max-md:w-1/3 md:table-cell">
+                <div v-if="item.specialPrice">
+                    @{{ item.specialPrice | price }}
                 </div>
-                <button
-                    class="text-ct-inactive mt-1 text-xs hover:underline"
-                    @click="remove(item)"
-                    :dusk="'item-delete-' + index"
-                >
-                    @lang('Remove')
-                </button>
-            </div>
-            <div class="flex items-center justify-between gap-10 font-medium max-sm:flex-1 sm:ml-auto">
-                <div class="text-sm sm:w-16">
+                <div :class="{ 'line-through text-xs text-ct-inactive font-normal': item.specialPrice }">
                     @{{ item.price | price }}
                 </div>
-                <div class="flex w-32 items-center justify-center">
-                    <x-rapidez-ct::input.quantity />
-                </div>
-                <div class="text-sm sm:w-16">
-                    @{{ item.total | price }}
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+            </td>
+            <td class="flex items-center font-medium max-md:w-1/3 md:table-cell">
+                <x-rapidez-ct::input.quantity />
+            </td>
+            <td class="flex items-center justify-end text-right font-medium max-md:w-1/3 md:table-cell">
+                @{{ item.total | price }}
+            </td>
+        </tr>
+    </tbody>
+</table>
