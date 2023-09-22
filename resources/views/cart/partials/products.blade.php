@@ -1,6 +1,6 @@
 <table class="my-5 w-full border-b">
     <thead class="bg-ct-inactive-100 mt-5 flex rounded md:table-header-group">
-        <tr class="text-xs [&>*]:py-4 [&>*]:text-left [&>*]:font-normal md:[&>*]:px-5">
+        <tr class="text-xs [&>*]:py-4 [&>*]:font-normal md:[&>*]:px-5">
             <th class="!pl-0 max-md:hidden"></th>
             <th>@lang('Product')</th>
             <th class="max-md:hidden">@lang('Price')</th>
@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody class="divide-y">
-        <tr v-for="(item, itemId, index) in cart.items" class="flex flex-wrap gap-y-5 py-5 md:table-row [&>*]:text-left md:[&>*]:p-5">
+        <tr v-for="(item, itemId, index) in cart.items" class="flex flex-wrap gap-y-5 py-5 md:table-row md:[&>*]:p-5">
             <td class="h-24 w-40 !pl-0 max-md:flex max-md:w-1/2">
                 <img v-if="item.image" class="object-contain" :alt="item.name" :src="'/storage/{{ config('rapidez.store') }}/resizes/200/magento/catalog/product' + item.image + '.webp'">
                 <x-rapidez::no-image v-else />
