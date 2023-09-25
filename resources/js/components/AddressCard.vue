@@ -7,29 +7,37 @@
         },
 
         render() {
-            return this.$scopedSlots.default({
-                address: this.formattedAddress,
-                baseAddress: this.address,
-                shipping: this.shipping,
-                billing: this.billing,
-                isEmpty: this.isEmpty,
-            });
+            return this.$scopedSlots.default(Object.assign(this, { self: this }))
         },
 
         computed: {
-            formattedAddress() {
-                let data = {
-                    company: this.address.company ?? '',
-                    name: [this.address.firstname, this.address.middlename, this.address.lastname].filter(Boolean).join(' '),
-                    street: this.address.street?.filter(Boolean).join(' ') ?? '',
-                    city: [this.address.postcode, this.address.city].filter(Boolean).join(' '),
-                    country: this.address.country_id ?? this.address.country_code ?? '',
+            company() {
+                return this.address.company ?? '';
+            },
+
+            street() {
+                let street = this.address.street
+                if (Array.isArray(street)) {
+                    return street?.filter(Boolean).join(' ') ?? ''
+                } else {
+                    return street.replace('\n', ' ')
                 }
-                return Object.fromEntries(Object.entries(data).filter(([key, value]) => value))
+            },
+
+            name() {
+                return [this.address.firstname, this.address.middlename, this.address.lastname].filter(Boolean).join(' ');
+            },
+
+            city() {
+                return [this.address.postcode, this.address.city].filter(Boolean).join(' ')
+            },
+
+            country() {
+                return this.address.country_id ?? this.address.country_code ?? ''
             },
 
             isEmpty() {
-                return Object.keys(this.formattedAddress).filter(key => key != 'country').length == 0
+                return [this.company, this.street, this.name, this.city].filter(Boolean).length == 0
             }
         }
     }

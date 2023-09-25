@@ -6,8 +6,8 @@
             <div slot-scope="{ toggle, isOpen }" class="contents">
                 <x-rapidez-ct::input.checkbox
                     class="col-span-full"
-                    id="isb2b"
-                    name="isb2b"
+                    id="{{ $type }}_isb2b"
+                    name="{{ $type }}_isb2b"
                     v-model="isOpen"
                     v-on:click="toggle"
                 >
@@ -90,6 +90,7 @@
             name="{{ $type }}_housenumber"
             label="Housenumber"
             v-model.lazy="{{ $address }}.street[1]"
+            type="{{ Rapidez::config('customer/address/street_lines', 3) == 3 ? 'number' : 'text' }}"
             required
         />
     @endif

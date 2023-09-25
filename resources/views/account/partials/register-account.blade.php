@@ -39,30 +39,30 @@
                     v-model="variables.password"
                     required
                 />
-                @if(config('customer/create_account/vat_frontend_visibility', 0))
-                <toggler>
-                    <div slot-scope="{ toggle, isOpen }" class="contents">
-                        <x-rapidez-ct::input.checkbox
-                            id="isb2b"
-                            name="isb2b"
-                            v-model="isOpen"
-                            v-on:click="toggle"
-                        >
-                            @lang('This is a business account')
-                        </x-rapidez-ct::input.checkbox>
-                        <x-rapidez-ct::input
-                            v-cloak
-                            v-if="isOpen"
-                            name="taxvat"
-                            label="Vat ID"
-                            type="text"
-                            v-model="variables.taxvat"
-                            required
-                        />
+                @if(Rapidez::config('customer/create_account/vat_frontend_visibility', 0))
+                    <toggler>
+                        <div slot-scope="{ toggle, isOpen }" class="contents">
+                            <x-rapidez-ct::input.checkbox
+                                id="isb2b"
+                                name="isb2b"
+                                v-model="isOpen"
+                                v-on:click="toggle"
+                            >
+                                @lang('This is a business account')
+                            </x-rapidez-ct::input.checkbox>
+                            <x-rapidez-ct::input
+                                v-cloak
+                                v-if="isOpen"
+                                name="taxvat"
+                                label="Vat ID"
+                                type="text"
+                                v-model="variables.taxvat"
+                                required
+                            />
                         </div>
                     </toggler>
                 @endif
-        </form>
+            </form>
         </x-rapidez-ct::card.inactive>
 
         <x-rapidez-ct::newsletter v-model="variables.is_subscribed"/>
