@@ -7,7 +7,7 @@
             <span>@lang('Subtotal')</span>
             <span>@{{ cart.subtotal | price }}</span>
         </li>
-        <li>
+        <li v-if="cart.shipping_method">
             <span>@lang('Shipping')</span>
             <span v-if="cart.shipping_amount_excl_tax > 0">
                 @{{ cart.shipping_amount_excl_tax | price }}
