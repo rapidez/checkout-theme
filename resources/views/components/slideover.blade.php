@@ -5,7 +5,7 @@
     <div class="flex w-full items-center justify-center bg-ct-primary py-4 px-5 text-lg font-bold text-white">
         <div>{{ $title }}</div>
         <label v-bind:for="{{ $id }}" class="absolute right-5 cursor-pointer">
-            <x-heroicon-o-x class="h-6" />
+            <x-heroicon-o-x-mark class="h-6" />
         </label>
     </div>
     <div class="overflow-y-auto overflow-x-hidden p-5">
