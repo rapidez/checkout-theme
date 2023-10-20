@@ -14,7 +14,7 @@
                 <img v-if="item.image" class="object-contain" :alt="item.name" :src="'/storage/{{ config('rapidez.store') }}/resizes/200/magento/catalog/product' + item.image + '.webp'">
                 <x-rapidez::no-image v-else />
             </td>
-            <td class="flex max-md:w-1/2 max-md:w-full md:table-cell">
+            <td class="flex max-md:w-1/2 md:table-cell">
                 <div class="flex flex-col items-start">
                     <a :href="item.url | url">
                         <div dusk="cart-item-name">@{{ item.name }}</div>
