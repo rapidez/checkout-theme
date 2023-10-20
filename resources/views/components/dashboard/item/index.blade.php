@@ -5,7 +5,7 @@
     'is' => isset($item['href']) ? 'a' : 'button',
 ]) }}>
     @if ($item['icon'] ?? false)
-        <x-icon name="{{ $item['icon'] }}" class="h-6 stroke-[1.5px]"/>
+        <x-icon name="{{ $item['icon'] }}" class="h-6 w-6 stroke-[1.5px]"/>
     @endif
     <div class="flex flex-col gap-y-1">
         @if ($item['heading'] ?? false)
@@ -21,7 +21,7 @@
             </strong>
         @endif
         @if ($item['subheading'] ?? false)
-            <p class="text-inactive">
+            <p class="text-ct-inactive">
                 @lang($item['subheading'])
             </p>
         @endif
