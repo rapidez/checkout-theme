@@ -1,15 +1,15 @@
-<li class="flex justify-between last:font-medium [&>*]:flex-1 last:[&>*]:text-right">
+<div>
     <template v-if="segment.code !== 'shipping'">
-        <span>@{{ segment.title }}</span>
-        <span>@{{ segment.value | price }}</span>
+        <dt>@{{ segment.title }}</dt>
+        <dd>@{{ segment.value | price }}</dd>
     </template>
     <template v-else>
-        <span>@lang('Shipping')</span>
-        <span v-if="checkout.totals.shipping_amount > 0">
+        <dt>@lang('Shipping')</dt>
+        <dd v-if="checkout.totals.shipping_amount > 0">
             @{{ checkout.totals.shipping_amount | price }}
-        </span>
-        <span v-else class="text-ct-enhanced font-medium">
+        </dd>
+        <dd v-else class="text-ct-enhanced font-medium">
             @lang('Free')
-        </span>
+        </dd>
     </template>
-</li>
+</div>
