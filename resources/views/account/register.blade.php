@@ -11,10 +11,8 @@
                 @lang('Register')
             </x-rapidez-ct::title>
 
-            <x-rapidez-ct::sections>
-                @include('rapidez-ct::account.partials.register-account')
-                @include('rapidez-ct::components.newsletter')
-            </x-rapidez-ct::sections>
+            
+            @include('rapidez-ct::account.partials.register-account')
 
             <x-rapidez-ct::toolbar>
                 <x-rapidez-ct::button.outline :href="route('account.login')">

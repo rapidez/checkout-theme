@@ -1,0 +1,24 @@
+mutation createCustomer (
+    $firstname: String!,
+    $lastname: String!,
+    $email: String!,
+    $password: String,
+    $taxvat: String,
+    $is_subscribed: Boolean
+) {
+    createCustomerV2 (
+        input: {
+            firstname: $firstname,
+            lastname: $lastname,
+            email: $email,
+            password: $password,
+            is_subscribed:
+            $is_subscribed,
+            taxvat: $taxvat
+        }
+    ) {
+        customer {
+            email
+        }
+    }
+}
