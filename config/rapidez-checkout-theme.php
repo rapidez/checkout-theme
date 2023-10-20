@@ -16,7 +16,7 @@ return [
                 'subheading' => 'Change credentials / Add addresses / Newsletters',
             ],
             'logout' => [
-                'icon' => 'heroicon-o-logout',
+                'icon' => 'heroicon-o-arrow-right-on-rectangle',
                 'heading' => 'Logout',
                 'subheading' => 'Logout from your account',
             ],

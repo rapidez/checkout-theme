@@ -5,7 +5,7 @@
     <x-rapidez-ct::sections class="relative z-10">
         <x-rapidez-ct::card.inactive>
             <label for="popup" class="absolute cursor-pointer z-10 top-7 right-7 w-5 h-5">
-                <x-heroicon-o-x />
+                <x-heroicon-o-x-mark />
             </label>
             @if($title)
                 <x-rapidez-ct::title class="mb-5">
