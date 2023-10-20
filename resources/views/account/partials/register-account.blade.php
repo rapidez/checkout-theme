@@ -1,6 +1,6 @@
 <x-rapidez::recaptcha location="customer_create"/>
 <graphql-mutation
-    query="mutation customer ($firstname: String!, $lastname: String!, $email: String!, $password: String, $taxvat: String, $is_subscribed: Boolean) { createCustomerV2 ( input: { firstname: $firstname, lastname: $lastname, email: $email, password: $password, is_subscribed: $is_subscribed, taxvat: $taxvat } ) { customer { email } } }"
+    query="@include('rapidez-ct::account.partials.queries.register-account')"
     redirect="{{ route('account.overview') }}"
     :callback="registerCallback"
     :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
