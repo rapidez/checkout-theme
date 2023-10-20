@@ -19,7 +19,7 @@
             </x-rapidez-ct::input.radio>
         </div>
         <graphql query="{ checkoutAgreements { agreement_id name checkbox_text content is_html mode } }">
-            <div v-if="data" class="mt-5 flex flex-col gap-y-4" slot-scope="{ data }">
+            <div v-if="data?.checkoutAgreements?.length" class="mt-5 flex flex-col gap-y-4" slot-scope="{ data }">
                 <div v-for="agreement in data.checkoutAgreements">
                     <label
                         class="text-ct-primary cursor-pointer text-sm underline"
