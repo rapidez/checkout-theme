@@ -2,7 +2,7 @@
 <x-tag
     is="{{ $tag ?? ($attributes->has('href') || $attributes->has('v-bind:href') ? 'a' : 'button') }}"
     {{ $attributes->class([
-        'relative inline-block self-start rounded py-4 px-6 text-center text-sm transition',
+        'relative inline-block self-start rounded py-4 px-6 text-center text-sm transition cursor-pointer',
         'disabled:cursor-not-allowed disabled:opacity-70',
     ]) }}
     v-bind:disabled="$root.loading"
