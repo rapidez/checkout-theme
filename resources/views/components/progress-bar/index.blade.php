@@ -1,4 +1,3 @@
-@props(['checkout' => true])
 @php($steps = config('rapidez.frontend.checkout_steps.' . config('rapidez.store_code'), config('rapidez.checkout_steps.' . config('rapidez.store_code'), config('rapidez.checkout_steps.default'))))
 <div class="flex items-center space-x-3.5 sm:space-x-[18px] text-xs" v-cloak>
     <span class="whitespace-nowrap font-medium text-ct-inactive">
