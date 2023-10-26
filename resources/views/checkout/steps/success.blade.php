@@ -9,7 +9,6 @@
         <x-rapidez-ct::sections>
             @include('rapidez-ct::checkout.partials.sections.success.order-info')
             @include('rapidez-ct::checkout.partials.sections.success.products')
-            @include('rapidez-ct::components.newsletter')
             @includeWhen(
                 config('rapidez-checkout-theme.checkout.success.register'),
                 'rapidez-ct::checkout.partials.sections.success.create-account'
