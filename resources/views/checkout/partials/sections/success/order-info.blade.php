@@ -5,7 +5,7 @@
                 <template v-if="hideBilling">
                     <x-rapidez-ct::card.address v-bind:address="shipping" shipping billing check/>
                 </template>
-                <x-rapidez-ct::card.address v-bind:address="pickup" custom-title="Pickup address" check/>
+                <x-rapidez-ct::card.address v-if="pickup" v-bind:address="pickup" custom-title="Pickup address" check/>
                 <x-rapidez-ct::card.address v-if="!hideBilling && shipping" v-bind:address="shipping" shipping check/>
                 <x-rapidez-ct::card.address v-if="!hideBilling && billing" v-bind:address="billing" billing check/>
             </div>
