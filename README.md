@@ -1,8 +1,12 @@
-# Checkout theme - In development...
+# Rapidez Checkout Theme
 
-A checkout theme including the checkout, cart and accounts views.
+An **opinionated** checkout theme for [Rapidez](https://github.com/rapidez/rapidez). This theme differs from the core checkout in the following ways:
 
-Screenshots...
+- Updated UI in the cart and checkout with address cards, nicer base components, and combined login/credentials step
+- Beautified UI in the account center with a landing page and simplified navigation
+- Overhaul of the component structure, allowing for limitless control over every part of the checkout theme without hassle
+
+...Image...
 
 ## Installation
 
@@ -15,7 +19,10 @@ To use the views from this package instead of the default ones, you'll need to p
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=core-overwrites
 ```
 
+If you've already overwritten these by yourself before you installed this package, you will have to manually overwrite these as the publish command will not overwrite already existing files.
+
 Add these colors to your `tailwind.config.js` and modify them to your liking:
+(Alternatively, you could add these to a separate file and add it as a preset to your tailwind.config.js)
 ```
 colors: {
     ct: {
@@ -39,7 +46,7 @@ colors: {
 },
 ```
 
-This package also requires the `SKU` functionality to be enabled in the image resizer, which is normally enabled by default.
+This package also requires the `SKU` functionality to be enabled in the image resizer. This is normally enabled by default.
 
 ## Configuration
 
@@ -54,6 +61,8 @@ We have provided a set of payment icons for your convenience. To integrate these
 ```
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=payment-icons
 ```
+
+For future deployment purposes, it might be a good idea to add this command to your composer post-autoload-dump script.
 
 ## Customizations
 
