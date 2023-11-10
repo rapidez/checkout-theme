@@ -1,8 +1,36 @@
-# Checkout theme - In development...
+# Rapidez Checkout Theme
 
-A checkout theme including the checkout, cart and accounts views.
+An **opinionated** checkout with customer center for [Rapidez](https://github.com/rapidez/rapidez). Easily configurable with your own logo, colors, fonts and style. A fully mobile optimized theme which takes about 1 hour to fully implement.
 
-Screenshots...
+![](images/checkout-theme.gif)
+
+Package includes:
+- Extensive checkout (including a fast checkout experience when users are logged-in)
+- Extensive customer center
+- Overhaul of the component structure, allowing for limitless control over every part of the checkout theme without hassle
+
+Checkout
+- Step 1 - Cart ([image](images/step-1-cart-payment.jpg))
+- Step 2 - Shipping information with shipping methods ([logged in](images/step-2-logged-in-my-information.jpg), [logged out](images/step-2-my-information.jpg))
+- Step 3 - Payment method ([image](images/step-3-payment.jpg))
+- Step 4 - Order success ([image](images/step-4-success.jpg))
+
+Customer center
+- Account - Login + Register
+- Account - Forgot password + Register
+- Account - Register account + Account features + Newsletter subscription (optional)
+- Account - Dashboard (My orders, Account settings)
+- Account - My orders
+- Account - Account settings
+
+Easily configurable in less than 5 minutes
+- Colors - Change a total of 8 variables for personal customization
+- Logo - Simply add your own logo by extending 1 template
+- Visuals - Change the look of various types of cards, customer center tiles, etc, by extending well-defined templates
+
+Fast checkout experience
+- Already logged in - If the user is already logged in when entering the checkout, the user enters a simplified step 2 of the checkout.
+- Not logged in - If the user is not logged in when entering the checkout, we verify the e-mail that's being used on step 2 of the checkout. If the e-mail is known we provide a login screen where the user can log in to enter the simplified step 2 state.
 
 ## Installation
 
@@ -15,7 +43,10 @@ To use the views from this package instead of the default ones, you'll need to p
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=core-overwrites
 ```
 
+If you've already overwritten these by yourself before you installed this package, you will have to manually overwrite these as the publish command will not overwrite already existing files.
+
 Add these colors to your `tailwind.config.js` and modify them to your liking:
+(Alternatively, you could add these to a separate file and add it as a preset to your tailwind.config.js)
 ```
 colors: {
     ct: {
@@ -39,7 +70,7 @@ colors: {
 },
 ```
 
-This package also requires the `SKU` functionality to be enabled in the image resizer, which is normally enabled by default.
+This package also requires the `SKU` functionality to be enabled in the image resizer. This is normally enabled by default.
 
 ## Configuration
 
@@ -54,6 +85,8 @@ We have provided a set of payment icons for your convenience. To integrate these
 ```
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=payment-icons
 ```
+
+For future deployment purposes, it might be a good idea to add this command to your composer post-autoload-dump script.
 
 ## Customizations
 
