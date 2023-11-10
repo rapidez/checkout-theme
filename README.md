@@ -2,7 +2,7 @@
 
 An **opinionated** checkout with customer center for [Rapidez](https://github.com/rapidez/rapidez). Easily configurable with your own logo, colors, fonts and style. A fully mobile optimized theme which takes about 1 hour to fully implement.
 
-![](https://justbetter.nl/storage/repositories/rapidez/checkout-theme/checkout-theme.gif)
+![](images/checkout-theme.gif)
 
 Package includes:
 - Extensive checkout (including a fast checkout experience when users are logged-in)
@@ -10,10 +10,10 @@ Package includes:
 - Overhaul of the component structure, allowing for limitless control over every part of the checkout theme without hassle
 
 Checkout
-- Step 1 - Cart ([image](https://justbetter.nl/storage/repositories/rapidez/checkout-theme/step-1-cart-payment.jpg))
-- Step 2 - Shipping information with shipping methods ([logged in](https://justbetter.nl/storage/repositories/rapidez/checkout-theme/step-2-logged-in-my-information.jpg), [logged out](https://justbetter.nl/storage/repositories/rapidez/checkout-theme/step-2-my-information.jpg))
-- Step 3 - Payment method ([image](https://justbetter.nl/storage/repositories/rapidez/checkout-theme/step-3-payment.jpg))
-- Step 4 - Order success ([image](https://justbetter.nl/storage/repositories/rapidez/checkout-theme/step-4-success.jpg))
+- Step 1 - Cart ([image](images/step-1-cart-payment.jpg))
+- Step 2 - Shipping information with shipping methods ([logged in](images/step-2-logged-in-my-information.jpg), [logged out](images/step-2-my-information.jpg))
+- Step 3 - Payment method ([image](images/step-3-payment.jpg))
+- Step 4 - Order success ([image](images/step-4-success.jpg))
 
 Customer center
 - Account - Login + Register
