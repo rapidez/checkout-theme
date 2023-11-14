@@ -4,6 +4,7 @@
 ## [1.0.1](https://github.com/rapidez/checkout-theme/releases/tag/1.0.1) - 2023-11-14
 
 ### Fixed
+
 - Fix image names (#51)
 - Support MSP way of saving method_title (#52)
 
