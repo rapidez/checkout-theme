@@ -18,7 +18,7 @@
                 <div class="flex flex-1 flex-wrap justify-between">
                     <ul class="flex flex-col gap-1">
                         <li v-for="method in order.sales_order_payments">
-                            @{{ method.additional_information.method_title }}
+                            @{{ method.additional_information.method_title || method.additional_information.raw_details_info.method_title }}
                         </li>
                     </ul>
                     @if (!empty($slot))
