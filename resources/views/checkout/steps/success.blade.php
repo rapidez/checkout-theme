@@ -10,7 +10,7 @@
             @include('rapidez-ct::checkout.partials.sections.success.order-info')
             @include('rapidez-ct::checkout.partials.sections.success.products')
             @includeWhen(
-                config('rapidez-checkout-theme.checkout.success.register'),
+                config('rapidez.checkout-theme.checkout.success.register'),
                 'rapidez-ct::checkout.partials.sections.success.create-account'
             )
         </x-rapidez-ct::sections>
