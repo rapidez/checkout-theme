@@ -23,7 +23,7 @@ class ServiceProvider extends BaseServiceProvider
 
     public function registerConfig() : self
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/rapidez-checkout-theme.php', 'rapidez-checkout-theme');
+        $this->mergeConfigFrom(__DIR__.'/../config/rapidez/checkout-theme.php', 'rapidez.checkout-theme');
 
         return $this;
     }
@@ -46,7 +46,7 @@ class ServiceProvider extends BaseServiceProvider
         ], 'views');
 
         $this->publishes([
-            __DIR__.'/../config/rapidez-checkout-theme.php' => config_path('rapidez-checkout-theme.php'),
+            __DIR__.'/../config/rapidez/checkout-theme.php' => config_path('rapidez/checkout-theme.php'),
         ], 'config');
         $this->publishes([
             __DIR__.'/../resources/payment-icons' => public_path('vendor/payment-icons'),

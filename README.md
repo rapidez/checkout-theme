@@ -74,7 +74,7 @@ This package also requires the `SKU` functionality to be enabled in the image re
 
 ## Configuration
 
-Publish the configuration file and have a look at the options `config/rapidez-checkout-theme.php`
+Publish the configuration file and have a look at the options `config/rapidez/checkout-theme.php`
 ```
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=config
 ```

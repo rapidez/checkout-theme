@@ -7,7 +7,7 @@
 @section('account-content')
     <x-rapidez-ct::sections>
         <x-rapidez-ct::card.inactive class="flex flex-col gap-3">
-            @foreach (config('rapidez-checkout-theme.account.navigation') as $key => $item)
+            @foreach (config('rapidez.checkout-theme.account.navigation') as $key => $item)
                 @includeFirst(['rapidez-ct::components.dashboard.item.' . $key, 'rapidez-ct::components.dashboard.item.index'])
             @endforeach
         </x-rapidez-ct::card.inactive>
