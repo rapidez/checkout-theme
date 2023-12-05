@@ -1,7 +1,5 @@
 <x-rapidez-ct::card.inactive v-if="!$root.loggedIn">
-    <x-rapidez-ct::title.lg>
-        @lang('Create account')
-    </x-rapidez-ct::title.lg>
+    @include('rapidez-ct::checkout.partials.sections.success.create-account-title')
     <graphql-mutation
         v-cloak
         query="mutation customer ($firstname: String!, $lastname: String!, $email: String!, $password: String) { createCustomerV2 ( input: { firstname: $firstname, lastname: $lastname, email: $email, password: $password } ) { customer { email } } }"
@@ -41,10 +39,5 @@
     </graphql-mutation>
 </x-rapidez-ct::card.inactive>
 <x-rapidez-ct::card.inactive v-else>
-    <x-rapidez-ct::title.lg>
-        @lang('Already logged in')
-    </x-rapidez-ct::title.lg>
-    <x-rapidez-ct::button.enhanced class="mt-5" href="{{ route('account.overview') }}">
-        @lang('Go to your account')
-    </x-rapidez-ct::button.enhanced>
+    @include('rapidez-ct::checkout.partials.sections.success.logged-in')
 </x-rapidez-ct::card.inactive>
