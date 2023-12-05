@@ -13,6 +13,9 @@
                     @include('rapidez-ct::cart.partials.sidebar.sidebar')
                 </x-slot:sidebar>
             </x-rapidez-ct::layout>
+            @if(config('rapidez.checkout-theme.checkout.show_crosssells'))
+                @include('rapidez-ct::cart.partials.crosssells')
+            @endif
         </div>
         <div v-else class="container">
             <p>@lang("You don't have anything in your cart.")</p>

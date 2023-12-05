@@ -23,6 +23,7 @@ return [
         ],
     ],
     'checkout' => [
+        'show_crosssells' => true,
         'success' => [
             // Show the account registration on the success page?
             'register' => false
