@@ -32,9 +32,7 @@
                 v-model="variables.password"
                 required
             />
-            <x-rapidez-ct::button.accent class="self-end justify-self-start" loader>
-                @lang('Create account')
-            </x-rapidez-ct::button.accent>
+            @include('rapidez-ct::checkout.partials.sections.success.create-account-button')
         </form>
     </graphql-mutation>
 </x-rapidez-ct::card.inactive>
