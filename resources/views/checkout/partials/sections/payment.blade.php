@@ -1,7 +1,7 @@
 <x-rapidez-ct::card.inactive>
     <form id="payment" class="flex flex-col gap-2" v-on:submit.prevent="save(['payment_method'], 4)">
         <div v-for="(method, index) in checkout.payment_methods">
-            @include('rapidez-ct::checkout.sections.partials.payment.payment-methods')
+            @include('rapidez-ct::checkout.partials.sections.payment.payment-methods')
         </div>
         <graphql query="{ checkoutAgreements { agreement_id name checkbox_text content is_html mode } }">
             <div v-if="data?.checkoutAgreements?.length" class="mt-5 flex flex-col gap-y-4" slot-scope="{ data }">
@@ -14,7 +14,7 @@
                         @{{ agreement.checkbox_text }}
                     </label>
                     <template v-else>
-                        @include('rapidez-ct::checkout.sections.partials.payment.agreement-checkbox')
+                        @include('rapidez-ct::checkout.partials.sections.payment.agreement-checkbox')
                     </template>
                     <x-rapidez-ct::slideover id="agreement.checkbox_text">
                         <x-slot name="title">
