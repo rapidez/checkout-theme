@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.1.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.1.1...master)
+## [1.1.1](https://github.com/rapidez/checkout-theme/releases/tag/1.1.1) - 2023-12-07
+
+### Fixed
+
+-  Fix import & Moved button to own file for override (https://github.com/rapidez/checkout-theme/pull/58)
+
 ## [1.1.0](https://github.com/rapidez/checkout-theme/releases/tag/1.1.0) - 2023-12-05
 
 ### Changed
