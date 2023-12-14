@@ -19,7 +19,10 @@
         class="relative flex w-full cursor-pointer !items-start rounded border bg-white p-7"
         id="{{ $id }}"
         {{ $attributes->only('v-model')->merge(['v-model' => 'variables.is_subscribed']) }}
-        v-on:change="{{ $attributes->has('v-model') ? '' : 'mutate();$root.user.extension_attributes.is_subscribed=variables.is_subscribed' }}"
+        v-on:change="() => {
+            if (typeof mutate === 'function') { mutate() }
+            if ($root.loggedIn) { $root.user.extension_attributes.is_subscribed=variables.is_subscribed }
+        }"
     >
         <x-slot:slot class="ml-2 flex flex-col gap-1">
             <span class="text-ct-primary text-sm font-medium">@lang('Yes, I want to subscribe to the newsletter')</span>
