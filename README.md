@@ -81,7 +81,7 @@ php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --
 
 ## Payment-icons
 
-Rapidez packages now come with payment icons bundled, and the checkout theme will use these automaticaly. You only have to publish them:
+The Rapidez core and Rapidez packages that contain payment methods come with payment icons bundled, and the checkout theme will use these automatically. You only have to publish them:
 ```
 php artisan vendor:publish --tag=payment-icons
 ```
