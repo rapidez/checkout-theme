@@ -18,8 +18,7 @@
                 v-on:submit.prevent="mutate"
             >
                 <div class="flex-1">
-                    <x-input
-                        class="h-[52px]"
+                    <x-rapidez-ct::input
                         name="email-newsletter"
                         type="email"
                         required
@@ -28,7 +27,7 @@
                         :placeholder="__('Enter your email address')"
                     />
                 </div>
-                <x-button.accent
+                <x-rapidez-ct::button.accent
                     class="relative self-end whitespace-nowrap"
                     type="submit"
                     v-bind:disabled="mutating && !error"
@@ -49,7 +48,7 @@
                             v-else
                         />
                     </div>
-                </x-button.accent>
+                </x-rapidez-ct::button.accent>
             </form>
         </template>
     </graphql-mutation>
