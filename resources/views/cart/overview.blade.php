@@ -13,6 +13,7 @@
                     @include('rapidez-ct::cart.partials.sidebar.sidebar')
                 </x-slot:sidebar>
             </x-rapidez-ct::layout>
+            @include('rapidez-ct::cart.partials.crosssells')
         </div>
         <div v-else class="container">
             <p>@lang("You don't have anything in your cart.")</p>
