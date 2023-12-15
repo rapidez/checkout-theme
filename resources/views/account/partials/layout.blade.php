@@ -16,9 +16,11 @@
         <template v-if="loggedIn">
             <x-rapidez-ct::layout>
                 <x-rapidez-ct::toolbar>
-                    <x-rapidez-ct::title :href="$backurl">
-                        @yield('title')
-                    </x-rapidez-ct::title>
+                    @hasSection('title')
+                        <x-rapidez-ct::title :href="$backurl">
+                            @yield('title')
+                        </x-rapidez-ct::title>
+                    @endif
                     @yield('button')
                 </x-rapidez-ct::toolbar>
                 @yield('account-content')
