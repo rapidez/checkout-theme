@@ -1,6 +1,20 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.1.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.2.0...master)
+## [1.2.0](https://github.com/rapidez/checkout-theme/releases/tag/1.2.0) - 2023-12-15
+
+### Added
+
+- Cross-sells (#57)
+
+### Changed
+
+- Use new payment icons (#59)
+
+### Bugfix
+
+- Only show title in account center if it exists (#61)
+
 ## [1.1.1](https://github.com/rapidez/checkout-theme/releases/tag/1.1.1) - 2023-12-07
 
 ### Fixed
