@@ -15,21 +15,11 @@
             v-slot="{ mutate, variables }"
         >
     @endif
-    <x-rapidez-ct::input.checkbox
-        class="relative flex w-full cursor-pointer !items-start rounded border bg-white p-7"
-        id="{{ $id }}"
-        {{ $attributes->only('v-model')->merge(['v-model' => 'variables.is_subscribed']) }}
-        v-on:change="() => {
-            if (typeof mutate === 'function') { mutate() }
-            if ($root.loggedIn) { $root.user.extension_attributes.is_subscribed=variables.is_subscribed }
-        }"
-    >
-        <x-slot:slot class="ml-2 flex flex-col gap-1">
-            <span class="text-ct-primary text-sm font-medium">@lang('Yes, I want to subscribe to the newsletter')</span>
-            <span class="text-ct-inactive text-xs font-normal">@lang('You will receive this newsletter approximately 2x a year')</span>
-            <x-rapidez-ct::newsletter-visual />
-        </x-slot:slot>
-    </x-rapidez-ct::input.checkbox>
+
+    <x-rapidez-ct::newsletter.partials.checkbox
+        :v-model="$attributes->has('v-model') ? $attributes['v-model'] : 'variables.is_subscribed'"
+    />
+
     @if (!$attributes->has('v-model'))
         </graphql-mutation>
     @endif
