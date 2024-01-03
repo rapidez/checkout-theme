@@ -9,8 +9,6 @@
                 @{{ option.label }}: @{{ option.value.title || option.value }}
             </div>
         </a>
-        <button v-on:click="remove(item)" class="text-ct-inactive mt-1 text-xs hover:underline" :dusk="'item-delete-' + index">
-            @lang('Remove')
-        </button>
+        @include('rapidez-ct::cart.partials.product.remove-button')
     </div>
 </td>
