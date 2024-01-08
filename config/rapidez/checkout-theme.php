@@ -28,4 +28,8 @@ return [
             'register' => false
         ],
     ],
+    'register' => [
+        // Make the user create an address during registration.
+        'create-address' => false,
+    ],
 ];
