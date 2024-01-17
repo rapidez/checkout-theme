@@ -20,7 +20,7 @@
         <div :class="{ 'opacity-0': (mutated || mutating) && !error }">
             @lang('Subscribe to newsletter')
         </div>
-        <div class="absolute inset-0 p-[14px]" v-if="(mutated || mutating) && !error">
+        <div class="absolute inset-0 p-3.5" v-if="(mutated || mutating) && !error">
             <x-heroicon-o-arrow-path class="mx-auto h-full animate-spin" v-if="mutating" />
             <x-heroicon-o-check class="mx-auto h-full" v-else />
         </div>
