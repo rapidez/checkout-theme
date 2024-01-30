@@ -1,6 +1,26 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.2.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.3.0...master)
+## [1.3.0](https://github.com/rapidez/checkout-theme/releases/tag/1.3.0) - 2024-01-30
+
+### Added
+
+ - Add option to make the user create an address during registration (https://github.com/rapidez/checkout-theme/pull/63)
+ - Show a button to select address + frontend validation if default address is missing (https://github.com/rapidez/checkout-theme/pull/64)
+
+### Changed
+
+ - Add newsletter to checkout & splice up cart products listing into separate parts (https://github.com/rapidez/checkout-theme/pull/62)
+
+### Bugfix
+
+- Use proper config path (but still keep fallback) (https://github.com/rapidez/checkout-theme/pull/65)
+
+
+
+
+
+
 ## [1.2.0](https://github.com/rapidez/checkout-theme/releases/tag/1.2.0) - 2023-12-15
 
 ### Added
