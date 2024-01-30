@@ -1,21 +1,16 @@
-<x-rapidez-ct::title-progress-bar :href="route('cart')">
+<x-rapidez-ct::section-title :href="route('cart')">
     @lang('Credentials')
-</x-rapidez-ct::title-progress-bar>
+</x-rapidez-ct::section-title>
 
-<form id="credentials" v-on:submit.prevent="save(['credentials'], 3)">
+<x-rapidez-ct::checkout.partials.credentials-form>
     <x-rapidez-ct::sections>
         @include('rapidez-ct::checkout.partials.sections.login')
         @include('rapidez-ct::checkout.partials.sections.address')
         @include('rapidez-ct::checkout.partials.sections.newsletter')
         @include('rapidez-ct::checkout.partials.sections.shipping')
     </x-rapidez-ct::sections>
-</form>
+</x-rapidez-ct::checkout.partials.credentials-form>
 
 <x-rapidez-ct::toolbar>
-    <x-rapidez-ct::button.outline :href="route('cart')">
-        @lang('Back to cart')
-    </x-rapidez-ct::button.outline>
-    <x-rapidez-ct::button.enhanced form="credentials" loader>
-        @lang('Next')
-    </x-rapidez-ct::button.enhanced>
+    @include('rapidez-ct::checkout.partials.buttons.credentials')
 </x-rapidez-ct::toolbar>
