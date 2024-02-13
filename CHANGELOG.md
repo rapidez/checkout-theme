@@ -5,16 +5,16 @@
 
 ### Added
 
- - Add option to make the user create an address during registration (https://github.com/rapidez/checkout-theme/pull/63)
- - Show a button to select address + frontend validation if default address is missing (https://github.com/rapidez/checkout-theme/pull/64)
+ - Add option to make the user create an address during registration (#63)
+ - Show a button to select address + frontend validation if default address is missing (#64)
 
 ### Changed
 
- - Add newsletter to checkout & splice up cart products listing into separate parts (https://github.com/rapidez/checkout-theme/pull/62)
+ - Add newsletter to checkout & splice up cart products listing into separate parts (#62)
 
 ### Bugfix
 
-- Use proper config path (but still keep fallback) (https://github.com/rapidez/checkout-theme/pull/65)
+- Use proper config path (but still keep fallback) (#65)
 
 
 
