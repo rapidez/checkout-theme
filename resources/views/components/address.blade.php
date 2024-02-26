@@ -1,19 +1,21 @@
 @props(['shipping' => false, 'billing' => false, 'check' => false, 'customTitle' => null])
 
 <address-card
-    {{ $attributes->whereStartsWith('v-') }}
-    @if (!$attributes->has('v-bind:shipping')) :shipping="{{ var_export($shipping) }}" @endif
-    @if (!$attributes->has('v-bind:billing')) :billing="{{ var_export($billing) }}" @endif
-    v-slot="{ company, name, street, city, country, billing, shipping, isEmpty, customTitle }"
+    {{ $attributes->whereStartsWith('v-')->merge([
+        'v-bind:shipping' => var_export($shipping, true),
+        'v-bind:billing' => var_export($billing, true),
+    ]) }}
+    v-slot="{ company, name, street, city, country, billing, shipping, isEmpty, customTitle, disabled, check }"
 >
     <div {{ $attributes->whereDoesntStartWith('v-')->class('flex flex-col') }}>
         <template v-if="!isEmpty">
-            @if ($check)
-                <template v-if="{{ $check }}">
-                    <div class="bg-ct-accent absolute inset-y-0 left-0 w-1 rounded-l"></div>
-                    <x-heroicon-s-check class="text-ct-accent absolute right-7 top-7 w-5" />
-                </template>
-            @endif
+            <template v-if="check">
+                <div class="bg-ct-accent absolute inset-y-0 left-0 w-1 rounded-l"></div>
+                <x-heroicon-s-check class="text-ct-accent absolute right-7 top-7 w-5" />
+            </template>
+            <template v-else-if="disabled">
+                <x-heroicon-o-lock-closed class="absolute right-5 top-5 w-6" />
+            </template>
             <x-rapidez-ct::title.lg class="mb-4 pr-8">
                 @if($customTitle)
                     @lang($customTitle)
