@@ -4,6 +4,8 @@
             address: Object,
             shipping: Boolean,
             billing: Boolean,
+            disabled: Boolean,
+            check: Boolean,
         },
 
         render() {
