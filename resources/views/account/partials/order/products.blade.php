@@ -24,6 +24,9 @@
             </div>
             <div class="flex w-[150px] flex-1 flex-col items-start">
                 <a :href="item.url" dusk="cart-item-name">@{{ item.product_name }}</a>
+                <div class="text-xs text-ct-inactive">
+                    @{{ item.product_sku }}
+                </div>
                 <div v-for="(optionValue, option) in item.options">
                     @{{ option }}: @{{ optionValue }}
                 </div>
