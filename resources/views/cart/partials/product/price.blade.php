@@ -6,7 +6,7 @@
         @{{ item.prices.price_including_tax.value | price }}
     </div>
 </td>
-<td class="flex items-center font-medium max-md:w-1/3 md:table-cell [&>*]:mx-auto">
+<td class="flex items-center font-medium max-md:w-1/3 md:table-cell *:mx-auto">
     <x-rapidez-ct::input.quantity/>
 </td>
 <td class="flex items-center justify-end text-right font-medium max-md:w-1/3 md:table-cell">
