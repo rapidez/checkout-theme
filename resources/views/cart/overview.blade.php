@@ -5,12 +5,11 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('content')
-    <graphql
-    v-if="mask"
-    :query="'query getCart($cart_id: String!) { cart (cart_id: $cart_id) { ' + config.queries.cart + ' } }'"
-    :variables="{ cart_id: mask }"
-    :callback="updateCart"
-    :error-callback="checkResponseForExpiredCart"
+    <graphql v-if="mask"
+        :query="'query getCart($cart_id: String!) { cart (cart_id: $cart_id) { ' + config.queries.cart + ' } }'"
+        :variables="{ cart_id: mask }" 
+        :callback="updateCart" 
+        :error-callback="checkResponseForExpiredCart"
     >
     </graphql>
     <div v-if="hasCart" v-cloak class="container">

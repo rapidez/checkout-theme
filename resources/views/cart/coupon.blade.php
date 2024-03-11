@@ -11,7 +11,7 @@
                 :error-callback="checkResponseForExpiredCart"
                 v-slot="{ mutate, variables }"
             >
-                <form v-on:submit.prevent="mutate" class="flex w-full flex-row gap-x-3">
+                <form v-on:submit.prevent="mutate" class="flex w-full gap-x-3">
                     <x-rapidez::input
                         :label="false"
                         class="text-ct-primary w-60"
@@ -27,7 +27,7 @@
                 </form>
             </graphql-mutation>
 
-            <div class="flex w-full flex-row gap-x-3">
+            <div class="flex w-full gap-x-3">
                 <x-rapidez-ct::input
                     class="text-ct-primary w-60"
                     name="couponCode"
@@ -52,7 +52,7 @@
                 >
                     <form v-on:submit.prevent="mutate" class="text-ct-inactive mt-1 flex items-center gap-x-2">
                         <button type="submit">
-                            <x-heroicon-s-x-mark class="h-4 w-4 text-black-400"/>
+                            <x-heroicon-s-x-mark class="size-4 text-black-400"/>
                         </button>
                         @{{ coupon.code }}
                     </form>
