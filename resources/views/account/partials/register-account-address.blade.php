@@ -46,7 +46,14 @@
                 </div>
                 @if(Rapidez::config('customer/address/street_lines', 2) >= 2)
                     <div class="flex-1">
-                        <x-rapidez-ct::input name="street[1]" type="number" label="Housenumber" v-model="addressVariables.street[1]" placeholder="" />
+                        <x-rapidez-ct::input
+                            name="street[1]"
+                            type="number"
+                            label="Housenumber"
+                            v-model="addressVariables.street[1]"
+                            v-on:change="window.app.$emit('postcode-change', addressVariables)"
+                            placeholder=""
+                        />
                     </div>
                 @endif
                 @if(Rapidez::config('customer/address/street_lines', 2) >= 3)
@@ -61,7 +68,13 @@
                 @endif
             </div>
 
-            <x-rapidez-ct::input name="postcode" label="Postcode" v-model="addressVariables.postcode" required />
+            <x-rapidez-ct::input
+                name="postcode"
+                label="Postcode"
+                v-model="addressVariables.postcode"
+                v-on:change="window.app.$emit('postcode-change', addressVariables)"
+                required
+            />
             <x-rapidez-ct::input name="city" label="City" v-model="addressVariables.city" required />
             <span class="relative flex flex-col gap-y-1.5 sm:gap-y-2 text-sm !mb-3">
                 <x-rapidez-ct::input.label :required="true">
@@ -71,6 +84,7 @@
                     name="country_code"
                     label="Country"
                     v-model="addressVariables.country_code"
+                    v-on:change="window.app.$emit('postcode-change', addressVariables)"
                     class="w-full"
                     required
                 />
