@@ -1,4 +1,4 @@
-@props(['id' => uniqId('newsletter-'), 'email' => '\'\''])
+@props(['id' => uniqId('newsletter-'), 'email' => "''"])
 
 <x-rapidez-ct::card.inactive class="relative">
     <x-rapidez-ct::title.lg class="mb-5">
