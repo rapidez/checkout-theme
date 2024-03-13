@@ -5,12 +5,12 @@
     <x-rapidez-ct::separated-listing tag="dl">
         <div>
             <dt>@lang('Subtotal')</dt>
-            <dd>@{{ cart.subtotal | price }}</dd>
+            <dd>@{{ cart.prices.subtotal_including_tax.value | price }}</dd>
         </div>
         <div v-if="cart.shipping_method">
             <dt>@lang('Shipping')</dt>
-            <dd v-if="cart.shipping_amount_excl_tax > 0">
-                @{{ cart.shipping_amount_excl_tax | price }}
+            <dd v-if="cart.shipping_addresses[0].selected_shipping_method.amount.value  > 0">
+                @{{ cart.shipping_addresses[0].selected_shipping_method.amount.value | price  }}
             </dd>
             <dd v-else class="font-medium text-ct-enhanced">
                 @lang('Free')
@@ -18,15 +18,15 @@
         </div>
         <div v-if="cart.tax > 0">
             <dt>@lang('Tax')</dt>
-            <dd>@{{ cart.tax | price }}</dd>
+            <dd>@{{ cart.prices.applied_taxes[0].amount.value | price }}</dd>
         </div>
-        <div v-if="cart.discount_name">
-            <dt>@lang('Discount') (@{{ cart.discount_name }})</dt>
-            <dd>@{{ cart.discount_amount | price }}</dd>
+        <div v-for="discount in cart.prices.discounts">
+            <dt>@{{ discount.label }}</dt>
+            <dd>-@{{ discount.amount.value | price }}</dd>
         </div>
         <div class="font-medium">
             <dt>@lang('Total')</dt>
-            <dd>@{{ cart.total | price }}</dd>
+            <dd>@{{ cart.prices.grand_total.value | price }}</dd>
         </div>
     </x-rapidez-ct::separated-listing>
 

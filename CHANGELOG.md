@@ -1,20 +1,38 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.3.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.0.0...master)
+## [2.0.0](https://github.com/rapidez/checkout-theme/releases/tag/2.0.0) - 2024-03-13
+
+### Added
+
+- Rapidez v2 compatibility (#68)
+
+## [1.4.0](https://github.com/rapidez/checkout-theme/releases/tag/1.4.0) - 2024-03-12
+
+### Added
+
+- Allow address cards to be disabled (#69)
+- Newsletter subscription on checkout success (#60)
+- Fire postcode change events (#71)
+
+### Fixed
+
+- Add SKU to product listing in account orders (#70)
+
 ## [1.3.0](https://github.com/rapidez/checkout-theme/releases/tag/1.3.0) - 2024-01-30
 
 ### Added
 
- - Add option to make the user create an address during registration (https://github.com/rapidez/checkout-theme/pull/63)
- - Show a button to select address + frontend validation if default address is missing (https://github.com/rapidez/checkout-theme/pull/64)
+ - Add option to make the user create an address during registration (#63)
+ - Show a button to select address + frontend validation if default address is missing (#64)
 
 ### Changed
 
- - Add newsletter to checkout & splice up cart products listing into separate parts (https://github.com/rapidez/checkout-theme/pull/62)
+ - Add newsletter to checkout & splice up cart products listing into separate parts (#62)
 
 ### Bugfix
 
-- Use proper config path (but still keep fallback) (https://github.com/rapidez/checkout-theme/pull/65)
+- Use proper config path (but still keep fallback) (#65)
 
 
 

@@ -7,7 +7,7 @@
     </x-rapidez-ct::title.lg>
     <x-rapidez-ct::separated-listing class="border-b pb-4 mb-4">
         <li v-for="item in cart.items">
-            @{{ item.qty }}x @{{ item.name }}
+            @{{ item.quantity }}x @{{ item.product.name }}
         </li>
     </x-rapidez-ct::separated-listing>
     <x-rapidez-ct::separated-listing tag="dl">
