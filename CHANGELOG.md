@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.4.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.0.0...master)
+## [2.0.0](https://github.com/rapidez/checkout-theme/releases/tag/2.0.0) - 2024-03-13
+
+### Added
+
+- Rapidez v2 compatibility (#68)
+
 ## [1.4.0](https://github.com/rapidez/checkout-theme/releases/tag/1.4.0) - 2024-03-12
 
 ### Added
