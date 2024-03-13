@@ -1,4 +1,4 @@
-<div class="flex w-full flex-row gap-x-3 checkout-theme">
+<div {{ $attributes->merge(['class' => 'flex w-full flex-row gap-x-3']) }}>
     <x-rapidez-ct::input
         class="text-ct-primary w-60"
         name="couponCode"
@@ -12,4 +12,3 @@
         @lang('Apply')
     </x-rapidez-ct::button.outline>
 </div>
-
