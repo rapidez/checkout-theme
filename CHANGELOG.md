@@ -1,6 +1,18 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.3.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.4.0...master)
+## [1.4.0](https://github.com/rapidez/checkout-theme/releases/tag/1.4.0) - 2024-03-12
+
+### Added
+
+- Allow address cards to be disabled (#69)
+- Newsletter subscription on checkout success (#60)
+- Fire postcode change events (#71)
+
+### Fixed
+
+- Add SKU to product listing in account orders (#70)
+
 ## [1.3.0](https://github.com/rapidez/checkout-theme/releases/tag/1.3.0) - 2024-01-30
 
 ### Added
