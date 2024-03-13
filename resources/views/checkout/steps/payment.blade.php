@@ -10,13 +10,8 @@
     <x-rapidez-ct::button.outline v-on:click.prevent="goToStep(1)">
         @lang('Back to credentials')
     </x-rapidez-ct::button.outline>
-    <x-rapidez-ct::button.enhanced
-        class="relative"
-        form="payment"
-        type="submit"
-        dusk="continue"
-        loader
-    >
+
+    <x-rapidez-ct::button.accent class="relative" form="payment" type="submit" dusk="continue" loader>
         @lang('Place order')
-    </x-rapidez-ct::button.enhanced>
+    </x-rapidez-ct::button.accent>
 </x-rapidez-ct::toolbar>
