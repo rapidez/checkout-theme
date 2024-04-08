@@ -30,6 +30,12 @@
                     <x-rapidez-ct::button.link v-else v-on:click="userAddress.default_billing=false;mutate()">
                         @lang('Deselect as billing')
                     </x-rapidez-ct::button.link>
+                    <graphql-mutation query="mutation deleteCustomerAddress($id: Int!){ deleteCustomerAddress ( id: $id ) }" :variables="{ id: userAddress.id }" v-slot="{ mutate }">
+                        <x-rapidez-ct::button.link v-if="!userAddress.default_billing && !userAddress.default_shipping" v-on:click="data.customer.addresses.splice(addressIndex,1);mutate()">
+                            @lang('Delete address')
+                        </x-rapidez-ct::button.link>
+                    </graphql-mutation>
+                </x-rapidez-ct::card.address>
                 </x-rapidez-ct::card.address>
             </graphql-mutation>
         </template>
