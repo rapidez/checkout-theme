@@ -14,28 +14,32 @@
 
         computed: {
             company() {
-                return this.address.company ?? '';
+                return this.address?.company ?? '';
             },
 
             street() {
-                let street = this.address.street
+                let street = this.address?.street
+                if (!street) {
+                    return ''
+                }
+                
                 if (Array.isArray(street)) {
-                    return street?.filter(Boolean).join(' ') ?? ''
+                    return street.filter(Boolean).join(' ') ?? ''
                 } else {
                     return street.replace('\n', ' ')
                 }
             },
 
             name() {
-                return [this.address.firstname, this.address.middlename, this.address.lastname].filter(Boolean).join(' ');
+                return [this.address?.firstname, this.address?.middlename, this.address?.lastname].filter(Boolean).join(' ');
             },
 
             city() {
-                return [this.address.postcode, this.address.city].filter(Boolean).join(' ')
+                return [this.address?.postcode, this.address?.city].filter(Boolean).join(' ')
             },
 
             country() {
-                return this.address.country_id ?? this.address.country_code ?? ''
+                return this.address?.country_id ?? this.address?.country_code ?? ''
             },
 
             isEmpty() {
