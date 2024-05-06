@@ -1,6 +1,30 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.0.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.1.0...master)
+## [2.1.0](https://github.com/rapidez/checkout-theme/releases/tag/2.1.0) - 2024-05-06
+
+### Changed
+
+- Split up files to make confira override easier (#66)
+
+### Fixed
+
+- Add "delete" button to address cards (#72)
+- Add fallbacks for address card (#73)
+- Fix attributes error (#76)
+
+## [1.5.0](https://github.com/rapidez/checkout-theme/releases/tag/1.5.0) - 2024-05-06
+
+### Changed
+
+- Split templates in to smaller views for easier individual overwrites (32ffc93)
+- Add fallbacks for address card (#74)
+
+### Fixed
+
+- Add "delete" button to address cards (#75)
+- Fix attributes error (#77)
+
 ## [2.0.0](https://github.com/rapidez/checkout-theme/releases/tag/2.0.0) - 2024-03-13
 
 ### Added
