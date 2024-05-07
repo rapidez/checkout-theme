@@ -13,6 +13,12 @@
 - Add fallbacks for address card (#73)
 - Fix attributes error (#76)
 
+## [1.5.1](https://github.com/rapidez/checkout-theme/releases/tag/1.5.1) - 2024-05-06
+
+### Fixed
+
+- Add :$id to newsletter checkbox (#79)
+
 ## [1.5.0](https://github.com/rapidez/checkout-theme/releases/tag/1.5.0) - 2024-05-06
 
 ### Changed
