@@ -13,13 +13,7 @@
     >
     </graphql>
     <div v-if="hasCart" v-cloak class="container">
-        <x-rapidez-ct::layout class="!mt-0">
-            @include('rapidez-ct::cart.cart')
-            <x-slot:sidebar>
-                @include('rapidez-ct::cart.partials.sidebar.sidebar')
-            </x-slot:sidebar>
-        </x-rapidez-ct::layout>
-        @include('rapidez-ct::cart.partials.crosssells')
+        @include('rapidez-ct::cart.content')
     </div>
     <div v-else class="container">
         <p>@lang("You don't have anything in your cart.")</p>
