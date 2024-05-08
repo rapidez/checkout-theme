@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.5.2...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.5.3...master)
+## [1.5.3](https://github.com/rapidez/checkout-theme/releases/tag/1.5.3) - 2024-05-08
+
+### Fixed
+
+- Add addressIndex to loop (#85)
+
 ## [1.5.2](https://github.com/rapidez/checkout-theme/releases/tag/1.5.2) - 2024-05-08
 
 ### Fixed
