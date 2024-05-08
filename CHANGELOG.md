@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.1.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/1.5.2...master)
+## [1.5.2](https://github.com/rapidez/checkout-theme/releases/tag/1.5.2) - 2024-05-08
+
+### Fixed
+
+- Add mutating slot (#83)
+
 ## [2.1.0](https://github.com/rapidez/checkout-theme/releases/tag/2.1.0) - 2024-05-06
 
 ### Changed
