@@ -1,6 +1,6 @@
 <x-rapidez-ct::popup title="My addresses">
     <div class="grid sm:grid-cols-2 gap-5">
-        <template v-for="userAddress in data.customer.addresses">
+        <template v-for="userAddress, addressIndex in data.customer.addresses">
             <graphql-mutation
                 query="mutation address($id: Int!, $default_billing: Boolean, $default_shipping: Boolean){ updateCustomerAddress ( id: $id, input: {default_billing: $default_billing, default_shipping: $default_shipping} ) { id } }"
                 :variables="userAddress"
