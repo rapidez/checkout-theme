@@ -9,7 +9,7 @@
     v-slot="{ mutate, variables }"
 >
     <form v-on:submit.prevent="mutate" class="flex w-full gap-x-3">
-        <x-rapidez::input
+        <x-rapidez-ct::input
             :label="false"
             class="text-ct-primary w-60"
             name="couponCode"
@@ -18,23 +18,8 @@
             v-bind:disabled="$root.loading"
             required
         />
-        <x-rapidez::button type="submit" class="sm:text-sm">
+        <x-rapidez-ct::button.outline type="submit">
             @lang('Apply')
-        </x-rapidez::button>
+        </x-rapidez-ct::button>
     </form>
 </graphql-mutation>
-
-<div class="flex w-full gap-x-3">
-    <x-rapidez-ct::input
-        class="text-ct-primary w-60"
-        name="couponCode"
-        :placeholder="__('Enter code') . '...'"
-        v-on="inputEvents"
-        v-bind:value="couponCode"
-        v-bind:disabled="$root.loading"
-        required
-    />
-    <x-rapidez-ct::button.outline type="submit" loader>
-        @lang('Apply')
-    </x-rapidez-ct::button.outline>
-</div>
