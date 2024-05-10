@@ -1,4 +1,4 @@
-<x-rapidez-ct::card.inactive class="!bg-ct-accent/20">
+<x-rapidez-ct::card.inactive class="!bg-ct-primary/20">
     <x-rapidez-ct::title.lg>
         @lang('We will get to work for you right away')
     </x-rapidez-ct::title.lg>

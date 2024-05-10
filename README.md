@@ -58,10 +58,10 @@ colors: {
             100: '#F6F4EE',
         },
         disabled: '#EBE8DE',
-        accent: {
+        primary: {
             DEFAULT: '#FEAB05',
         },
-        primary: {
+        neutral: {
             DEFAULT: '#625B50',
         },
         border: '#EAE7DC',
