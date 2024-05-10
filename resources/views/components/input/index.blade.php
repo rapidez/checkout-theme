@@ -10,7 +10,7 @@
         'id' => $attributes->get('name'),
         'type' => 'text',
         'dusk' => $attributes->get('v-bind:dusk') ? null : $attributes->get('name'),
-        'class' => 'rounded peer border border-border bg-white py-3.5 sm:py-4 px-5 text-sm outline-none !ring-0 transition-all placeholder:text-ct-inactive focus:border-ct-primary disabled:bg-ct-disabled disabled:text-ct-inactive font-medium disabled:pr-12',
+        'class' => 'rounded peer border border-ct-border bg-white py-3.5 sm:py-4 px-5 text-sm outline-none !ring-0 transition-all placeholder:text-ct-inactive focus:border-ct-primary disabled:bg-ct-disabled disabled:text-ct-inactive font-medium disabled:pr-12',
     ]) }}>
     {{ $slot }}
     <x-heroicon-o-lock-closed class="absolute right-5 bottom-4 hidden h-5 peer-disabled:block" />
