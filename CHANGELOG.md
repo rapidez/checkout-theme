@@ -1,6 +1,35 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.1.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.2.0...master)
+## [2.2.0](https://github.com/rapidez/checkout-theme/releases/tag/2.2.0) - 2024-05-14
+
+### Changed
+
+- Split templates up like in 1.x (#80)
+
+### Fixed
+
+- Add :$id to checkbox (#78)
+- Address cards popup (#82)
+- Add addressIndex to loop (#84)
+- Remove extra coupon field (#81)
+- Use border-ct-border (#87)
+- Rapidez v2 compatibility (#86)
+- Use correct item image check (#89)
+- Update remove button to 2.x (#91)
+
+## [1.5.3](https://github.com/rapidez/checkout-theme/releases/tag/1.5.3) - 2024-05-08
+
+### Fixed
+
+- Add addressIndex to loop (#85)
+
+## [1.5.2](https://github.com/rapidez/checkout-theme/releases/tag/1.5.2) - 2024-05-08
+
+### Fixed
+
+- Add mutating slot (#83)
+
 ## [2.1.0](https://github.com/rapidez/checkout-theme/releases/tag/2.1.0) - 2024-05-06
 
 ### Changed
@@ -13,16 +42,22 @@
 - Add fallbacks for address card (#73)
 - Fix attributes error (#76)
 
+## [1.5.1](https://github.com/rapidez/checkout-theme/releases/tag/1.5.1) - 2024-05-06
+
+### Fixed
+
+- Add :$id to newsletter checkbox (#79)
+
 ## [1.5.0](https://github.com/rapidez/checkout-theme/releases/tag/1.5.0) - 2024-05-06
 
 ### Changed
 
 - Split templates in to smaller views for easier individual overwrites (32ffc93)
-- Add fallbacks for address card (#74)
 
 ### Fixed
 
 - Add "delete" button to address cards (#75)
+- Add fallbacks for address card (#74)
 - Fix attributes error (#77)
 
 ## [2.0.0](https://github.com/rapidez/checkout-theme/releases/tag/2.0.0) - 2024-03-13
