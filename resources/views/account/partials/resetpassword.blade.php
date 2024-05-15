@@ -27,9 +27,9 @@
                 label="New password"
                 required
             />
-            <x-rapidez-ct::button.accent type="submit" class="w-full">
+            <x-rapidez-ct::button.primary type="submit" class="w-full">
                 @lang('Change password')
-            </x-rapidez-ct::button.accent>
+            </x-rapidez-ct::button.primary>
         </form>
     </x-rapidez-ct::card.inactive>
 </graphql-mutation>

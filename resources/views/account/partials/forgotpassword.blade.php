@@ -23,7 +23,7 @@
                 <a href="{{ route('account.login') }}" class="text-sm text-ct-inactive underline">
                     @lang('Back to login')
                 </a>
-                <x-rapidez-ct::button.accent
+                <x-rapidez-ct::button.primary
                     class="flex items-center gap-1"
                     type="submit"
                     dusk="continue"
@@ -31,7 +31,7 @@
                 >
                     @lang('Send')
                     <x-heroicon-o-arrow-right class="h-4" />
-                </x-rapidez-ct::button.accent>
+                </x-rapidez-ct::button.primary>
             </div>
         </form>
     </x-rapidez-ct::card.inactive>

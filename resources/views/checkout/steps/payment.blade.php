@@ -11,7 +11,7 @@
         @lang('Back to credentials')
     </x-rapidez-ct::button.outline>
 
-    <x-rapidez-ct::button.accent class="relative" form="payment" type="submit" dusk="continue" loader>
+    <x-rapidez-ct::button.primary class="relative" form="payment" type="submit" dusk="continue" loader>
         @lang('Place order')
-    </x-rapidez-ct::button.accent>
+    </x-rapidez-ct::button.primary>
 </x-rapidez-ct::toolbar>

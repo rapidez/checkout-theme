@@ -16,7 +16,7 @@
         @lang('Back to cart')
     </x-rapidez-ct::button.outline>
 
-    <x-rapidez-ct::button.accent form="credentials" loader>
+    <x-rapidez-ct::button.primary form="credentials" loader>
         @lang('Next')
-    </x-rapidez-ct::button.accent>
+    </x-rapidez-ct::button.primary>
 </x-rapidez-ct::toolbar>
