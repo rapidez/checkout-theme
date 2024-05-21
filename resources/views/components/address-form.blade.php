@@ -64,6 +64,7 @@
         name="{{ $type }}_postcode"
         label="Postcode"
         v-model.lazy="{{ $address }}.postcode"
+        v-on:change="window.app.$emit('postcode-change', {{ $address }})"
         required
     />
     @if (Rapidez::config('customer/address/street_lines', 3) >= 2)
@@ -71,6 +72,7 @@
             name="{{ $type }}_housenumber"
             label="Housenumber"
             v-model.lazy="{{ $address }}.street[1]"
+            v-on:change="window.app.$emit('postcode-change', {{ $address }})"
             type="{{ Rapidez::config('customer/address/street_lines', 3) == 3 ? 'number' : 'text' }}"
             required
         />
