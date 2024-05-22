@@ -12,7 +12,7 @@
             :placeholder="__('Enter your email address')"
         />
     </div>
-    <x-rapidez-ct::button.accent
+    <x-rapidez-ct::button.primary
         class="relative self-end whitespace-nowrap"
         type="submit"
         v-bind:disabled="mutating && !error"
@@ -24,5 +24,5 @@
             <x-heroicon-o-arrow-path class="mx-auto h-full animate-spin" v-if="mutating" />
             <x-heroicon-o-check class="mx-auto h-full" v-else />
         </div>
-    </x-rapidez-ct::button.accent>
+    </x-rapidez-ct::button.primary>
 </form>

@@ -36,7 +36,7 @@
     </x-rapidez-ct::button.enhanced>
 
     <div class="mt-4 flex items-center justify-center gap-1 text-center text-sm">
-        <x-heroicon-o-check class="h-5 text-ct-accent" />
+        <x-heroicon-o-check class="h-5 text-ct-primary" />
         @lang('Ordered within 2 minutes')
     </div>
 </x-rapidez-ct::card>

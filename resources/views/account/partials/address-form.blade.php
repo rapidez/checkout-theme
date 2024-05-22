@@ -13,9 +13,9 @@
             @lang('Back to settings')
         </x-rapidez-ct::button.outline>
         <div>
-            <x-rapidez-ct::button.accent type="submit">
+            <x-rapidez-ct::button.primary type="submit">
                 @lang(request()->id ? 'Change address and save' : 'Add address and save')
-            </x-rapidez-ct::button.accent>
+            </x-rapidez-ct::button.primary>
             <div v-if="mutated" class="ml-3 text-green-500">
                 @lang('Changed successfully!')
             </div>

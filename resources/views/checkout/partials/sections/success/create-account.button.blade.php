@@ -1,3 +1,3 @@
-<x-rapidez-ct::button.accent class="self-end justify-self-start" loader>
+<x-rapidez-ct::button.primary class="self-end justify-self-start" loader>
     @lang('Create account')
-</x-rapidez-ct::button.accent>
+</x-rapidez-ct::button.primary>

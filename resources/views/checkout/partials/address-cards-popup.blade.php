@@ -9,5 +9,5 @@
             @include('rapidez-ct::checkout.partials.address-card')
         </x-rapidez-ct::card.inactive>
     </x-rapidez-ct::sections>
-    <label class="absolute cursor-pointer inset-0 bg-ct-primary/60" for="popup"></label>
+    <label class="absolute cursor-pointer inset-0 bg-ct-neutral/60" for="popup"></label>
 </div>

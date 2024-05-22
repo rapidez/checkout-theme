@@ -19,9 +19,9 @@
             />
 
             <div class="flex items-center">
-                <x-rapidez-ct::button.accent type="submit">
+                <x-rapidez-ct::button.primary type="submit">
                     @lang('Change password')
-                </x-rapidez-ct::button.accent>
+                </x-rapidez-ct::button.primary>
 
                 <div v-if="mutated" class="ml-3 text-green-500">
                     @lang('Changed successfully!')

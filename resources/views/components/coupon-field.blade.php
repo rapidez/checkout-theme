@@ -11,7 +11,7 @@
     <form v-on:submit.prevent="mutate" class="flex w-full gap-x-3">
         <x-rapidez-ct::input
             :label="false"
-            class="text-ct-primary w-60"
+            class="text-ct-neutral w-60"
             name="couponCode"
             placeholder="Coupon code"
             v-model="variables.coupon_code"

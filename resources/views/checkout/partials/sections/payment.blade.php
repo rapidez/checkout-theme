@@ -7,7 +7,7 @@
             <div v-if="data?.checkoutAgreements?.length" class="mt-5 flex flex-col gap-y-4" slot-scope="{ data }">
                 <div v-for="agreement in data.checkoutAgreements">
                     <label
-                        class="text-ct-primary cursor-pointer text-sm underline"
+                        class="text-ct-neutral cursor-pointer text-sm underline"
                         v-bind:for="agreement.checkbox_text"
                         v-if="agreement.mode == 'AUTO'"
                     >

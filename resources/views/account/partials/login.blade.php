@@ -20,7 +20,7 @@
                 <a href="{{ route('account.forgotpassword') }}" class="text-sm text-ct-inactive underline">
                     @lang('Forgot your password?')
                 </a>
-                <x-rapidez-ct::button.accent
+                <x-rapidez-ct::button.primary
                     class="flex items-center gap-1"
                     type="submit"
                     dusk="continue"
@@ -28,7 +28,7 @@
                 >
                     @lang('Login')
                     <x-heroicon-o-arrow-right class="h-4" />
-                </x-rapidez-ct::button.accent>
+                </x-rapidez-ct::button.primary>
             </div>
         </form>
     </x-rapidez-ct::card.inactive>
