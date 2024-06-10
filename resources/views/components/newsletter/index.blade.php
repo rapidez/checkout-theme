@@ -18,6 +18,7 @@
 
     <x-rapidez-ct::newsletter.partials.checkbox
         :v-model="$attributes->has('v-model') ? $attributes['v-model'] : 'variables.is_subscribed'"
+        :isPartOfAnotherForm="$attributes->has('v-model')"
         :$id
     />
 
