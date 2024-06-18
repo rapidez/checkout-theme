@@ -19,7 +19,7 @@
 @section('account-content')
     <graphql
         query='@include('rapidez::account.partials.queries.order')'
-        check="data.customer.orders.items[0]"
+        check="customer.orders.items[0]"
         cache="orderdetail{{ $id }}"
     >
         <div v-if="data" slot-scope="{ data }">
