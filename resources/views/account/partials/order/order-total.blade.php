@@ -1,6 +1,6 @@
 <graphql
     query='@include('rapidez::account.partials.queries.order')'
-    check="data.customer.orders.items[0]"
+    check="customer.orders.items[0]"
     cache="orderdetail{{ $id }}"
 >
     <x-rapidez-ct::card v-if="data" slot-scope="{ data }">
