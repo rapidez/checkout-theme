@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.3.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.3.1...master)
+## [2.3.1](https://github.com/rapidez/checkout-theme/releases/tag/2.3.1) - 2024-06-18
+
+### Fixed
+
+- Fix the newsletter subscribe to not mutate right away (#94)
+- Rapidez v2 compatibility fixes (#95)
+
 ## [2.3.0](https://github.com/rapidez/checkout-theme/releases/tag/2.3.0) - 2024-05-28
 
 ### Added
