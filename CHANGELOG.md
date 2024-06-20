@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.3.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.3.2...master)
+## [2.3.2](https://github.com/rapidez/checkout-theme/releases/tag/2.3.2) - 2024-06-20
+
+### Fixed
+
+- Remove extra parentheses (#96)
+
 ## [2.3.1](https://github.com/rapidez/checkout-theme/releases/tag/2.3.1) - 2024-06-18
 
 ### Fixed
