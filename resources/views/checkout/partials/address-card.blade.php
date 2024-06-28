@@ -5,7 +5,7 @@
             v-bind:address="userAddress"
             v-bind:billing="isType('billing', userAddress)"
             v-bind:shipping="isType('shipping', userAddress)"
-            check="isType('billing', userAddress) || isType('shipping', userAddress)"
+            v-bind:check="isType('billing', userAddress) || isType('shipping', userAddress)"
             class="w-full sm:min-w-[350px]"
         >
             <x-rapidez-ct::button.link v-if="!isType('shipping', userAddress)" v-on:click.prevent="select('shipping', userAddress)">
