@@ -1,4 +1,3 @@
-
 <graphql-mutation
     key="address-create"
     query="@include('rapidez::account.partials.queries.address-create')"
@@ -96,7 +95,9 @@
                 </x-rapidez-ct::card.inactive>
             @endif
 
-            <x-rapidez-ct::newsletter v-model="variables.is_subscribed"/>
+            <x-rapidez-ct::card.inactive>
+                <x-rapidez-ct::newsletter v-model="variables.is_subscribed"/>
+            </x-rapidez-ct::card.inactive>
         </x-rapidez-ct::sections>
     </graphql-mutation>
 </graphql-mutation>

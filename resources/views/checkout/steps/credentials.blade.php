@@ -4,10 +4,18 @@
 
 <form id="credentials" v-on:submit.prevent="save(['credentials'], 3)">
     <x-rapidez-ct::sections>
-        @include('rapidez-ct::checkout.partials.sections.login')
-        @include('rapidez-ct::checkout.partials.sections.address')
-        @include('rapidez-ct::checkout.partials.sections.newsletter')
-        @include('rapidez-ct::checkout.partials.sections.shipping')
+        <x-rapidez-ct::card.inactive>
+            @include('rapidez-ct::checkout.partials.sections.login')
+        </x-rapidez-ct::card.inactive>
+        <x-rapidez-ct::card.inactive>
+            @include('rapidez-ct::checkout.partials.sections.address')
+        </x-rapidez-ct::card.inactive>
+        <x-rapidez-ct::card.inactive>
+            @include('rapidez-ct::checkout.partials.sections.newsletter')
+        </x-rapidez-ct::card.inactive>
+        <x-rapidez-ct::card.inactive>
+            @include('rapidez-ct::checkout.partials.sections.shipping')
+        </x-rapidez-ct::card.inactive>
     </x-rapidez-ct::sections>
 </form>
 

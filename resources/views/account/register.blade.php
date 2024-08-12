@@ -11,7 +11,6 @@
                 @lang('Register')
             </x-rapidez-ct::title>
 
-            
             @include('rapidez-ct::account.partials.register-account')
 
             <x-rapidez-ct::toolbar>
