@@ -6,7 +6,7 @@
     :error-callback="checkResponseForExpiredCart"
     v-slot="{ mutate, variables }"
 >
-    <form v-on:submit.prevent="mutate" class="flex w-20 overflow-hidden border rounded-full">
+    <form v-on:submit.prevent="mutate" class="flex w-20 overflow-hidden border rounded">
         <button
             class="flex-1 bg-ct-inactive-100 transition hover:bg-opacity-80"
             v-on:click.prevent="variables.quantity <= (item.product.stock_item?.min_sale_qty || 1) ? variables.quantity = variables.quantity : variables.quantity = +variables.quantity - (item.product.stock_item?.qty_increments || 1);mutate()"
