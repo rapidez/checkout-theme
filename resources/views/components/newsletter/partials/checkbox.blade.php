@@ -4,7 +4,7 @@
     'class' => 'relative flex w-full cursor-pointer !items-start rounded border bg-white p-7',
     'id' => $id,
 ])" v-on:change="() => {
-        if (typeof mutate === 'function' && (!{{ $isPartOfAnotherForm }})) { mutate() }
+        if (typeof mutate === 'function' && (!{{ (int)$isPartOfAnotherForm }})) { mutate() }
         if ($root.loggedIn) { $root.user.extension_attributes.is_subscribed=variables.is_subscribed }
     }">
     <x-slot:slot class="ml-2 flex flex-col gap-1">
