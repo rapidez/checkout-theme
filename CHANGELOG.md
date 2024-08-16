@@ -1,6 +1,19 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.3.2...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.4.0...master)
+## [2.4.0](https://github.com/rapidez/checkout-theme/releases/tag/2.4.0) - 2024-08-16
+
+### Changed
+
+- Move card outside of include to reduce need for overwrites (#98)
+
+### Fixed
+
+- Disable GraphQL cache on the order view (#99)
+- Removed rounded-full from quantity component (#102)
+- Fix empty expression error (#103)
+- Newsletter on checkout success for logged in customers fix (#101)
+
 ## [2.3.2](https://github.com/rapidez/checkout-theme/releases/tag/2.3.2) - 2024-06-20
 
 ### Fixed
