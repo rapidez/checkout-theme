@@ -2,7 +2,7 @@
     name="email"
     type="email"
     label="Email"
-    disabeld
+    disabled
     v-bind:value="email"
     class="justify-center"
     required
