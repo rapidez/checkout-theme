@@ -1,4 +1,4 @@
-@props(['isPartOfAnotherForm', 'id'])
+@props(['isPartOfAnotherForm' => false, 'id'])
 
 <x-rapidez-ct::input.checkbox :attributes="$attributes->merge([
     'class' => 'relative flex w-full cursor-pointer !items-start rounded border bg-white p-7',
