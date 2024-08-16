@@ -22,7 +22,7 @@
                 required
             />
 
-            <div class="flex items-center mt-5 col-span-full">
+            <div class="flex items-center col-span-full">
                 <x-rapidez-ct::button.accent type="submit">
                     @lang('Change password')
                 </x-rapidez-ct::button.accent>
