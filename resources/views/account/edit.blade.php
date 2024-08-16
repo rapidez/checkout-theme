@@ -10,6 +10,7 @@
             <x-rapidez-ct::sections>
                 @include('rapidez-ct::account.partials.sections.edit.addresses')
                 @include('rapidez-ct::account.partials.sections.edit.newsletter')
+                @include('rapidez-ct::account.partials.sections.edit.email')
                 @include('rapidez-ct::account.partials.sections.edit.password')
             </x-rapidez-ct::sections>
             <x-rapidez-ct::toolbar>
