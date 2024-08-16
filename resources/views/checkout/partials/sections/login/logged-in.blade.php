@@ -3,7 +3,7 @@
     type="email"
     label="Email"
     disabled
-    v-bind:value="email"
+    v-bind:value="$root.user?.email"
     class="justify-center"
     required
     :placeholder="__('Enter your e-mail address')"
