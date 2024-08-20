@@ -1,1 +1,1 @@
-<x-rapidez-ct::newsletter/>
+<x-rapidez-ct::newsletter has-data/>
