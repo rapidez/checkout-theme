@@ -1,4 +1,4 @@
-@props(['id' => uniqId('newsletter-')])
+@props(['id' => uniqId('newsletter-'), 'hasData' => false])
 
 <x-rapidez-ct::card.inactive>
     <x-rapidez-ct::title.lg class="mb-5">
@@ -6,12 +6,17 @@
     </x-rapidez-ct::title.lg>
 
     @if (!$attributes->has('v-model'))
+        @php
+            $subscribedData = $hasData
+                ? 'data?.customer?.is_subscribed ?? $root.user?.extension_attributes?.is_subscribed ?? false'
+                : '$root.user?.extension_attributes?.is_subscribed ?? false'
+        @endphp
         <graphql-mutation
             v-cloak
             query="mutation subscribeNewsletter ($is_subscribed: Boolean!) { updateCustomerV2(input: { is_subscribed: $is_subscribed }) { customer { is_subscribed } } }"
             :alert="false"
             :clear="false"
-            :variables="{ is_subscribed: data?.customer?.is_subscribed ?? $root.user?.extension_attributes?.is_subscribed ?? false }"
+            :variables="{ is_subscribed: {{ $subscribedData }} }"
             v-slot="{ mutate, variables }"
         >
     @endif
