@@ -1,6 +1,20 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.4.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.5.0...master)
+## [2.5.0](https://github.com/rapidez/checkout-theme/releases/tag/2.5.0) - 2024-08-20
+
+### Added
+
+- Change email option and fixed the change password option (#106)
+
+### Fixed
+
+- Add default to isPartOfAnotherForm prop (#104)
+- Override account layout partial (#105)
+- Typo (#107)
+- Use the right value for logged in email (#108)
+- Re-add isPartOfAnotherForm (#109)
+
 ## [2.4.0](https://github.com/rapidez/checkout-theme/releases/tag/2.4.0) - 2024-08-16
 
 ### Changed
