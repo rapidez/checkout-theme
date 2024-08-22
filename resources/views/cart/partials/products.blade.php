@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody class="divide-y">
-        <tr v-for="(item, index) in cart.items" v-if="cart.items" class="flex flex-wrap gap-y-5 py-5 md:table-row md:*:p-5">
+        <tr v-for="(item, index) in cart.items" v-if="cart.items" class="relative flex flex-wrap gap-y-5 py-5 md:table-row md:*:p-5">
             @include('rapidez-ct::cart.partials.product.image')
             @include('rapidez-ct::cart.partials.product.description')
             @include('rapidez-ct::cart.partials.product.price')
