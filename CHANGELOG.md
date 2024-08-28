@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.5.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.5.1...master)
+## [2.5.1](https://github.com/rapidez/checkout-theme/releases/tag/2.5.1) - 2024-08-27
+
+### Fixed
+
+- Make cart items relative to make absolute usage easier (#111)
+
 ## [2.5.0](https://github.com/rapidez/checkout-theme/releases/tag/2.5.0) - 2024-08-20
 
 ### Added
