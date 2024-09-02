@@ -27,7 +27,7 @@
                 @include('rapidez-ct::account.partials.order.order-info')
             </x-rapidez-ct::sections>
             <x-rapidez-ct::toolbar>
-                <x-rapidez-ct::button.outline>
+                <x-rapidez-ct::button.outline href="/account/orders">
                     @lang('Back to my orders')
                 </x-rapidez-ct::button.outline>
                 <span class="text-ct-inactive">
