@@ -7,7 +7,7 @@
             <dt>@lang('Subtotal')</dt>
             <dd>@{{ cart.prices.subtotal_including_tax.value | price }}</dd>
         </div>
-        <div v-if="cart.shipping_addresses[0]?.selected_shipping_method?.amount">
+        <div v-if="cart.shipping_addresses?.length && cart.shipping_addresses[0]?.selected_shipping_method?.amount">
             <dt>@lang('Shipping')</dt>
             <dd v-if="cart.shipping_addresses[0].selected_shipping_method.amount.value > 0">
                 @{{ cart.shipping_addresses[0].selected_shipping_method.amount.value | price  }}
@@ -16,7 +16,7 @@
                 @lang('Free')
             </dd>
         </div>
-        <div v-if="cart.prices?.applied_taxes[0]?.amount?.value > 0">
+        <div v-if="cart.prices?.applied_taxes?.length && cart.prices?.applied_taxes[0]?.amount?.value > 0">
             <dt>@lang('Tax')</dt>
             <dd>@{{ cart.prices.applied_taxes[0].amount.value | price }}</dd>
         </div>
