@@ -1,6 +1,14 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.5.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.5.2...master)
+## [2.5.2](https://github.com/rapidez/checkout-theme/releases/tag/2.5.2) - 2024-09-16
+
+### Fixed
+- Fix the product image because catalog/product is already in the image url (#115)
+- Make back button work (#112)
+- Fix cart summary(#113)
+- Fix missed v-bind (#97 & #114)
+
 ## [2.5.1](https://github.com/rapidez/checkout-theme/releases/tag/2.5.1) - 2024-08-27
 
 ### Fixed
