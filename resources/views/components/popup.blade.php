@@ -1,7 +1,7 @@
 @props(['title' => ''])
 
 <input type="checkbox" id="popup" class="peer hidden"/>
-<div class="fixed inset-0 opacity-0 transition max-h-full z-50 flex justify-center items-center pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto">
+<div class="fixed inset-0 opacity-0 transition max-h-full z-50 flex justify-center items-center pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto lg:py-5">
     <x-rapidez-ct::sections class="relative z-10 max-h-full overflow-y-auto scrollbar-hide">
         <x-rapidez-ct::card.inactive>
             <label for="popup" class="absolute cursor-pointer z-10 top-7 right-7 w-5 h-5">
