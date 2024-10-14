@@ -1,5 +1,5 @@
 <input type="checkbox" id="popup" class="peer hidden"/>
-<div class="fixed inset-0 opacity-0 transition z-50 max-h-full flex justify-center items-center pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto lg:py-5">
+<div class="fixed inset-0 opacity-0 transition z-50 flex justify-center items-center pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto lg:py-5">
     <x-rapidez-ct::sections class="relative z-10 max-h-full overflow-y-auto scrollbar-hide">
         <x-rapidez-ct::card.inactive>
             <x-rapidez-ct::title class="mb-5">@lang('My addresses')</x-rapidez-ct::title>
