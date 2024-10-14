@@ -3,7 +3,7 @@
 <input type="checkbox" id="popup" class="peer hidden"/>
 <div class="fixed inset-0 opacity-0 transition z-50 flex justify-center items-center pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto">
     <x-rapidez-ct::sections class="relative z-10">
-        <x-rapidez-ct::card.inactive>
+        <x-rapidez-ct::card.inactive class="max-h-dvh overflow-y-auto scrollbar-hide relative xl:max-h-[calc(100dvh-44px)]">
             <label for="popup" class="absolute cursor-pointer z-10 top-7 right-7 w-5 h-5">
                 <x-heroicon-o-x-mark />
             </label>
