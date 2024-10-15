@@ -1,4 +1,4 @@
-<div class="grid sm:grid-cols-2 gap-5">
+<div class="grid gap-5 lg:grid-cols-2">
     <template v-for="userAddress in $root.user.addresses">
         <x-rapidez-ct::card.address
             v-bind:key="userAddress.id"
