@@ -17,8 +17,8 @@
                 </x-rapidez-ct::title.lg>
                 <div class="flex flex-1 flex-wrap justify-between">
                     <ul class="flex flex-col gap-1">
-                        <li v-for="method in order.sales_order_payments">
-                            @{{ method.additional_information.method_title || method.additional_information.raw_details_info.method_title }}
+                        <li v-for="method in order.payment_methods">
+                            @{{ method.name || method.type }}
                         </li>
                     </ul>
                     @if (!empty($slot))
@@ -34,7 +34,7 @@
                 </x-rapidez-ct::title.lg>
                 <div class="flex flex-1 flex-wrap justify-between">
                     <ul class="flex flex-col gap-1">
-                        <li v-text="order.shipping_description"></li>
+                        <li v-text="order.shipping_method"></li>
                     </ul>
                     @if (!empty($slot))
                         <div class="mt-auto flex flex-col self-end">

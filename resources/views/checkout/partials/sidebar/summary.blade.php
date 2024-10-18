@@ -11,8 +11,6 @@
         </li>
     </x-rapidez-ct::separated-listing>
     <x-rapidez-ct::separated-listing tag="dl">
-        <template v-for="segment in checkout.totals.total_segments" v-if="segment.title">
-            @include('rapidez-ct::checkout.partials.sidebar.segment')
-        </template>
+            @include('rapidez-ct::checkout.partials.sidebar.totals')
     </x-rapidez-ct::separated-listing>
 </x-rapidez-ct::card>

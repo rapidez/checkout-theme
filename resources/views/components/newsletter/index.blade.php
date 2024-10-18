@@ -13,10 +13,10 @@
         @endphp
         <graphql-mutation
             v-cloak
-            query="mutation subscribeNewsletter ($is_subscribed: Boolean!) { updateCustomerV2(input: { is_subscribed: $is_subscribed }) { customer { is_subscribed } } }"
+            :query="user.is_logged_in ? 'mutation subscribeNewsletter ($is_subscribed: Boolean!) { updateCustomerV2(input: { is_subscribed: $is_subscribed }) { customer { is_subscribed } } }' : 'mutation visitor ($email: String!) { subscribeEmailToNewsletter(email: $email) { status } }'"
             :alert="false"
             :clear="false"
-            :variables="{ is_subscribed: {{ $subscribedData }} }"
+            :variables="{ is_subscribed: {{ $subscribedData }}, email: {{ $email ?? 'user.email || cart.email' }} }"
             v-slot="{ mutate, variables }"
         >
     @endif

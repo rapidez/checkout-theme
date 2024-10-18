@@ -1,7 +1,22 @@
-<form id="payment" class="flex flex-col gap-2" v-on:submit.prevent="save(['payment_method'], 4)">
-    <div v-for="(method, index) in checkout.payment_methods">
-        @include('rapidez-ct::checkout.partials.sections.payment.payment-methods')
-    </div>
+    <graphql-mutation
+        :query="config.queries.setPaymentMethodOnCart"
+        :variables="{
+            cart_id: mask,
+            code: cart.selected_payment_method.code,
+        }"
+        group="payment"
+        :before-request="handleBeforePaymentMethodHandlers"
+        :callback="updateCart"
+        :error-callback="checkResponseForExpiredCart"
+        mutate-event="setPaymentMethodOnCart"
+        v-slot="{ mutate, variables }"
+    >
+        <div data-function="mutate">
+            <div v-for="(method, index) in cart.available_payment_methods">
+                @include('rapidez-ct::checkout.partials.sections.payment.payment-methods')
+            </div>
+        </div>
+    </graphql-mutation>
     <graphql query="{ checkoutAgreements { agreement_id name checkbox_text content is_html mode } }">
         <div v-if="data?.checkoutAgreements?.length" class="mt-5 flex flex-col gap-y-4" slot-scope="{ data }">
             <div v-for="agreement in data.checkoutAgreements">
@@ -25,4 +40,3 @@
             </div>
         </div>
     </graphql>
-</form>
