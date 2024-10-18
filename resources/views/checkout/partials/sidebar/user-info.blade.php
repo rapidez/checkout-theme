@@ -1,27 +1,25 @@
-<template v-if="checkout.step < 4">
-    <template v-if="billingAndShippingAreTheSame">
-        <x-rapidez-ct::card>
-            <x-rapidez-ct::address v-bind:address="checkout.shipping_address" shipping billing>
-                <x-rapidez-ct::button.link v-if="checkout.step == 3" v-on:click="goToStep(2)">
-                    @lang('Edit')
-                </x-rapidez-ct::button.link>
-            </x-rapidez-ct::address>
-        </x-rapidez-ct::card>
-    </template>
-    <template v-else>
-        <x-rapidez-ct::card>
-            <x-rapidez-ct::address v-bind:address="checkout.shipping_address" shipping>
-                <x-rapidez-ct::button.link v-if="checkout.step == 3" v-on:click="goToStep(2)">
-                    @lang('Edit')
-                </x-rapidez-ct::button.link>
-            </x-rapidez-ct::address>
-        </x-rapidez-ct::card>
-        <x-rapidez-ct::card>
-            <x-rapidez-ct::address v-bind:address="checkout.billing_address" billing>
-                <x-rapidez-ct::button.link v-if="checkout.step == 3" v-on:click="goToStep(2)">
-                    @lang('Edit')
-                </x-rapidez-ct::button.link>
-            </x-rapidez-ct::address>
-        </x-rapidez-ct::card>
-    </template>
+<template v-if="cart.shipping_addresses[0]?.uid == cart.billing_address?.uid || cart.shipping_addresses[0]?.customer_address_id == cart.billing_address?.customer_address_id">
+    <x-rapidez-ct::card v-if="cart.shipping_addresses[0]">
+        <x-rapidez-ct::address v-bind:address="cart.shipping_addresses[0]" shipping billing>
+            <x-rapidez-ct::button.link :href="route('checkout', ['step' => 'credentials'])">
+                @lang('Edit')
+            </x-rapidez-ct::button.link>
+        </x-rapidez-ct::address>
+    </x-rapidez-ct::card>
+</template>
+<template v-else>
+    <x-rapidez-ct::card v-if="cart.shipping_addresses[0]">
+        <x-rapidez-ct::address v-bind:address="cart.shipping_addresses[0]" shipping>
+            <x-rapidez-ct::button.link :href="route('checkout', ['step' => 'credentials'])">
+                @lang('Edit')
+            </x-rapidez-ct::button.link>
+        </x-rapidez-ct::address>
+    </x-rapidez-ct::card>
+    <x-rapidez-ct::card>
+        <x-rapidez-ct::address v-bind:address="cart.billing_address" billing>
+            <x-rapidez-ct::button.link :href="route('checkout', ['step' => 'credentials'])">
+                @lang('Edit')
+            </x-rapidez-ct::button.link>
+        </x-rapidez-ct::address>
+    </x-rapidez-ct::card>
 </template>

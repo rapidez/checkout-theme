@@ -1,1 +1,1 @@
-<x-rapidez-ct::newsletter v-model="checkout.newsletter_subscribe" />
+<x-rapidez-ct::newsletter/>
