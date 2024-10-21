@@ -1,8 +1,11 @@
+@php($checkoutSteps = config('rapidez.frontend.checkout_steps.' . config('rapidez.store_code')) ?: config('rapidez.frontend.checkout_steps.default'))
 <checkout-success>
-    <div slot-scope="{ order }" dusk="checkout-success">
-        <x-rapidez-ct::title-progress-bar>
-            @lang('Thank you for your order')
-        </x-rapidez-ct::title-progress-bar>
+    <div slot-scope="{ order, refreshOrder, hideBilling, shipping, billing, items }" dusk="checkout-success" class="container">
+        <div class="flex flex-wrap gap-1 items-baseline justify-between">
+            <x-rapidez-ct::title>
+                @lang('Thank you for your order')
+            </x-rapidez-ct::title>
+        </div>
         <x-rapidez-ct::sections>
             @include('rapidez-ct::checkout.partials.sections.success.order-completed-note')
         </x-rapidez-ct::sections>

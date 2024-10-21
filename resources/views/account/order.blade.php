@@ -20,8 +20,9 @@
     <graphql
         query='@include('rapidez::account.partials.queries.order')'
         check="customer.orders.items[0]"
+        :callback="async (variables, response) => {return await updateOrder(variables, {data: response.data.customer.orders.items})}"
     >
-        <div v-if="data" slot-scope="{ data }">
+        <div slot-scope="{ order: data }" v-if="order">
             <x-rapidez-ct::sections>
                 @include('rapidez-ct::account.partials.order.products')
                 @include('rapidez-ct::account.partials.order.order-info')
@@ -31,7 +32,7 @@
                     @lang('Back to my orders')
                 </x-rapidez-ct::button.outline>
                 <span class="text-ct-inactive">
-                    @lang('Order date'): @{{ (new Date(data.customer.orders.items[0].order_date)).toLocaleDateString() }}
+                    @lang('Order date'): @{{ (new Date(order.order_date)).toLocaleDateString() }}
                 </span>
             </x-rapidez-ct::toolbar>
         </div>

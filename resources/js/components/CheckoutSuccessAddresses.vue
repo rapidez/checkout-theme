@@ -32,30 +32,15 @@
             },
 
             shipping() {
-                if(!this.order?.sales_order_addresses) {
-                    return null;
-                }
-
-                let shipping = this.order.sales_order_addresses.filter(e => e.address_type == 'shipping')
-                return shipping.length > 1 ? null : shipping.at(-1)
+                return this.order.shipping_address
             },
 
             billing() {
-                if(!this.order?.sales_order_addresses) {
-                    return null;
-                }
-
-                let billing = this.order.sales_order_addresses.filter(e => e.address_type == 'billing')
-                return billing.at(-1)
+                return this.order.billing_address
             },
 
             pickup() {
-                if(!this.order?.sales_order_addresses) {
-                    return null;
-                }
-
-                let shipping = this.order.sales_order_addresses.filter(e => e.address_type == 'shipping')
-                return shipping.length > 1 ? shipping[0] : null
+                return this.shipping
             }
         }
     }
