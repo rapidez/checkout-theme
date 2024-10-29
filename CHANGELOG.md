@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.6.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.7.0...master)
+## [2.7.0](https://github.com/rapidez/checkout-theme/releases/tag/2.7.0) - 2024-10-29
+
+### Added
+
+- Dutch translations (#119)
+
 ## [2.6.0](https://github.com/rapidez/checkout-theme/releases/tag/2.6.0) - 2024-10-22
 
 ### Added
