@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.7.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.8.0...master)
+## [2.8.0](https://github.com/rapidez/checkout-theme/releases/tag/2.8.0) - 2024-10-31
+
+### Added
+
+- Forgot password link at checkout login (#122)
+
 ## [2.7.0](https://github.com/rapidez/checkout-theme/releases/tag/2.7.0) - 2024-10-29
 
 ### Added
