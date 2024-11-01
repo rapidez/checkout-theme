@@ -5,7 +5,6 @@
                 class="[&>input]:pr-12"
                 type="password"
                 v-bind:type="isOpen ? 'text' : 'password'"
-                label="Password"
                 {{ $attributes }}
             />
             @if (!$attributes['disabled'] ?? false)

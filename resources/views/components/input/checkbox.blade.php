@@ -8,6 +8,6 @@
         {{ $attributes->except('class') }}
     />
     @isset($slot)
-        <span {{ $slot->attributes ?? '' }}>{{ $slot }}</span>
+        <span {{ $slot->attributes->class('mt-0.5') ?? '' }}>{{ $slot }}</span>
     @endisset
 </label>
