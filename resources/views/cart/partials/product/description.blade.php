@@ -1,4 +1,5 @@
 <td class="flex max-md:w-1/2 md:table-cell">
+    @include('rapidez-ct::cart.partials.product.alert')
     <div class="flex flex-col items-start">
         <a :href="item.product.url_key + item.product.url_suffix | url">
             <div dusk="cart-item-name">@{{ item.product.name }}</div>

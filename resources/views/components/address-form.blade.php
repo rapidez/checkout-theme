@@ -17,6 +17,7 @@
                 name="{{ $type }}_vat_id"
                 label="Tax ID"
                 v-model="{{ $address }}.vat_id"
+                v-on:change="window.app.$emit('vat-change', $event)"
                 :required="Rapidez::config('customer/address/taxvat_show', 0) == 'req'"
             />
         @endif

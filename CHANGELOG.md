@@ -1,9 +1,33 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.5.2...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.8.0...master)
+## [2.8.0](https://github.com/rapidez/checkout-theme/releases/tag/2.8.0) - 2024-10-31
+
+### Added
+
+- Forgot password link at checkout login (#122)
+
+## [2.7.0](https://github.com/rapidez/checkout-theme/releases/tag/2.7.0) - 2024-10-29
+
+### Added
+
+- Dutch translations (#119)
+
+## [2.6.0](https://github.com/rapidez/checkout-theme/releases/tag/2.6.0) - 2024-10-22
+
+### Added
+
+- Backorder count to cart (#117)
+- VAT change event (#120)
+
+### Fixed
+
+- Fix address popup when list is to long | Fix text alignment (#116)
+
 ## [2.5.2](https://github.com/rapidez/checkout-theme/releases/tag/2.5.2) - 2024-09-16
 
 ### Fixed
+
 - Fix the product image because catalog/product is already in the image url (#115)
 - Make back button work (#112)
 - Fix cart summary(#113)
