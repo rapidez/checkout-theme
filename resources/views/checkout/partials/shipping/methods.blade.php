@@ -17,7 +17,7 @@
     v-if="!cart.is_virtual"
 >
     <fieldset class="mt-5 flex flex-col gap-2" data-function="mutate" v-on:change="window.app.$emit('setShippingAddressesOnCart')">
-        <div class="p-5 border rounded bg-white" v-for="(method, index) in cart.shipping_addresses[0]?.available_shipping_methods">
+        <template v-for="(method, index) in cart.shipping_addresses[0]?.available_shipping_methods">
             <x-rapidez-ct::input.radio
                 name="shipping_method"
                 v-model="variables.method"
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </x-rapidez-ct::input.radio>
-        </div>
+        </template>
     </fieldset>
 </graphql-mutation>
 

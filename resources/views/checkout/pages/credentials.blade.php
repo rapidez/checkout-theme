@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <x-rapidez-ct::layout class="mt-8 sm:mt-14">
+        <x-rapidez-ct::layout class="mt-4 sm:mt-12">
             <x-rapidez-ct::title-progress-bar :href="route('cart')" :$checkoutSteps :$currentStep :$currentStepKey>
                 @lang('Credentials')
             </x-rapidez-ct::title-progress-bar>

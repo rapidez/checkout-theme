@@ -1,4 +1,4 @@
-<x-rapidez-ct::layout class="mt-8 sm:mt-14">
+<x-rapidez-ct::layout class="mt-4 sm:mt-12">
     <template v-if="checkout.step == 2 && $root.cart?.total_quantity">
         @include('rapidez-ct::checkout.steps.credentials')
     </template>

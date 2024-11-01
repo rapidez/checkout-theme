@@ -11,7 +11,6 @@
                 @lang('Register')
             </x-rapidez-ct::title>
 
-            
             @include('rapidez-ct::account.partials.register-account')
 
             <x-rapidez-ct::toolbar>
@@ -27,5 +26,5 @@
                 @include('rapidez-ct::account.partials.account-features')
             </x-slot:sidebar>
         </x-rapidez-ct::layout>
-    </div>
+    </div>  
 @endsection
