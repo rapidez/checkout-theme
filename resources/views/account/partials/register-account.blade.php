@@ -78,6 +78,7 @@
                                     label="Vat ID"
                                     type="text"
                                     v-model="variables.taxvat"
+                                    v-on:change="window.app.$emit('vat-change', $event)"
                                     required
                                 />
                             </div>
