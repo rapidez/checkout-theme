@@ -26,5 +26,5 @@
                 @include('rapidez-ct::account.partials.account-features')
             </x-slot:sidebar>
         </x-rapidez-ct::layout>
-    </div>  
+    </div>
 @endsection
