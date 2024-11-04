@@ -14,7 +14,7 @@
             <form
                 class="contents"
                 v-on:submit.prevent="(e) => {
-                    submitFieldsets(e.target?.form ?? e.target)
+                    submitPartials(e.target?.form ?? e.target)
                         .then((result) =>
                             window.app.$emit('checkout-credentials-saved')
                             && window.Turbo.visit(window.url('{{ route('checkout', ['step' => 'payment']) }}'))
