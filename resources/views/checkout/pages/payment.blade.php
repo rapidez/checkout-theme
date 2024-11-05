@@ -10,10 +10,10 @@
             <x-rapidez-ct::title-progress-bar :href="route('checkout', ['step' => 'credentials'])" :$checkoutSteps :$currentStep :$currentStepKey>
                 @lang('Payment')
             </x-rapidez-ct::title-progress-bar>
-            <form 
+            <form
                 class="contents"
                 v-on:submit.prevent="(e) => {
-                    submitFieldsets(e.target?.form ?? e.target)
+                    submitPartials(e.target?.form ?? e.target)
                         .then((result) =>
                             window.app.$emit('checkout-payment-saved')
                             && window.app.$emit('placeOrder')

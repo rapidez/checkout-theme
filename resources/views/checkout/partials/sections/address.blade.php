@@ -22,11 +22,10 @@
             v-slot="{ mutate, variables }"
             v-if="!cart.is_virtual"
         >
-            <fieldset data-function="mutate" v-on:change="function (e) {e.target.closest('fieldset').querySelector(':invalid') === null && mutate().then(() => (cart?.billing_address?.same_as_shipping ?? true) && window.app.$emit('setBillingAddressOnCart'))}">
+            <fieldset partial-submit="mutate" v-on:change="function (e) {e.target.closest('fieldset').querySelector(':invalid') === null && mutate().then(() => (cart?.billing_address?.same_as_shipping ?? true) && window.app.$emit('setBillingAddressOnCart'))}">
                 @include('rapidez-ct::checkout.partials.shipping-billing-fields', ['type' => 'shipping'])
             </fieldset>
         </graphql-mutation>
-
         <graphql-mutation
             :query="config.queries.setNewBillingAddressOnCart"
             :variables="JSON.parse(JSON.stringify({
@@ -44,7 +43,7 @@
             mutate-event="setBillingAddressOnCart"
             v-slot="{ mutate, variables }"
         >
-            <fieldset data-function="mutate" v-on:change="function (e) {e.target.closest('fieldset').querySelector(':invalid') === null && mutate().then(() => (cart?.billing_address?.same_as_shipping ?? true) && window.app.$emit('setBillingAddressOnCart'))}">
+            <fieldset partial-submit="mutate" v-on:change="function (e) {e.target.closest('fieldset').querySelector(':invalid') === null && mutate().then(() => (cart?.billing_address?.same_as_shipping ?? true) && window.app.$emit('setBillingAddressOnCart'))}">
                 @include('rapidez-ct::checkout.partials.shipping-billing-fields', ['type' => 'billing'])
             </fieldset>
         </graphql-mutation>
