@@ -1,5 +1,5 @@
 <checkout-login v-slot="checkoutLogin">
-    <fieldset partial-submit="go" class="flex flex-col gap-3">
+    <fieldset partial-submit="go" class="grid gap-4 md:gap-5 md:grid-cols-2">
         <x-rapidez-ct::input
             label="Email"
             name="email"
@@ -10,11 +10,15 @@
             required
             :placeholder="__('Enter your e-mail address')"
         />
+
+        <p v-if="checkoutLogin.isEmailAvailable" class="self-end text-ct-inactive">
+            @lang('We will send your order confirmation to this e-mail address. We will also check if you already have an account so you can checkout more efficiently.')
+        </p>
+
         <template v-if="!loggedIn && (!checkoutLogin.isEmailAvailable || checkoutLogin.createAccount)">
-            <x-rapidez-ct::input
+            <x-rapidez-ct::input.password
                 label="Password"
                 name="password"
-                type="password"
                 v-model="checkoutLogin.password"
                 required
             />
@@ -29,10 +33,9 @@
             </a>
         @endif
         <template v-if="!loggedIn && checkoutLogin.createAccount">
-            <x-rapidez-ct::input
+            <x-rapidez-ct::input.password
                 label="Repeat password"
                 name="password_repeat"
-                type="password"
                 v-model="checkoutLogin.password_repeat"
                 required
             />
@@ -51,15 +54,14 @@
                 required
             />
         </template>
-        <template v-if="!loggedIn && checkoutLogin.isEmailAvailable">
-            <x-rapidez::checkbox v-model="checkoutLogin.createAccount" dusk="create_account">
-                @lang('Create an account')
-            </x-rapidez::checkbox>
-        </template>
 
-        <p v-if="checkoutLogin.isEmailAvailable" class="self-end text-ct-inactive">
-            @lang('We will send your order confirmation to this e-mail address. We will also check if you already have an account so you can checkout more efficiently.')
-        </p>
+        <template v-if="!loggedIn && checkoutLogin.isEmailAvailable">
+            <div class="col-span-full">
+                <x-rapidez-ct::input.checkbox v-model="checkoutLogin.createAccount" dusk="create_account" class="">
+                    @lang('Create an account')
+                </x-rapidez-ct::input.checkbox>
+            </div>
+        </template>
 
         <x-rapidez-ct::button.accent type="button" v-on:click="checkoutLogin.go" v-if="checkoutLogin.isEmailAvailable && checkoutLogin.createAccount" dusk="register">
             @lang('Register')
