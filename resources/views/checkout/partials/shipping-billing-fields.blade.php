@@ -1,10 +1,13 @@
-<p class="mb-5 text-lg font-medium">
-    @if ($type == 'shipping')
+@if ($type == 'shipping')
+    <p class="mb-5 text-lg font-medium">
         @lang('Shipping address')
-    @else
+    </p>
+@else
+    <p class="mb-5 text-lg font-medium mt-9 pt-7 border-t-2 border-white" v-if="!variables.same_as_shipping" v-cloak>
         @lang('Billing address')
-    @endif
-</p>
+    </p>
+@endif
+
 
 <template @if($type == 'billing') v-if="!variables.same_as_shipping" @endif >
     <x-rapidez-ct::address-form :$type/>

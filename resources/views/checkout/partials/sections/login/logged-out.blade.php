@@ -71,4 +71,3 @@
         </x-rapidez-ct::button.accent>
     </fieldset>
 </checkout-login>
-

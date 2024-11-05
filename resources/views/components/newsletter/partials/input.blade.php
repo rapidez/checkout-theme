@@ -22,7 +22,7 @@
         </div>
         <div class="absolute inset-0 p-3.5" v-if="(mutated || mutating) && !error">
             <x-heroicon-o-arrow-path class="mx-auto h-full animate-spin" v-if="mutating" />
-            <x-heroicon-o-check class="mx-auto h-full" v-else />
+            <x-heroicon-o-check class="mx-auto h-full" v-else stroke-width="2.5" />
         </div>
     </x-rapidez-ct::button.accent>
 </form>

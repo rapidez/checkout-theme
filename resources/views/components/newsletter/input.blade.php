@@ -4,7 +4,6 @@
     <x-rapidez-ct::title.lg class="mb-5">
         @lang('Newsletter')
     </x-rapidez-ct::title.lg>
-    <x-rapidez-ct::newsletter-visual />
     <graphql-mutation
         v-cloak
         query="mutation visitor ($email: String!) { subscribeEmailToNewsletter(email: $email) { status } }"
