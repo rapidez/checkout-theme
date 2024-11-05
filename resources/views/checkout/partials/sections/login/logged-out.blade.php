@@ -1,5 +1,5 @@
 <checkout-login v-slot="checkoutLogin">
-    <fieldset data-function="go" class="grid gap-4 md:gap-5 md:grid-cols-2">
+    <fieldset partial-submit="go" class="grid gap-4 md:gap-5 md:grid-cols-2">
         <x-rapidez-ct::input
             label="Email"
             name="email"
