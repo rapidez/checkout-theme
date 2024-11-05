@@ -1,4 +1,4 @@
-<div class="grid gap-5 sm:grid-cols-2">
+<div class="grid gap-5 md:grid-cols-2">
     <template v-if="billingAndShippingAreTheSame">
         <x-rapidez-ct::card.address v-bind:address="checkout.shipping_address" shipping billing check>
             <x-rapidez-ct::button.link v-on:click.prevent="toggleEdit">

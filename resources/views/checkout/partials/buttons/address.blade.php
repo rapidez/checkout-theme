@@ -1,4 +1,4 @@
-<div class="mt-5">
+<div class="flex flex-wrap gap-3 mt-5">
     <x-rapidez-ct::button.accent v-on:click.prevent="toggleEdit">
         @lang('Use a new address')
     </x-rapidez-ct::button.accent>
