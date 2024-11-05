@@ -1,7 +1,7 @@
 <x-rapidez-ct::title.lg>
     @lang('My addresses')
 </x-rapidez-ct::title.lg>
-<div class="grid gap-5 sm:grid-cols-2 my-5">
+<div class="grid gap-5 md:grid-cols-2 my-5">
     <template v-if="data.customer.shipping_address?.default_billing || !data.customer.shipping_address || !data.customer.billing_address">
         <template v-if="data.customer.shipping_address || data.customer.billing_address">
             <x-rapidez-ct::card.address v-bind:address="data.customer.shipping_address ?? data.customer.billing_address" shipping billing check>
@@ -10,7 +10,7 @@
                 </x-rapidez-ct::button.link>
             </x-rapidez-ct::card.address>
         </template>
-        <a href="/account/address/new" class="min-h-[180px] flex flex-col items-center justify-center gap-y-2 font-medium bg-ct-disabled rounded max-sm:hidden">
+        <a href="/account/address/new" class="min-h-[180px] flex flex-col items-center justify-center gap-y-2 font-medium bg-ct-disabled rounded max-md:hidden">
             <span>+</span>
             <span>@lang('Add new address')</span>
         </a>
@@ -28,7 +28,7 @@
         </x-rapidez-ct::card.address>
     </template>
 </div>
-<div class="flex gap-5">
+<div class="flex flex-wrap gap-3">
     <x-rapidez-ct::button.accent :href="route('account.address.create')">
         @lang('Add a new address')
     </x-rapidez-ct::button.accent>

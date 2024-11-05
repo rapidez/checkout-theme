@@ -1,19 +1,17 @@
-<login :checkout-login="false" v-slot="{ email, password, go, loginInputChange }" redirect="{{ $redirect ?? route('account.overview') }}">
+<login :checkout-login="false" v-slot="login" redirect="{{ $redirect ?? route('account.overview') }}">
     <x-rapidez-ct::card.inactive>
-        <form class="space-y-5" v-on:submit.prevent="go()">
+        <form class="space-y-5" v-on:submit.prevent="login.go()">
             <x-rapidez-ct::input
                 name="email"
                 type="email"
                 label="Email"
-                v-bind:value="email"
-                v-on:input="loginInputChange"
+                v-model="login.email"
                 required
             />
             <x-rapidez-ct::input.password
                 name="password"
                 label="Password"
-                v-bind:value="password"
-                v-on:input="loginInputChange"
+                v-model="login.password"
                 required
             />
             <div class="flex items-center justify-between">

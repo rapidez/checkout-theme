@@ -1,7 +1,6 @@
 <x-rapidez-ct::input.checkbox
     name="agreement_ids[]"
     v-bind:value="agreement.agreement_id"
-    v-model="checkout.agreement_ids"
     dusk="agreements"
     required
 >

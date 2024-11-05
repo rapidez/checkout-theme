@@ -10,7 +10,7 @@
     </div>
 </div>
 <ul class="flex flex-col divide-y">
-    <li class="flex py-5" v-for="item in data.customer.orders.items[0].items">
+    <li class="flex py-5" v-for="item in order.items">
         <div class="flex w-full flex-wrap gap-y-3 gap-x-3 text-sm sm:gap-x-6 sm:pr-6 md:items-center">
             <div class="flex h-[100px] w-[150px] items-center justify-center">
                 <img

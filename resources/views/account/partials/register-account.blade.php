@@ -10,8 +10,8 @@
     <graphql-mutation
         query="@include('rapidez-ct::account.partials.queries.register-account')"
         redirect="{{ route('account.overview') }}"
-        :callback="async (variables, response) => { 
-            await registerCallback(variables, response); 
+        :callback="async (variables, response) => {
+            await registerCallback(variables, response);
             @if(config('rapidez.checkout-theme.register.create-address'))
                 await createAddress();
             @endif
@@ -24,9 +24,9 @@
                 <x-rapidez-ct::title.lg class="mb-5">
                     @lang('Register account')
                 </x-rapidez-ct::title.lg>
-                <form 
-                    id="register" 
-                    class="grid gap-5 sm:grid-cols-2"
+                <form
+                    id="register"
+                    class="grid gap-5 md:grid-cols-2"
                     @if(config('rapidez.checkout-theme.register.create-address'))
                         v-on:submit.prevent="window.document.getElementById('register-address').reportValidity() && mutate()"
                     @else
