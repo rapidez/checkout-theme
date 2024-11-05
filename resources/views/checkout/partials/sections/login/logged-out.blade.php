@@ -16,12 +16,21 @@
         </p>
 
         <template v-if="!loggedIn && (!checkoutLogin.isEmailAvailable || checkoutLogin.createAccount)">
-            <x-rapidez-ct::input.password
-                label="Password"
-                name="password"
-                v-model="checkoutLogin.password"
-                required
-            />
+            <div class="relative">
+                <x-rapidez-ct::input.password
+                    label="Password"
+                    name="password"
+                    v-model="checkoutLogin.password"
+                    required
+                />
+                <input
+                    type="checkbox"
+                    v-if="!checkoutLogin.createAccount"
+                    oninvalid="this.setCustomValidity('{{ __('Please log in') }}')"
+                    class="absolute h-full inset-0 opacity-0 pointer-events-none"
+                    required
+                />
+            </div>
         </template>
         <p v-if="!loggedIn && !checkoutLogin.isEmailAvailable" class="self-end text-ct-inactive">
             @lang('You already have an account with this e-mail address. Please log in to continue.')
