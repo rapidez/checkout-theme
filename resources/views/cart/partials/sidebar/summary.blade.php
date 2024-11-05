@@ -29,16 +29,26 @@
             <dd>@{{ cart.prices.grand_total.value | price }}</dd>
         </div>
     </x-rapidez-ct::separated-listing>
-    <div class="w-full" :class="{ 'cursor-not-allowed': !canOrder }">
+
+    <div class="w-full">
         <x-rapidez-ct::button.enhanced 
             :href="route('checkout')" 
             class="flex w-full items-center justify-center gap-1 mt-6" 
-            v-bind:class="{ 'pointer-events-none': !canOrder }"
             dusk="checkout"
+            v-if="canOrder"
         >
             @lang('To checkout')
             <x-heroicon-o-arrow-right class="h-4" />
         </x-rapidez-ct::button.enhanced>
+        <remove-multiple-from-cart v-slot="{ remove }" v-else>
+            <x-rapidez-ct::button.accent
+                @click="remove"
+                class="flex w-full items-center justify-center gap-1 mt-6" 
+                dusk="remove-out-of-stock-items"
+            >
+                @lang('Remove items from cart')
+            </x-rapidez-ct::button.accent>
+        </remove-multiple-from-cart>
     </div>
     <div class="mt-4 flex items-center justify-center gap-1 text-center text-sm">
         <x-heroicon-o-check class="h-5 text-ct-accent" />
