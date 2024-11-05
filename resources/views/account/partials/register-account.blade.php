@@ -26,7 +26,7 @@
                 </x-rapidez-ct::title.lg>
                 <form 
                     id="register" 
-                    class="grid gap-5 sm:grid-cols-2"
+                    class="grid gap-5 md:grid-cols-2"
                     @if(config('rapidez.checkout-theme.register.create-address'))
                         v-on:submit.prevent="window.document.getElementById('register-address').reportValidity() && mutate()"
                     @else
@@ -78,6 +78,7 @@
                                     label="Vat ID"
                                     type="text"
                                     v-model="variables.taxvat"
+                                    v-on:change="window.app.$emit('vat-change', $event)"
                                     required
                                 />
                             </div>
