@@ -1,6 +1,17 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.8.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.9.0...master)
+## [2.9.0](https://github.com/rapidez/checkout-theme/releases/tag/2.9.0) - 2024-11-05
+
+### Added
+
+- VAT check in register page (#129)
+- Disable checkout button and add notice if not in stock (#127)
+
+### Changed
+
+- Changed breakpoints for smaller screens (#124)
+
 ## [2.8.0](https://github.com/rapidez/checkout-theme/releases/tag/2.8.0) - 2024-10-31
 
 ### Added
