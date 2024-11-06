@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.9.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.9.1...master)
+## [2.9.1](https://github.com/rapidez/checkout-theme/releases/tag/2.9.1) - 2024-11-06
+
+### Fixed
+
+- Make sure you actually log in from the checkout (#121)
+
 ## [2.9.0](https://github.com/rapidez/checkout-theme/releases/tag/2.9.0) - 2024-11-05
 
 ### Added
