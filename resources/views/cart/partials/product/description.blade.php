@@ -10,7 +10,7 @@
                 @{{ option.label }}: @{{ option.values[0].label || option.values[0].value }}
             </div>
             <div class="text-red-600" v-if="!canOrderCartItem(item)">
-                @lang('This product it out of stock, remove it to continue your order.')
+                @lang('This product is out of stock, remove it to continue your order.')
             </div>
             <div v-for="option in config.cart_attributes">
                 <template v-if="item.product.attribute_values?.[option] && typeof item.product.attribute_values[option] === 'object'">
