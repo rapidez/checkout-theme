@@ -1,5 +1,5 @@
 <div class="bg-inactive-100 text-ct-inactive relative py-3 text-xs font-semibold">
-    <slider reference="header-usp-slider" autoplay>
+    <slider reference="header-usp-slider" autoplay loop>
         <div
             ref="header-usp-slider"
             class="scrollbar-hide flex snap-x snap-mandatory items-center gap-7 overflow-x-auto lg:justify-center"
