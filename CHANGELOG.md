@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.9.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.9.2...master)
+## [2.9.2](https://github.com/rapidez/checkout-theme/releases/tag/2.9.2) - 2024-11-08
+
+### Fixed
+
+- Input v-cloak fix (#133)
+- Use v-model variable for is_subscribed (#136)
+
 ## [2.9.1](https://github.com/rapidez/checkout-theme/releases/tag/2.9.1) - 2024-11-06
 
 ### Fixed
