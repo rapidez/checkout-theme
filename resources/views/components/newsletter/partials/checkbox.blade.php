@@ -5,7 +5,7 @@
     'id' => $id,
 ])" v-on:change="() => {
         if (typeof mutate === 'function' && (!{{ (int)$isPartOfAnotherForm }})) { mutate() }
-        if ($root.loggedIn) { $root.user.extension_attributes.is_subscribed=variables.is_subscribed }
+        if ($root.loggedIn) { $root.user.extension_attributes.is_subscribed={{ $attributes->get('v-model') }} }
     }">
     <x-slot:slot class="ml-2 flex flex-col gap-1">
         <span class="text-ct-primary text-sm font-medium">@lang('Yes, I want to subscribe to the newsletter')</span>
