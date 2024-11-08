@@ -11,8 +11,12 @@
                 @lang('Reset password')
             </x-rapidez-ct::title>
             <x-slot:columns>
-                @include('rapidez-ct::account.partials.resetpassword')
-                @include('rapidez-ct::account.partials.register')
+                <x-rapidez-ct::card.inactive>
+                    @include('rapidez-ct::account.partials.resetpassword')
+                </x-rapidez-ct::card.inactive>
+                <x-rapidez-ct::card class="md:w-auto">
+                    @include('rapidez-ct::account.partials.register')
+                </x-rapidez-ct::card>
             </x-slot:columns>
         </x-rapidez-ct::layout.two-column>
     </div>
