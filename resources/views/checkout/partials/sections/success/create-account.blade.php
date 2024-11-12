@@ -1,4 +1,4 @@
-<x-rapidez-ct::card.inactive v-if="!$root.loggedIn">
+<template v-if="!$root.loggedIn">
     @include('rapidez-ct::checkout.partials.sections.success.create-account-title')
     <graphql-mutation
         v-cloak
@@ -35,7 +35,7 @@
             @include('rapidez-ct::checkout.partials.sections.success.create-account-button')
         </form>
     </graphql-mutation>
-</x-rapidez-ct::card.inactive>
-<x-rapidez-ct::card.inactive v-else>
+</template>
+<template v-else>
     @include('rapidez-ct::checkout.partials.sections.success.logged-in')
-</x-rapidez-ct::card.inactive>
+</template>
