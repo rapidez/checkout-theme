@@ -6,7 +6,7 @@
             slot-scope="{ navigate, currentSlide, slidesTotal }"
         >
             @foreach (['Wide range of products', 'Free returns', 'All items shown are in stock', 'Free shipping'] as $usp)
-                <div class="flex shrink-0 snap-center items-center justify-center gap-2 max-lg:w-screen">
+                <div class="flex shrink-0 snap-center items-center justify-center gap-2 max-lg:w-full">
                     <x-heroicon-o-check class="size-4 text-ct-enhanced stroke-2" />
                     <span>{{ $usp }}</span>
                 </div>
