@@ -89,6 +89,8 @@ php artisan vendor:publish --tag=payment-icons
 
 ## Customizations
 
+It is recommended to edit the `config/rapidez/frontend.php` and remove the `login` step. This will enable two step checkout.
+
 If you want you *could* publish the views. But it's recommended to only publish and change the views you need so when there is an update you don't have to compare all views with the new version. Also keep in mind this is an opinionated theme, if you want/need to change a lot it's better to build your own in terms of upgradability.
 ```
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=views
