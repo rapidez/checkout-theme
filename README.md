@@ -1,6 +1,6 @@
 # Rapidez Checkout Theme
 
-An **opinionated** checkout with customer center for [Rapidez](https://github.com/rapidez/rapidez). Easily configurable with your own logo, colors, fonts and style. A fully mobile optimized theme which takes about 1 hour to fully implement.
+An **opinionated** checkout with customer center for [Rapidez](https://github.com/rapidez/rapidez). Easily configurable with your own logo, checkout header/footer, colors, fonts and style. A fully mobile optimized theme which takes about 1 hour to fully implement.
 
 ![](images/checkout-theme.gif)
 
@@ -26,6 +26,7 @@ Customer center
 Easily configurable in less than 5 minutes
 - Colors - Change a total of 8 variables for personal customization
 - Logo - Simply add your own logo by extending 1 template
+- Checkout Header/Footer - Populate these files with relevant usps and links; currently, they use placeholder content and should be replaced with actual brand information
 - Visuals - Change the look of various types of cards, customer center tiles, etc, by extending well-defined templates
 
 Fast checkout experience
@@ -87,8 +88,6 @@ php artisan vendor:publish --tag=payment-icons
 ```
 
 ## Customizations
-
-It is recommended to edit the `config/rapidez/frontend.php` and remove the `login` step. This will enable two step checkout.
 
 If you want you *could* publish the views. But it's recommended to only publish and change the views you need so when there is an update you don't have to compare all views with the new version. Also keep in mind this is an opinionated theme, if you want/need to change a lot it's better to build your own in terms of upgradability.
 ```
