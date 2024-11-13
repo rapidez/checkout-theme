@@ -25,7 +25,9 @@
         <div slot-scope="{ order: data }" v-if="order">
             <x-rapidez-ct::sections>
                 @include('rapidez-ct::account.partials.order.products')
-                @include('rapidez-ct::account.partials.order.order-info')
+                <x-rapidez-ct::card.inactive>
+                    @include('rapidez-ct::account.partials.order.order-info')
+                </x-rapidez-ct::card.inactive>
             </x-rapidez-ct::sections>
             <x-rapidez-ct::toolbar>
                 <x-rapidez-ct::button.outline href="/account/orders">
