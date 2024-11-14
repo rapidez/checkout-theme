@@ -6,9 +6,9 @@
 
 @section('content')
     <graphql v-if="mask"
-        :query="'query getCart($cart_id: String!) { cart (cart_id: $cart_id) { ' + config.queries.cart + ' } }'"
-        :variables="{ cart_id: mask }" 
-        :callback="updateCart" 
+        :query="'query getCart($cart_id: String!) { cart (cart_id: $cart_id) { ...cart } } ' + config.fragments.cart"
+        :variables="{ cart_id: mask }"
+        :callback="updateCart"
         :error-callback="checkResponseForExpiredCart"
     >
     </graphql>
