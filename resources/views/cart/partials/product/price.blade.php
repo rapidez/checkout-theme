@@ -7,7 +7,9 @@
     </div>
 </td>
 <td class="flex items-center font-medium max-md:w-1/3 md:table-cell *:mx-auto">
-    <x-rapidez-ct::input.quantity/>
+    <template v-if="canOrderCartItem(item)">
+        <x-rapidez-ct::input.quantity/>
+    </template>
 </td>
 <td class="flex items-center justify-end text-right font-medium max-md:w-1/3 md:table-cell">
     @{{ item.prices.row_total_including_tax.value | price }}
