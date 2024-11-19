@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.10.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.11.0...master)
+## [2.11.0](https://github.com/rapidez/checkout-theme/releases/tag/2.11.0) - 2024-11-19
+
+### Changed
+
+- Use the resizedPath helper (01eaa98)
+
 ## [2.10.0](https://github.com/rapidez/checkout-theme/releases/tag/2.10.0) - 2024-11-19
 
 ### Added
