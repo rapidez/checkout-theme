@@ -1,16 +1,6 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.10.0...master)
-## [2.10.0](https://github.com/rapidez/checkout-theme/releases/tag/2.10.0) - 2024-11-19
-
-### Added
-
-- Added default header and footer (#138)
-
-### Changed
-
-- Revert #127 (80fc797)
-
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.9.2...master)
 ## [2.9.2](https://github.com/rapidez/checkout-theme/releases/tag/2.9.2) - 2024-11-08
 
 ### Fixed
