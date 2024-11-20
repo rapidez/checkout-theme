@@ -1,5 +1,3 @@
-@include('rapidez-ct::cart.partials.cart-title')
-
 <x-rapidez-ct::sections>
     @include('rapidez-ct::cart.partials.products')
 </x-rapidez-ct::sections>
