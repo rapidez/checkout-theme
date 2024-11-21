@@ -31,7 +31,7 @@
             },
 
             select(type, address) {
-                this.$root.checkout[`${type}_address`] = address
+                this.$root.checkout[`${type}_address`] = JSON.parse(JSON.stringify(address))
                 this.$root.checkout[`${type}_address`].customer_address_id = address.id
             },
         },
