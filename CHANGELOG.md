@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.11.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.11.1...master)
+## [2.11.1](https://github.com/rapidez/checkout-theme/releases/tag/2.11.1) - 2024-11-26
+
+### Fixed
+
+- Fix closing tag (#146)
+- Clone address to remove reactivity (#145)
+
 ## [2.11.0](https://github.com/rapidez/checkout-theme/releases/tag/2.11.0) - 2024-11-19
 
 ### Changed
