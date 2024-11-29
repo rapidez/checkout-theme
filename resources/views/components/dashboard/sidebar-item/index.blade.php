@@ -1,5 +1,5 @@
 @props(['item' => [], 'key' => ''])
-<x-tag {{ $attributes->merge([
+<x-rapidez::tag {{ $attributes->merge([
     'class' => 'flex-1 text-left',
     'is' => isset($item['href']) ? 'a' : 'button',
     'href' => $item['href'] ?? '',
@@ -13,4 +13,4 @@
         </graphql>
     @endif
     <x-heroicon-o-chevron-right class="h-4" />
-</x-tag>
+</x-rapidez::tag>

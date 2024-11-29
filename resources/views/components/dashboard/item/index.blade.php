@@ -1,5 +1,5 @@
 @props(['item' => [], 'key' => ''])
-<x-tag {{ $attributes->merge([
+<x-rapidez::tag {{ $attributes->merge([
     'class' => 'flex flex-wrap items-center gap-x-6 rounded border bg-white px-8 py-4 text-left',
     'href' => $item['href'] ?? '',
     'is' => isset($item['href']) ? 'a' : 'button',
@@ -27,4 +27,4 @@
         @endif
     </div>
     <x-heroicon-o-chevron-right class="ml-auto h-4" />
-</x-tag>
+</x-rapidez::tag>
