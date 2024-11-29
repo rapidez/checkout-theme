@@ -1,5 +1,5 @@
 @props(['loader' => false, 'tag'])
-<x-tag
+<x-rapidez::tag
     is="{{ $tag ?? ($attributes->has('href') || $attributes->has('v-bind:href') ? 'a' : 'button') }}"
     {{ $attributes->class([
         'relative inline-block self-start text-center text-sm transition cursor-pointer',
@@ -15,4 +15,4 @@
     <span class="contents" @attributes([':class' => $loader ? '{ "invisible": $root.loading }' : false])>
         {{ $slot }}
     </span>
-</x-tag>
+</x-rapidez::tag>
