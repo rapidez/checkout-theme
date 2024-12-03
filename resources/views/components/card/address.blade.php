@@ -5,7 +5,7 @@
         'v-bind:disabled' => var_export($disabled, true),
     ]);
 @endphp
-<x-rapidez-ct::card.white 
+<x-rapidez-ct::card.white
     {{ $attributes->only('v-if') }}
     v-bind:class="{!! $attributes['v-bind:disabled'] !!} ? '!bg-ct-disabled !text-ct-inactive' : ''"
     :$check
