@@ -1,6 +1,12 @@
 @props(['loader' => false, 'tag'])
+
+@php
+    $tag = $attributes->hasAny('href', ':href', 'v-bind:href') ? 'a' : 'button';
+    $tag = $attributes->has('for') ? 'label' : $tag;
+@endphp
+
 <x-rapidez::tag
-    is="{{ $tag ?? ($attributes->has('href') || $attributes->has('v-bind:href') ? 'a' : 'button') }}"
+    :is="$tag"
     {{ $attributes->class([
         'relative inline-block self-start text-center text-sm transition cursor-pointer',
         'disabled:cursor-not-allowed disabled:opacity-70',
