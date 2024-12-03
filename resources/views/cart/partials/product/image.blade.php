@@ -4,7 +4,7 @@
         v-bind:class="{'opacity-20' : !item.is_available}"
         class="object-contain"
         :alt="item.product.name"
-        :src="'/storage/{{ config('rapidez.store') }}/resizes/200/magento' + item.product.image.url.replace(config.media_url, '') + '.webp'"
-    >
+        :src="resizedPath(item.product.image.url + '.webp', '200')"
+    />
     <x-rapidez::no-image v-else />
 </td>

@@ -1,6 +1,30 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.8.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.9.2...master)
+## [2.9.2](https://github.com/rapidez/checkout-theme/releases/tag/2.9.2) - 2024-11-08
+
+### Fixed
+
+- Input v-cloak fix (#133)
+- Use v-model variable for is_subscribed (#136)
+
+## [2.9.1](https://github.com/rapidez/checkout-theme/releases/tag/2.9.1) - 2024-11-06
+
+### Fixed
+
+- Make sure you actually log in from the checkout (#121)
+
+## [2.9.0](https://github.com/rapidez/checkout-theme/releases/tag/2.9.0) - 2024-11-05
+
+### Added
+
+- VAT check in register page (#129)
+- Disable checkout button and add notice if not in stock (#127)
+
+### Changed
+
+- Changed breakpoints for smaller screens (#124)
+
 ## [2.8.0](https://github.com/rapidez/checkout-theme/releases/tag/2.8.0) - 2024-10-31
 
 ### Added
