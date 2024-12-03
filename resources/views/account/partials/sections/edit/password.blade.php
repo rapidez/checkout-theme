@@ -32,5 +32,5 @@
                 </div>
             </div>
         </form>
-    <graphql-mutation>
+    </graphql-mutation>
 </x-rapidez-ct::card.inactive>
