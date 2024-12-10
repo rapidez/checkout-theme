@@ -19,7 +19,7 @@
 @section('account-content')
     <graphql
         query='@include('rapidez::account.partials.queries.order')'
-        check="customer.orders.items[0]"
+        check="(data) => data.customer.orders.items[0]"
         :callback="async (variables, response) => {return await updateOrder(variables, {data: response.data.customer.orders.items})}"
     >
         <div slot-scope="{ order: data }" v-if="order">
