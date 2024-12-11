@@ -3,9 +3,9 @@
 </x-rapidez-ct::sections>
 
 <x-rapidez-ct::toolbar>
-    <x-rapidez-ct::button.outline href="/">
+    <x-rapidez::button.outline href="/">
         @lang('Continue shopping')
-    </x-rapidez-ct::button.outline>
+    </x-rapidez::button.outline>
 
     @include('rapidez-ct::cart.coupon')
 </x-rapidez-ct::toolbar>

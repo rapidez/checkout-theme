@@ -6,32 +6,49 @@
         <div class="flex flex-col space-y-3">
             <div class="flex sm:flex-row flex-col sm:space-x-3">
                 <div class="flex-1">
-                    <x-rapidez-ct::input name="firstname" label="Firstname" v-model="addressVariables.firstname" required />
+                    <label>
+                        <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                        <x-rapidez::input name="firstname" v-model="addressVariables.firstname" required />
+                    </label>
                 </div>
                 @if(Rapidez::config('customer/address/middlename_show', 0))
                     <div class="flex-1">
-                        <x-rapidez-ct::input name="middlename" label="Middlename" v-model="addressVariables.middlename" />
+                        <label>
+                            <x-rapidez::label>@lang('Middlename')</x-rapidez::label>
+                            <x-rapidez::input name="middlename" v-model="addressVariables.middlename" />
+                        </label>
                     </div>
                 @endif
                 <div class="flex-1">
-                    <x-rapidez-ct::input name="lastname" label="Lastname" v-model="addressVariables.lastname" required />
+                    <label>
+                        <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
+                        <x-rapidez::input name="lastname" v-model="addressVariables.lastname" required />
+                    </label>
                 </div>
             </div>
             @if(Rapidez::config('customer/address/telephone_show', 'req'))
-                <x-rapidez-ct::input name="telephone" label="Telephone" v-model="addressVariables.telephone" :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'" />
+                <label>
+                    <x-rapidez::label>@lang('Telephone')</x-rapidez::label>
+                    <x-rapidez::input name="telephone" v-model="addressVariables.telephone" :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'" />
+                </label>
             @endif
 
             @if(Rapidez::config('customer/address/company_show', 'opt'))
-                <x-rapidez-ct::input name="company" label="Company" v-model="addressVariables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
+                <label>
+                    <x-rapidez::label>@lang('Company')</x-rapidez::label>
+                    <x-rapidez:input name="company" v-model="addressVariables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
+                </label>
             @endif
             @if(Rapidez::config('customer/address/taxvat_show', 0))
-                <x-rapidez-ct::input
-                    name="vat_id"
-                    label="Vat ID"
-                    v-model="addressVariables.vat_id"
-                    v-on:change="window.app.$emit('vat-change', $event)"
-                    :required="Rapidez::config('customer/address/taxvat_show', 0) == 'req'"
-                />
+                <label>
+                    <x-rapidez::label>@lang('Vat ID')</x-rapidez::label>
+                    <x-rapidez::input
+                        name="vat_id"
+                        v-model="addressVariables.vat_id"
+                        v-on:change="window.app.$emit('vat-change', $event)"
+                        :required="Rapidez::config('customer/address/taxvat_show', 0) == 'req'"
+                    />
+                </label>
             @endif
         </div>
     </div>
@@ -43,52 +60,64 @@
         <div class="flex flex-col space-y-3">
             <div class="flex sm:flex-row flex-col sm:space-x-3">
                 <div class="flex-1">
-                    <x-rapidez-ct::input name="street[0]" v-model="addressVariables.street[0]" :label="__('Street')" placeholder="" required />
+                    <label>
+                        <x-rapidez::label>@lang('Street')</x-rapidez::label>
+                        <x-rapidez::input name="street[0]" v-model="addressVariables.street[0]" required />
+                    </label>
                 </div>
                 @if(Rapidez::config('customer/address/street_lines', 2) >= 2)
                     <div class="flex-1">
-                        <x-rapidez-ct::input
-                            name="street[1]"
-                            type="number"
-                            label="Housenumber"
-                            v-model="addressVariables.street[1]"
-                            v-on:change="window.app.$emit('postcode-change', addressVariables)"
-                            placeholder=""
-                        />
+                        <label>
+                            <x-rapidez::label>@lang('Housenumber')</x-rapidez::label>
+                            <x-rapidez::input
+                                name="street[1]"
+                                type="number"
+                                v-model="addressVariables.street[1]"
+                                v-on:change="window.app.$emit('postcode-change', addressVariables)"
+                            />
+                        </label>
                     </div>
                 @endif
                 @if(Rapidez::config('customer/address/street_lines', 2) >= 3)
                     <div class="flex-1">
-                        <x-rapidez-ct::input name="street[2]" label="Addition" v-model="addressVariables.street[2]" placeholder="" />
+                        <label>
+                            <x-rapidez::label>@lang('Addition')</x-rapidez::label>
+                            <x-rapidez::input name="street[2]" v-model="addressVariables.street[2]" />
+
+                        </label>
                     </div>
                 @endif
                 @if(Rapidez::config('customer/address/street_lines', 2) >= 4)
                     <div class="flex-1">
-                        <x-rapidez-ct::input name="street[3]" v-model="addressVariables.street[3]" placeholder="" />
+                        <x-rapidez::input name="street[3]" v-model="addressVariables.street[3]" />
                     </div>
                 @endif
             </div>
 
-            <x-rapidez-ct::input
-                name="postcode"
-                label="Postcode"
-                v-model="addressVariables.postcode"
-                v-on:change="window.app.$emit('postcode-change', addressVariables)"
-                required
-            />
-            <x-rapidez-ct::input name="city" label="City" v-model="addressVariables.city" required />
-            <span class="relative flex flex-col gap-y-1.5 sm:gap-y-2 text-sm !mb-3">
-                <x-rapidez-ct::input.label :required="true">
-                    @lang('Country')
-                </x-rapidez-ct::input.label>
-                <x-rapidez-ct::input.country-select
-                    name="country_code"
-                    label="Country"
-                    v-model="addressVariables.country_code"
+            <label>
+                <x-rapidez::label>@lang('Postcode')</x-rapidez::label>
+                <x-rapidez::input
+                    name="postcode"
+                    v-model="addressVariables.postcode"
                     v-on:change="window.app.$emit('postcode-change', addressVariables)"
-                    class="w-full"
                     required
                 />
+            </label>
+            <label>
+                <x-rapidez::label>@lang('City')</x-rapidez::label>
+                <x-rapidez::input name="city" v-model="addressVariables.city" required />
+            </label>
+            <span class="relative flex flex-col gap-y-1.5 sm:gap-y-2 text-sm !mb-3">
+                <label>
+                    <x-rapidez::label>@lang('Country')</x-rapidez::label>
+                    <x-rapidez::country-select
+                        name="country_code"
+                        v-model="addressVariables.country_code"
+                        v-on:change="window.app.$emit('postcode-change', addressVariables)"
+                        class="w-full"
+                        required
+                    />
+                </label>
             </span>
         </div>
     </div>

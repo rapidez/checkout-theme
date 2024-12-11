@@ -8,24 +8,27 @@
         <x-rapidez-ct::title.lg class="col-span-2">
             @lang('Change e-mail address')
         </x-rapidez-ct::title.lg>
-        <x-rapidez-ct::input
-            name="email"
-            label="Email"
-            v-model="variables.email"
-            required
-        />
-        <x-rapidez-ct::input
-            type="password"
-            label="Password"
-            name="password"
-            v-model="variables.password"
-            required
-        />
+        <label class="col-span-full sm:col-span-1">
+            <x-rapidez::label>@lang('Email')</x-rapidez::label>
+            <x-rapidez::input
+                name="email"
+                v-model="variables.email"
+                required
+            />
+        </label>
+        <label class="col-span-full sm:col-span-1">
+            <x-rapidez::label>@lang('Password')</x-rapidez::label>
+            <x-rapidez::input.password
+                name="password"
+                v-model="variables.password"
+                required
+            />
+        </label>
 
         <div class="flex items-center col-span-full">
-            <x-rapidez-ct::button.accent type="submit">
+            <x-rapidez::button.secondary type="submit">
                 @lang('Change e-mail address')
-            </x-rapidez-ct::button.accent>
+            </x-rapidez::button.secondary>
 
             <div v-if="mutated" class="ml-3 text-green-500">
                 @lang('Changed successfully!')

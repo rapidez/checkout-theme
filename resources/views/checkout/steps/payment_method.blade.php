@@ -5,9 +5,9 @@
 </x-rapidez-ct::sections>
 
 <x-rapidez-ct::toolbar>
-    <x-rapidez-ct::button.outline :href="route('checkout', ['step' => 'credentials'])">
+    <x-rapidez::button.outline :href="route('checkout', ['step' => 'credentials'])">
         @lang('Back to credentials')
-    </x-rapidez-ct::button.outline>
+    </x-rapidez::button.outline>
 
 
     <graphql-mutation
@@ -20,9 +20,9 @@
         v-slot="{ mutate, variables }"
     >
         <fieldset>
-            <x-rapidez-ct::button.accent class="relative" type="submit" dusk="continue" loader>
+            <x-rapidez::button.conversion class="relative" type="submit" dusk="continue" loader>
                 @lang('Place order')
-            </x-rapidez-ct::button.accent>
+            </x-rapidez::button.conversion>
         </fieldset>
     </graphql-mutation>
 

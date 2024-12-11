@@ -6,25 +6,27 @@
         <x-rapidez-ct::title.lg class="col-span-2">
             @lang('Change password')
         </x-rapidez-ct::title.lg>
-        <x-rapidez-ct::input
-            type="password"
-            label="Current password"
-            name="currentPassword"
-            v-model="variables.currentPassword"
-            required
-        />
-        <x-rapidez-ct::input
-            type="password"
-            label="New password"
-            name="newPassword"
-            v-model="variables.newPassword"
-            required
-        />
+        <label class="col-span-full sm:col-span-1">
+            <x-rapidez::label>@lang('Current password')</x-rapidez::label>
+            <x-rapidez::input.password
+                name="currentPassword"
+                v-model="variables.currentPassword"
+                required
+            />
+        </label>
+        <label class="col-span-full sm:col-span-1">
+            <x-rapidez::label>@lang('New password')</x-rapidez::label>
+            <x-rapidez::input.password
+                name="newPassword"
+                v-model="variables.newPassword"
+                required
+            />
+        </label>
 
         <div class="flex items-center col-span-full">
-            <x-rapidez-ct::button.accent type="submit">
+            <x-rapidez::button.secondary type="submit">
                 @lang('Change password')
-            </x-rapidez-ct::button.accent>
+            </x-rapidez::button.secondary>
 
             <div v-if="mutated" class="ml-3 text-green-500">
                 @lang('Changed successfully!')

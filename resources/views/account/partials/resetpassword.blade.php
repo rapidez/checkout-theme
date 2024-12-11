@@ -5,29 +5,34 @@
     :clear="true"
     :notify="{ message: '@lang('Your password has been changed, please login.')' }"
 >
-    <form class="space-y-5" v-on:submit.prevent="mutate" slot-scope="{ mutate, variables }">
-        <x-rapidez-ct::input
-            name="token"
-            v-model="variables.token"
-            label="Security token"
-            required
-        />
-        <x-rapidez-ct::input
-            name="email"
-            type="email"
-            label="Email"
-            v-model="variables.email"
-            required
-        />
-        <x-rapidez-ct::input
-            name="password"
-            type="password"
-            v-model="variables.password"
-            label="New password"
-            required
-        />
-        <x-rapidez-ct::button.accent type="submit" class="w-full">
+    <form class="flex flex-col gap-y-5" v-on:submit.prevent="mutate" slot-scope="{ mutate, variables }">
+        <label>
+            <x-rapidez::label>@lang('Security token')</x-rapidez::label>
+            <x-rapidez::input
+                name="token"
+                v-model="variables.token"
+                required
+            />
+        </label>
+        <label>
+            <x-rapidez::label>@lang('Email')</x-rapidez::label>
+            <x-rapidez::input
+                name="email"
+                type="email"
+                v-model="variables.email"
+                required
+            />
+        </label>
+        <label>
+            <x-rapidez::label>@lang('New password')</x-rapidez::label>
+            <x-rapidez::input.password
+                name="password"
+                v-model="variables.password"
+                required
+            />
+        </label>
+        <x-rapidez::button.secondary type="submit" class="w-full">
             @lang('Change password')
-        </x-rapidez-ct::button.accent>
+        </x-rapidez::button.secondary>
     </form>
 </graphql-mutation>

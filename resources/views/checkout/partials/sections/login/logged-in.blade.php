@@ -1,4 +1,4 @@
-<x-rapidez-ct::input
+<x-rapidez::input
     name="email"
     type="email"
     label="Email"

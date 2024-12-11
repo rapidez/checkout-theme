@@ -14,13 +14,13 @@
 @section('content')
     <div v-cloak class="container">
         <template v-if="loggedIn">
+            @hasSection('title')
+                <x-rapidez-ct::title class="mb-5">
+                    @yield('title')
+                </x-rapidez-ct::title>
+            @endif
             <x-rapidez-ct::layout>
                 <x-rapidez-ct::toolbar>
-                    @hasSection('title')
-                        <x-rapidez-ct::title :href="$backurl">
-                            @yield('title')
-                        </x-rapidez-ct::title>
-                    @endif
                     @yield('button')
                 </x-rapidez-ct::toolbar>
                 @yield('account-content')

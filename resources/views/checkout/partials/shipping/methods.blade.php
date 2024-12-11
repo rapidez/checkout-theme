@@ -18,7 +18,7 @@
 >
     <fieldset class="mt-5 flex flex-col gap-2" partial-submit="mutate" v-on:change="window.app.$emit('setShippingAddressesOnCart')">
         <template v-for="(method, index) in cart.shipping_addresses[0]?.available_shipping_methods">
-            <x-rapidez-ct::input.radio
+            <x-rapidez-ct::input.radio.tile
                 name="shipping_method"
                 v-model="variables.method"
                 v-bind:value="method.carrier_code+'/'+method.method_code"
@@ -35,7 +35,7 @@
                         @lang('Free')
                     </div>
                 </div>
-            </x-rapidez-ct::input.radio>
+            </x-rapidez-ct::input.radio.tile>
         </template>
     </fieldset>
 </graphql-mutation>

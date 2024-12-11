@@ -1,23 +1,27 @@
 <login :checkout-login="false" v-slot="login" redirect="{{ $redirect ?? route('account.overview') }}">
-    <form class="space-y-5" v-on:submit.prevent="login.go()">
-        <x-rapidez-ct::input
-            name="email"
-            type="email"
-            label="Email"
-            v-model="login.email"
-            required
-        />
-        <x-rapidez-ct::input.password
-            name="password"
-            label="Password"
-            v-model="login.password"
-            required
-        />
+    <form class="flex flex-col gap-y-5" v-on:submit.prevent="login.go()">
+        <label>
+            <x-rapidez::label>@lang('Email')</x-rapidez::label>
+            <x-rapidez::input
+                name="email"
+                type="email"
+                v-model="login.email"
+                required
+            />
+        </label>
+        <label>
+            <x-rapidez::label>@lang('Password')</x-rapidez::label>
+            <x-rapidez::input.password
+                name="password"
+                v-model="login.password"
+                required
+            />
+        </label>
         <div class="flex items-center justify-between">
             <a href="{{ route('account.forgotpassword') }}" class="text-sm text-ct-inactive underline">
                 @lang('Forgot your password?')
             </a>
-            <x-rapidez-ct::button.accent
+            <x-rapidez::button.secondary
                 class="flex items-center gap-1"
                 type="submit"
                 dusk="continue"
@@ -25,7 +29,7 @@
             >
                 @lang('Login')
                 <x-heroicon-o-arrow-right class="h-4" />
-            </x-rapidez-ct::button.accent>
+            </x-rapidez::button.secondary>
         </div>
     </form>
 </login>

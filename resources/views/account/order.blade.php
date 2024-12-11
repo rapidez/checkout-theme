@@ -9,9 +9,9 @@
         :callback="reorderCallback"
     >
         <form slot-scope="{ mutate, mutating, mutated }" v-on:submit.prevent="mutate">
-            <x-rapidez-ct::button.enhanced type="submit" class="flex items-center" v-cloak>
+            <x-rapidez::button.conversion type="submit" class="flex items-center" v-cloak>
                 @lang('Order again')
-            </x-rapidez-ct::button.enhanced>
+            </x-rapidez::button.conversion>
         </form>
     </graphql-mutation>
 @endsection
@@ -30,9 +30,9 @@
                 </x-rapidez-ct::card.inactive>
             </x-rapidez-ct::sections>
             <x-rapidez-ct::toolbar>
-                <x-rapidez-ct::button.outline href="/account/orders">
+                <x-rapidez::button.outline href="/account/orders">
                     @lang('Back to my orders')
-                </x-rapidez-ct::button.outline>
+                </x-rapidez::button.outline>
                 <span class="text-ct-inactive">
                     @lang('Order date'): @{{ (new Date(order.order_date)).toLocaleDateString() }}
                 </span>
