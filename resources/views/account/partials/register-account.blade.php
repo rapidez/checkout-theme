@@ -97,9 +97,11 @@
                 </x-rapidez-ct::card.inactive>
             @endif
 
-            <x-rapidez-ct::card.inactive>
-                <x-rapidez-ct::newsletter v-model="variables.is_subscribed"/>
-            </x-rapidez-ct::card.inactive>
+            @if (config('rapidez.checkout-theme.register.newsletter'))
+                <x-rapidez-ct::card.inactive>
+                    <x-rapidez-ct::newsletter v-model="variables.is_subscribed"/>
+                </x-rapidez-ct::card.inactive>
+            @endif
         </x-rapidez-ct::sections>
     </graphql-mutation>
 </graphql-mutation>
