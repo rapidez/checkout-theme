@@ -1,7 +1,7 @@
 <template v-if="false"></template>
 @stack('payment_methods')
 <template v-else>
-    <x-rapidez-ct::input.radio.variant
+    <x-rapidez-ct::input.radio.tile
         name="payment_method"
         v-model="variables.code"
         v-bind:value="method.code"
@@ -17,5 +17,5 @@
                 onerror="this.onerror=null; this.src=`/payment-icons/default.svg`"
             >
         </div>
-    </x-rapidez-ct::input.radio.variant>
+    </x-rapidez-ct::input.radio.tile>
 </template>
