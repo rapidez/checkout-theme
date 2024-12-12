@@ -16,22 +16,26 @@
             slot-scope="{ mutate, variables, mutating }"
             v-on:submit.prevent="mutate"
         >
-            <x-rapidez-ct::input
-                name="email"
-                type="email"
-                label="Email"
-                v-bind:value="order.customer_email"
-                disabled
-            />
+            <label>
+                <x-rapidez::label>@lang('Email')</x-rapidez::label>
+                <x-rapidez::input
+                    name="email"
+                    type="email"
+                    v-bind:value="order.customer_email"
+                    disabled
+                />
+            </label>
             <div class="text-sm max-sm:order-first">
                 @lang('No account yet? Create an account and benefit instantly from repeat orders, order statuses and easy returns!')
             </div>
-            <x-rapidez-ct::input.password
-                name="password"
-                label="Password"
-                v-model="variables.password"
-                required
-            />
+            <label>
+                <x-rapidez::label>@lang('Password')</x-rapidez::label>
+                <x-rapidez::input.password
+                    name="password"
+                    v-model="variables.password"
+                    required
+                />
+            </label>
             @include('rapidez-ct::checkout.partials.sections.success.create-account-button')
         </form>
     </graphql-mutation>
