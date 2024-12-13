@@ -30,13 +30,13 @@
             <template v-else>
                 @include('rapidez-ct::checkout.partials.sections.payment.agreement-checkbox')
             </template>
-            <x-rapidez-ct::slideover id="agreement.checkbox_text">
+            <x-rapidez::slideover id="agreement.checkbox_text">
                 <x-slot name="title">
                     @{{ agreement.name }}
                 </x-slot>
                 <div v-if="agreement.is_html" v-html="agreement.content"></div>
                 <div v-else class="whitespace-pre-wrap" v-text="agreement.content"></div>
-            </x-rapidez-ct::slideover>
+            </x-rapidez::slideover>
         </div>
     </div>
 </graphql>

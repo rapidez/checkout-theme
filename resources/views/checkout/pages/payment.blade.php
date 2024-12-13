@@ -10,8 +10,8 @@
             <x-rapidez-ct::title-progress-bar :href="route('checkout', ['step' => 'credentials'])" :$checkoutSteps :$currentStep :$currentStepKey>
                 @lang('Payment')
             </x-rapidez-ct::title-progress-bar>
-            <x-slot:sidebar>
-                <a href="{{ url('/') }}" class="*:h-auto *:max-h-20 *:w-full *:object-contain max-lg:hidden">
+            <x-slot:sidebar class="max-lg:hidden">
+                <a href="{{ url('/') }}" class="*:h-auto *:max-h-20 *:w-full *:object-contain">
                     <x-rapidez-ct::logo />
                 </a>
             </x-slot:sidebar>
