@@ -21,7 +21,7 @@
             </strong>
         @endif
         @if ($item['subheading'] ?? false)
-            <p class="text-ct-inactive">
+            <p class="text-muted">
                 @lang($item['subheading'])
             </p>
         @endif

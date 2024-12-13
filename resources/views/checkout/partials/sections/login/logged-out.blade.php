@@ -13,7 +13,7 @@
             />
         </label>
 
-        <p v-if="checkoutLogin.isEmailAvailable" class="self-end text-ct-inactive">
+        <p v-if="checkoutLogin.isEmailAvailable" class="self-end text-muted">
             @lang('We will send your order confirmation to this e-mail address. We will also check if you already have an account so you can checkout more efficiently.')
         </p>
 
@@ -27,7 +27,7 @@
                 />
             </label>
         </template>
-        <p v-if="!loggedIn && !checkoutLogin.isEmailAvailable" class="self-end text-ct-inactive">
+        <p v-if="!loggedIn && !checkoutLogin.isEmailAvailable" class="self-end text-muted">
             @lang('You already have an account with this e-mail address. Please log in to continue.')
             <a href="{{ route('account.forgotpassword') }}" class="underline hover:no-underline">@lang('Forgot your password?')</a>
         </p>

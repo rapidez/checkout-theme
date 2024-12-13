@@ -15,5 +15,5 @@
             {{ $slot }}
         </x-rapidez-ct::card.inactive>
     </x-rapidez-ct::sections>
-    <label class="absolute inset-0 bg-ct-primary/60 cursor-pointer" for="{{ $id }}"></label>
+    <label class="absolute inset-0 text/60 cursor-pointer" for="{{ $id }}"></label>
 </div>

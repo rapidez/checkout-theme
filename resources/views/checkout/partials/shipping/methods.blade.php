@@ -30,8 +30,8 @@
                 <div class="sm:w-3/5">@{{ method.carrier_title }}</div>
                 <div class="flex-1">@{{ method.method_title }}</div>
                 <div class="text-right text-sm font-medium">
-                    <div v-if="method.amount.value > 0" class="text-ct-inactive">@{{ method.amount.value | price }}</div>
-                    <div v-else class="text-ct-enhanced">
+                    <div v-if="method.amount.value > 0" class="text-muted">@{{ method.amount.value | price }}</div>
+                    <div v-else class="text-primary">
                         @lang('Free')
                     </div>
                 </div>
