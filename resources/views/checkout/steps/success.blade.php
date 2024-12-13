@@ -19,7 +19,7 @@
 
                 @include('rapidez-ct::checkout.partials.sections.success.products')
 
-                @if (config('rapidez.checkout-theme.checkout.success.newsletter'))
+                @if (Rapidez::config('newsletter/general/active', 1))
                     <x-rapidez-ct::card.inactive>
                         @include('rapidez-ct::checkout.partials.sections.success.newsletter')
                     </x-rapidez-ct::card.inactive>

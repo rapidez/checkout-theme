@@ -11,7 +11,7 @@
                 <x-rapidez-ct::card.inactive>
                     @include('rapidez-ct::account.partials.sections.edit.addresses')
                 </x-rapidez-ct::card.inactive>
-                @if (config('rapidez.checkout-theme.account.newsletter'))
+                @if (Rapidez::config('newsletter/general/active', 1))
                     <x-rapidez-ct::card.inactive>
                         @include('rapidez-ct::account.partials.sections.edit.newsletter')
                     </x-rapidez-ct::card.inactive>

@@ -7,7 +7,7 @@
     <x-rapidez-ct::card.inactive>
         @include('rapidez-ct::checkout.partials.sections.address')
     </x-rapidez-ct::card.inactive>
-    @if (config('rapidez.checkout-theme.checkout.credentials.newsletter'))
+    @if (Rapidez::config('newsletter/general/active', 1))
         <x-rapidez-ct::card.inactive>
             @include('rapidez-ct::checkout.partials.sections.newsletter')
         </x-rapidez-ct::card.inactive>
