@@ -1,6 +1,6 @@
 <x-rapidez-ct::title.lg>
     @lang('Already logged in')
 </x-rapidez-ct::title.lg>
-<x-rapidez-ct::button.enhanced class="mt-5" href="{{ route('account.overview') }}">
+<x-rapidez::button.conversion class="mt-5" href="{{ route('account.overview') }}">
     @lang('Go to your account')
-</x-rapidez-ct::button.enhanced>
+</x-rapidez::button.conversion>

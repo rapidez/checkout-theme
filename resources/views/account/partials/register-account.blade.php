@@ -33,54 +33,63 @@
                         v-on:submit.prevent="mutate"
                     @endif
                 >
-                    <x-rapidez-ct::input
-                        name="firstname"
-                        label="Firstname"
-                        type="text"
-                        v-model="variables.firstname"
-                        required
-                    />
-                    <x-rapidez-ct::input
-                        name="lastname"
-                        label="Lastname"
-                        type="text"
-                        v-model="variables.lastname"
-                        required
-                    />
-                    <x-rapidez-ct::input
-                        name="email"
-                        label="Email"
-                        type="email"
-                        v-model="variables.email"
-                        required
-                    />
-                    <x-rapidez-ct::input.password
-                        name="password"
-                        Label="Password"
-                        v-model="variables.password"
-                        required
-                    />
+                    <label>
+                        <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                        <x-rapidez::input
+                            name="firstname"
+                            type="text"
+                            v-model="variables.firstname"
+                            required
+                        />
+                    </label>
+                    <label>
+                        <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
+                        <x-rapidez::input
+                            name="lastname"
+                            type="text"
+                            v-model="variables.lastname"
+                            required
+                        />
+                    </label>
+                    <label>
+                        <x-rapidez::label>@lang('Email')</x-rapidez::label>
+                        <x-rapidez::input
+                            name="email"
+                            type="email"
+                            v-model="variables.email"
+                            required
+                        />
+                    </label>
+                    <label>
+                        <x-rapidez::label>@lang('Password')</x-rapidez::label>
+                        <x-rapidez::input.password
+                            name="password"
+                            v-model="variables.password"
+                            required
+                        />
+                    </label>
+
                     @if(Rapidez::config('customer/create_account/vat_frontend_visibility', 0))
                         <toggler>
                             <div slot-scope="{ toggle, isOpen }" class="contents">
-                                <x-rapidez-ct::input.checkbox
+                                <x-rapidez::input.checkbox
                                     id="isb2b"
                                     name="isb2b"
                                     v-model="isOpen"
                                     v-on:click="toggle"
                                 >
                                     @lang('This is a business account')
-                                </x-rapidez-ct::input.checkbox>
-                                <x-rapidez-ct::input
-                                    v-cloak
-                                    v-if="isOpen"
-                                    name="taxvat"
-                                    label="Vat ID"
-                                    type="text"
-                                    v-model="variables.taxvat"
-                                    v-on:change="window.app.$emit('vat-change', $event)"
-                                    required
-                                />
+                                </x-rapidez::input.checkbox>
+                                <label v-if="isOpen" v-cloak>
+                                    <x-rapidez::label>@lang('Vat ID')</x-rapidez::label>
+                                    <x-rapidez::input
+                                        name="taxvat"
+                                        type="text"
+                                        v-model="variables.taxvat"
+                                        v-on:change="window.app.$emit('vat-change', $event)"
+                                        required
+                                    />
+                                </label>
                             </div>
                         </toggler>
                     @endif

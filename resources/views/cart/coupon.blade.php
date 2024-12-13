@@ -19,8 +19,8 @@
                 </graphql-mutation>
             </template>
         </div>
-        <x-rapidez-ct::button.outline v-show="!isOpen" @click="toggle">
+        <x-rapidez::button.outline v-show="!isOpen" @click="toggle">
             @lang('Coupon code')
-        </x-rapidez-ct::button.outline>
+        </x-rapidez::button.outline>
     </div>
 </toggler>

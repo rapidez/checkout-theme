@@ -15,8 +15,8 @@
 
 @if ($type == 'billing')
     <div class="mt-5" v-if="!cart.is_virtual">
-        <x-rapidez-ct::input.checkbox v-model="variables.same_as_shipping">
+        <x-rapidez::input.checkbox v-model="variables.same_as_shipping">
             @lang('My billing and shipping address are the same')
-        </x-rapidez-ct::input.checkbox>
+        </x-rapidez::input.checkbox>
     </div>
 @endif

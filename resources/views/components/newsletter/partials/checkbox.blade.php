@@ -1,6 +1,6 @@
 @props(['isPartOfAnotherForm' => false, 'id'])
 
-<x-rapidez-ct::input.checkbox :attributes="$attributes->merge([
+<x-rapidez-ct::input.checkbox.tile :attributes="$attributes->merge([
     'class' => 'relative flex w-full cursor-pointer !items-start rounded border bg-white p-7',
     'id' => $id,
 ])" v-on:change="() => {
@@ -12,4 +12,4 @@
         <span class="text-ct-inactive text-xs font-normal">@lang('You will receive this newsletter approximately 2x a year')</span>
         <x-rapidez-ct::newsletter-visual />
     </x-slot:slot>
-</x-rapidez-ct::input.checkbox>
+</x-rapidez-ct::input.checkbox.tile>
