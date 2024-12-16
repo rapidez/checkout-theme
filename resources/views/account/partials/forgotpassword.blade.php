@@ -7,7 +7,7 @@
 >
     <form v-on:submit.prevent="mutate">
         <x-rapidez-ct::title.lg class="mb-4">
-            @lang('Forgot Your Password?')
+            @lang('Forgot your password?')
         </x-rapidez-ct::title.lg>
         <p class="mb-5 text-sm">
             @lang('Enter your email address below, you will receive an email within minutes to reset the password.')
