@@ -1,5 +1,5 @@
 <login v-slot="{ email, password, go, loginInputChange, emailAvailable, logout }">
-    <div class="grid gap-4 sm:gap-5 md:grid-cols-1 md:items-end">
+    <div class="grid gap-4 sm:gap-5 md:items-end">
         <template v-if="!loggedIn">
             @include('rapidez-ct::checkout.partials.sections.login.logged-out')
         </template>
