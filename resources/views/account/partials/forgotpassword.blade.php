@@ -3,7 +3,7 @@
     query="mutation reset($email: String!) { requestPasswordResetEmail ( email: $email ) }"
     v-slot="{ mutate, variables }"
     :clear="true"
-    :notify="{ message: '@lang('An email is send with a password reset link if an account exists with the provided email address.')' }"
+    :notify="{ message: '@lang('An email has been sent with a password reset link if an account exists with the provided email address.')' }"
 >
     <form v-on:submit.prevent="mutate">
         <x-rapidez-ct::title.lg class="mb-4">
