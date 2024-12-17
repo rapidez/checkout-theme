@@ -1,6 +1,6 @@
 @extends('rapidez::layouts.app')
 
-@section('title', __('Forgot password'))
+@section('title', __('Forgot your password?'))
 
 @section('robots', 'NOINDEX,NOFOLLOW')
 
