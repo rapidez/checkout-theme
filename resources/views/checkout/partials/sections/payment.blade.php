@@ -11,7 +11,7 @@
     mutate-event="setPaymentMethodOnCart"
     v-slot="{ mutate, variables }"
 >
-    <div partial-submit="mutate" class="flex flex-col gap-4">
+    <div partial-submit="mutate" class="flex flex-col gap-3">
         <div v-for="(method, index) in cart.available_payment_methods">
             @include('rapidez-ct::checkout.partials.sections.payment.payment-methods')
         </div>

@@ -1,4 +1,4 @@
-<div class="bg-inactive-100 text-muted relative py-3 text-xs font-semibold">
+<div class="bg text-muted relative py-3 text-xs font-semibold">
     <slider reference="header-usp-slider" autoplay loop>
         <div
             ref="header-usp-slider"
