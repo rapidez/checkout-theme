@@ -7,7 +7,7 @@
                         @lang('Order') #@{{ order.number }}
                     </x-rapidez-ct::title.lg>
                     <x-rapidez-ct::card.white class="mt-5 flex flex-wrap items-center gap-x-3 md:gap-x-8">
-                        <x-heroicon-s-shopping-cart class="h-5 text-muted" />
+                        <x-heroicon-s-shopping-cart class="size-5 text-muted" />
                         <div class="flex flex-col">
                             <span class="font-medium">
                                 @lang('Number of products')
@@ -19,7 +19,7 @@
                                 @lang('Order date'): @{{ (new Date(order.order_date)).toLocaleDateString() }}
                             </span>
                         </div>
-                        <x-heroicon-o-chevron-right class="ml-auto h-4 max-sm:hidden" />
+                        <x-heroicon-o-chevron-right class="ml-auto size-4 max-sm:hidden" />
                     </x-rapidez-ct::card.white>
                 </x-rapidez-ct::card.inactive>
             </a>

@@ -12,5 +12,5 @@
             </template>
         </graphql>
     @endif
-    <x-heroicon-o-chevron-right class="h-4" />
+    <x-heroicon-o-chevron-right class="size-4" />
 </x-rapidez::tag>

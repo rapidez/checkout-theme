@@ -12,10 +12,8 @@
     "Already logged in": "Al ingelogd",
     "Amount": "Bedrag",
     "An email is send with a password reset link if an account exists with the provided email address.": "Een e-mail is verzonden met een link om het wachtwoord te resetten, als er een account bestaat met het opgegeven e-mailadres.",
-    "and use a different e-mail address.": "en gebruik een ander e-mailadres.",
     "Back to account": "Terug naar account",
     "Back to cart": "Terug naar winkelwagen",
-    "This product it out of stock, remove it to continue your order.": "Dit product is niet op voorraad, verwijder het om verder te gaan met je bestelling.",
     "Back to credentials": "Terug naar inloggegevens",
     "Back to dashboard": "Terug naar dashboard",
     "Back to login": "Terug naar inloggen",
@@ -45,6 +43,7 @@
     "Enter your email address below, you will receive an email within minutes to reset the password.": "Voer hieronder uw e-mailadres in, u ontvangt binnen enkele minuten een e-mail om het wachtwoord te resetten.",
     "Everything centralized in 1 place such as returns, exchanges and customer service": "Alles gecentraliseerd op 1 plek zoals retouren, ruilingen en klantenservice",
     "Free": "Gratis",
+    "Go to step :step": "Ga naar stap :step",
     "Go to your account": "Ga naar uw account",
     "Is this not your account?": "Is dit niet uw account?",
     "Log out": "Uitloggen",
@@ -79,6 +78,7 @@
     "Thank you for your order": "Bedankt voor uw bestelling",
     "This is a business account": "Dit is een zakelijke account",
     "This product is out of stock, remove it to continue your order.": "Dit product is op dit moment niet op voorraad, verwijder deze om verder te gaan met de bestelling.",
+    "This product it out of stock, remove it to continue your order.": "Dit product is niet op voorraad, verwijder het om verder te gaan met je bestelling.",
     "To checkout": "Naar afrekenen",
     "Total price": "Totale prijs",
     "Total price (incl. VAT)": "Totale prijs (incl. BTW)",
@@ -92,5 +92,6 @@
     "You already have an account with this e-mail address. Please log in to continue.": "U heeft al een account met dit e-mailadres. Log in om verder te gaan.",
     "You do not have any orders yet.": "U heeft nog geen bestellingen.",
     "You will receive this newsletter approximately 2x a year": "U ontvangt deze nieuwsbrief ongeveer 2x per jaar",
-    "Your password has been changed, please login.": "Uw wachtwoord is gewijzigd, log alstublieft in."
+    "Your password has been changed, please login.": "Uw wachtwoord is gewijzigd, log alstublieft in.",
+    "and use a different e-mail address.": "en gebruik een ander e-mailadres."
 }

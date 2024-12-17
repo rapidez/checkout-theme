@@ -32,7 +32,7 @@
                 loader
             >
                 @lang('Send')
-                <x-heroicon-o-arrow-right class="h-4" />
+                <x-heroicon-o-arrow-right class="size-4" />
             </x-rapidez::button.secondary>
         </div>
     </form>

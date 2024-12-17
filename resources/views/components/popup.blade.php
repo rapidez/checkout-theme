@@ -4,7 +4,7 @@
 <div class="fixed inset-0 opacity-0 transition z-popup flex justify-center items-center pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto lg:py-5">
     <x-rapidez-ct::sections class="relative z-10 max-h-full overflow-y-auto scrollbar-hide">
         <x-rapidez-ct::card.inactive>
-            <label for="{{ $id }}" class="absolute cursor-pointer z-10 top-7 right-7 w-5 h-5">
+            <label for="{{ $id }}" class="absolute cursor-pointer z-10 top-7 right-7 size-5">
                 <x-heroicon-o-x-mark />
             </label>
             @if($title)

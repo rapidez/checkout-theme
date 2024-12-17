@@ -32,11 +32,11 @@
 
     <x-rapidez::button.conversion :href="route('checkout')" class="flex w-full items-center justify-center gap-1 mt-6" dusk="checkout">
         @lang('To checkout')
-        <x-heroicon-o-arrow-right class="h-4" />
+        <x-heroicon-o-arrow-right class="size-4" />
     </x-rapidez::button.conversion>
 
     <div class="mt-4 flex items-center justify-center gap-1 text-center text-sm">
-        <x-heroicon-o-check class="h-5 text-primary" stroke-width="2.5" />
+        <x-heroicon-o-check class="size-5 text-primary" stroke-width="2.5" />
         @lang('Ordered within 2 minutes')
     </div>
 </x-rapidez-ct::card>

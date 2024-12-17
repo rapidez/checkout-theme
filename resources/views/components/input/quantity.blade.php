@@ -6,26 +6,28 @@
     :error-callback="checkResponseForExpiredCart"
     v-slot="{ mutate, variables }"
 >
-    <form v-on:submit.prevent="mutate" class="flex w-20 overflow-hidden border rounded">
-        <button
-            class="flex-1 bg transition hover:bg-opacity-80"
-            v-on:click.prevent="variables.quantity <= (item.product.stock_item?.min_sale_qty || 1) ? variables.quantity = variables.quantity : variables.quantity = +variables.quantity - (item.product.stock_item?.qty_increments || 1);mutate()"
-        >-</button>
-        <input
-            class="h-10 w-2/5 border-none px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-            name="qty"
-            type="number"
-            {{ $attributes }}
-            v-model="variables.quantity"
-            v-on:change="mutate"
-            v-bind:min="Math.max(item.product.stock_item?.min_sale_qty, item.product.stock_item?.qty_increments) || null"
-            v-bind:max="item.product.stock_item?.max_sale_qty"
-            v-bind:step="item.qty_increments"
-            v-bind:dusk="'qty-'+index"
-        />
-        <button
-            class="flex-1 bg transition hover:bg-opacity-80"
-            v-on:click.prevent="variables.quantity = +variables.quantity + (item.product.stock_item?.qty_increments || 1);mutate()"
-        >+</button>
+    <form v-on:submit.prevent="mutate" class="w-20">
+        <label class="flex overflow-hidden border rounded">
+            <button
+                class="flex-1 bg transition hover:bg-opacity-80"
+                v-on:click.prevent="variables.quantity <= (item.product.stock_item?.min_sale_qty || 1) ? variables.quantity = variables.quantity : variables.quantity = +variables.quantity - (item.product.stock_item?.qty_increments || 1);mutate()"
+            >-</button>
+            <input
+                class="h-10 w-2/5 border-none px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                name="qty"
+                type="number"
+                {{ $attributes }}
+                v-model="variables.quantity"
+                v-on:change="mutate"
+                v-bind:min="Math.max(item.product.stock_item?.min_sale_qty, item.product.stock_item?.qty_increments) || null"
+                v-bind:max="item.product.stock_item?.max_sale_qty"
+                v-bind:step="item.qty_increments"
+                v-bind:dusk="'qty-'+index"
+            />
+            <button
+                class="flex-1 bg transition hover:bg-opacity-80"
+                v-on:click.prevent="variables.quantity = +variables.quantity + (item.product.stock_item?.qty_increments || 1);mutate()"
+            >+</button>
+        </label>
     </form>
 </graphql-mutation>

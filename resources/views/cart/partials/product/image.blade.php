@@ -7,4 +7,3 @@
     />
     <x-rapidez::no-image v-else />
 </td>
-
