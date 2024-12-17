@@ -1,5 +1,5 @@
 @props(['name' => '', 'id' => uniqid('checkbox-')])
-<label for="{{ $id }}" {{ $attributes->only('class')->class('relative flex cursor-pointer select-none flex-wrap gap-x-3 text-sm') }}>
+<label for="{{ $id }}" {{ $attributes->only('class')->class('relative flex cursor-pointer select-none gap-x-3 text-sm') }}>
     <x-rapidez::input.checkbox.base
         class="size-6 text-primary peer"
         id="{{ $id }}"

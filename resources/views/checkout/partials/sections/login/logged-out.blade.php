@@ -14,7 +14,7 @@
         </label>
 
         <p v-if="checkoutLogin.isEmailAvailable" class="self-end text-muted">
-            @lang('We will send your order confirmation to this e-mail address. We will also check if you already have an account so you can checkout more efficiently.')
+            @lang('We\'ll email your order confirmation and check if you have an account for faster checkout.')
         </p>
 
         <template v-if="!loggedIn && (!checkoutLogin.isEmailAvailable || checkoutLogin.createAccount)">
