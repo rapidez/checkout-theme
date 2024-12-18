@@ -29,13 +29,13 @@
             >
                 @include('rapidez-ct::checkout.steps.credentials')
                 <x-rapidez-ct::toolbar>
-                    <x-rapidez-ct::button.outline :href="route('cart')">
+                    <x-rapidez::button.outline :href="route('cart')">
                         @lang('Back to cart')
-                    </x-rapidez-ct::button.outline>
+                    </x-rapidez::button.outline>
 
-                    <x-rapidez-ct::button.accent loader>
+                    <x-rapidez::button.conversion loader>
                         @lang('Next')
-                    </x-rapidez-ct::button.accent>
+                    </x-rapidez::button.conversion>
                 </x-rapidez-ct::toolbar>
             </form>
             <x-slot:sidebar>

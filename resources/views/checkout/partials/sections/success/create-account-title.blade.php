@@ -1,3 +1,3 @@
 <x-rapidez-ct::title.lg>
-    @lang('Create account')
+    @lang('Create an account')
 </x-rapidez-ct::title.lg>

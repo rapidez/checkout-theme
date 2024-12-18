@@ -12,7 +12,7 @@
         </template>
         <a href="/account/address/new" class="min-h-[180px] flex flex-col items-center justify-center gap-y-2 font-medium bg-ct-disabled rounded max-md:hidden">
             <span>+</span>
-            <span>@lang('Add new address')</span>
+            <span>@lang('Add a new address')</span>
         </a>
     </template>
     <template v-else>
@@ -29,10 +29,10 @@
     </template>
 </div>
 <div class="flex flex-wrap gap-3">
-    <x-rapidez-ct::button.accent :href="route('account.address.create')">
+    <x-rapidez::button.secondary :href="route('account.address.create')">
         @lang('Add a new address')
-    </x-rapidez-ct::button.accent>
-    <x-rapidez-ct::button.outline tag="label" for="popup" v-if="data?.customer?.addresses?.length">
+    </x-rapidez::button.secondary>
+    <x-rapidez::button.secondary tag="label" for="popup" v-if="data?.customer?.addresses?.length">
         @lang('My addresses')
-    </x-rapidez-ct::button.outline>
+    </x-rapidez::button.secondary>
 </div>

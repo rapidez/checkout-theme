@@ -24,12 +24,12 @@ return [
     ],
     'checkout' => [
         'success' => [
-            // Show the account registration on the success page?
-            'register' => false
+            // Show the account registration on the success page
+            'register' => false,
         ],
     ],
     'register' => [
-        // Make the user create an address during registration.
+        // Make the user create an address during registration
         'create-address' => false,
     ],
 ];

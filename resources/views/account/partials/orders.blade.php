@@ -34,8 +34,8 @@
         </x-rapidez-ct::sections>
     </template>
     <x-rapidez-ct::toolbar>
-        <x-rapidez-ct::button.outline :href="route('account.overview')">
+        <x-rapidez::button.outline :href="route('account.overview')">
             @lang('Back to account')
-        </x-rapidez-ct::button.outline>
+        </x-rapidez::button.outline>
     </x-rapidez-ct::toolbar>
 </div>

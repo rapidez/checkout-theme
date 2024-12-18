@@ -17,8 +17,8 @@
     </div>
     <div v-else class="container">
         <p>@lang("You don't have anything in your cart.")</p>
-        <x-rapidez-ct::button.outline class="mt-3" href="/">
+        <x-rapidez::button.outline class="mt-3" href="/">
             @lang('Return to home')
-        </x-rapidez-ct::button.outline>
+        </x-rapidez::button.outline>
     </div>
 @endsection
