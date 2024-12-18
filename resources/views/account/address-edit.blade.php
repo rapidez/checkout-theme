@@ -15,6 +15,7 @@
                 <graphql-mutation
                     query="@include('rapidez::account.partials.queries.address-edit')"
                     :variables="data.customer.addresses.find(a => a.id == {{ request()->id }})"
+                    :callback="refreshUserInfoCallback"
                     :notify="{ 'message': '@lang('Address changed successfully')' }"
                     redirect="{{ route('account.edit') }}"
                 >

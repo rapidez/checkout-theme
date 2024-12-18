@@ -1,7 +1,7 @@
 @props(['isPartOfAnotherForm' => false, 'id'])
 
 <x-rapidez-ct::input.checkbox.tile :attributes="$attributes->merge([
-    'class' => 'relative flex w-full cursor-pointer !items-start rounded border bg-white p-7',
+    'class' => 'relative flex w-full cursor-pointer !items-start rounded-md border bg-white px-7 py-5',
     'id' => $id,
 ])" v-on:change="() => {
         if (typeof mutate === 'function' && (!{{ (int)$isPartOfAnotherForm }})) { mutate() }
