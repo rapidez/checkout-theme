@@ -8,7 +8,7 @@
                     <x-heroicon-o-arrow-left class="size-5" />
                 </a>
             @endif
-            <a href="{{ url('/') }}" aria-label="Home" class="*:h-auto *:max-h-16 *:w-full *:object-contain lg:hidden">
+            <a href="{{ url('/') }}" aria-label="@lang('Home')" class="*:h-auto *:max-h-16 *:w-full *:object-contain lg:hidden">
                 <x-rapidez-ct::logo />
             </a>
         </div>

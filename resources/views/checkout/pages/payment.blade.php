@@ -11,7 +11,7 @@
                 @lang('Payment')
             </x-rapidez-ct::title-progress-bar>
             <x-slot:sidebar class="max-lg:hidden">
-                <a href="{{ url('/') }}" aria-label="Home" class="*:h-auto *:max-h-20 *:w-full *:object-contain">
+                <a href="{{ url('/') }}" aria-label="@lang('Home')" class="*:h-auto *:max-h-20 *:w-full *:object-contain">
                     <x-rapidez-ct::logo />
                 </a>
             </x-slot:sidebar>

@@ -11,6 +11,7 @@
             <button
                 class="flex-1 bg transition hover:bg-opacity-80"
                 v-on:click.prevent="variables.quantity <= (item.product.stock_item?.min_sale_qty || 1) ? variables.quantity = variables.quantity : variables.quantity = +variables.quantity - (item.product.stock_item?.qty_increments || 1);mutate()"
+                aria-label="@lang('Decrease quantity')"
             >-</button>
             <input
                 class="h-10 w-2/5 border-none px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
@@ -27,6 +28,7 @@
             <button
                 class="flex-1 bg transition hover:bg-opacity-80"
                 v-on:click.prevent="variables.quantity = +variables.quantity + (item.product.stock_item?.qty_increments || 1);mutate()"
+                aria-label="@lang('Increase quantity')"
             >+</button>
         </label>
     </form>
