@@ -15,6 +15,7 @@
                 class="absolute right-5 size-8"
                 v-bind:src="`/payment-icons/${method.code}.svg`"
                 onerror="this.onerror=null; this.src=`/payment-icons/default.svg`"
+                v-bind:alt="method.title"
             >
         </div>
     </x-rapidez-ct::input.radio.tile>

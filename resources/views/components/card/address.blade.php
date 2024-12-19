@@ -8,7 +8,7 @@
 
 <x-rapidez-ct::card.white
     {{ $attributes->only('v-if') }}
-    v-bind:class="{!! $attributes['v-bind:disabled'] !!} ? '!bg-ct-disabled !text-ct-inactive' : ''"
+    v-bind:class="{!! $attributes['v-bind:disabled'] !!} ? '!bg-emphasis !text-muted' : ''"
     :$check
 >
     <x-rapidez-ct::address :$attributes :$customTitle>

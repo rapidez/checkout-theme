@@ -2,7 +2,7 @@
     <div v-if="item.prices.specialPrice">
         @{{ item.prices.specialPrice | price }}
     </div>
-    <div :class="{ 'line-through text-xs text-ct-inactive font-normal': item.prices.specialPrice }">
+    <div :class="{ 'line-through text-xs text-muted font-normal': item.prices.specialPrice }">
         @{{ item.prices.price_including_tax.value | price }}
     </div>
 </td>

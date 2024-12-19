@@ -26,7 +26,7 @@
     @endif
     <label class="sm:col-span-2">
         <x-rapidez::label>@lang('Country')</x-rapidez::label>
-        <x-rapidez::country-select
+        <x-rapidez::input.select.country
             name="{{ $type }}_country"
             v-model="{{ $address }}.{{ $countryKey }}"
             required

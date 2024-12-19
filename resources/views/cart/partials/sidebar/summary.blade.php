@@ -12,7 +12,7 @@
             <dd v-if="cart.shipping_addresses[0].selected_shipping_method.amount.value > 0">
                 @{{ cart.shipping_addresses[0].selected_shipping_method.amount.value | price  }}
             </dd>
-            <dd v-else class="font-medium text-ct-enhanced">
+            <dd v-else class="font-medium text-primary">
                 @lang('Free')
             </dd>
         </div>
@@ -32,11 +32,11 @@
 
     <x-rapidez::button.conversion :href="route('checkout')" class="flex w-full items-center justify-center gap-1 mt-6" dusk="checkout">
         @lang('To checkout')
-        <x-heroicon-o-arrow-right class="h-4" />
+        <x-heroicon-o-arrow-right class="size-4" />
     </x-rapidez::button.conversion>
 
     <div class="mt-4 flex items-center justify-center gap-1 text-center text-sm">
-        <x-heroicon-o-check class="h-5 text-ct-accent" stroke-width="2.5" />
+        <x-heroicon-o-check class="size-5 text-primary" stroke-width="2.5" />
         @lang('Ordered within 2 minutes')
     </div>
 </x-rapidez-ct::card>

@@ -10,8 +10,8 @@
     <div {{ $attributes->whereDoesntStartWith('v-')->class('flex flex-col') }}>
         <template v-if="!isEmpty">
             <template v-if="check">
-                <div class="bg-ct-accent absolute inset-y-0 left-0 w-1 rounded-l"></div>
-                <x-heroicon-o-check class="text-ct-accent absolute right-7 top-7 w-5" stroke-width="2.5" />
+                <div class="bg-primary absolute inset-y-0 left-0 w-1 rounded-l"></div>
+                <x-heroicon-o-check class="text-primary absolute right-7 top-7 w-5" stroke-width="2.5" />
             </template>
             <template v-else-if="disabled">
                 <x-heroicon-o-lock-closed class="absolute right-5 top-5 w-6" />
