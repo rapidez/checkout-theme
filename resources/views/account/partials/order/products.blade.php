@@ -15,7 +15,7 @@
             <div class="flex h-[100px] w-[150px] items-center justify-center">
                 <img
                     class="max-h-[100px] max-w-[150px]"
-                    :alt="item.name"
+                    :alt="item.product_name"
                     :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${item.product_sku}`"
                     height="100"
                     v-if="item.product_sku"
