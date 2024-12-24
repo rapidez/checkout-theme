@@ -1,4 +1,4 @@
-<template v-if="cart.shipping_addresses[0]?.uid == cart.billing_address?.uid || cart.shipping_addresses[0]?.customer_address_id == cart.billing_address?.customer_address_id">
+<template v-if="!cart.billing_address || cart.billing_address?.same_as_shipping">
     <x-rapidez-ct::card v-if="cart.shipping_addresses[0]">
         <x-rapidez-ct::address v-bind:address="cart.shipping_addresses[0]" shipping billing>
             <x-rapidez-ct::button.link :href="route('checkout', ['step' => 'credentials'])">
