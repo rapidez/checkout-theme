@@ -4,7 +4,7 @@
 @section('title', __('Order') . ' #' . $id)
 @section('button')
     <graphql-mutation
-        query='mutation { reorderItems(orderNumber: "{{ request()->id }}") { cart { id } userInputErrors { message } } }'
+        :query='`mutation { reorderItems(orderNumber: "{{ request()->id }}") { cart { ...cart } userInputErrors { message } } } ${config.fragments.cart}`'
         redirect="{{ route('cart') }}"
         :callback="reorderCallback"
     >
