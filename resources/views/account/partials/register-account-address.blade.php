@@ -78,9 +78,6 @@
             />
             <x-rapidez-ct::input name="city" label="City" v-model="addressVariables.city" required />
             <span class="relative flex flex-col gap-y-1.5 sm:gap-y-2 text-sm !mb-3">
-                <x-rapidez-ct::input.label :required="true">
-                    @lang('Country')
-                </x-rapidez-ct::input.label>
                 <x-rapidez-ct::input.country-select
                     name="country_code"
                     label="Country"
