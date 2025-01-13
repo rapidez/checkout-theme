@@ -46,48 +46,7 @@ php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --
 
 If you've already overwritten these by yourself before you installed this package, you will have to manually overwrite these as the publish command will not overwrite already existing files.
 
-When you install Rapidez, the colors below are already configured in your `tailwind.config.js`. This ensures that your colors are consistently applied across all elements.
-Alternatively, if you are using the standalone checkout, you can copy these variables and customize them to your liking.
-```
-colors: {
-    primary: {
-        DEFAULT: color('--primary', '#2FBC85'),
-        text: color('--primary-text', colors.white),
-    },
-
-    secondary: {
-        DEFAULT: color('--secondary', '#202F60'),
-        text: color('--secondary-text', colors.white),
-    },
-
-    conversion: {
-        DEFAULT: color('--conversion', colors.green[500]),
-        text: color('--conversion-text', colors.white),
-    },
-
-    foreground: {
-        emphasis: color('--foreground-emphasis', colors.slate[900]),
-        DEFAULT: color('--foreground', colors.slate[800]),
-        muted: color('--foreground-muted', colors.slate[600]),
-    },
-
-    border: {
-        emphasis: color('--border-emphasis', colors.slate[500]),
-        DEFAULT: color('--border', colors.slate[200]),
-        muted: color('--border-muted', colors.slate[100]),
-    },
-
-    background: {
-        emphasis: color('--background-emphasis', colors.slate[200]),
-        DEFAULT: color('--background', colors.slate[100]),
-        muted: color('--background-muted', colors.slate[50]),
-    },
-
-    overlay: {
-        DEFAULT: color('--overlay', colors.slate[800]),
-    }
-},
-```
+If you want more information about how we use color variables; Check our [https://docs.rapidez.io/3.x/theming.html#colors](Rapidez docs).
 
 This package also requires the `SKU` functionality to be enabled in the image resizer. This is normally enabled by default.
 
