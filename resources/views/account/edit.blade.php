@@ -11,9 +11,11 @@
                 <x-rapidez-ct::card.inactive>
                     @include('rapidez-ct::account.partials.sections.edit.addresses')
                 </x-rapidez-ct::card.inactive>
-                <x-rapidez-ct::card.inactive>
-                    @include('rapidez-ct::account.partials.sections.edit.newsletter')
-                </x-rapidez-ct::card.inactive>
+                @if (Rapidez::config('newsletter/general/active', 1))
+                    <x-rapidez-ct::card.inactive>
+                        @include('rapidez-ct::account.partials.sections.edit.newsletter')
+                    </x-rapidez-ct::card.inactive>
+                @endif
                 <x-rapidez-ct::card.inactive>
                     @include('rapidez-ct::account.partials.sections.edit.email')
                 </x-rapidez-ct::card.inactive>
