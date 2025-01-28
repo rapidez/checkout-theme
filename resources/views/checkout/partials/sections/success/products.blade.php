@@ -3,7 +3,7 @@
         <div class="sm:w-[150px]"></div>
         <div class="flex-1 sm:w-[150px]">@lang('Product')</div>
         <div class="ml-auto w-16 text-center max-md:hidden">
-            @lang('Amount')
+            @lang('Quantity')
         </div>
     </div>
 </div>

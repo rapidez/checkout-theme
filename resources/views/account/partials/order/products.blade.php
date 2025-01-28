@@ -5,7 +5,7 @@
             <div class="flex-1 sm:w-[150px]">@lang('Product')</div>
             <div class="flex items-center justify-between gap-10 font-medium max-md:hidden max-sm:flex-1 sm:ml-auto">
                 <div class="w-[60px]">@lang('Price')</div>
-                <div class="w-16 text-center">@lang('Amount')</div>
+                <div class="w-16 text-center">@lang('Quantity')</div>
                 <div class="w-[60px]">@lang('Subtotal')</div>
             </div>
         </div>
