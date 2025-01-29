@@ -38,10 +38,6 @@
             billing() {
                 return this.order.billing_address
             },
-
-            pickup() {
-                return this.shipping
-            }
         }
     }
 </script>

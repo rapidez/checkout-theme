@@ -22,7 +22,7 @@
             />
         </label>
         <div class="mt-5 flex items-center justify-between">
-            <a href="{{ route('account.login') }}" class="text-sm text-ct-inactive underline">
+            <a href="{{ route('account.login') }}" class="text-sm text-muted underline">
                 @lang('Back to login')
             </a>
             <x-rapidez::button.secondary
@@ -32,7 +32,7 @@
                 loader
             >
                 @lang('Send')
-                <x-heroicon-o-arrow-right class="h-4" />
+                <x-heroicon-o-arrow-right class="size-4" />
             </x-rapidez::button.secondary>
         </div>
     </form>

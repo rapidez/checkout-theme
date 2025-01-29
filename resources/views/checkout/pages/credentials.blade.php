@@ -7,11 +7,11 @@
 @section('content')
     <div class="container">
         <x-rapidez-ct::layout class="lg:items-end">
-            <x-rapidez-ct::title-progress-bar :href="route('cart')" :$checkoutSteps :$currentStep :$currentStepKey>
+            <x-rapidez-ct::title-progress-bar :aria-label="__('Back to cart')" :href="route('cart')" :$checkoutSteps :$currentStep :$currentStepKey>
                 @lang('Credentials')
             </x-rapidez-ct::title-progress-bar>
-            <x-slot:sidebar>
-                <a href="{{ url('/') }}" class="*:h-auto *:max-h-20 *:w-full *:object-contain max-lg:hidden">
+            <x-slot:sidebar class="max-lg:hidden">
+                <a href="{{ url('/') }}" aria-label="@lang('Home')" class="*:h-auto *:max-h-20 *:w-full *:object-contain">
                     <x-rapidez-ct::logo />
                 </a>
             </x-slot:sidebar>

@@ -46,30 +46,7 @@ php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --
 
 If you've already overwritten these by yourself before you installed this package, you will have to manually overwrite these as the publish command will not overwrite already existing files.
 
-Add these colors to your `tailwind.config.js` and modify them to your liking:
-(Alternatively, you could add these to a separate file and add it as a preset to your tailwind.config.js)
-```
-colors: {
-    ct: {
-        enhanced: {
-            DEFAULT: '#40C42A',
-        },
-        inactive: {
-            DEFAULT: '#8A8275',
-            100: '#F6F4EE',
-        },
-        disabled: '#EBE8DE',
-        accent: {
-            DEFAULT: '#FEAB05',
-        },
-        primary: {
-            DEFAULT: '#625B50',
-        },
-        border: '#EAE7DC',
-        error: '#DF241D',
-    },
-},
-```
+If you want more information about how we use color variables; Check our [https://docs.rapidez.io/3.x/theming.html#colors](Rapidez docs).
 
 This package also requires the `SKU` functionality to be enabled in the image resizer. This is normally enabled by default.
 

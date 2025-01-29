@@ -9,8 +9,8 @@
     :placeholder="__('Enter your e-mail address')"
 />
 <div>
-    <p class="text-sm font-medium text-ct-neutral">@lang('Welcome back') @{{ $root.user?.firstname }}!</p>
-    <span class="text-ct-inactive text-sm">
+    <p class="text-sm font-medium">@lang('Welcome back') @{{ $root.user?.firstname }}!</p>
+    <span class="text-muted text-sm">
         @lang('Is this not your account?')
         <user>
             <template v-slot="user">

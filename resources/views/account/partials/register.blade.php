@@ -6,5 +6,5 @@
 </p>
 <x-rapidez::button.outline :href="route('account.register')" class="flex w-fit items-center gap-1">
     @lang('Register')
-    <x-heroicon-o-arrow-right class="h-4" />
+    <x-heroicon-o-arrow-right class="size-4" />
 </x-rapidez::button.outline>

@@ -18,7 +18,7 @@
             />
         </label>
         <div class="flex items-center justify-between">
-            <a href="{{ route('account.forgotpassword') }}" class="text-sm text-ct-inactive underline">
+            <a href="{{ route('account.forgotpassword') }}" class="text-sm text-muted underline">
                 @lang('Forgot your password?')
             </a>
             <x-rapidez::button.secondary
@@ -28,7 +28,7 @@
                 loader
             >
                 @lang('Login')
-                <x-heroicon-o-arrow-right class="h-4" />
+                <x-heroicon-o-arrow-right class="size-4" />
             </x-rapidez::button.secondary>
         </div>
     </form>

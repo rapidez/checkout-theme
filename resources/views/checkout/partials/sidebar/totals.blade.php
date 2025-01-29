@@ -12,7 +12,7 @@
         <small v-cloak>@{{ cart.shipping_addresses[0]?.selected_shipping_method.carrier_title }} - @{{ cart.shipping_addresses[0]?.selected_shipping_method.method_title }}</small>
     </dt>
     <dd v-cloak v-if="cart.shipping_addresses[0]?.selected_shipping_method.amount.value > 0">@{{ cart.shipping_addresses[0]?.selected_shipping_method.amount.value | price }}</dd>
-    <dd v-else class="text-ct-enhanced font-medium">
+    <dd v-else class="text-primary font-medium">
         @lang('Free')
     </dd>
 </div>

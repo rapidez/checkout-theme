@@ -4,7 +4,7 @@
 @section('title', __('Order') . ' #' . $id)
 @section('button')
     <graphql-mutation
-        query='mutation { reorderItems(orderNumber: "{{ request()->id }}") { cart { id } userInputErrors { message } } }'
+        :query='`mutation { reorderItems(orderNumber: "{{ request()->id }}") { cart { ...cart } userInputErrors { message } } } ${config.fragments.cart}`'
         redirect="{{ route('cart') }}"
         :callback="reorderCallback"
     >
@@ -19,7 +19,7 @@
 @section('account-content')
     <graphql
         query='@include('rapidez::account.partials.queries.order')'
-        check="(data) => data.customer.orders.items[0]"
+        :check="(data) => data.customer.orders.items[0]"
         :callback="async (variables, response) => {return await updateOrder(variables, {data: response.data.customer.orders.items})}"
     >
         <div slot-scope="{ order: data }" v-if="order">
@@ -33,7 +33,7 @@
                 <x-rapidez::button.outline href="/account/orders">
                     @lang('Back to my orders')
                 </x-rapidez::button.outline>
-                <span class="text-ct-inactive">
+                <span class="text-muted">
                     @lang('Order date'): @{{ (new Date(order.order_date)).toLocaleDateString() }}
                 </span>
             </x-rapidez-ct::toolbar>
