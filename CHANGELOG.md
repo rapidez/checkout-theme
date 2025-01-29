@@ -1,7 +1,7 @@
 # Changelog 
 
 [Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.11.2...master)
-## [2.11.2](https://github.com/rapidez/checkout-theme/releases/tag/2.11.2) - 2024-12-19
+## [2.11.2](https://github.com/rapidez/checkout-theme/releases/tag/2.11.2) - 2025-01-08
 
 ### Fixed
 
