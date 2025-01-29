@@ -1,6 +1,36 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.9.2...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.11.2...master)
+## [2.11.2](https://github.com/rapidez/checkout-theme/releases/tag/2.11.2) - 2024-12-19
+
+### Fixed
+
+- Only show label if it has content (#158)
+- Remove double label in country select (#164)
+
+## [2.11.1](https://github.com/rapidez/checkout-theme/releases/tag/2.11.1) - 2024-11-26
+
+### Fixed
+
+- Fix closing tag (#146)
+- Clone address to remove reactivity (#145)
+
+## [2.11.0](https://github.com/rapidez/checkout-theme/releases/tag/2.11.0) - 2024-11-19
+
+### Changed
+
+- Use the resizedPath helper (01eaa98)
+
+## [2.10.0](https://github.com/rapidez/checkout-theme/releases/tag/2.10.0) - 2024-11-19
+
+### Added
+
+- Added default header and footer (#138)
+
+### Changed
+
+- Revert #127 (80fc797)
+
 ## [2.9.2](https://github.com/rapidez/checkout-theme/releases/tag/2.9.2) - 2024-11-08
 
 ### Fixed
