@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.11.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.11.2...master)
+## [2.11.2](https://github.com/rapidez/checkout-theme/releases/tag/2.11.2) - 2025-01-08
+
+### Fixed
+
+- Only show label if it has content (#158)
+- Remove double label in country select (#164)
+
 ## [2.11.1](https://github.com/rapidez/checkout-theme/releases/tag/2.11.1) - 2024-11-26
 
 ### Fixed
