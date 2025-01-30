@@ -20,7 +20,13 @@
         v-slot="{ mutate, variables }"
     >
         <fieldset>
-            <x-rapidez::button.conversion class="relative" type="submit" dusk="continue" loader>
+            <x-rapidez::button.conversion
+                class="relative"
+                type="submit"
+                dusk="continue"
+                loader
+                v-on:click="(event) => event.target.disabled = true"
+            >
                 @lang('Place order')
             </x-rapidez::button.conversion>
         </fieldset>
