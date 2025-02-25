@@ -42,6 +42,10 @@
                 return this.address?.country_id ?? this.address?.country_code ?? ''
             },
 
+            region() {
+                return this.address?.region?.region ?? this.address?.region?.region_code ?? ''
+            },
+
             isEmpty() {
                 return [this.company, this.street, this.name, this.city].filter(Boolean).length == 0
             }
