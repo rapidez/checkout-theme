@@ -29,7 +29,17 @@
         <x-rapidez::input.select.country
             name="{{ $type }}_country"
             v-model="{{ $address }}.{{ $countryKey }}"
+            v-on:change="() => {{ $address }}.region_id = null"
             required
+        />
+    </label>
+    <label class="sm:col-span-2 has-[.exists]:block hidden">
+        <x-rapidez::label>@lang('Region')</x-rapidez::label>
+        <x-rapidez::input.select.region
+            class="exists"
+            name="{{ $type }}_region"
+            v-model="{{ $address }}.region_id"
+            country="{{ $address }}.{{ $countryKey }}"
         />
     </label>
     <div class="max-sm:hidden sm:col-span-2"></div>
