@@ -113,9 +113,21 @@
                     <x-rapidez::input.select.country
                         name="country_code"
                         v-model="addressVariables.country_code"
-                        v-on:change="window.app.$emit('postcode-change', addressVariables)"
                         class="w-full"
+                        v-on:change="() => {
+                            window.app.$emit('postcode-change', addressVariables);
+                            addressVariables.region = { region_id: null };
+                        }"
                         required
+                    />
+                </label>
+                <label class="sm:col-span-2 has-[.exists]:block hidden">
+                    <x-rapidez::label>@lang('Region')</x-rapidez::label>
+                    <x-rapidez::input.select.region
+                        class="exists"
+                        name="region"
+                        v-model="addressVariables.region.region_id"
+                        country="addressVariables.country_code"
                     />
                 </label>
             </span>

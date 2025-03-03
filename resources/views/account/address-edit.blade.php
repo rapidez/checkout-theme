@@ -7,7 +7,7 @@
 @section('account-content')
     <x-rapidez-ct::sections>
         <graphql
-            query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone company vat_id default_billing default_shipping } } }"
+            query="{ customer { addresses { id firstname middlename lastname street city postcode country_code region { region_id } telephone company vat_id default_billing default_shipping } } }"
             :check="(data) => data.customer?.addresses.find(a => a.id == {{ request()->id }})"
             redirect="{{ route('account.edit') }}"
         >
@@ -19,7 +19,7 @@
                     :notify="{ 'message': '@lang('Address changed successfully')' }"
                     redirect="{{ route('account.edit') }}"
                 >
-                    @include('rapidez-ct::account.partials.address-form')
+                    @include('rapidez-ct::account.partials.address-form', ['region' => 'region.region_id'])
                 </graphql-mutation>
             </div>
         </graphql>
