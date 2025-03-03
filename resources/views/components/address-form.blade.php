@@ -1,4 +1,4 @@
-@props(['type' => 'shipping', 'address' => 'variables', 'countryKey' => 'country_code'])
+@props(['type' => 'shipping', 'address' => 'variables', 'countryKey' => 'country_code', 'region' => 'region_id'])
 
 <div class="grid gap-4 md:gap-5 md:grid-cols-4">
     @if (Rapidez::config('customer/address/company_show', 'opt') || Rapidez::config('customer/address/taxvat_show', 0))
@@ -29,7 +29,10 @@
         <x-rapidez::input.select.country
             name="{{ $type }}_country"
             v-model="{{ $address }}.{{ $countryKey }}"
-            v-on:change="() => {{ $address }}.region_id = null"
+            v-on:change="() => {
+                {{ $address }}.region = {};
+                {{ $address }}.{{ $region }} = null;
+            }"
             required
         />
     </label>
@@ -38,7 +41,7 @@
         <x-rapidez::input.select.region
             class="exists"
             name="{{ $type }}_region"
-            v-model="{{ $address }}.region_id"
+            v-model="{{ $address }}.{{ $region }}"
             country="{{ $address }}.{{ $countryKey }}"
         />
     </label>

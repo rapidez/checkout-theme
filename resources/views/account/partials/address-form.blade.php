@@ -1,7 +1,9 @@
+@props(['region' => 'region_id'])
+
 <form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate">
     <x-rapidez-ct::sections>
         <x-rapidez-ct::card.inactive>
-            <x-rapidez-ct::address-form type="edit"/>
+            <x-rapidez-ct::address-form type="edit" :$region/>
             <div class="flex gap-5 py-5">
                 <x-rapidez::input.checkbox v-model="variables.default_shipping">@lang('Default shipping address')</x-input.checkbox>
                 <x-rapidez::input.checkbox v-model="variables.default_billing">@lang('Default billing address')</x-input.checkbox>
