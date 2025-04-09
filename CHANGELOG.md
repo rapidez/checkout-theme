@@ -1,6 +1,25 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.0.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.0.1...master)
+## [3.0.1](https://github.com/rapidez/checkout-theme/releases/tag/3.0.1) - 2025-04-02
+
+### Fixed
+
+- Default on company_show fix (#168)
+- Fix crosssells (#171)
+- Remove unnecessary translation (#173)
+
+## [2.12.0](https://github.com/rapidez/checkout-theme/releases/tag/2.12.0) - 2025-04-02
+
+### Changed
+
+- Sort countries in country select (#166, #167)
+
+### Fixed
+
+- Default on company_show fix (#169)
+- Fix crosssells (#172)
+
 ## [3.0.0](https://github.com/rapidez/checkout-theme/releases/tag/3.0.0) - 2025-01-29
 
 ### Added
