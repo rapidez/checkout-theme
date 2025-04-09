@@ -1,6 +1,36 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.11.2...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/2.12.0...master)
+## [2.12.0](https://github.com/rapidez/checkout-theme/releases/tag/2.12.0) - 2025-04-02
+
+### Changed
+
+- Sort countries in country select (#166, #167)
+
+### Fixed
+
+- Default on company_show fix (#169)
+- Fix crosssells (#172)
+
+## [3.0.0](https://github.com/rapidez/checkout-theme/releases/tag/3.0.0) - 2025-01-29
+
+### Added
+
+- Rapidez v3 support (#118, #126, #147, #148, #149, #152, #153, #156, #159, #160)
+
+### Changed
+
+- Move card component outside of includes for more extendability (#139)
+- Removed hacky absolute styling (#141)
+- Listen to newsletter/general/active (#157)
+- Enhance out of stock message (#143)
+
+### Fixed
+
+- Fix translations (#161)
+
+
+
 ## [2.11.2](https://github.com/rapidez/checkout-theme/releases/tag/2.11.2) - 2025-01-08
 
 ### Fixed
