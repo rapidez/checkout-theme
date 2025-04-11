@@ -14,7 +14,7 @@
             :notify="{ 'message': '@lang('Address created successfully')' }"
             redirect="{{ route('account.edit') }}"
         >
-            @include('rapidez-ct::account.partials.address-form')
+            @include('rapidez-ct::account.partials.address-form', ['region' => 'region.region_id'])
         </graphql-mutation>
     </x-rapidez-ct::sections>
 @endsection
