@@ -19,8 +19,8 @@
     "require": {
         "php": "^8.0",
         "blade-ui-kit/blade-heroicons": "^2.0",
-        "rapidez/account": "^3.0",
-        "rapidez/core": "^3.1"
+        "rapidez/account": "^3.2",
+        "rapidez/core": "^3.4"
     },
     "autoload": {
         "psr-4": {
