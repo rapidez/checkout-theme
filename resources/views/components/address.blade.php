@@ -5,7 +5,7 @@
         'v-bind:shipping' => var_export($shipping, true),
         'v-bind:billing' => var_export($billing, true),
     ]) }}
-    v-slot="{ company, name, street, city, country, billing, shipping, isEmpty, customTitle, disabled, check }"
+    v-slot="{ company, name, street, city, country, region, billing, shipping, isEmpty, customTitle, disabled, check }"
 >
     <div {{ $attributes->whereDoesntStartWith('v-')->class('flex flex-col') }}>
         <template v-if="!isEmpty">
@@ -32,6 +32,7 @@
                     <li v-if="name">@{{ name }}</li>
                     <li v-if="street">@{{ street }}</li>
                     <li v-if="city">@{{ city }}</li>
+                    <li v-if="region">@{{ region }}</li>
                     <li v-if="country">@{{ country }}</li>
                 </ul>
                 @if (!empty($slot))
