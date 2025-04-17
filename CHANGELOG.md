@@ -1,6 +1,16 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.0.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.1.0...master)
+## [3.1.0](https://github.com/rapidez/checkout-theme/releases/tag/3.1.0) - 2025-04-17
+
+### Added
+
+- Region select (#170)
+
+### Changed
+
+- Require rapidez/core 3.5 (#174)
+
 ## [3.0.1](https://github.com/rapidez/checkout-theme/releases/tag/3.0.1) - 2025-04-02
 
 ### Fixed
