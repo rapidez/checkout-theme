@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.1.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.1.1...master)
+## [3.1.1](https://github.com/rapidez/checkout-theme/releases/tag/3.1.1) - 2025-04-22
+
+### Fixed
+
+- Remove unnecessary rewrite (#175)
+
 ## [3.1.0](https://github.com/rapidez/checkout-theme/releases/tag/3.1.0) - 2025-04-17
 
 ### Added
