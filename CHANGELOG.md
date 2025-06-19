@@ -1,6 +1,18 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.0.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.0.1...master)
+## [4.0.1](https://github.com/rapidez/checkout-theme/releases/tag/4.0.1) - 2025-06-19
+
+### Fixed
+
+- Typo (#177)
+
+## [3.1.2](https://github.com/rapidez/checkout-theme/releases/tag/3.1.2) - 2025-06-19
+
+### Fixed
+
+- Typo (#176)
+
 ## [4.0.0](https://github.com/rapidez/checkout-theme/releases/tag/4.0.0) - 2025-06-05
 
 ### Added
