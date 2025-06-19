@@ -1,6 +1,18 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.1.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.1.2...master)
+## [3.1.2](https://github.com/rapidez/checkout-theme/releases/tag/3.1.2) - 2025-06-19
+
+### Fixed
+
+- Typo (#176)
+
+## [4.0.0](https://github.com/rapidez/checkout-theme/releases/tag/4.0.0) - 2025-06-05
+
+### Added
+
+- Rapidez v4 support (d48aad5)
+
 ## [3.1.1](https://github.com/rapidez/checkout-theme/releases/tag/3.1.1) - 2025-04-22
 
 ### Fixed
