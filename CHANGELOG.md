@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.0.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.0.2...master)
+## [4.0.2](https://github.com/rapidez/checkout-theme/releases/tag/4.0.2) - 2025-06-24
+
+### Fixed
+
+- Listing to the tax config (#178)
+
 ## [4.0.1](https://github.com/rapidez/checkout-theme/releases/tag/4.0.1) - 2025-06-19
 
 ### Fixed
