@@ -5,7 +5,8 @@
     <x-rapidez-ct::separated-listing tag="dl">
         <div>
             <dt>@lang('Subtotal')</dt>
-            <dd>@{{ cart.prices.subtotal_including_tax.value | price }}</dd>
+            <dd v-if="showTax">@{{ cart.prices.subtotal_including_tax.value | price }}</dd>
+            <dd v-else>@{{ cart.prices.subtotal_excluding_tax.value | price }}</dd>
         </div>
         <div v-if="cart.shipping_addresses?.length && cart.shipping_addresses[0]?.selected_shipping_method?.amount">
             <dt>@lang('Shipping')</dt>
