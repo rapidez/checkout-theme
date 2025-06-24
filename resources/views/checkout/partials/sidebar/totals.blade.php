@@ -1,6 +1,7 @@
 <div>
     <dt>@lang('Subtotal')</dt>
-    <dd v-cloak>@{{ cart.prices.subtotal_including_tax.value | price }}</dd>
+    <dd v-if="showTax" v-cloak>@{{ cart.prices.subtotal_including_tax.value | price }}</dd>
+    <dd v-else v-cloak>@{{ cart.prices.subtotal_excluding_tax.value | price }}</dd>
 </div>
 <div v-if="cart.prices.applied_taxes.length">
     <dt>@lang('Tax')</dt>
