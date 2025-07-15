@@ -18,16 +18,18 @@
         label="Password"
         ref="password"
         v-on:input="loginInputChange"
-        required
+        :required="!config('rapidez.frontend.allow_guest_on_existing_account')"
     />
 
-    <input
-        type="checkbox"
-        v-if="!emailAvailable"
-        oninvalid="this.setCustomValidity('{{ __('Please log in') }}')"
-        class="absolute h-full inset-0 opacity-0 pointer-events-none"
-        required
-    />
+    @unless (config('rapidez.frontend.allow_guest_on_existing_account'))
+        <input
+            type="checkbox"
+            v-if="!emailAvailable"
+            oninvalid="this.setCustomValidity('{{ __('Please log in') }}')"
+            class="absolute h-full inset-0 opacity-0 pointer-events-none"
+            required
+        />
+    @endunless
 </div>
 
 <p v-if="!emailAvailable" class="self-end text-ct-inactive">
