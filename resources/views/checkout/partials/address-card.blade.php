@@ -4,6 +4,7 @@
         cart_id: mask,
         customer_address_id: cart.shipping_addresses[0]?.customer_address_id,
     }"
+    group="shipping"
     :callback="updateCart"
     :error-callback="checkResponseForExpiredCart"
     mutate-event="setShippingAddressesOnCart"
@@ -15,6 +16,7 @@
             cart_id: mask,
             customer_address_id: cart.billing_address?.customer_address_id,
         }"
+        group="billing"
         :callback="updateCart"
         :error-callback="checkResponseForExpiredCart"
         mutate-event="setBillingAddressOnCart"
