@@ -36,7 +36,7 @@
             @if(Rapidez::config('customer/address/company_show', 'opt'))
                 <label>
                     <x-rapidez::label>@lang('Company')</x-rapidez::label>
-                    <x-rapidez:input name="company" v-model="addressVariables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
+                    <x-rapidez::input name="company" v-model="addressVariables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
                 </label>
             @endif
             @if(Rapidez::config('customer/address/taxvat_show', 0))
