@@ -1,6 +1,24 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.1.2...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.1.3...master)
+## [3.1.3](https://github.com/rapidez/checkout-theme/releases/tag/3.1.3) - 2025-07-18
+
+### Fixed
+
+- Small bugfixes (#180)
+
+## [4.0.2](https://github.com/rapidez/checkout-theme/releases/tag/4.0.2) - 2025-06-24
+
+### Fixed
+
+- Listing to the tax config (#178)
+
+## [4.0.1](https://github.com/rapidez/checkout-theme/releases/tag/4.0.1) - 2025-06-19
+
+### Fixed
+
+- Typo (#177)
+
 ## [3.1.2](https://github.com/rapidez/checkout-theme/releases/tag/3.1.2) - 2025-06-19
 
 ### Fixed
