@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.0.3...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.1.0...master)
+## [4.1.0](https://github.com/rapidez/checkout-theme/releases/tag/4.1.0) - 2025-07-29
+
+### Changed
+
+- Optional checkout login option (#182)
+
 ## [4.0.3](https://github.com/rapidez/checkout-theme/releases/tag/4.0.3) - 2025-07-18
 
 ### Fixed
