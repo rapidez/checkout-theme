@@ -12,7 +12,7 @@
         <div class="flex items-center">
             <span>@{{ method.title }}</span>
             <img
-                class="absolute right-5 h-8 w-9"
+                class="absolute right-5 h-8 w-full max-w-9"
                 v-bind:src="`/payment-icons/${method.code}.svg`"
                 onerror="this.onerror=null; this.src=`/payment-icons/default.svg`"
                 v-bind:alt="method.title"
