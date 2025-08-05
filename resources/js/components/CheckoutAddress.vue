@@ -13,6 +13,8 @@
         methods: {
             toggleEdit() {
                 this.editing = !this.editing
+                this.$root.$emit('setShippingAddressOnCart')
+                this.$root.$emit('setBillingAddressOnCart')
             },
         },
 
