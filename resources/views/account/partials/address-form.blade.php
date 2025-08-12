@@ -5,8 +5,8 @@
         <x-rapidez-ct::card.inactive>
             <x-rapidez-ct::address-form type="edit" :$region/>
             <div class="flex gap-5 py-5">
-                <x-rapidez::input.checkbox v-model="variables.default_shipping">@lang('Default shipping address')</x-input.checkbox>
-                <x-rapidez::input.checkbox v-model="variables.default_billing">@lang('Default billing address')</x-input.checkbox>
+                <x-rapidez::input.checkbox v-model="variables.default_shipping">@lang('Default shipping address')</x-rapidez::input.checkbox>
+                <x-rapidez::input.checkbox v-model="variables.default_billing">@lang('Default billing address')</x-rapidez::input.checkbox>
             </div>
         </x-rapidez-ct::card.inactive>
     </x-rapidez-ct::sections>
