@@ -1,6 +1,20 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.1.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.2.0...master)
+## [4.2.0](https://github.com/rapidez/checkout-theme/releases/tag/4.2.0) - 2025-08-13
+
+### Changed
+
+- Simplify address cards (#188)
+
+### Fixed
+
+- Prevent cutting icons from the side (#183)
+- Remove duplication and bugfix (#184)
+- Reload Heroicon instead of a char (#186)
+- Fix closing tag (#187)
+- Optional checkout login option fix (#185)
+
 ## [4.1.0](https://github.com/rapidez/checkout-theme/releases/tag/4.1.0) - 2025-07-29
 
 ### Changed
