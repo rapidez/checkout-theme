@@ -16,7 +16,7 @@
                 </a>
             </x-slot:sidebar>
         </x-rapidez-ct::layout>
-        <x-rapidez-ct::layout class="mt-5">
+        <x-rapidez-ct::layout class="mt-5" v-cloak>
             <form
                 class="contents"
                 v-on:submit.prevent="(e) => {
