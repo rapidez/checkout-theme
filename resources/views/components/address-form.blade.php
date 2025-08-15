@@ -1,22 +1,24 @@
-@props(['type' => 'shipping', 'address' => 'variables', 'countryKey' => 'country_code', 'region' => 'region_id'])
+@props(['type' => 'shipping', 'address' => 'variables', 'countryKey' => 'country_code', 'region' => 'region_id', 'showList' => false])
 
 <div class="grid gap-4 md:gap-5 md:grid-cols-4">
-    <div class="col-span-full" v-if="$root.loggedIn">
-        <graphql query="{ customer { addresses { id firstname lastname street city postcode country_code } } }">
-            <div v-if="data" slot-scope="{ data }">
-                <x-rapidez::input.select v-model="variables.customer_address_id" dusk="{{ $type }}_address_select">
-                    <option v-for="address in data.customer.addresses" :value="address.id">
-                        @{{ address.firstname }} @{{ address.lastname }}
-                        - @{{ address.street[0] }} @{{ address.street[1] }} @{{ address.street[2] }}
-                        - @{{ address.postcode }}
-                        - @{{ address.city }}
-                        - @{{ address.country_code }}
-                    </option>
-                    <option :value="null">@lang('New address')</option>
-                </x-rapidez::input.select>
-            </div>
-        </graphql>
-    </div>
+    @if ($showList)
+        <div class="col-span-full" v-if="$root.loggedIn">
+            <graphql query="{ customer { addresses { id firstname lastname street city postcode country_code } } }">
+                <div v-if="data" slot-scope="{ data }">
+                    <x-rapidez::input.select v-model="variables.customer_address_id" dusk="{{ $type }}_address_select">
+                        <option v-for="address in data.customer.addresses" :value="address.id">
+                            @{{ address.firstname }} @{{ address.lastname }}
+                            - @{{ address.street[0] }} @{{ address.street[1] }} @{{ address.street[2] }}
+                            - @{{ address.postcode }}
+                            - @{{ address.city }}
+                            - @{{ address.country_code }}
+                        </option>
+                        <option :value="null">@lang('New address')</option>
+                    </x-rapidez::input.select>
+                </div>
+            </graphql>
+        </div>
+    @endif
 
     <div class="contents" v-if="!$root.loggedIn || !variables.customer_address_id">
         @if (Rapidez::config('customer/address/company_show', 'opt') || Rapidez::config('customer/address/taxvat_show', 0))
