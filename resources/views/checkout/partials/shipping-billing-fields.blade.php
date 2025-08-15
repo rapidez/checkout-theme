@@ -8,4 +8,4 @@
     </p>
 @endif
 
-<x-rapidez-ct::address-form :$type/>
+<x-rapidez-ct::address-form show-list :$type/>
