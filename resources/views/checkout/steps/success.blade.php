@@ -1,15 +1,14 @@
 @php($checkoutSteps = config('rapidez.frontend.checkout_steps.' . config('rapidez.store_code')) ?: config('rapidez.frontend.checkout_steps.default'))
 <checkout-success>
-    <div slot-scope="{ order, refreshOrder, hideBilling, shipping, billing, items }" dusk="checkout-success" class="container">
+    <div slot-scope="{ order, refreshOrder, hideBilling, shipping, billing, items, needsLogin }" dusk="checkout-success" class="container">
         <x-rapidez-ct::layout class="mt-4 sm:mt-12">
             <x-rapidez-ct::title>
                 @lang('Thank you for your order')
             </x-rapidez-ct::title>
-        
             <x-rapidez-ct::sections>
                 <x-rapidez-ct::card.inactive class="!bg-primary/20">
-                @include('rapidez-ct::checkout.partials.sections.success.order-completed-note')
-            </x-rapidez-ct::card.inactive>
+                    @include('rapidez-ct::checkout.partials.sections.success.order-completed-note')
+                </x-rapidez-ct::card.inactive>
             </x-rapidez-ct::sections>
 
             <x-rapidez-ct::sections>
