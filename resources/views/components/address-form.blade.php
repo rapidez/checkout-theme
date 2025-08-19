@@ -28,6 +28,7 @@
                     <x-rapidez::input
                         name="{{ $type }}_company"
                         v-model.lazy="{{ $address }}.company"
+                        v-bind:disabled="$root.loading"
                     />
                 </label>
             @endif
@@ -39,6 +40,7 @@
                         name="{{ $type }}_vat_id"
                         v-model.lazy="{{ $address }}.vat_id"
                         v-on:change="window.app.$emit('vat-change', $event)"
+                        v-bind:disabled="$root.loading"
                         :required="Rapidez::config('customer/address/taxvat_show', 0) == 'req'"
                     />
                 </label>
@@ -53,6 +55,7 @@
                     {{ $address }}.region = {};
                     {{ $address }}.{{ $region }} = null;
                 }"
+                v-bind:disabled="$root.loading"
                 required
             />
         </label>
@@ -62,6 +65,7 @@
                 class="exists"
                 name="{{ $type }}_region"
                 v-model="{{ $address }}.{{ $region }}"
+                v-bind:disabled="$root.loading"
                 country="{{ $address }}.{{ $countryKey }}"
             />
         </label>
@@ -71,6 +75,7 @@
             <x-rapidez::input
                 name="{{ $type }}_firstname"
                 v-model.lazy="{{ $address }}.firstname"
+                v-bind:disabled="$root.loading"
                 required
             />
         </label>
@@ -80,6 +85,7 @@
                 <x-rapidez::input
                     name="{{ $type }}_middlename"
                     v-model.lazy="{{ $address }}.middlename"
+                    v-bind:disabled="$root.loading"
                 />
             </label>
         @endif
@@ -88,6 +94,7 @@
             <x-rapidez::input
                 name="{{ $type }}_lastname"
                 v-model.lazy="{{ $address }}.lastname"
+                v-bind:disabled="$root.loading"
                 required
             />
         </label>
@@ -97,6 +104,7 @@
                 <x-rapidez::input
                     name="{{ $type }}_telephone"
                     v-model.lazy="{{ $address }}.telephone"
+                    v-bind:disabled="$root.loading"
                     :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'"
                 />
             </label>
@@ -107,6 +115,7 @@
                 name="{{ $type }}_postcode"
                 v-model.lazy="{{ $address }}.postcode"
                 v-on:change="window.app.$emit('postcode-change', {{ $address }})"
+                v-bind:disabled="$root.loading"
                 required
             />
         </label>
@@ -117,6 +126,7 @@
                     name="{{ $type }}_housenumber"
                     v-model.lazy="{{ $address }}.street[1]"
                     v-on:change="window.app.$emit('postcode-change', {{ $address }})"
+                    v-bind:disabled="$root.loading"
                     type="{{ Rapidez::config('customer/address/street_lines', 3) == 3 ? 'number' : 'text' }}"
                     required
                 />
@@ -128,6 +138,7 @@
                 <x-rapidez::input
                     name="{{ $type }}_addition"
                     v-model.lazy="{{ $address }}.street[2]"
+                    v-bind:disabled="$root.loading"
                 />
             </label>
         @endif
@@ -136,6 +147,7 @@
             <x-rapidez::input
                 name="{{ $type }}_street"
                 v-model.lazy="{{ $address }}.street[0]"
+                v-bind:disabled="$root.loading"
                 required
             />
         </label>
@@ -144,6 +156,7 @@
             <x-rapidez::input
                 name="{{ $type }}_city"
                 v-model.lazy="{{ $address }}.city"
+                v-bind:disabled="$root.loading"
                 required
             />
         </label>
