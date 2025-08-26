@@ -1,1 +1,0 @@
-@include('rapidez-ct::checkout.steps.payment_method')
