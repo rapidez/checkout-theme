@@ -6,6 +6,7 @@
     v-bind:value="$root.user?.email"
     class="justify-center"
     required
+    data-testid="email-input"
     :placeholder="__('Enter your e-mail address')"
 />
 <div>
@@ -14,7 +15,7 @@
         @lang('Is this not your account?')
         <user>
             <template v-slot="user">
-                <button class="underline" v-on:click.prevent="user.logout('/login')">@lang('Log out')</button>
+                <button class="underline" v-on:click.prevent="user.logout('/login')" data-testid="logout-button">@lang('Log out')</button>
             </template>
         </user>
         @lang('and use a different e-mail address.')

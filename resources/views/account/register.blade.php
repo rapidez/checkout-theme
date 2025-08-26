@@ -16,7 +16,7 @@
                 <x-rapidez::button.outline :href="route('account.login')">
                     @lang('Back to login')
                 </x-rapidez::button.outline>
-                <x-rapidez::button.secondary type="submit" form="register" loader>
+                <x-rapidez::button.secondary type="submit" form="register" loader data-testid="register-button">
                     @lang('Register')
                 </x-rapidez::button.secondary>
             </x-rapidez-ct::toolbar>

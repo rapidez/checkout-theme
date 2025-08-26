@@ -40,6 +40,7 @@
                             type="text"
                             v-model="variables.firstname"
                             required
+                            data-testid="firstname-input"
                         />
                     </label>
                     <label>
@@ -49,6 +50,7 @@
                             type="text"
                             v-model="variables.lastname"
                             required
+                            data-testid="lastname-input"
                         />
                     </label>
                     <label>
@@ -58,6 +60,7 @@
                             type="email"
                             v-model="variables.email"
                             required
+                            data-testid="email-input"
                         />
                     </label>
                     <label>
@@ -66,6 +69,7 @@
                             name="password"
                             v-model="variables.password"
                             required
+                            data-testid="password-input"
                         />
                     </label>
 
@@ -77,6 +81,7 @@
                                     name="isb2b"
                                     v-model="isOpen"
                                     v-on:click="toggle"
+                                    data-testid="b2b-checkbox"
                                 >
                                     @lang('This is a business account')
                                 </x-rapidez::input.checkbox>
@@ -88,6 +93,7 @@
                                         v-model="variables.taxvat"
                                         v-on:change="window.app.$emit('vat-change', $event)"
                                         required
+                                        data-testid="taxvat-input"
                                     />
                                 </label>
                             </div>
