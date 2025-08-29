@@ -115,7 +115,9 @@ jobs:
         run: yarn run prod
 
       - name: Install Playwright tests
-        run: php artisan rapidez:install:tests
+        run: |
+          cp -r vendor/rapidez/checkout-theme/tests/playwright tests/playwright
+          cp vendor/rapidez/checkout-theme/playwright.config.js playwright.config.js
 
       - name: Wait for index to finish
         run: for i in {1..60}; do [[ $(mysql -h 127.0.0.1 -P 3307 -u magento -ppassword -ss -r -e "CALL sys.table_exists('magento', 'catalog_product_flat_1', @exists); SELECT @exists;") == *"BASE TABLE"* ]] && break || sleep 5; done
@@ -127,7 +129,7 @@ jobs:
         run: php artisan serve &
 
       - name: Run Playwright tests
-        run: yarn playwright test tests/playwright/account.spec.js tests/playwright/cart.spec.js tests/playwright/checkout.spec.js --shard ${{ matrix.shard }}
+        run: yarn playwright test --shard ${{ matrix.shard }}
 
       # Screenshots
       - name: Update screenshots
