@@ -1,6 +1,6 @@
 @php($checkoutSteps = config('rapidez.frontend.checkout_steps.' . config('rapidez.store_code')) ?: config('rapidez.frontend.checkout_steps.default'))
 <checkout-success>
-    <div slot-scope="{ order, refreshOrder, hideBilling, shipping, billing, items }" data-testid="checkout-success" class="container" data-testid="success">
+    <div slot-scope="{ order, refreshOrder, hideBilling, shipping, billing, items }" data-testid="checkout-success" class="container">
         <x-rapidez-ct::layout class="mt-4 sm:mt-12">
             <x-rapidez-ct::title>
                 @lang('Thank you for your order')

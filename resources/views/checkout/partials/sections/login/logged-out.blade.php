@@ -9,7 +9,6 @@
                 v-bind:disabled="loggedIn"
                 class="justify-center"
                 required
-                data-testid="email-input"
                 :placeholder="__('Enter your e-mail address')"
             />
         </label>

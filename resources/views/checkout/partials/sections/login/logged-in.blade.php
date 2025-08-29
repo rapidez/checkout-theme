@@ -6,7 +6,6 @@
     v-bind:value="$root.user?.email"
     class="justify-center"
     required
-    data-testid="email-input"
     :placeholder="__('Enter your e-mail address')"
 />
 <div>
