@@ -9,6 +9,10 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
+    inputs:
+      update_all_screenshots:
+        description: 'Update all screenshots?'
+        type: boolean
 
 jobs:
   test:
@@ -105,6 +109,12 @@ jobs:
       - name: Overwrite core views
         run: php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=core-overwrites
 
+      - name: Publish Rapidez configs
+        run: php artisan vendor:publish --provider="Rapidez\Core\RapidezServiceProvider" --tag="config"
+
+      - name: Configure checkout theme steps
+        run: sed -i "s/'login',//g" config/rapidez/frontend.php
+
       - name: Install Rapidez command
         run: php artisan rapidez:install --frontendonly
 
@@ -139,12 +149,16 @@ jobs:
         if: failure() && matrix.screenshots == true && github.event_name != 'schedule' && !(github.event_name == 'push' && (github.ref_name == 'master' || endsWith(github.ref_name, '.x')))
         run: yarn playwright test --update-snapshots --last-failed --reporter=list
 
+      - name: Update all screenshots
+        if: ${{ inputs.update_all_screenshots && matrix.screenshots == true }}
+        run: yarn playwright test --update-snapshots --reporter=list
+
       - name: Move the screenshots
-        if: failure() && matrix.screenshots == true && github.event_name != 'schedule' && !(github.event_name == 'push' && (github.ref_name == 'master' || endsWith(github.ref_name, '.x')))
+        if: (failure() || inputs.update_all_screenshots) && matrix.screenshots == true && github.event_name != 'schedule' && !(github.event_name == 'push' && (github.ref_name == 'master' || endsWith(github.ref_name, '.x')))
         run: cp -r tests/playwright/. ../checkout-theme/tests/playwright/
 
       - name: Commit the screenshots
-        if: failure() && matrix.screenshots == true && github.event_name != 'schedule' && !(github.event_name == 'push' && (github.ref_name == 'master' || endsWith(github.ref_name, '.x')))
+        if: (failure() || inputs.update_all_screenshots) && matrix.screenshots == true && github.event_name != 'schedule' && !(github.event_name == 'push' && (github.ref_name == 'master' || endsWith(github.ref_name, '.x')))
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "[CI] Update Snapshots"
