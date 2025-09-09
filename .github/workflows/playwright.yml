@@ -102,6 +102,9 @@ jobs:
       - name: Composer require the local rapidez/checkout-theme
         run: composer require rapidez/checkout-theme:"dev-${{ env.CHECKOUT-THEME_HASH }} as ${{ env.LATEST_TAG }}"
 
+      - name: Overwrite core views
+        run: php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=core-overwrites
+
       - name: Install Rapidez command
         run: php artisan rapidez:install --frontendonly
 
