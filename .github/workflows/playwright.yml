@@ -145,6 +145,10 @@ jobs:
         run: yarn playwright test --shard ${{ matrix.shard }}
 
       # Screenshots
+      - name: Collect failed tests
+        if: (failure() || inputs.update_all_screenshots)
+        run: yarn playwright test --last-failed --list --pass-with-no-tests > failed-tests.txt
+
       - name: Update screenshots
         if: failure() && matrix.screenshots == true && github.event_name != 'schedule' && !(github.event_name == 'push' && (github.ref_name == 'master' || endsWith(github.ref_name, '.x')))
         run: yarn playwright test --update-snapshots --last-failed --reporter=list
