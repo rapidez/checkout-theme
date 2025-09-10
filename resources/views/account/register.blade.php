@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <x-rapidez-ct::title class="mb-5">
+        <x-rapidez-ct::title tag="h1" class="mb-5">
             @lang('Register')
         </x-rapidez-ct::title>
         <x-rapidez-ct::layout>

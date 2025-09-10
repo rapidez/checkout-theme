@@ -2,7 +2,7 @@
 <checkout-success>
     <div slot-scope="{ order, refreshOrder, hideBilling, shipping, billing, items }" data-testid="checkout-success" class="container">
         <x-rapidez-ct::layout class="mt-4 sm:mt-12">
-            <x-rapidez-ct::title>
+            <x-rapidez-ct::title tag="h1">
                 @lang('Thank you for your order')
             </x-rapidez-ct::title>
 

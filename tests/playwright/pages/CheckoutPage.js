@@ -93,13 +93,19 @@ export class CheckoutPage {
         await this.gotoCheckout()
 
         if (screenshots.includes('login')) {
-            await expect(this.page).toHaveScreenshot({ fullPage: true })
+            await expect(this.page).toHaveScreenshot({
+                fullPage: true,
+                mask: [await this.page.locator('[name=email]')]
+            })
         }
 
         await this.login(email, password, register)
 
         if (screenshots.includes('credentials')) {
-            await expect(this.page).toHaveScreenshot({ fullPage: true })
+            await expect(this.page).toHaveScreenshot({
+                fullPage: true,
+                mask: [await this.page.locator('[name=email]')]
+            })
         }
 
         await this.shippingAddress()

@@ -7,7 +7,7 @@
 @section('content')
     <div class="container">
         <x-rapidez-ct::layout.two-column>
-            <x-rapidez-ct::title>
+            <x-rapidez-ct::title tag="h1">
                 @lang('Reset password')
             </x-rapidez-ct::title>
             <x-slot:columns>
