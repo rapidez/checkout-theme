@@ -4,7 +4,7 @@
             <x-rapidez-ct::coupon-field />
             <template v-if="cart.applied_coupons?.length" v-for="coupon in cart.applied_coupons" v-cloak>
                 <graphql-mutation
-                    :query="'mutation ($cart_id: String!) { removeCouponFromCart(input: { cart_id: $cart_id })  { ...cart } } ' + config.fragments.cart"
+                    :query="'mutation ($cart_id: String!) { removeCouponFromCart(input: { cart_id: $cart_id })  { cart { ...cart } } } ' + config.fragments.cart"
                     :variables="{ cart_id: mask }"
                     :callback="updateCart"
                     :error-callback="checkResponseForExpiredCart"
