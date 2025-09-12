@@ -30,11 +30,9 @@ jobs:
           - magento-version: 2.4.7-p7
             magento-php-version: php83-fpm
             rapidez-php-version: 8.3
-            shard: 1/2
           - magento-version: 2.4.8-p2
             magento-php-version: php84-fpm
             rapidez-php-version: 8.4
-            shard: 2/2
             screenshots: true
 
     services:
@@ -142,12 +140,19 @@ jobs:
         run: php artisan serve &
 
       - name: Run Playwright tests
-        run: yarn playwright test --shard ${{ matrix.shard }}
+        run: yarn playwright test
 
       # Screenshots
+      - name: Collect failed tests
+        if: (failure() || inputs.update_all_screenshots)
+        run: yarn playwright test --last-failed --list --reporter=dot --pass-with-no-tests > failed-tests.txt
+
       - name: Update screenshots
         if: failure() && matrix.screenshots == true && github.event_name != 'schedule' && !(github.event_name == 'push' && (github.ref_name == 'master' || endsWith(github.ref_name, '.x')))
-        run: yarn playwright test --update-snapshots --last-failed --reporter=list
+        run: |
+          while read -r test_name; do
+            yarn playwright test "$test_name" --update-snapshots --reporter=list
+          done < <(awk -F ' › ' 'NF>1{print $2}' failed-tests.txt | sort -u)
 
       - name: Update all screenshots
         if: ${{ inputs.update_all_screenshots && matrix.screenshots == true }}
