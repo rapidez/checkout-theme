@@ -19,24 +19,24 @@
 </graphql-mutation>
 <graphql query="{ checkoutAgreements { agreement_id name checkbox_text content is_html mode } }">
     <div v-if="data?.checkoutAgreements?.length" class="mt-5 flex flex-col gap-y-4" slot-scope="{ data }">
-        <div v-for="agreement in data.checkoutAgreements">
-            <label
-                class="cursor-pointer text-sm underline"
-                v-bind:for="agreement.checkbox_text"
-                v-if="agreement.mode == 'AUTO'"
-            >
-                @{{ agreement.checkbox_text }}
-            </label>
-            <template v-else>
-                @include('rapidez-ct::checkout.partials.sections.payment.agreement-checkbox')
+        <div v-for="agreement in data.checkoutAgreements" class="flex gap-2">
+            <template v-if="agreement.mode != 'AUTO'">
+                <x-rapidez::input.checkbox.base
+                    name="agreement_ids[]"
+                    v-bind:value="agreement.agreement_id"
+                    dusk="agreements"
+                    required
+                />
             </template>
-            <x-rapidez::slideover id="agreement.checkbox_text">
-                <x-slot name="title">
-                    @{{ agreement.name }}
-                </x-slot>
+            <x-rapidez::slideover.global title="agreement" v-bind:id="agreement.checkbox_text" v-bind:title="agreement.name">
+                <x-slot:label>
+                    <span class="text-sm underline">
+                        @{{ agreement.checkbox_text }}
+                    </span>
+                </x-slot:label>
                 <div v-if="agreement.is_html" v-html="agreement.content"></div>
                 <div v-else class="whitespace-pre-wrap" v-text="agreement.content"></div>
-            </x-rapidez::slideover>
+            </x-rapidez::slideover.global>
         </div>
     </div>
 </graphql>
