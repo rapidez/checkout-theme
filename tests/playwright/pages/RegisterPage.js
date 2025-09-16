@@ -8,6 +8,7 @@ export class RegisterPage extends BasePage {
 
   async register(firstname, lastname, email, password) {
     await super.goto();
+    await this.page.waitForLoadState('domcontentloaded');
     await this.page.fill('[name=firstname]', firstname)
     await this.page.fill('[name=lastname]', lastname)
     await this.page.fill('[name=email]', email)
