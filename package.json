@@ -1,14 +1,11 @@
 {
     "private": true,
     "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "prod": "vite build"
-    },
     "devDependencies": {
         "@axe-core/playwright": "^4.10.2",
         "@playwright/test": "^1.53.0",
-        "dotenv": "^17.2.0"
+        "dotenv": "^17.2.0",
+        "lighthouse": "^12.8.2",
+        "playwright-lighthouse": "^4.0.0"
     }
 }

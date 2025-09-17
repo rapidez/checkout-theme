@@ -12,7 +12,7 @@
 @endphp
 
 @section('content')
-    <div v-cloak class="container">
+    <div v-cloak class="container" data-testid="account-content">
         <template v-if="loggedIn">
             @hasSection('title')
                 <x-rapidez-ct::title class="mb-5" tag="h1">
