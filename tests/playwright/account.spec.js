@@ -1,7 +1,9 @@
 import { test, expect } from "@playwright/test";
 import { BasePage } from '../../vendor/rapidez/core/tests/playwright/pages/BasePage'
 import { AccountPage } from './pages/AccountPage';
-import { RegisterPage } from '../../vendor/rapidez/account/tests/playwright/pages/RegisterPage';
+// import { RegisterPage } from '../../vendor/rapidez/account/tests/playwright/pages/RegisterPage';
+import { RegisterPage } from './pages/RegisterPage';
+
 
 test("Register account", async ({ page }) => {
   const registerPage = new RegisterPage(page);
