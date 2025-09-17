@@ -76,6 +76,7 @@ export class CheckoutPage {
         await this.page.waitForTimeout(200)
         await this.page.waitForLoadState('networkidle')
         await this.page.waitForURL('**/' + expectedStep)
+        await this.page.waitForTimeout(200)
         if (expectedStep != 'success') {
             await this.continueButtonVisible()
         }
