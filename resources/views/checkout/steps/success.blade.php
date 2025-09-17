@@ -7,7 +7,7 @@
             </x-rapidez-ct::title>
 
             <x-rapidez-ct::sections>
-                <x-rapidez-ct::card.inactive class="!bg-primary/20">
+                <x-rapidez-ct::card.inactive class="!bg-primary/20" data-testid="masked">
                     @include('rapidez-ct::checkout.partials.sections.success.order-completed-note')
                 </x-rapidez-ct::card.inactive>
             </x-rapidez-ct::sections>
