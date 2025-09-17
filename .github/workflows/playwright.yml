@@ -14,6 +14,9 @@ on:
         description: 'Update all screenshots?'
         type: boolean
 
+env:
+  PACKAGE: checkout-theme
+
 jobs:
   test:
     timeout-minutes: 60
@@ -69,7 +72,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          path: rapidez/checkout-theme
+          path: rapidez/${{ env.PACKAGE }}
           fetch-depth: 0
           lfs: true
 
@@ -90,19 +93,19 @@ jobs:
           coverage: none
 
       - name: Copy testing .env
-        run: cp ../checkout-theme/tests/playwright/.env.testing .env
+        run: cp ../$PACKAGE/tests/playwright/.env.testing .env
 
-      - name: Use rapidez/checkout-theme from source
-        run: composer config repositories.checkout-theme path ../checkout-theme
+      - name: Use Rapidez package from source
+        run: composer config repositories.$PACKAGE path ../$PACKAGE
 
-      - name: Get commit hash and tag of the checkout-theme
-        working-directory: ./rapidez/checkout-theme
+      - name: Get commit hash and tag of the package
+        working-directory: ./rapidez/${{ env.PACKAGE }}
         run: |
-          echo "CHECKOUT-THEME_HASH=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse HEAD | sed 's|/|_|g')" >> $GITHUB_ENV
+          echo "PACKAGE_HASH=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse HEAD | sed 's|/|_|g')" >> $GITHUB_ENV
           echo "LATEST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
 
-      - name: Composer require the local rapidez/checkout-theme
-        run: composer require rapidez/checkout-theme:"dev-${{ env.CHECKOUT-THEME_HASH }} as ${{ env.LATEST_TAG }}"
+      - name: Composer require the local rapidez package
+        run: composer require rapidez/$PACKAGE:"dev-${{ env.PACKAGE_HASH }} as ${{ env.LATEST_TAG }}"
 
       - name: Overwrite core views
         run: php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=core-overwrites
@@ -127,8 +130,8 @@ jobs:
 
       - name: Install Playwright tests
         run: |
-          cp -r vendor/rapidez/checkout-theme/tests/playwright tests/playwright
-          cp vendor/rapidez/checkout-theme/playwright.config.js playwright.config.js
+          cp -r vendor/rapidez/$PACKAGE/tests/playwright tests/playwright
+          cp vendor/rapidez/$PACKAGE/playwright.config.js playwright.config.js
 
       - name: Wait for index to finish
         run: for i in {1..60}; do [[ $(mysql -h 127.0.0.1 -P 3307 -u magento -ppassword -ss -r -e "CALL sys.table_exists('magento', 'catalog_product_flat_1', @exists); SELECT @exists;") == *"BASE TABLE"* ]] && break || sleep 5; done
@@ -160,14 +163,14 @@ jobs:
 
       - name: Move the screenshots
         if: (failure() || inputs.update_all_screenshots) && matrix.screenshots == true && github.event_name != 'schedule' && !(github.event_name == 'push' && (github.ref_name == 'master' || endsWith(github.ref_name, '.x')))
-        run: cp -r tests/playwright/. ../checkout-theme/tests/playwright/
+        run: cp -r tests/playwright/. ../$PACKAGE/tests/playwright/
 
       - name: Commit the screenshots
         if: (failure() || inputs.update_all_screenshots) && matrix.screenshots == true && github.event_name != 'schedule' && !(github.event_name == 'push' && (github.ref_name == 'master' || endsWith(github.ref_name, '.x')))
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "[CI] Update Snapshots"
-          repository: rapidez/checkout-theme
+          repository: rapidez/${{ env.PACKAGE }}
 
       # Artifact
       - name: Dump docker logs
