@@ -19,7 +19,7 @@ export class CheckoutPage {
         }
 
         if (password && register) {
-            await this.page.getByTestId('create-account-checkbox').check()
+            await this.page.getByTestId('create-account').check()
             await this.page.fill('[name=password]', password)
             await this.page.fill('[name=password_repeat]', password)
             await this.page.fill('[name=firstname]', 'Bruce')
