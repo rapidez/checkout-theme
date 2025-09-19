@@ -8,6 +8,7 @@
 >
     <x-rapidez::recaptcha location="customer_create"/>
     <graphql-mutation
+        v-cloak
         query="@include('rapidez-ct::account.partials.queries.register-account')"
         redirect="{{ route('account.overview') }}"
         :callback="async (variables, response) => {
@@ -19,7 +20,7 @@
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
         v-slot="{ mutate, variables }"
     >
-        <x-rapidez-ct::sections>
+        <x-rapidez-ct::sections v-if="!loggedIn">
             <x-rapidez-ct::card.inactive>
                 <x-rapidez-ct::title.lg class="mb-5">
                     @lang('Register account')
@@ -112,5 +113,11 @@
                 </x-rapidez-ct::card.inactive>
             @endif
         </x-rapidez-ct::sections>
+        <div v-else>
+            <p class="mb-5 text-base">@lang('You\'re already logged in.')</p>
+            <x-rapidez::button.secondary :href="route('account.overview')">
+                @lang('Go to your account')
+            </x-rapidez::button.secondary>
+        </div>
     </graphql-mutation>
 </graphql-mutation>

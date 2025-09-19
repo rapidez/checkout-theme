@@ -22,7 +22,7 @@
                 <x-rapidez::no-image v-else class="h-[100px] w-[150px]"/>
             </div>
             <div class="flex w-[150px] flex-1 flex-col items-start">
-                <a :href="item.url" dusk="cart-item-name">@{{ item.product_name }}</a>
+                <a :href="item.url" data-testid="cart-item-name">@{{ item.product_name }}</a>
                 <div v-for="option in item.selected_options">
                     @{{ option.label }}: @{{ option.value }}
                 </div>

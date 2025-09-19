@@ -20,7 +20,7 @@
         v-slot="{ mutate, variables }"
     >
         <fieldset>
-            <x-rapidez::button.conversion class="relative" type="submit" dusk="continue" loader>
+            <x-rapidez::button.conversion class="relative" type="submit" data-testid="continue" loader>
                 @lang('Place order')
             </x-rapidez::button.conversion>
         </fieldset>

@@ -1,0 +1,36 @@
+import { test, expect } from '@playwright/test'
+import { ProductPage } from '../../vendor/rapidez/core/tests/playwright/pages/ProductPage'
+import { CheckoutPage } from './pages/CheckoutPage'
+import { AccountPage } from './pages/AccountPage'
+
+test('default - as guest', async ({ page }) => {
+    const productPage = new ProductPage(page)
+    const checkoutPage = new CheckoutPage(page)
+
+    await productPage.addToCart(process.env.PRODUCT_URL_SIMPLE)
+    await checkoutPage.checkout(`wayne+${crypto.randomUUID()}@enterprises.com`, false, false, [
+        'login',
+        'credentials',
+        'payment',
+        'success',
+    ])
+})
+
+test('default - as user', async ({ page }) => {
+    const productPage = new ProductPage(page)
+    const checkoutPage = new CheckoutPage(page)
+    const accountPage = new AccountPage(page)
+
+    const email = `wayne+${crypto.randomUUID()}@enterprises.com`
+    const password = 'IronManSucks.91939'
+
+    // Register
+    await productPage.addToCart(process.env.PRODUCT_URL_SIMPLE)
+    await checkoutPage.checkout(email, password, true, ['credentials'])
+
+    await accountPage.logout()
+
+    // Login
+    await productPage.addToCart(process.env.PRODUCT_URL_SIMPLE)
+    await checkoutPage.checkout(email, password)
+})

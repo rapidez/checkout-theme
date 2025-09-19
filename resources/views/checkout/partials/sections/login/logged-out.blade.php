@@ -24,6 +24,7 @@
                     name="password"
                     v-model="checkoutLogin.password"
                     v-bind:required="checkoutLogin.createAccount || !checkoutLogin.allowPasswordless ? 'required' : null"
+                    data-testid="password-input"
                 />
             </label>
         </template>
@@ -43,6 +44,7 @@
                     name="password_repeat"
                     v-model="checkoutLogin.password_repeat"
                     required
+                    data-testid="password-repeat-input"
                 />
             </label>
             <label>
@@ -52,6 +54,7 @@
                     type="text"
                     v-model="checkoutLogin.firstname"
                     required
+                    data-testid="firstname-input"
                 />
             </label>
             <label>
@@ -61,22 +64,23 @@
                     type="text"
                     v-model="checkoutLogin.lastname"
                     required
+                    data-testid="lastname-input"
                 />
             </label>
         </template>
 
         <template v-if="!loggedIn && checkoutLogin.isEmailAvailable">
             <div class="col-span-full">
-                <x-rapidez::input.checkbox v-model="checkoutLogin.createAccount" dusk="create_account">
+                <x-rapidez::input.checkbox v-model="checkoutLogin.createAccount" data-testid="create-account">
                     @lang('Create an account')
                 </x-rapidez::input.checkbox>
             </div>
         </template>
 
-        <x-rapidez::button.secondary type="button" v-on:click="checkoutLogin.go" v-if="checkoutLogin.isEmailAvailable && checkoutLogin.createAccount" dusk="register">
+        <x-rapidez::button.secondary type="button" v-on:click="checkoutLogin.go" v-if="checkoutLogin.isEmailAvailable && checkoutLogin.createAccount" data-testid="register">
             @lang('Register')
         </x-rapidez::button.secondary>
-        <x-rapidez::button.secondary type="button" v-on:click="checkoutLogin.go" v-if="!checkoutLogin.isEmailAvailable" dusk="register">
+        <x-rapidez::button.secondary type="button" v-on:click="checkoutLogin.go" v-if="!checkoutLogin.isEmailAvailable" data-testid="login">
             @lang('Login')
         </x-rapidez::button.secondary>
     </fieldset>

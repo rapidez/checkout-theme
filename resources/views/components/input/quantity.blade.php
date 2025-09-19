@@ -23,7 +23,7 @@
                 v-bind:min="Math.max(item.product.stock_item?.min_sale_qty, item.product.stock_item?.qty_increments) || null"
                 v-bind:max="item.product.stock_item?.max_sale_qty"
                 v-bind:step="item.qty_increments"
-                v-bind:dusk="'qty-'+index"
+                data-testid="qty"
             />
             <button
                 class="flex-1 bg transition hover:bg-opacity-80"

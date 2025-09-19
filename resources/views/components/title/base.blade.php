@@ -1,3 +1,5 @@
-<div {{ $attributes->class('font-medium relative group') }}>
+@props(['tag' => 'div'])
+
+<x-rapidez::tag :is="$tag" {{ $attributes->class('font-medium relative group') }}>
     {{ $slot }}
-</div>
+</x-rapidez::tag>
