@@ -1,6 +1,22 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.2.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.3.0...master)
+## [4.3.0](https://github.com/rapidez/checkout-theme/releases/tag/4.3.0) - 2025-09-17
+
+### Changed
+
+- Uniform Blade file naming with dashes (#195, #201)
+
+### Fixed
+
+- Success page html markup and style fix (#189)
+- v-cloaks in the checkout (#190)
+- Hide address dropdown in account center (#191)
+- Translation fix (#192)
+- Fix indenting & orientation of the if statement (#197)
+- Remove coupon query fix (#198)
+- Checkout agreements fix (#199)
+
 ## [4.2.0](https://github.com/rapidez/checkout-theme/releases/tag/4.2.0) - 2025-08-13
 
 ### Changed

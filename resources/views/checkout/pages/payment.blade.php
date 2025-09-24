@@ -27,7 +27,7 @@
                         ).catch();
                 }"
             >
-                @include('rapidez::checkout.steps.payment_method')
+                @include('rapidez::checkout.steps.payment-method')
             </form>
             <x-slot:sidebar>
                 @include('rapidez-ct::checkout.partials.sidebar.sidebar')

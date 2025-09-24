@@ -23,11 +23,11 @@
                         @include('rapidez-ct::checkout.partials.sections.success.newsletter')
                     </x-rapidez-ct::card.inactive>
                 @endif
-                <x-rapidez-ct::card.inactive>
-                    @if (config('rapidez.checkout-theme.checkout.success.register'))
+                @if (config('rapidez.checkout-theme.checkout.success.register'))
+                    <x-rapidez-ct::card.inactive>
                         @include('rapidez-ct::checkout.partials.sections.success.create-account')
-                    @endif
-                </x-rapidez-ct::card.inactive>
+                    </x-rapidez-ct::card.inactive>
+                @endif
             </x-rapidez-ct::sections>
             <x-slot:sidebar>
                 @include('rapidez-ct::checkout.partials.sections.success.features')
