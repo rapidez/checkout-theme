@@ -1,2 +1,2 @@
-// Added this to run the same test that are in the core
-export * from '../../vendor/rapidez/core/tests/playwright/cart.spec.js'
+// Run the cart tests from the core
+import '../../vendor/rapidez/core/tests/playwright/cart.spec.js'
