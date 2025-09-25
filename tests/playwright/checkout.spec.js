@@ -3,7 +3,7 @@ import { ProductPage } from '../../vendor/rapidez/core/tests/playwright/pages/Pr
 import { CheckoutPage } from './pages/CheckoutPage'
 import { AccountPage } from './pages/AccountPage'
 
-test('default - as guest', async ({ page }) => {
+test('as guest', async ({ page }) => {
     const productPage = new ProductPage(page)
     const checkoutPage = new CheckoutPage(page)
 
@@ -16,7 +16,7 @@ test('default - as guest', async ({ page }) => {
     ])
 })
 
-test('default - as user', async ({ page }) => {
+test('as user', async ({ page }) => {
     const productPage = new ProductPage(page)
     const checkoutPage = new CheckoutPage(page)
     const accountPage = new AccountPage(page)
