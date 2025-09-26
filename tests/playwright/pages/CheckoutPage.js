@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test'
-import { CheckoutPage as CoreCheckoutPage } from '../../../vendor/rapidez/core/tests/playwright/pages/CheckoutPage'
+import { CheckoutPage as CoreCheckoutPage } from '@rapidez/core/tests/playwright/pages/CheckoutPage.js'
 
 export class CheckoutPage extends CoreCheckoutPage {
     async continue(expectedStep) {

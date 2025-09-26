@@ -1,4 +1,5 @@
-@props(['type' => 'shipping', 'address' => 'variables', 'countryKey' => 'country_code', 'region' => 'region_id', 'showList' => false])
+@props(['type' => '', 'address' => 'variables', 'countryKey' => 'country_code', 'region' => 'region_id', 'showList' => false])
+@php($prefix = $type ? $type.'_' : '')
 
 <div class="grid grid-cols-12 gap-5">
     @if($showList)
@@ -44,7 +45,7 @@
                             <label>
                                 <x-rapidez::label>@lang('Company')</x-rapidez::label>
                                 <x-rapidez::input
-                                    name="{{ $type }}_company"
+                                    name="{{ $prefix }}company"
                                     v-model="variables.company"
                                     :required="Rapidez::config('customer/address/company_show') == 'req'"
                                 />
@@ -56,7 +57,7 @@
                             <label>
                                 <x-rapidez::label>@lang('Tax ID')</x-rapidez::label>
                                 <x-rapidez::input
-                                    name="{{ $type }}_vat_id"
+                                    name="{{ $prefix }}vat_id"
                                     v-model="variables.vat_id"
                                     v-on:change="window.app.$emit('vat-change', $event)"
                                     :required="Rapidez::config('customer/address/taxvat_show') == 'req'"
@@ -72,7 +73,7 @@
                 <label>
                     <x-rapidez::label>@lang('Prefix')</x-rapidez::label>
                     <x-rapidez::input.select
-                        name="{{ $type }}_prefix"
+                        name="{{ $prefix }}prefix"
                         v-model="variables.prefix"
                         :required="Rapidez::config('customer/address/prefix_show') == 'req'"
                     >
@@ -92,7 +93,7 @@
             <label>
                 <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
                 <x-rapidez::input
-                    name="{{ $type }}_firstname"
+                    name="{{ $prefix }}firstname"
                     v-model="variables.firstname"
                     required
                 />
@@ -103,7 +104,7 @@
                 <label>
                     <x-rapidez::label>@lang('Middlename')</x-rapidez::label>
                     <x-rapidez::input
-                        name="{{ $type }}_middlename"
+                        name="{{ $prefix }}middlename"
                         v-model="variables.middlename"
                     />
                 </label>
@@ -113,7 +114,7 @@
             <label>
                 <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
                 <x-rapidez::input
-                    name="{{ $type }}_lastname"
+                    name="{{ $prefix }}lastname"
                     v-model="variables.lastname"
                     required
                 />
@@ -124,7 +125,7 @@
                 <label>
                     <x-rapidez::label>@lang('Suffix')</x-rapidez::label>
                     <x-rapidez::input.select
-                        name="{{ $type }}_suffix"
+                        name="{{ $prefix }}suffix"
                         v-model="variables.suffix"
                         :required="Rapidez::config('customer/address/suffix_show') == 'req'"
                     >
@@ -144,7 +145,7 @@
             <label>
                 <x-rapidez::label>@lang('Country')</x-rapidez::label>
                 <x-rapidez::input.select.country
-                    name="{{ $type }}_country"
+                    name="{{ $prefix }}country"
                     v-model="variables.country_code"
                     v-on:change="$root.$nextTick(() => {
                         window.app.$emit('postcode-change', variables);
@@ -159,7 +160,7 @@
                 <x-rapidez::label>@lang('Region')</x-rapidez::label>
                 <x-rapidez::input.select.region
                     class="region exists"
-                    name="{{ $type }}_region"
+                    name="{{ $prefix }}region"
                     country="variables.country_code"
                     v-model="variables.region_id"
                 />
@@ -170,7 +171,7 @@
                 <label>
                     <x-rapidez::label>@lang('Telephone')</x-rapidez::label>
                     <x-rapidez::input
-                        name="{{ $type }}_telephone"
+                        name="{{ $prefix }}telephone"
                         v-model="variables.telephone"
                         :required="Rapidez::config('customer/address/telephone_show') == 'req'"
                     />
@@ -181,7 +182,7 @@
             <label>
                 <x-rapidez::label>@lang('Postcode')</x-rapidez::label>
                 <x-rapidez::input
-                    name="{{ $type }}_postcode"
+                    name="{{ $prefix }}postcode"
                     v-model="variables.postcode"
                     v-on:change="$root.$nextTick(() => window.app.$emit('postcode-change', variables))"
                     required
@@ -193,7 +194,7 @@
                 <label>
                     <x-rapidez::label>@lang('Housenumber')</x-rapidez::label>
                     <x-rapidez::input
-                        name="{{ $type }}_housenumber"
+                        name="{{ $prefix }}housenumber"
                         v-model="variables.street[1]"
                         v-on:change="$root.$nextTick(() => window.app.$emit('postcode-change', variables))"
                         required
@@ -206,7 +207,7 @@
                 <label>
                     <x-rapidez::label>@lang('Addition')</x-rapidez::label>
                     <x-rapidez::input
-                        name="{{ $type }}_addition"
+                        name="{{ $prefix }}addition"
                         v-model="variables.street[2]"
                     />
                 </label>
@@ -216,7 +217,7 @@
             <label>
                 <x-rapidez::label>@lang('Street')</x-rapidez::label>
                 <x-rapidez::input
-                    name="{{ $type }}_street"
+                    name="{{ $prefix }}street"
                     v-model="variables.street[0]"
                     required
                 />
@@ -226,7 +227,7 @@
             <label>
                 <x-rapidez::label>@lang('City')</x-rapidez::label>
                 <x-rapidez::input
-                    name="{{ $type }}_city"
+                    name="{{ $prefix }}city"
                     v-model="variables.city"
                     required
                 />
@@ -237,7 +238,7 @@
                 <label>
                     <x-rapidez::label>@lang('Fax')</x-rapidez::label>
                     <x-rapidez::input
-                        name="{{ $type }}_fax"
+                        name="{{ $prefix }}fax"
                         v-model="variables.fax"
                         :required="Rapidez::config('customer/address/fax_show') === 'req'"
                     />

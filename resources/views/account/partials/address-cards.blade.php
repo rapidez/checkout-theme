@@ -5,7 +5,7 @@
     <template v-if="data.customer.shipping_address?.default_billing || !data.customer.shipping_address || !data.customer.billing_address">
         <template v-if="data.customer.shipping_address || data.customer.billing_address">
             <x-rapidez-ct::card.address v-bind:address="data.customer.shipping_address ?? data.customer.billing_address" shipping billing check>
-                <x-rapidez-ct::button.link v-bind:href="`/account/address/${(data.customer.shipping_address ?? data.customer.billing_address).id}`">
+                <x-rapidez-ct::button.link v-bind:href="`/account/address/${(data.customer.shipping_address ?? data.customer.billing_address).id}`" data-testid="address-edit">
                     @lang('Edit')
                 </x-rapidez-ct::button.link>
             </x-rapidez-ct::card.address>
@@ -17,12 +17,12 @@
     </template>
     <template v-else>
         <x-rapidez-ct::card.address v-bind:address="data.customer.shipping_address" shipping check>
-            <x-rapidez-ct::button.link v-bind:href="`/account/address/${data.customer.shipping_address.id}`">
+            <x-rapidez-ct::button.link v-bind:href="`/account/address/${data.customer.shipping_address.id}`" data-testid="address-edit">
                 @lang('Edit')
             </x-rapidez-ct::button.link>
         </x-rapidez-ct::card.address>
         <x-rapidez-ct::card.address v-bind:address="data.customer.billing_address" billing check>
-            <x-rapidez-ct::button.link v-bind:href="`/account/address/${data.customer.billing_address.id}`">
+            <x-rapidez-ct::button.link v-bind:href="`/account/address/${data.customer.billing_address.id}`" data-testid="address-edit">
                 @lang('Edit')
             </x-rapidez-ct::button.link>
         </x-rapidez-ct::card.address>

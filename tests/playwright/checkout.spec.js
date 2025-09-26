@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { ProductPage } from '../../vendor/rapidez/core/tests/playwright/pages/ProductPage'
+import { ProductPage } from '@rapidez/core/tests/playwright/pages/ProductPage.js'
 import { CheckoutPage } from './pages/CheckoutPage'
 import { AccountPage } from './pages/AccountPage'
 
