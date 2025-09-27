@@ -31,7 +31,7 @@
         </div>
     </x-rapidez-ct::separated-listing>
 
-    <x-rapidez::button.conversion :href="route('checkout')" class="flex w-full items-center justify-center gap-1 mt-6" dusk="checkout">
+    <x-rapidez::button.conversion :href="route('checkout')" class="flex w-full items-center justify-center gap-1 mt-6" data-testid="checkout">
         @lang('To checkout')
         <x-heroicon-o-arrow-right class="size-4" />
     </x-rapidez::button.conversion>

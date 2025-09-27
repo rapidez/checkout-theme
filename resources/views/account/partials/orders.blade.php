@@ -1,7 +1,7 @@
 <div>
     <template v-if="data.customer.orders.items.length">
         <x-rapidez-ct::sections>
-            <a class="block" v-for="order in data.customer.orders.items" :href="'/account/order/' + order.number">
+            <a class="block" v-for="order in data.customer.orders.items" :href="'/account/order/' + order.number" data-testid="order-id">
                 <x-rapidez-ct::card.inactive class="flex-col">
                     <x-rapidez-ct::title.lg>
                         @lang('Order') #@{{ order.number }}

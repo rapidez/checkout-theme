@@ -14,7 +14,7 @@
         @lang('Is this not your account?')
         <user>
             <template v-slot="user">
-                <button class="underline" v-on:click.prevent="user.logout('/login')">@lang('Log out')</button>
+                <button class="underline" v-on:click.prevent="user.logout('/login')" data-testid="logout-button">@lang('Log out')</button>
             </template>
         </user>
         @lang('and use a different e-mail address.')

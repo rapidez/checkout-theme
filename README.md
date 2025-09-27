@@ -72,6 +72,12 @@ If you want you *could* publish the views. But it's recommended to only publish 
 ```
 php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --tag=views
 ```
+## Browser tests
+
+- Make sure Rapidez with the checkout theme is working in your browser
+- Run the tests with `yarn playwright test`
+- Alternatively, run the tests from a UI with `yarn playwright test --ui`
+- Update the screenshots with `yarn playwright test --update-snapshots`
 
 ## License
 

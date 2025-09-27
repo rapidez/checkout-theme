@@ -2,7 +2,7 @@
     <x-rapidez-ct::dashboard.sidebar-item
         :$item
         :$key
-        dusk="logout"
+        data-testid="logout"
         slot-scope="{ logout }"
         v-on:click.prevent="logout('/login')"
     />

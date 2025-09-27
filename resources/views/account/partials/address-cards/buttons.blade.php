@@ -1,6 +1,6 @@
 @include('rapidez-ct::account.partials.address-cards.delete')
 
-<x-rapidez-ct::button.link v-bind:href="`/account/address/${userAddress.id}`">
+<x-rapidez-ct::button.link v-bind:href="`/account/address/${userAddress.id}`" data-testid="address-edit">
     @lang('Edit')
 </x-rapidez-ct::button.link>
 

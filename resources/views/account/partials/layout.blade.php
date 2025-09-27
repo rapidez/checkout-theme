@@ -12,10 +12,10 @@
 @endphp
 
 @section('content')
-    <div v-cloak class="container">
+    <div v-cloak class="container" data-testid="account-content">
         <template v-if="loggedIn">
             @hasSection('title')
-                <x-rapidez-ct::title class="mb-5">
+                <x-rapidez-ct::title class="mb-5" tag="h1">
                     @yield('title')
                 </x-rapidez-ct::title>
             @endif
@@ -34,7 +34,7 @@
 
         <template v-else-if="!$root.loading">
             <x-rapidez-ct::layout.two-column>
-                <x-rapidez-ct::title>
+                <x-rapidez-ct::title tag="h1">
                     @lang('Login')
                 </x-rapidez-ct::title>
                 <x-slot:columns>

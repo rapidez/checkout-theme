@@ -2,7 +2,7 @@
     @include('rapidez-ct::cart.partials.product.alert')
     <div class="flex flex-col items-start">
         <div>
-            <a :href="item.product.url_key + item.product.url_suffix | url" dusk="cart-item-name">@{{ item.product.name }}</a>
+            <a :href="item.product.url_key + item.product.url_suffix | url" data-testid="cart-item-name">@{{ item.product.name }}</a>
             <div v-for="option in item.configurable_options">
                 @{{ option.option_label }}: @{{ option.value_label }}
             </div>
