@@ -9,13 +9,12 @@
             <dd v-else>@{{ cart.prices.subtotal_excluding_tax.value | price }}</dd>
         </div>
         
-        <div v-if="cart.shipping_addresses?.length && cart.shipping_addresses[0]?.selected_shipping_method?.price_incl_tax">
+        <div v-if="cart.shipping_addresses?.length && cart.shipping_addresses[0]?.selected_shipping_method?.amount">
             <dt>@lang('Shipping')</dt>
-            <template v-if="cart.shipping_addresses[0].selected_shipping_method.price_incl_tax.value > 0">
-                <dd v-if="showTax">@{{ cart.shipping_addresses[0].selected_shipping_method.price_incl_tax.value | price }}</dd>
-                <dd v-else>@{{ cart.shipping_addresses[0].selected_shipping_method.price_excl_tax.value | price }}</dd>
-            </template>
-            <dd v-else class="font-medium text-ct-enhanced">
+            <dd v-if="cart.shipping_addresses[0].selected_shipping_method.amount.value > 0">
+                @{{ cart.shipping_addresses[0].selected_shipping_method.amount.value | price  }}
+            </dd>
+            <dd v-else class="font-medium text-primary">
                 @lang('Free')
             </dd>
         </div>
