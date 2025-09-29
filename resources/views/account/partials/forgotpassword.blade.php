@@ -28,7 +28,7 @@
             <x-rapidez::button.secondary
                 class="flex items-center gap-1"
                 type="submit"
-                dusk="continue"
+                data-testid="continue"
                 loader
             >
                 @lang('Send')

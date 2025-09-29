@@ -1,6 +1,6 @@
 @extends('rapidez-ct::account.partials.layout')
 
-@section('title', __('New address'))
+@section('title', __('Edit address'))
 
 @section('robots', 'NOINDEX,NOFOLLOW')
 
@@ -16,8 +16,7 @@
                     query="@include('rapidez::account.partials.queries.address-edit')"
                     :variables="data.customer.addresses.find(a => a.id == {{ request()->id }})"
                     :callback="refreshUserInfoCallback"
-                    :notify="{ 'message': '@lang('Address changed successfully')' }"
-                    redirect="{{ route('account.edit') }}"
+                    redirect="{{ route('account.addresses') }}"
                 >
                     @include('rapidez-ct::account.partials.address-form', ['region' => 'region.region_id'])
                 </graphql-mutation>

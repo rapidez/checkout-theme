@@ -6,7 +6,7 @@
         <label>
             <x-rapidez::label>@lang('Email')</x-rapidez::label>
             <x-rapidez::input
-                name="email-newsletter"
+                name="email"
                 type="email"
                 required
                 v-model="variables.email"

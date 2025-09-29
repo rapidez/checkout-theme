@@ -11,8 +11,7 @@
             :variables="{ street: [] }"
             :watch="false"
             :callback="refreshUserInfoCallback"
-            :notify="{ 'message': '@lang('Address created successfully')' }"
-            redirect="{{ route('account.edit') }}"
+            redirect="{{ route('account.addresses') }}"
         >
             @include('rapidez-ct::account.partials.address-form', ['region' => 'region.region_id'])
         </graphql-mutation>

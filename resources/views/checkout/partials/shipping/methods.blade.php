@@ -23,7 +23,7 @@
                 v-model="variables.method"
                 v-bind:value="method.carrier_code+'/'+method.method_code"
                 v-bind:disabled="!method.available"
-                v-bind:dusk="'shipping-method-'+index"
+                data-testid="shipping-method"
                 v-on:change="mutate"
                 required
             >
@@ -39,4 +39,3 @@
         </template>
     </fieldset>
 </graphql-mutation>
-

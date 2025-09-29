@@ -1,6 +1,6 @@
 <div class="flex flex-wrap -space-x-px max-sm:-space-y-px">
     <div class="flex flex-1 flex-col -space-y-px">
-        <template v-if="order.hide_billing || hideBilling || order.shipping_address?.customer_address_id == order.billing_address?.customer_address_id">
+        <template v-if="order.hide_billing || order.shipping_address?.customer_address_id == order.billing_address?.customer_address_id">
             <x-rapidez-ct::card.address
                 v-bind:address="order.shipping_address"
                 shipping
