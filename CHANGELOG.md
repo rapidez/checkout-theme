@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.3.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.4.0...master)
+## [4.4.0](https://github.com/rapidez/checkout-theme/releases/tag/4.4.0) - 2025-09-27
+
+### Added
+
+- Playwright tests + fixes (#196)
+
 ## [4.3.0](https://github.com/rapidez/checkout-theme/releases/tag/4.3.0) - 2025-09-17
 
 ### Changed
