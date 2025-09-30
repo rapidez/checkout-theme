@@ -1,4 +1,6 @@
 {
+    "name": "@rapidez/checkout-theme",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
     "devDependencies": {
