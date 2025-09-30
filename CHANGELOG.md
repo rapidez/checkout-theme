@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.4.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.4.1...master)
+## [4.4.1](https://github.com/rapidez/checkout-theme/releases/tag/4.4.1) - 2025-09-30
+
+### Fixed
+
+- Success page login required to view order fallback (#194)
+- package.json name (#206)
+
 ## [4.4.0](https://github.com/rapidez/checkout-theme/releases/tag/4.4.0) - 2025-09-27
 
 ### Added
