@@ -29,7 +29,7 @@
         <div class="font-medium">
             <dt>@lang('Total')</dt>
             <dd v-if="showTax">@{{ cart.prices.grand_total.value | price }}</dd>
-            <dd v-else>@{{ cart.prices.grand_total.value - cart.taxTotal.value | price }}</dd>
+            <dd v-else>@{{ cart.prices.grand_total.value - cart.taxTotal | price }}</dd>
         </div>
     </x-rapidez-ct::separated-listing>
 
