@@ -98,6 +98,9 @@ jobs:
       - name: Use Rapidez package from source
         run: composer config repositories.$PACKAGE path ../$PACKAGE
 
+      - name: Make the Magento version available as env variable
+        run: echo "MAGENTO_VERSION=${{ matrix.magento-version }}" >> $GITHUB_ENV
+
       - name: Get commit hash and tag of the package
         working-directory: ./rapidez/${{ env.PACKAGE }}
         run: |

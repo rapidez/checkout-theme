@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test'
+import { BasePage } from '@rapidez/core/tests/playwright/pages/BasePage.js'
 import { ProductPage } from '@rapidez/core/tests/playwright/pages/ProductPage.js'
 import { CheckoutPage } from './pages/CheckoutPage'
 import { AccountPage } from './pages/AccountPage'
 
-test('as guest', async ({ page }) => {
+test('as guest', BasePage.tags, async ({ page }) => {
     const productPage = new ProductPage(page)
     const checkoutPage = new CheckoutPage(page)
 
@@ -16,7 +17,7 @@ test('as guest', async ({ page }) => {
     ])
 })
 
-test('as user', async ({ page }) => {
+test('as user', BasePage.tags, async ({ page }) => {
     const productPage = new ProductPage(page)
     const checkoutPage = new CheckoutPage(page)
     const accountPage = new AccountPage(page)
