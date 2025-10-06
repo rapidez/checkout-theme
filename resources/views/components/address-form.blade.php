@@ -48,6 +48,7 @@
                                     name="{{ $prefix }}company"
                                     v-model="variables.company"
                                     :required="Rapidez::config('customer/address/company_show') == 'req'"
+                                    v-bind:disabled="$root.loading"
                                 />
                             </label>
                         </div>
@@ -61,6 +62,7 @@
                                     v-model="variables.vat_id"
                                     v-on:change="window.app.$emit('vat-change', $event)"
                                     :required="Rapidez::config('customer/address/taxvat_show') == 'req'"
+                                    v-bind:disabled="$root.loading"
                                 />
                             </label>
                         </div>
@@ -76,6 +78,7 @@
                         name="{{ $prefix }}prefix"
                         v-model="variables.prefix"
                         :required="Rapidez::config('customer/address/prefix_show') == 'req'"
+                        v-bind:disabled="$root.loading"
                     >
                         @if (Rapidez::config('customer/address/prefix_show') === 'opt')
                             <option value=""></option>
@@ -95,6 +98,7 @@
                 <x-rapidez::input
                     name="{{ $prefix }}firstname"
                     v-model="variables.firstname"
+                    v-bind:disabled="$root.loading"
                     required
                 />
             </label>
@@ -106,6 +110,7 @@
                     <x-rapidez::input
                         name="{{ $prefix }}middlename"
                         v-model="variables.middlename"
+                        v-bind:disabled="$root.loading"
                     />
                 </label>
             </div>
@@ -116,6 +121,7 @@
                 <x-rapidez::input
                     name="{{ $prefix }}lastname"
                     v-model="variables.lastname"
+                    v-bind:disabled="$root.loading"
                     required
                 />
             </label>
@@ -127,6 +133,7 @@
                     <x-rapidez::input.select
                         name="{{ $prefix }}suffix"
                         v-model="variables.suffix"
+                        v-bind:disabled="$root.loading"
                         :required="Rapidez::config('customer/address/suffix_show') == 'req'"
                     >
                         @if (Rapidez::config('customer/address/suffix_show') === 'opt')
@@ -151,6 +158,7 @@
                         window.app.$emit('postcode-change', variables);
                         variables.region_id = null
                     })"
+                    v-bind:disabled="$root.loading"
                     required
                 />
             </label>
@@ -163,6 +171,7 @@
                     name="{{ $prefix }}region"
                     country="variables.country_code"
                     v-model="variables.region_id"
+                    v-bind:disabled="$root.loading"
                 />
             </label>
         </div>
@@ -173,6 +182,7 @@
                     <x-rapidez::input
                         name="{{ $prefix }}telephone"
                         v-model="variables.telephone"
+                        v-bind:disabled="$root.loading"
                         :required="Rapidez::config('customer/address/telephone_show') == 'req'"
                     />
                 </label>
@@ -185,6 +195,7 @@
                     name="{{ $prefix }}postcode"
                     v-model="variables.postcode"
                     v-on:change="$root.$nextTick(() => window.app.$emit('postcode-change', variables))"
+                    v-bind:disabled="$root.loading"
                     required
                 />
             </label>
@@ -197,6 +208,7 @@
                         name="{{ $prefix }}housenumber"
                         v-model="variables.street[1]"
                         v-on:change="$root.$nextTick(() => window.app.$emit('postcode-change', variables))"
+                        v-bind:disabled="$root.loading"
                         required
                     />
                 </label>
@@ -209,6 +221,7 @@
                     <x-rapidez::input
                         name="{{ $prefix }}addition"
                         v-model="variables.street[2]"
+                        v-bind:disabled="$root.loading"
                     />
                 </label>
             </div>
@@ -219,6 +232,7 @@
                 <x-rapidez::input
                     name="{{ $prefix }}street"
                     v-model="variables.street[0]"
+                    v-bind:disabled="$root.loading"
                     required
                 />
             </label>
@@ -229,6 +243,7 @@
                 <x-rapidez::input
                     name="{{ $prefix }}city"
                     v-model="variables.city"
+                    v-bind:disabled="$root.loading"
                     required
                 />
             </label>
@@ -240,6 +255,7 @@
                     <x-rapidez::input
                         name="{{ $prefix }}fax"
                         v-model="variables.fax"
+                        v-bind:disabled="$root.loading"
                         :required="Rapidez::config('customer/address/fax_show') === 'req'"
                     />
                 </label>
