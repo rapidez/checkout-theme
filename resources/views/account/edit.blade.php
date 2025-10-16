@@ -20,6 +20,9 @@
                     @include('rapidez-ct::account.partials.sections.edit.email')
                 </x-rapidez-ct::card.inactive>
                 <x-rapidez-ct::card.inactive>
+                    @include('rapidez-ct::account.partials.sections.edit.name')
+                </x-rapidez-ct::card.inactive>
+                <x-rapidez-ct::card.inactive>
                     @include('rapidez-ct::account.partials.sections.edit.password')
                 </x-rapidez-ct::card.inactive>
             </x-rapidez-ct::sections>
