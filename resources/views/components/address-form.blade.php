@@ -4,13 +4,14 @@
 <div class="grid grid-cols-12 gap-5">
     @if($showList)
         <div class="col-span-12" v-if="$root.loggedIn">
-            <graphql query="{ customer { addresses { id firstname lastname street city postcode country_code } } }">
+            <graphql query="{ customer { addresses { id firstname lastname street city postcode company country_code } } }">
                 <div v-if="data" slot-scope="{ data }">
                     <x-rapidez::input.select v-model="variables.customer_address_id" data-testid="{{ $type }}-address-select">
                         <option v-for="address in data.customer.addresses" :value="address.id">
                             @{{ address.firstname }} @{{ address.lastname }}
                             - @{{ address.street[0] }} @{{ address.street[1] }} @{{ address.street[2] }}
                             - @{{ address.postcode }}
+                            <template v-if="address.company">- @{{ address.company }}</template>
                             - @{{ address.city }}
                             - @{{ address.country_code }}
                         </option>
