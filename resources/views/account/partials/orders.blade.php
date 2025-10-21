@@ -13,7 +13,7 @@
                                 @lang('Number of products')
                                 (@{{ order.items.length }})
                             </span>
-                            <span class="text-muted">
+                            <span class="text-muted" data-testid="masked">
                                 @lang('Total price'): @{{ order.total.grand_total.value | price }}
                                 /
                                 @lang('Order date'): @{{ (new Date(order.order_date)).toLocaleDateString() }}

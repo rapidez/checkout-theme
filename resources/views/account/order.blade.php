@@ -33,7 +33,7 @@
                 <x-rapidez::button.outline href="/account/orders">
                     @lang('Back to my orders')
                 </x-rapidez::button.outline>
-                <span class="text-muted">
+                <span class="text-muted w-full" data-testid="masked">
                     @lang('Order date'): @{{ (new Date(order.order_date)).toLocaleDateString() }}
                 </span>
             </x-rapidez-ct::toolbar>
