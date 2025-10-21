@@ -8,7 +8,7 @@
                     </x-rapidez-ct::title.lg>
                     <x-rapidez-ct::card.white class="mt-5 flex flex-wrap items-center gap-x-3 md:gap-x-8">
                         <x-heroicon-s-shopping-cart class="size-5 text-muted" />
-                        <div class="flex flex-col">
+                        <div class="flex flex-col flex-1">
                             <span class="font-medium">
                                 @lang('Number of products')
                                 (@{{ order.items.length }})
