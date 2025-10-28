@@ -10,10 +10,6 @@
                 </x-rapidez-ct::button.link>
             </x-rapidez-ct::card.address>
         </template>
-        <a href="/account/address/new" class="min-h-[180px] flex flex-col items-center justify-center gap-y-2 font-medium bg-emphasis rounded max-md:hidden">
-            <span>+</span>
-            <span>@lang('Add a new address')</span>
-        </a>
     </template>
     <template v-else>
         <x-rapidez-ct::card.address v-bind:address="data.customer.shipping_address" shipping check>
@@ -27,12 +23,4 @@
             </x-rapidez-ct::button.link>
         </x-rapidez-ct::card.address>
     </template>
-</div>
-<div class="flex flex-wrap gap-3">
-    <x-rapidez::button.secondary :href="route('account.address.create')">
-        @lang('Add a new address')
-    </x-rapidez::button.secondary>
-    <x-rapidez::button.secondary tag="label" for="popup" v-if="data?.customer?.addresses?.length">
-        @lang('My addresses')
-    </x-rapidez::button.secondary>
 </div>
