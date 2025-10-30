@@ -1,7 +1,4 @@
-<form
-    class="relative flex gap-3 flex-wrap items-end w-full z-10"
-    v-on:submit.prevent="mutate"
->
+<form v-on:submit.prevent="mutate" class="relative flex gap-3 flex-wrap items-end w-full z-10">
     <div class="sm:flex-1 max-sm:w-full">
         <label>
             <x-rapidez::label>@lang('Email')</x-rapidez::label>
