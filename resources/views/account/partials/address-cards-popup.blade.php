@@ -12,7 +12,7 @@
                     v-bind:billing="userAddress.default_billing"
                     v-bind:shipping="userAddress.default_shipping"
                     v-bind:check="userAddress.default_billing || userAddress.default_shipping"
-                    class="w-full sm:min-w-[350px]"
+                    class="w-full sm:min-w-96"
                 >
                     @include('rapidez-ct::account.partials.address-cards.buttons')
                 </x-rapidez-ct::card.address>
