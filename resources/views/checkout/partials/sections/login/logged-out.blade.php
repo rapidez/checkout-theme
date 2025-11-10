@@ -6,7 +6,7 @@
                 name="email"
                 type="email"
                 v-model="checkoutLogin.email"
-                v-bind:disabled="loggedIn"
+                v-bind:disabled="loggedIn || $root.loading"
                 class="justify-center"
                 required
                 :placeholder="__('Enter your e-mail address')"
