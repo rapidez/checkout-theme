@@ -5,13 +5,13 @@
                 query="mutation address($id: Int!, $default_billing: Boolean, $default_shipping: Boolean){ updateCustomerAddress ( id: $id, input: {default_billing: $default_billing, default_shipping: $default_shipping} ) { id } }"
                 :variables="userAddress"
                 :callback="runQuery"
-                v-slot="{ mutate, mutating }"
+                v-slot="{ mutate, mutating, variables }"
             >
                 <x-rapidez-ct::card.address
-                    v-bind:address="userAddress"
-                    v-bind:billing="userAddress.default_billing"
-                    v-bind:shipping="userAddress.default_shipping"
-                    v-bind:check="userAddress.default_billing || userAddress.default_shipping"
+                    v-bind:address="variables"
+                    v-bind:billing="variables.default_billing"
+                    v-bind:shipping="variables.default_shipping"
+                    v-bind:check="variables.default_billing || variables.default_shipping"
                     class="w-full sm:min-w-[350px]"
                 >
                     @include('rapidez-ct::account.partials.address-cards.buttons')
