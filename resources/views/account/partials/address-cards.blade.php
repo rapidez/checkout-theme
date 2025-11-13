@@ -10,7 +10,7 @@
                 </x-rapidez-ct::button.link>
             </x-rapidez-ct::card.address>
         </template>
-        <a href="/account/address/new" class="min-h-[180px] flex flex-col items-center justify-center gap-y-2 font-medium bg-emphasis rounded max-md:hidden">
+        <a href="/account/address/new" class="min-h-44 flex flex-col items-center justify-center gap-y-2 font-medium bg-emphasis rounded max-md:hidden">
             <span>+</span>
             <span>@lang('Add a new address')</span>
         </a>

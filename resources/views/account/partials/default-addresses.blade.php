@@ -23,7 +23,7 @@
             </div>
             <a href="{{ route('account.edit') }}" class="font-medium">
                 <span>@lang('Account settings')</span>
-                <x-heroicon-o-cog class="size-6 stroke-[1.5px]" />
+                <x-heroicon-o-cog class="size-6 stroke-2" />
             </a>
         </x-rapidez-ct::separated-listing>
     </x-rapidez-ct::card>

@@ -1,4 +1,4 @@
-<td class="h-24 w-32 !pl-0 max-md:flex max-md:w-1/2">
+<td class="size-24 !pl-0 max-md:flex max-md:w-1/2">
     <img
         v-if="item.configured_variant?.image"
         class="object-contain"
