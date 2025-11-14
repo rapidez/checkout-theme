@@ -7,7 +7,7 @@
         <template v-if="item.qty_backordered < item.qty">
             @lang(':count of the requested quantity will be backordered', ['count' => '@{{ item.qty_backordered }}'])
         </template>
-        <template v-else>
+        <template v-else="">
             @lang('This product will be backordered')
         </template>
     </span>

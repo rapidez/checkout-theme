@@ -1,4 +1,4 @@
-<template v-if="!$root.loggedIn">
+<template v-if="!window.app?.config?.globalProperties?.loggedIn?.value">
     @include('rapidez-ct::checkout.partials.sections.success.create-account-title')
     <graphql-mutation
         v-cloak
@@ -10,10 +10,10 @@
         }"
         :callback="registerCallback"
         :notify="{ message: '@lang('Account registration successful.')' }"
+        v-slot="{ mutate, variables, mutating }"
     >
         <form
             class="mt-5 grid items-end gap-5 sm:grid-cols-2"
-            slot-scope="{ mutate, variables, mutating }"
             v-on:submit.prevent="mutate"
         >
             <label>

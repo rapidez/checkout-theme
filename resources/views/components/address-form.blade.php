@@ -3,13 +3,13 @@
 
 <div class="grid grid-cols-12 gap-5">
     @if($showList)
-        <div class="col-span-12" v-if="$root.loggedIn">
-            <graphql query="{ customer { addresses { id firstname lastname street city postcode country_code } } }">
-                <div v-if="data" slot-scope="{ data }">
+        <div class="col-span-12" v-if="window.app.config.globalProperties.loggedIn.value">
+            <graphql query="{ customer { addresses { id firstname lastname street city postcode country_code } } }" v-slot="{ data }">
+                <div v-if="data">
                     <x-rapidez::input.select v-model="variables.customer_address_id" data-testid="{{ $type }}-address-select">
                         <option v-for="address in data.customer.addresses" :value="address.id">
                             @{{ address.firstname }} @{{ address.lastname }}
-                            - @{{ address.street[0] }} @{{ address.street[1] }} @{{ address.street[2] }}
+                            - @{{ address.street?.[0] }} @{{ address.street?.[1] }} @{{ address.street?.[2] }}
                             - @{{ address.postcode }}
                             - @{{ address.city }}
                             - @{{ address.country_code }}
@@ -20,8 +20,7 @@
             </graphql>
         </div>
     @endif
-
-    <div class="contents" v-if="!$root.loggedIn || !variables.customer_address_id">
+    <div class="contents" v-if="!window.app.config.globalProperties.loggedIn.value || !variables.customer_address_id">
         @if ((Rapidez::config('customer/address/company_show')) || (Rapidez::config('customer/address/taxvat_show')))
             <div class="col-span-full">
                 <div class="font-bold mb-2">@lang('Order type')</div>
@@ -59,7 +58,7 @@
                                 <x-rapidez::input
                                     name="{{ $prefix }}vat_id"
                                     v-model="variables.vat_id"
-                                    v-on:change="window.app.$emit('vat-change', $event)"
+                                    v-on:change="window.$emit('rapidez:vat-change', $event)"
                                     :required="Rapidez::config('customer/address/taxvat_show') == 'req'"
                                 />
                             </label>
@@ -147,10 +146,7 @@
                 <x-rapidez::input.select.country
                     name="{{ $prefix }}country"
                     v-model="variables.country_code"
-                    v-on:change="$root.$nextTick(() => {
-                        window.app.$emit('postcode-change', variables);
-                        variables.region_id = null
-                    })"
+                    v-on:change="() => { window.$emit('rapidez:postcode-change', variables); variables.region = {}; variables.{{ $region }} = null }"
                     required
                 />
             </label>
@@ -184,7 +180,7 @@
                 <x-rapidez::input
                     name="{{ $prefix }}postcode"
                     v-model="variables.postcode"
-                    v-on:change="$root.$nextTick(() => window.app.$emit('postcode-change', variables))"
+                    v-on:change="$root.$nextTick(() => window.$emit('postcode-change', variables))"
                     required
                 />
             </label>
@@ -196,7 +192,7 @@
                     <x-rapidez::input
                         name="{{ $prefix }}housenumber"
                         v-model="variables.street[1]"
-                        v-on:change="$root.$nextTick(() => window.app.$emit('postcode-change', variables))"
+                        v-on:change="$root.$nextTick(() => window.$emit('postcode-change', variables))"
                         required
                     />
                 </label>

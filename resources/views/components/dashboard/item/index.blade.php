@@ -5,15 +5,15 @@
     'is' => isset($item['href']) ? 'a' : 'button',
 ]) }}>
     @if ($item['icon'] ?? false)
-        <x-icon name="{{ $item['icon'] }}" class="size-6 stroke-[1.5px]"/>
+        <x-icon name="{{ $item['icon'] }}" class="size-6 stroke-2"/>
     @endif
     <div class="flex flex-col gap-y-1">
         @if ($item['heading'] ?? false)
             <strong class="font-medium">
                 @lang($item['heading'])
                 @if ($key === 'orders')
-                    <graphql query="{customer{orders{items{number}}}}">
-                        <template v-if="data" slot-scope="{ data }">
+                    <graphql query="{customer{orders{items{number}}}}" v-slot="{ data }">
+                        <template v-if="data">
                             (@{{ data.customer.orders.items.length ?? 0 }})
                         </template>
                     </graphql>

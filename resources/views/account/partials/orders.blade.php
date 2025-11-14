@@ -14,7 +14,7 @@
                                 (@{{ order.items.length }})
                             </span>
                             <span class="text-muted">
-                                @lang('Total price'): @{{ order.total.grand_total.value | price }}
+                                @lang('Total price'): @{{ window.price(order.total.grand_total.value)}}
                                 /
                                 @lang('Order date'): @{{ (new Date(order.order_date)).toLocaleDateString() }}
                             </span>
@@ -26,7 +26,7 @@
         </x-rapidez-ct::sections>
     </template>
 
-    <template v-else>
+    <template v-else="">
         <x-rapidez-ct::sections>
             <x-rapidez-ct::card.inactive>
                 @lang('You do not have any orders yet.')

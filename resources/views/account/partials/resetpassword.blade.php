@@ -5,8 +5,9 @@
     :clear="true"
     :notify="{ message: '@lang('Your password has been changed, please login.')' }"
     redirect="{{ route('account.login') }}"
+    v-slot="{ mutate, variables }"
 >
-    <form class="flex flex-col gap-y-5" v-on:submit.prevent="mutate" slot-scope="{ mutate, variables }">
+    <form class="flex flex-col gap-y-5" v-on:submit.prevent="mutate">
         <label class="hidden">
             <x-rapidez::label>@lang('Security token')</x-rapidez::label>
             <x-rapidez::input

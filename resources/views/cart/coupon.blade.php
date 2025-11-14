@@ -1,11 +1,11 @@
-<toggler>
-    <div slot-scope="{ isOpen, toggle }">
+<toggler v-slot="{ isOpen, toggle }">
+    <div>
         <div v-if="isOpen" v-cloak class="text-sm">
             <x-rapidez-ct::coupon-field />
-            <template v-if="cart.applied_coupons?.length" v-for="coupon in cart.applied_coupons" v-cloak>
+            <template v-if="cart.value.applied_coupons?.length" v-for="coupon in cart.value.applied_coupons" v-cloak>
                 <graphql-mutation
                     :query="'mutation ($cart_id: String!) { removeCouponFromCart(input: { cart_id: $cart_id })  { cart { ...cart } } } ' + config.fragments.cart"
-                    :variables="{ cart_id: mask }"
+                    :variables="{ cart_id: mask.value }"
                     :callback="updateCart"
                     :error-callback="checkResponseForExpiredCart"
                     v-slot="{ mutate }"
