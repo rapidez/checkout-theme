@@ -1,9 +1,8 @@
 <div class="bg text-muted relative py-3 text-xs font-semibold">
-    <slider reference="header-usp-slider" autoplay>
+    <slider reference="header-usp-slider" autoplay v-slot="{ navigate, currentSlide, slidesTotal }">
         <ul
             ref="header-usp-slider"
             class="scrollbar-hide flex snap-x snap-mandatory items-center gap-7 overflow-x-auto lg:justify-center"
-            slot-scope="{ navigate, currentSlide, slidesTotal }"
             tabindex="0"
             aria-label="USP features"
         >

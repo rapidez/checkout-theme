@@ -11,7 +11,7 @@
         </div>
     </div>
     <ul class="flex flex-col divide-y">
-        <li class="flex py-5" v-for="item in order.items">
+        <li class="flex py-5" v-for="item in order.value.items">
             <div class="flex w-full flex-wrap gap-y-3 gap-x-3 text-sm sm:gap-x-6 sm:pr-6 md:items-center">
                 <div class="flex h-24 w-36 items-center justify-center">
                     <img
@@ -21,7 +21,7 @@
                         height="100"
                         v-if="item.product_sku"
                     >
-                    <x-rapidez::no-image v-else class="h-24 w-36"/>
+                    <x-rapidez::no-image v-else="" class="h-24 w-36"/>
                 </div>
                 <div class="flex w-36 flex-1 flex-col items-start">
                     <a :href="item.url" data-testid="cart-item-name">@{{ item.product_name }}</a>
@@ -34,13 +34,13 @@
                 </div>
                 <div class="flex items-center justify-between gap-10 font-medium max-sm:flex-1 sm:ml-auto">
                     <div class="flex flex-col gap-px text-sm sm:w-16">
-                        @{{ item.product_sale_price.value | price }}
+                        @{{ window.price(item.product_sale_price.value) }}
                     </div>
                     <div class="flex h-14 w-16 items-center justify-center border text-sm">
                         @{{ Math.round(item.quantity_ordered) }}
                     </div>
                     <div class="text-sm sm:w-16">
-                        @{{ item.product_sale_price.value * item.quantity_ordered | price }}
+                        @{{ window.price(item.product_sale_price.value * item.quantity_ordered)}}
                     </div>
                 </div>
             </div>

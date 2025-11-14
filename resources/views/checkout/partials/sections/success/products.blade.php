@@ -19,7 +19,7 @@
                     height="100"
                     v-if="item.product_sku"
                 >
-                <x-rapidez::no-image v-else class="h-24 w-36"/>
+                <x-rapidez::no-image v-else="" class="h-24 w-36"/>
             </div>
             <div class="flex w-36 flex-1 flex-col items-start">
                 <a :href="item.url" data-testid="cart-item-name">@{{ item.product_name }}</a>

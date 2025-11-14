@@ -5,17 +5,18 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('content')
-    <graphql v-if="mask"
+    <graphql
+        v-if="mask"
         :query="'query getCart($cart_id: String!) { cart (cart_id: $cart_id) { ...cart } } ' + config.fragments.cart"
-        :variables="{ cart_id: mask }"
+        :variables="{ cart_id: mask.value }"
         :callback="updateCart"
         :error-callback="checkResponseForExpiredCart"
     >
     </graphql>
-    <div v-if="hasCart" v-cloak class="container">
+    <div v-if="hasCart.value" class="container" v-cloak>
         @include('rapidez-ct::cart.content')
     </div>
-    <div v-else class="container">
+    <div v-else="" class="container">
         <p>@lang("You don't have anything in your cart.")</p>
         <x-rapidez::button.outline class="mt-3" href="/">
             @lang('Return to home')

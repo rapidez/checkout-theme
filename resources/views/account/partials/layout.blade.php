@@ -13,7 +13,7 @@
 
 @section('content')
     <div v-cloak class="container" data-testid="account-content">
-        <template v-if="loggedIn">
+        <template v-if="window.app?.config?.globalProperties?.loggedIn?.value">
             @hasSection('title')
                 <x-rapidez-ct::title class="mb-5" tag="h1">
                     @yield('title')
@@ -32,7 +32,7 @@
             </x-rapidez-ct::layout>
         </template>
 
-        <template v-else-if="!$root.loading">
+        <template v-else-if="!loading">
             <x-rapidez-ct::layout.two-column>
                 <x-rapidez-ct::title tag="h1">
                     @lang('Login')

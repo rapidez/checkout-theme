@@ -12,6 +12,7 @@
             :watch="false"
             :callback="refreshUserInfoCallback"
             redirect="{{ route('account.addresses') }}"
+            v-slot="{ mutate, variables }"
         >
             @include('rapidez-ct::account.partials.address-form', ['region' => 'region.region_id'])
         </graphql-mutation>

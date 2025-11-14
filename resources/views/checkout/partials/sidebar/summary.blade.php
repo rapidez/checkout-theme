@@ -2,7 +2,7 @@
     @lang('Order overview')
 </x-rapidez-ct::title.lg>
 <x-rapidez-ct::separated-listing class="border-b pb-4 mb-4" v-cloak>
-    <li v-for="item in cart.items">
+    <li v-for="item in cart.value.items">
         @{{ item.quantity }}x @{{ item.product.name }}
     </li>
 </x-rapidez-ct::separated-listing>
