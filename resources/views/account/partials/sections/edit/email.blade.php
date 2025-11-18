@@ -3,8 +3,9 @@
     :clear="true"
     :callback="refreshUserInfoCallback"
     :variables="{ email: user.email }"
+    v-slot="{ variables, mutate, mutated }"
 >
-    <form class="grid gap-5 grid-cols-2" slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate">
+    <form class="grid gap-5 grid-cols-2" v-on:submit.prevent="mutate">
         <x-rapidez-ct::title.lg class="col-span-2">
             @lang('Change e-mail address')
         </x-rapidez-ct::title.lg>

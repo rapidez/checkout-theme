@@ -9,8 +9,7 @@
     :variables="{ email: {{ $email }} }"
     :clear="true"
     :notify="{ message: '@lang('Thank you for subscribing')', type: 'success' }"
+    v-slot="{ mutate, variables, mutated, mutating, error }"
 >
-    <template slot-scope="{ mutate, variables, mutated, mutating, error }">
-        <x-rapidez-ct::newsletter.partials.input />
-    </template>
+    <x-rapidez-ct::newsletter.partials.input />
 </graphql-mutation>
