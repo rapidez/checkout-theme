@@ -8,7 +8,7 @@
                 check
             />
         </template>
-        <template v-else="">
+        <template v-else>
             <x-rapidez-ct::card.address
                 v-bind:address="order.value.shipping_address"
                 shipping

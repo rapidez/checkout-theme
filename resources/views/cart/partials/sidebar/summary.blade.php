@@ -6,7 +6,7 @@
         <div>
             <dt>@lang('Subtotal')</dt>
             <dd v-if="showTax">@{{ window.price(cart.value.prices.subtotal_including_tax.value) }}</dd>
-            <dd v-else="">@{{ window.price(cart.value.prices.subtotal_excluding_tax.value) }}</dd>
+            <dd v-else>@{{ window.price(cart.value.prices.subtotal_excluding_tax.value) }}</dd>
         </div>
         <template v-if="cart.value.shipping_addresses?.length">
             <div v-for="address in cart.value.shipping_addresses">
@@ -16,9 +16,9 @@
                         <small class="text-muted">@{{ address.selected_shipping_method.carrier_title }} - @{{ address.selected_shipping_method.method_title }}</small>
                     </dt>
                     <dd v-if="showTax">@{{ window.price(address.selected_shipping_method.price_incl_tax.value) }}</dd>
-                    <dd v-else="">@{{ window.price(address.selected_shipping_method.price_excl_tax.value) }}</dd>
+                    <dd v-else>@{{ window.price(address.selected_shipping_method.price_excl_tax.value) }}</dd>
                 </template>
-                <template v-else="">
+                <template v-else>
                     <dt>@lang('Shipping')</dt>
                     <dd class="font-medium text-primary">
                         @lang('Free')
@@ -41,7 +41,7 @@
         <div class="font-medium">
             <dt>@lang('Total')</dt>
             <dd v-if="showTax">@{{ window.price(cart.value.prices.grand_total.value) }}</dd>
-            <dd v-else="">@{{ window.price(cart.value.prices.grand_total.value - cart.value.taxTotal) }}</dd>
+            <dd v-else>@{{ window.price(cart.value.prices.grand_total.value - cart.value.taxTotal) }}</dd>
         </div>
     </x-rapidez-ct::separated-listing>
 

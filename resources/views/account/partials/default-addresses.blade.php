@@ -9,7 +9,7 @@
                 <template v-if="data.customer.shipping_address?.default_billing || !data.customer.shipping_address || !data.customer.billing_address">
                     <x-rapidez-ct::address v-bind:address="data.customer.shipping_address" shipping billing/>
                 </template>
-                <template v-else="">
+                <template v-else>
                     <x-rapidez-ct::address v-bind:address="data.customer.shipping_address" shipping/>
                     <x-rapidez-ct::address v-bind:address="data.customer.billing_address" billing/>
                 </template>

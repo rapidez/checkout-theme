@@ -3,7 +3,7 @@
         <template v-if="showTax">
             @{{ window.price(item.prices.price_including_tax.value) }}
         </template>
-        <template v-else="">
+        <template v-else>
             @{{ window.price(item.prices.price.value) }}
         </template>
     </div>
@@ -17,7 +17,7 @@
     <template v-if="showTax">
         @{{ window.price(item.prices.row_total_including_tax.value) }}
     </template>
-    <template v-else="">
+    <template v-else>
         @{{ window.price(item.prices.row_total.value) }}
     </template>
 </td>

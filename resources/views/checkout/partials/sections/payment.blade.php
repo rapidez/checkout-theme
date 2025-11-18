@@ -35,7 +35,7 @@
                     </span>
                 </x-slot:label>
                 <div v-if="agreement.is_html" v-html="agreement.content"></div>
-                <div v-else="" class="whitespace-pre-wrap" v-text="agreement.content"></div>
+                <div v-else class="whitespace-pre-wrap" v-text="agreement.content"></div>
             </x-rapidez::slideover.global>
         </div>
     </div>

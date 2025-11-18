@@ -16,7 +16,7 @@
     <div v-if="hasCart.value" class="container" v-cloak>
         @include('rapidez-ct::cart.content')
     </div>
-    <div v-else="" class="container">
+    <div v-else class="container">
         <p>@lang("You don't have anything in your cart.")</p>
         <x-rapidez::button.outline class="mt-3" href="/">
             @lang('Return to home')

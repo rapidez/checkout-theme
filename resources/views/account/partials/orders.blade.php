@@ -26,7 +26,7 @@
         </x-rapidez-ct::sections>
     </template>
 
-    <template v-else="">
+    <template v-else>
         <x-rapidez-ct::sections>
             <x-rapidez-ct::card.inactive>
                 @lang('You do not have any orders yet.')

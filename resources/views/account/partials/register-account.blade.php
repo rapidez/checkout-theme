@@ -118,7 +118,7 @@
                 </x-rapidez-ct::card.inactive>
             @endif
         </x-rapidez-ct::sections>
-        <div v-else="">
+        <div v-else>
             <p class="mb-5 text-base">@lang('You\'re already logged in.')</p>
             <x-rapidez::button.secondary :href="route('account.overview')">
                 @lang('Go to your account')

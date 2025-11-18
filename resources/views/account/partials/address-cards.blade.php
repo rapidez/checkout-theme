@@ -11,7 +11,7 @@
             </x-rapidez-ct::card.address>
         </template>
     </template>
-    <template v-else="">
+    <template v-else>
         <x-rapidez-ct::card.address v-bind:address="data.customer.shipping_address" shipping check>
             <x-rapidez-ct::button.link v-bind:href="`/account/address/${data.customer.shipping_address.id}`" data-testid="address-edit">
                 @lang('Edit')

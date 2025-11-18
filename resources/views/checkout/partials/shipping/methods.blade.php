@@ -31,7 +31,7 @@
                 <div class="flex-1">@{{ method.method_title }}</div>
                 <div class="text-right text-sm font-medium">
                     <div v-if="method.amount.value > 0" class="text-muted">@{{ window.price(method.amount.value) }}</div>
-                    <div v-else="" class="text-primary">
+                    <div v-else class="text-primary">
                         @lang('Free')
                     </div>
                 </div>

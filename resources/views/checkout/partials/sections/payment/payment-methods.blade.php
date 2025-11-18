@@ -1,6 +1,6 @@
 <template v-if="false"></template>
 @stack('payment_methods')
-<template v-else="">
+<template v-else>
     <x-rapidez-ct::input.radio.tile
         name="payment_method"
         v-model="variables.code"
