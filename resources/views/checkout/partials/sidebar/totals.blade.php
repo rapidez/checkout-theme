@@ -7,12 +7,12 @@
     <dt>@lang('Tax')</dt>
     <dd v-cloak>@{{ cart.prices.applied_taxes[0].amount.value | price }}</dd>
 </div>
-<div v-if="cart.shipping_addresses.length && cart.shipping_addresses[0]?.selected_shipping_method">
+<div v-if="cart.shipping_addresses.length && cart.shipping_addresses?.[0]?.selected_shipping_method">
     <dt>
         @lang('Shipping')<br>
-        <small v-cloak>@{{ cart.shipping_addresses[0]?.selected_shipping_method.carrier_title }} - @{{ cart.shipping_addresses[0]?.selected_shipping_method.method_title }}</small>
+        <small v-cloak>@{{ cart.shipping_addresses?.[0]?.selected_shipping_method.carrier_title }} - @{{ cart.shipping_addresses?.[0]?.selected_shipping_method.method_title }}</small>
     </dt>
-    <dd v-cloak v-if="cart.shipping_addresses[0]?.selected_shipping_method.amount.value > 0">@{{ cart.shipping_addresses[0]?.selected_shipping_method.amount.value | price }}</dd>
+    <dd v-cloak v-if="cart.shipping_addresses?.[0]?.selected_shipping_method.amount.value > 0">@{{ cart.shipping_addresses?.[0]?.selected_shipping_method.amount.value | price }}</dd>
     <dd v-else class="text-primary font-medium">
         @lang('Free')
     </dd>
