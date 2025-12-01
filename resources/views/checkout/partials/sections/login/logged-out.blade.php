@@ -1,5 +1,5 @@
 <checkout-login v-slot="checkoutLogin" v-bind:allow-passwordless="Boolean({{ (int)(config('rapidez.frontend.allow_guest_on_existing_account')) }})">
-    <fieldset partial-submit v-on:partial-submit="async () => await checkoutLogin.go()" class="grid gap-4 md:gap-5 md:grid-cols-2">
+    <fieldset partial-submit v-on:partial-submit="(ev) => checkoutLogin.go().then(ev.detail.resolve).catch(ev.detail.reject)" class="grid gap-4 md:gap-5 md:grid-cols-2">
         <label>
             <x-rapidez::label>@lang('Email')</x-rapidez::label>
             <x-rapidez::input

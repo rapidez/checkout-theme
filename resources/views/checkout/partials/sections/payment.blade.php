@@ -11,7 +11,7 @@
     mutate-event="setPaymentMethodOnCart"
     v-slot="{ mutate, variables }"
 >
-    <div partial-submit v-on:partial-submit="async () => await mutate()" class="flex flex-col gap-3">
+    <div partial-submit v-on:partial-submit="(ev) => mutate().then(ev.detail.resolve).catch(ev.detail.reject)" class="flex flex-col gap-3">
         <div v-for="(method, index) in cart.value.available_payment_methods">
             @include('rapidez-ct::checkout.partials.sections.payment.payment-methods')
         </div>
