@@ -58,7 +58,7 @@
                                 <x-rapidez::input
                                     name="{{ $prefix }}vat_id"
                                     v-model="variables.vat_id"
-                                    v-on:change="window.$emit('rapidez:vat-change', $event)"
+                                    v-on:change="window.$emit('vat-change', $event)"
                                     :required="Rapidez::config('customer/address/taxvat_show') == 'req'"
                                 />
                             </label>
