@@ -9,7 +9,7 @@ test('as guest', BasePage.tags, async ({ page }) => {
     const checkoutPage = new CheckoutPage(page)
 
     await productPage.addToCart(process.env.PRODUCT_URL_SIMPLE)
-    await checkoutPage.checkout(`wayne+${crypto.randomUUID()}@enterprises.com`, false, false, [
+    await checkoutPage.checkout(`wayne+${crypto.randomUUID().substring(0, 24)}@enterprises.com`, false, false, [
         'login',
         'credentials',
         'payment',
@@ -22,7 +22,7 @@ test('as user', BasePage.tags, async ({ page }) => {
     const checkoutPage = new CheckoutPage(page)
     const accountPage = new AccountPage(page)
 
-    const email = `wayne+${crypto.randomUUID()}@enterprises.com`
+    const email = `wayne+${crypto.randomUUID().substring(0, 24)}@enterprises.com`
     const password = 'IronManSucks.91939'
 
     // Register

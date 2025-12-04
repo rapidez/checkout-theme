@@ -1,3 +1,3 @@
-<div {{ $attributes->class('space-y-5 lg:shrink-0 lg:w-96') }}>
+<div {{ $attributes->class('space-y-5 lg:w-80 xl:w-96') }}>
     {{ $slot }}
 </div>

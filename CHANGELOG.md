@@ -1,6 +1,23 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.4.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.5.0...master)
+## [4.5.0](https://github.com/rapidez/checkout-theme/releases/tag/4.5.0) - 2025-10-28
+
+### Added
+
+- Edit name from account (#210)
+
+### Changed
+
+- Hide token and prefill email in reset password form (#202)
+
+### Fixed
+
+- Playwright Magento version tag (#207)
+- Cart grand total tax check (#204)
+- Playwright publish payment icons (#209)
+- Notifications component in the footer (#212)
+
 ## [4.4.1](https://github.com/rapidez/checkout-theme/releases/tag/4.4.1) - 2025-09-30
 
 ### Fixed
