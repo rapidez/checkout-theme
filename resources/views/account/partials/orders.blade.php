@@ -3,7 +3,7 @@
         <x-rapidez-ct::sections>
             <a class="block" v-for="order in data.customer.orders.items" :href="'/account/order/' + order.number" data-testid="order-id">
                 <x-rapidez-ct::card.inactive class="flex-col">
-                    <x-rapidez-ct::title.lg>
+                    <x-rapidez-ct::title.lg data-testid="masked">
                         @lang('Order') #@{{ order.number }}
                     </x-rapidez-ct::title.lg>
                     <x-rapidez-ct::card.white class="mt-5 flex flex-wrap items-center gap-x-3 md:gap-x-8">
