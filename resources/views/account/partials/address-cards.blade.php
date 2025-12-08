@@ -10,6 +10,10 @@
                 </x-rapidez-ct::button.link>
             </x-rapidez-ct::card.address>
         </template>
+        <a href="/account/address/new" class="min-h-44 flex flex-col items-center justify-center gap-y-2 font-medium bg-emphasis rounded max-md:hidden">
+            <span>+</span>
+            <span>@lang('Add a new address')</span>
+        </a>
     </template>
     <template v-else>
         <x-rapidez-ct::card.address v-bind:address="data.customer.shipping_address" shipping check>
