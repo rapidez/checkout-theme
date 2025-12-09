@@ -6,7 +6,7 @@
                 class="grid gap-5 lg:grid-cols-8"
             >
                 <label class="col-span-full {{ Rapidez::config('customer/address/middlename_show') ? 'lg:col-span-3' : 'lg:col-span-4' }}">
-                    <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                    <x-rapidez::label>@lang('First name')</x-rapidez::label>
                     <x-rapidez::input name="firstname" v-model="variables.firstname" required />
                 </label>
                 @if(Rapidez::config('customer/address/middlename_show', 0))

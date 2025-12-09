@@ -90,7 +90,7 @@
         @endif
         <div class="col-span-12 {{ Rapidez::config('customer/address/middlename_show') ? 'sm:col-span-4' : 'sm:col-span-6' }}">
             <label>
-                <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                <x-rapidez::label>@lang('First name')</x-rapidez::label>
                 <x-rapidez::input
                     name="{{ $prefix }}firstname"
                     v-model="variables.firstname"

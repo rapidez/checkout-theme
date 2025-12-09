@@ -7,7 +7,7 @@
             <div class="flex sm:flex-row flex-col sm:space-x-3">
                 <div class="flex-1">
                     <label>
-                        <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                        <x-rapidez::label>@lang('First name')</x-rapidez::label>
                         <x-rapidez::input name="firstname" v-model="addressVariables.firstname" required />
                     </label>
                 </div>
