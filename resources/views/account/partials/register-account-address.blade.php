@@ -68,7 +68,7 @@
                 @if(Rapidez::config('customer/address/street_lines', 2) >= 2)
                     <div class="flex-1">
                         <label>
-                            <x-rapidez::label>@lang('Housenumber')</x-rapidez::label>
+                            <x-rapidez::label>@lang('House number')</x-rapidez::label>
                             <x-rapidez::input
                                 name="street[1]"
                                 type="number"
