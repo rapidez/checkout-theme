@@ -6,11 +6,11 @@
                 <table class="bg-white border p-2 w-full table-auto text-left">
                     <thead>
                         <tr>
-                            <th class="px-4 py-2">@lang('Firstname')</th>
+                            <th class="px-4 py-2">@lang('First name')</th>
                             @if (Rapidez::config('customer/address/middlename_show', 0))
-                                <th class="px-4 py-2">@lang('Middlename')</th>
+                                <th class="px-4 py-2">@lang('Middle name')</th>
                             @endif
-                            <th class="px-4 py-2">@lang('Lastname')</th>
+                            <th class="px-4 py-2">@lang('Last name')</th>
                             <th class="px-4 py-2">@lang('Address')</th>
                             <th class="px-4 py-2">@lang('Postcode')</th>
                             <th class="px-4 py-2">@lang('City')</th>
