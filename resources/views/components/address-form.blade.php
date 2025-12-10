@@ -101,7 +101,7 @@
         @if (Rapidez::config('customer/address/middlename_show'))
             <div class="col-span-12 sm:col-span-4">
                 <label>
-                    <x-rapidez::label>@lang('Middlename')</x-rapidez::label>
+                    <x-rapidez::label>@lang('Middle name')</x-rapidez::label>
                     <x-rapidez::input
                         name="{{ $prefix }}middlename"
                         v-model="variables.middlename"
