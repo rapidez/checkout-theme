@@ -16,7 +16,7 @@
                     </label>
                 @endif
                 <label class="col-span-full {{ Rapidez::config('customer/address/middlename_show') ? 'lg:col-span-3' : 'lg:col-span-4' }}">
-                    <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
+                    <x-rapidez::label>@lang('Last name')</x-rapidez::label>
                     <x-rapidez::input name="lastname" v-model="variables.lastname" required/>
                 </label>
 

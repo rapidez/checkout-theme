@@ -21,7 +21,7 @@
                 @endif
                 <div class="flex-1">
                     <label>
-                        <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
+                        <x-rapidez::label>@lang('Last name')</x-rapidez::label>
                         <x-rapidez::input name="lastname" v-model="addressVariables.lastname" required />
                     </label>
                 </div>
