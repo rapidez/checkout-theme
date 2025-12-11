@@ -80,6 +80,7 @@ jobs:
         with:
           repository: rapidez/rapidez
           path: rapidez/rapidez
+          ref: 4.x
 
       - uses: actions/setup-node@v4
         with:

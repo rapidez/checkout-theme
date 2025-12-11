@@ -3,17 +3,17 @@
         <x-rapidez-ct::sections>
             <a class="block" v-for="order in data.customer.orders.items" :href="'/account/order/' + order.number" data-testid="order-id">
                 <x-rapidez-ct::card.inactive class="flex-col">
-                    <x-rapidez-ct::title.lg>
+                    <x-rapidez-ct::title.lg data-testid="masked">
                         @lang('Order') #@{{ order.number }}
                     </x-rapidez-ct::title.lg>
                     <x-rapidez-ct::card.white class="mt-5 flex flex-wrap items-center gap-x-3 md:gap-x-8">
                         <x-heroicon-s-shopping-cart class="size-5 text-muted" />
-                        <div class="flex flex-col">
+                        <div class="flex flex-col flex-1">
                             <span class="font-medium">
                                 @lang('Number of products')
                                 (@{{ order.items.length }})
                             </span>
-                            <span class="text-muted">
+                            <span class="text-muted" data-testid="masked">
                                 @lang('Total price'): @{{ order.total.grand_total.value | price }}
                                 /
                                 @lang('Order date'): @{{ (new Date(order.order_date)).toLocaleDateString() }}
