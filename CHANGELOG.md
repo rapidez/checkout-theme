@@ -1,6 +1,28 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.5.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.0-alpha.1...master)
+## [5.0.0-alpha.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0-alpha.1) - 2025-12-11
+
+### Added
+
+- Rapidez v5 support (#218)
+
+## [4.6.0](https://github.com/rapidez/checkout-theme/releases/tag/4.6.0) - 2025-12-11
+
+### Changed
+
+- Use Tailwind classes instead of JIT (#216)
+
+### Fixed
+
+- Full width newsletter email input + consistent tests fix (#214)
+- Address cards not changing fix (#215)
+- Remove cart item color fix (#217)
+- Allow selected_payment_method to be null (#213)
+- Sidebar slot default (#219)
+- Shipping address fallbacks (#220)
+- Fix future Playwright tests (#222)
+
 ## [4.5.0](https://github.com/rapidez/checkout-theme/releases/tag/4.5.0) - 2025-10-28
 
 ### Added
