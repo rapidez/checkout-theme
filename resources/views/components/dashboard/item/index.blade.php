@@ -12,8 +12,8 @@
             <strong class="font-medium">
                 @lang($item['heading'])
                 @if ($key === 'orders')
-                    <graphql query="{customer{orders{items{number}}}}">
-                        <template v-if="data" slot-scope="{ data }">
+                    <graphql query="{customer{orders{items{number}}}}" v-slot="{ data }">
+                        <template v-if="data">
                             (@{{ data.customer.orders.items.length ?? 0 }})
                         </template>
                     </graphql>

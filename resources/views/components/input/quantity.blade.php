@@ -1,35 +1,20 @@
 
 <graphql-mutation
     :query="'mutation ($cart_id: String!, $cart_item_id: Int, $quantity: Float) { updateCartItems(input: { cart_id: $cart_id, cart_items: [{ cart_item_id: $cart_item_id, quantity: $quantity }] }) { cart { ...cart } } } ' + config.fragments.cart"
-    :variables="{ cart_id: mask, cart_item_id: item.id, quantity: item.quantity }"
-    :callback="updateCart"
+    :variables="{ cart_id: mask.value, cart_item_id: item.id, quantity: item.quantity }"
+    :callback="(variables, response) => updateCart(variables, response) && variables.quantity <= 0 ? window.$emit('cart-remove', item) : ''"
     :error-callback="checkResponseForExpiredCart"
+    :debounce="500"
     v-slot="{ mutate, variables }"
 >
-    <form v-on:submit.prevent="mutate" class="w-20">
-        <label class="flex overflow-hidden border rounded">
-            <button
-                class="flex-1 bg transition hover:bg-opacity-80"
-                v-on:click.prevent="variables.quantity <= (item.product.stock_item?.min_sale_qty || 1) ? variables.quantity = variables.quantity : variables.quantity = +variables.quantity - (item.product.stock_item?.qty_increments || 1);mutate()"
-                aria-label="@lang('Decrease quantity')"
-            >-</button>
-            <input
-                class="h-10 w-2/5 border-none px-0 text-center text-sm [appearance:textfield] focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                name="qty"
-                type="number"
-                {{ $attributes }}
-                v-model="variables.quantity"
-                v-on:change="mutate"
-                v-bind:min="Math.max(item.product.stock_item?.min_sale_qty, item.product.stock_item?.qty_increments) || null"
-                v-bind:max="item.product.stock_item?.max_sale_qty"
-                v-bind:step="item.qty_increments"
-                data-testid="qty"
-            />
-            <button
-                class="flex-1 bg transition hover:bg-opacity-80"
-                v-on:click.prevent="variables.quantity = +variables.quantity + (item.product.stock_item?.qty_increments || 1);mutate()"
-                aria-label="@lang('Increase quantity')"
-            >+</button>
-        </label>
+    <form v-on:submit.prevent="mutate" class="max-w-24">
+        <x-rapidez::quantity
+            v-on:change="mutate"
+            v-model.number="variables.quantity"
+            v-model="variables.quantity"
+            {{-- No "min" here so you're able to remove by lowering to 0 --}}
+            ::step="(item.product?.stock_item?.qty_increments ?? 1)"
+            ::max="item.product?.stock_item?.max_sale_qty"
+        />
     </form>
 </graphql-mutation>

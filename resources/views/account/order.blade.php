@@ -7,8 +7,9 @@
         :query='`mutation { reorderItems(orderNumber: "{{ request()->id }}") { cart { ...cart } userInputErrors { message } } } ${config.fragments.cart}`'
         redirect="{{ route('cart') }}"
         :callback="reorderCallback"
+        v-slot="{ mutate, mutating, mutated }"
     >
-        <form slot-scope="{ mutate, mutating, mutated }" v-on:submit.prevent="mutate">
+        <form v-on:submit.prevent="mutate">
             <x-rapidez::button.conversion type="submit" class="flex items-center" v-cloak>
                 @lang('Order again')
             </x-rapidez::button.conversion>
@@ -21,8 +22,9 @@
         query='@include('rapidez::account.partials.queries.order')'
         :check="(data) => data.customer.orders.items[0]"
         :callback="async (variables, response) => {return await updateOrder(variables, {data: response.data.customer.orders.items})}"
+        v-slot="{ order: data }"
     >
-        <div slot-scope="{ order: data }" v-if="order">
+        <div v-if="order">
             <x-rapidez-ct::sections>
                 @include('rapidez-ct::account.partials.order.products')
                 <x-rapidez-ct::card.inactive>
@@ -34,7 +36,7 @@
                     @lang('Back to my orders')
                 </x-rapidez::button.outline>
                 <span class="text-muted">
-                    @lang('Order date'): @{{ (new Date(order.order_date)).toLocaleDateString() }}
+                    @lang('Order date'): @{{ (new Date(order.value.order_date)).toLocaleDateString() }}
                 </span>
             </x-rapidez-ct::toolbar>
         </div>

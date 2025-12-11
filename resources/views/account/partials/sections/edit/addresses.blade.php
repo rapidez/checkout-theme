@@ -4,5 +4,5 @@
     v-bind:set-shipping="data.customer.shipping_address = data.customer.addresses.find(e => e.default_shipping)"
 >
     @include('rapidez-ct::account.partials.address-cards')
-    @include('rapidez-ct::account.partials.address-cards-popup')
+    @include('rapidez-ct::account.partials.additional-addresses')
 </div>

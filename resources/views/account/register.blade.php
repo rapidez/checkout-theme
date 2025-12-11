@@ -12,11 +12,11 @@
         <x-rapidez-ct::layout>
             @include('rapidez-ct::account.partials.register-account')
 
-            <x-rapidez-ct::toolbar v-if="!loggedIn" v-cloak>
+            <x-rapidez-ct::toolbar v-if="!window.app?.config?.globalProperties?.loggedIn?.value" v-cloak>
                 <x-rapidez::button.outline :href="route('account.login')">
                     @lang('Back to login')
                 </x-rapidez::button.outline>
-                <x-rapidez::button.secondary type="submit" form="register" loader data-testid="continue">
+                <x-rapidez::button.secondary type="submit" form="register" data-testid="continue" loader>
                     @lang('Register')
                 </x-rapidez::button.secondary>
             </x-rapidez-ct::toolbar>

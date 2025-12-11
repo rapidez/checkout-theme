@@ -7,21 +7,21 @@
             <div class="flex sm:flex-row flex-col sm:space-x-3">
                 <div class="flex-1">
                     <label>
-                        <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                        <x-rapidez::label>@lang('First name')</x-rapidez::label>
                         <x-rapidez::input name="firstname" v-model="addressVariables.firstname" required />
                     </label>
                 </div>
                 @if(Rapidez::config('customer/address/middlename_show', 0))
                     <div class="flex-1">
                         <label>
-                            <x-rapidez::label>@lang('Middlename')</x-rapidez::label>
+                            <x-rapidez::label>@lang('Middle name')</x-rapidez::label>
                             <x-rapidez::input name="middlename" v-model="addressVariables.middlename" />
                         </label>
                     </div>
                 @endif
                 <div class="flex-1">
                     <label>
-                        <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
+                        <x-rapidez::label>@lang('Last name')</x-rapidez::label>
                         <x-rapidez::input name="lastname" v-model="addressVariables.lastname" required />
                     </label>
                 </div>
@@ -45,7 +45,7 @@
                     <x-rapidez::input
                         name="vat_id"
                         v-model="addressVariables.vat_id"
-                        v-on:change="window.app.$emit('vat-change', $event)"
+                        v-on:change="window.$emit('vat-change', $event)"
                         :required="Rapidez::config('customer/address/taxvat_show', 0) == 'req'"
                     />
                 </label>
@@ -68,12 +68,12 @@
                 @if(Rapidez::config('customer/address/street_lines', 2) >= 2)
                     <div class="flex-1">
                         <label>
-                            <x-rapidez::label>@lang('Housenumber')</x-rapidez::label>
+                            <x-rapidez::label>@lang('House number')</x-rapidez::label>
                             <x-rapidez::input
                                 name="street[1]"
                                 type="number"
                                 v-model="addressVariables.street[1]"
-                                v-on:change="window.app.$emit('postcode-change', addressVariables)"
+                                v-on:change="window.$emit('postcode-change', addressVariables)"
                             />
                         </label>
                     </div>
@@ -99,7 +99,7 @@
                 <x-rapidez::input
                     name="postcode"
                     v-model="addressVariables.postcode"
-                    v-on:change="window.app.$emit('postcode-change', addressVariables)"
+                    v-on:change="window.$emit('postcode-change', addressVariables)"
                     required
                 />
             </label>
@@ -115,7 +115,7 @@
                         v-model="addressVariables.country_code"
                         class="w-full"
                         v-on:change="() => {
-                            window.app.$emit('postcode-change', addressVariables);
+                            window.$emit('postcode-change', addressVariables);
                             addressVariables.region = { region_id: null };
                         }"
                         required

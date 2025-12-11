@@ -1,6 +1,6 @@
 @props(['region' => 'region_id'])
 
-<form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate">
+<form v-on:submit.prevent="mutate">
     <x-rapidez-ct::sections>
         <x-rapidez-ct::card.inactive>
             <x-rapidez-ct::address-form :$region/>

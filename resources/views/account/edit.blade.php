@@ -5,8 +5,8 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('account-content')
-    <graphql query="@include('rapidez::account.partials.queries.overview')" :callback="sortOrdersCallback">
-        <div v-if="data" slot-scope="{ data, runQuery }">
+    <graphql query="@include('rapidez::account.partials.queries.overview')" :callback="sortOrdersCallback" v-slot="{ data, runQuery }">
+        <div v-if="data">
             <x-rapidez-ct::sections>
                 <x-rapidez-ct::card.inactive>
                     @include('rapidez-ct::account.partials.sections.edit.addresses')

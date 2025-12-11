@@ -12,5 +12,5 @@
         :alt="item.product.name"
         :src="resizedPath(item.product.image.url + '.webp', '200')"
     />
-    <x-rapidez::no-image v-else />
+    <x-rapidez::no-image v-else="" />
 </td>

@@ -28,11 +28,3 @@
         </x-rapidez-ct::card.address>
     </template>
 </div>
-<div class="flex flex-wrap gap-3">
-    <x-rapidez::button.secondary :href="route('account.address.create')">
-        @lang('Add a new address')
-    </x-rapidez::button.secondary>
-    <x-rapidez::button.secondary tag="label" for="popup" v-if="data?.customer?.addresses?.length">
-        @lang('My addresses')
-    </x-rapidez::button.secondary>
-</div>

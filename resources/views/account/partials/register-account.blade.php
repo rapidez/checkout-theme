@@ -20,7 +20,7 @@
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
         v-slot="{ mutate, variables }"
     >
-        <x-rapidez-ct::sections v-if="!loggedIn">
+        <x-rapidez-ct::sections v-if="!window.app?.config?.globalProperties?.loggedIn?.value">
             <x-rapidez-ct::card.inactive>
                 <x-rapidez-ct::title.lg class="mb-5">
                     @lang('Register account')
@@ -35,7 +35,7 @@
                     @endif
                 >
                     <label>
-                        <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                        <x-rapidez::label>@lang('First name')</x-rapidez::label>
                         <x-rapidez::input
                             name="firstname"
                             type="text"
@@ -44,7 +44,7 @@
                         />
                     </label>
                     <label>
-                        <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
+                        <x-rapidez::label>@lang('Last name')</x-rapidez::label>
                         <x-rapidez::input
                             name="lastname"
                             type="text"
@@ -61,18 +61,23 @@
                             required
                         />
                     </label>
-                    <label>
-                        <x-rapidez::label>@lang('Password')</x-rapidez::label>
-                        <x-rapidez::input.password
-                            name="password"
-                            v-model="variables.password"
-                            required
-                        />
-                    </label>
+                    <div>
+                        <label>
+                            <x-rapidez::label>@lang('Password')</x-rapidez::label>
+                            <x-rapidez::input.password
+                                name="password"
+                                v-model="variables.password"
+                                required
+                            />
+                        </label>
+                        <div class="mt-2.5">
+                            <x-rapidez::password-strength v-bind:password="variables.password"/>
+                        </div>
+                    </div>
 
                     @if(Rapidez::config('customer/create_account/vat_frontend_visibility', 0))
-                        <toggler>
-                            <div slot-scope="{ toggle, isOpen }" class="contents">
+                        <toggler v-slot="{ toggle, isOpen }">
+                            <div class="contents">
                                 <x-rapidez::input.checkbox
                                     id="isb2b"
                                     name="isb2b"
@@ -87,7 +92,7 @@
                                         name="taxvat"
                                         type="text"
                                         v-model="variables.taxvat"
-                                        v-on:change="window.app.$emit('vat-change', $event)"
+                                        v-on:change="window.$emit('vat-change', $event)"
                                         required
                                     />
                                 </label>

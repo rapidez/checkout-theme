@@ -1,13 +1,10 @@
 <td class="flex items-center font-medium max-md:w-1/3 md:table-cell">
-    <div v-if="item.prices.specialPrice">
-        @{{ item.prices.specialPrice | price }}
-    </div>
-    <div :class="{ 'line-through text-xs text-muted font-normal': item.prices.specialPrice }">
+    <div>
         <template v-if="showTax">
-            @{{ item.prices.price_including_tax.value | price }}
+            @{{ window.price(item.prices.price_including_tax.value) }}
         </template>
         <template v-else>
-            @{{ item.prices.price.value | price }}
+            @{{ window.price(item.prices.price.value) }}
         </template>
     </div>
 </td>
@@ -18,9 +15,9 @@
 </td>
 <td class="flex items-center justify-end text-right font-medium max-md:w-1/3 md:table-cell">
     <template v-if="showTax">
-        @{{ item.prices.row_total_including_tax.value | price }}
+        @{{ window.price(item.prices.row_total_including_tax.value) }}
     </template>
     <template v-else>
-        @{{ item.prices.row_total.value | price }}
+        @{{ window.price(item.prices.row_total.value) }}
     </template>
 </td>

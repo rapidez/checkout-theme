@@ -1,8 +1,8 @@
 <graphql-mutation
     :query="config.queries.setShippingMethodsOnCart"
     :variables="{
-        cart_id: mask,
-        method: cart.shipping_addresses?.[0]?.selected_shipping_method?.carrier_code+'/'+cart.shipping_addresses?.[0]?.selected_shipping_method?.method_code,
+        cart_id: mask.value,
+        method: cart.value.shipping_addresses?.[0]?.selected_shipping_method?.carrier_code + '/' + cart.value.shipping_addresses?.[0]?.selected_shipping_method?.method_code,
     }"
     group="shipping"
     :callback="updateCart"
@@ -14,10 +14,10 @@
     }"
     mutate-event="setShippingMethodsOnCart"
     v-slot="{ mutate, variables }"
-    v-if="!cart.is_virtual"
+    v-if="!cart.value.is_virtual"
 >
-    <fieldset class="mt-5 flex flex-col gap-2" partial-submit="mutate" v-on:change="window.app.$emit('setShippingAddressesOnCart')">
-        <template v-for="(method, index) in cart.shipping_addresses?.[0]?.available_shipping_methods">
+    <fieldset class="mt-5 flex flex-col gap-2" partial-submit v-on:partial-submit="(ev) => mutate().then(ev.detail.resolve).catch(ev.detail.reject)" v-on:change="window.$emit('setShippingAddressesOnCart')">
+        <template v-for="(method, index) in cart.value.shipping_addresses?.[0]?.available_shipping_methods">
             <x-rapidez-ct::input.radio.tile
                 name="shipping_method"
                 v-model="variables.method"
@@ -30,7 +30,7 @@
                 <div class="sm:w-3/5">@{{ method.carrier_title }}</div>
                 <div class="flex-1">@{{ method.method_title }}</div>
                 <div class="text-right text-sm font-medium">
-                    <div v-if="method.amount.value > 0" class="text-muted">@{{ method.amount.value | price }}</div>
+                    <div v-if="method.amount.value > 0" class="text-muted">@{{ window.price(method.amount.value) }}</div>
                     <div v-else class="text-primary">
                         @lang('Free')
                     </div>

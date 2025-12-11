@@ -9,7 +9,7 @@
         },
 
         render() {
-            return this.$scopedSlots.default(Object.assign(this, { self: this }))
+            return this?.$slots?.default(Object.assign(this, { self: this }))
         },
 
         computed: {

@@ -1,6 +1,5 @@
-<graphql query="@include('rapidez::account.partials.queries.overview')">
+<graphql query="@include('rapidez::account.partials.queries.overview')" v-slot="{ data }">
     <x-rapidez-ct::card
-        slot-scope="{ data }"
         v-if="data?.customer"
         v-bind:set-billing="data.customer.billing_address = data.customer.addresses.find(e => e.default_billing)"
         v-bind:set-shipping="data.customer.shipping_address = data.customer.addresses.find(e => e.default_shipping)"

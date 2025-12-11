@@ -20,9 +20,9 @@
             <form
                 class="contents"
                 v-on:submit.prevent="(e) => {
-                    submitPartials(e.target?.form ?? e.target)
+                    window.app.config.globalProperties.submitPartials(e.target?.form ?? e.target, (cart?.billing_address?.same_as_shipping ?? true))
                         .then((result) =>
-                            window.app.$emit('checkout-credentials-saved')
+                            window.$emit('checkout-credentials-saved')
                             && window.Turbo.visit(window.url('{{ route('checkout', ['step' => 'payment']) }}'))
                         ).catch();
                 }"

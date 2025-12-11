@@ -7,8 +7,8 @@
 @if (!$attributes->has('v-model'))
     @php
         $subscribedData = $hasData
-            ? 'data?.customer?.is_subscribed ?? $root.user?.extension_attributes?.is_subscribed ?? false'
-            : '$root.user?.extension_attributes?.is_subscribed ?? false'
+            ? 'data?.customer?.is_subscribed ?? user.value?.is_subscribed ?? false'
+            : 'user.value?.is_subscribed ?? false'
     @endphp
     <graphql-mutation
         v-cloak
