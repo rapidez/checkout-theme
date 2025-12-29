@@ -17,6 +17,9 @@
     v-if="!cart.value.is_virtual"
 >
     <fieldset class="mt-5 flex flex-col gap-2" partial-submit v-on:partial-submit="(ev) => mutate().then(ev.detail.resolve).catch(ev.detail.reject)" v-on:change="window.$emit('setShippingAddressesOnCart')">
+        <label v-if="!cart.value.shipping_addresses?.[0]?.uid" class="flex items-center p-5 border rounded relative bg-white">
+            <span>@lang('Please enter a shipping address first')</span>
+        </label>
         <template v-for="(method, index) in cart.value.shipping_addresses?.[0]?.available_shipping_methods">
             <x-rapidez-ct::input.radio.tile
                 name="shipping_method"
