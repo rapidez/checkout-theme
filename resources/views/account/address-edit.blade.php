@@ -1,6 +1,6 @@
 @extends('rapidez-ct::account.partials.layout')
 
-@section('title', __('New address'))
+@section('title', __('Edit address'))
 
 @section('robots', 'NOINDEX,NOFOLLOW')
 
