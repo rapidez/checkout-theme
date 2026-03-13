@@ -1,6 +1,6 @@
 @props(['item' => [], 'key' => ''])
 <x-rapidez::tag {{ $attributes->merge([
-    'class' => 'flex gap-x-6 rounded border bg-white px-8 py-4 text-left max-sm:flex-col max-sm:gap-y-1 sm:items-center',
+    'class' => 'flex gap-x-6 rounded-sm border bg-white px-8 py-4 text-left max-sm:flex-col max-sm:gap-y-1 sm:items-center',
     'href' => $item['href'] ?? '',
     'is' => isset($item['href']) ? 'a' : 'button',
 ]) }}>
