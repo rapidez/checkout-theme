@@ -13,7 +13,7 @@
                 'size-3 rounded-sm text-center bg-primary',
                 'cursor-pointer' => $currentStepKey < $checkoutStepKey,
                 'pointer-events-none bg-emphasis!' => $checkoutStepKey > $currentStepKey,
-                'outline-4 outline-solid outline-primary/20' => $checkoutStepKey === $currentStepKey,
+                'outline-4 outline-primary/20' => $checkoutStepKey === $currentStepKey,
             ])
         ></a>
     @endforeach
