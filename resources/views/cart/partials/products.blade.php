@@ -1,10 +1,10 @@
 <table class="w-full border-b">
-    <thead class="bg flex rounded md:table-header-group">
+    <thead class="bg flex rounded-sm md:table-header-group">
         <tr class="text-xs *:py-4 *:font-normal *:px-5">
-            <th class="!pl-0 max-md:hidden"><span class="sr-only">@lang('Image')</span></th>
+            <th class="pl-0! max-md:hidden"><span class="sr-only">@lang('Image')</span></th>
             <th class="text-start">@lang('Product')</th>
             <th class="text-start max-md:hidden">@lang('Price')</th>
-            <th class="!text-center max-md:hidden">@lang('Quantity')</th>
+            <th class="text-center! max-md:hidden">@lang('Quantity')</th>
             <th class="text-end max-md:hidden">@lang('Subtotal')</th>
         </tr>
     </thead>

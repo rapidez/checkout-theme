@@ -9,7 +9,7 @@
     <button
         v-on:click="mutate"
         class="text-red-700 mt-1 text-xs hover:underline"
-        v-bind:class="{'!text-ct-error !underline' : !item.is_available}"
+        v-bind:class="{'!text-ct-error underline!' : !item.is_available}"
         data-testid="cart-item-remove"
     >
         @lang('Remove')

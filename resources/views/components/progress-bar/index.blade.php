@@ -10,10 +10,10 @@
         <a href="{{ route('checkout', $checkoutStep) }}"
             aria-label="@lang('Go to step :step', ['step' => $checkoutStepKey + 1])"
             @class([
-                'size-3 rounded text-center bg-primary',
+                'size-3 rounded-sm text-center bg-primary',
                 'cursor-pointer' => $currentStepKey < $checkoutStepKey,
-                'pointer-events-none !bg-emphasis' => $checkoutStepKey > $currentStepKey,
-                'outline-4 outline outline-primary/20' => $checkoutStepKey === $currentStepKey,
+                'pointer-events-none bg-emphasis!' => $checkoutStepKey > $currentStepKey,
+                'outline-4 outline-primary/20' => $checkoutStepKey === $currentStepKey,
             ])
         ></a>
     @endforeach

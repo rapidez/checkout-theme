@@ -1,5 +1,5 @@
 <div class="mt-5">
-    <div class="rounded bg py-4 text-sm">
+    <div class="rounded-sm bg py-4 text-sm">
         <div class="flex w-full flex-wrap gap-y-3 gap-x-3 text-sm sm:gap-x-6 sm:pr-6 md:items-center">
             <div class="sm:w-36"></div>
             <div class="flex-1 sm:w-36">@lang('Product')</div>
