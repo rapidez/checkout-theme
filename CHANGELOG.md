@@ -1,6 +1,23 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.0-beta.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.0...master)
+## [5.0.0](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0) - 2026-04-03
+
+### Added
+
+- Rapidez v5 support (#218)
+- Rapidez v5 + Playwright fixes (#225)
+- Tailwind 4 update (#234)
+
+### Changed
+
+- Playwright reports in Cloudflare R2 (#226)
+
+### Fixed
+
+- Check for cart prices (#223)
+- Playwright update all screenshots + translations fix (#228)
+
 ## [5.0.0-beta.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0-beta.1) - 2026-03-20
 
 ### Added
