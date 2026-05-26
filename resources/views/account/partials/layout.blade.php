@@ -32,7 +32,7 @@
             </x-rapidez-ct::layout>
         </template>
 
-        <template v-else-if="!loading">
+        <template v-else-if="!loading.value">
             <x-rapidez-ct::layout.two-column>
                 <x-rapidez-ct::title tag="h1">
                     @lang('Login')
