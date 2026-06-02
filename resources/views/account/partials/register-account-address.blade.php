@@ -73,7 +73,7 @@
                                 name="street[1]"
                                 type="number"
                                 v-model="addressVariables.street[1]"
-                                v-on:change="window.$emit('postcode-change', addressVariables)"
+                                v-on:change="(event) => window.$emit('postcode-change', addressVariables, event)"
                             />
                         </label>
                     </div>
@@ -99,7 +99,7 @@
                 <x-rapidez::input
                     name="postcode"
                     v-model="addressVariables.postcode"
-                    v-on:change="window.$emit('postcode-change', addressVariables)"
+                    v-on:change="(event) => window.$emit('postcode-change', addressVariables, event)"
                     required
                 />
             </label>
@@ -114,8 +114,8 @@
                         name="country_code"
                         v-model="addressVariables.country_code"
                         class="w-full"
-                        v-on:change="() => {
-                            window.$emit('postcode-change', addressVariables);
+                        v-on:change="(event) => {
+                            window.$emit('postcode-change', addressVariables, event);
                             addressVariables.region = { region_id: null };
                         }"
                         required

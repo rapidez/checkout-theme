@@ -146,7 +146,7 @@
                 <x-rapidez::input.select.country
                     name="{{ $prefix }}country"
                     v-model="variables.country_code"
-                    v-on:change="() => { window.$emit('rapidez:postcode-change', variables); variables.region = {}; variables.{{ $region }} = null }"
+                    v-on:change="(event) => { window.$emit('rapidez:postcode-change', variables, event); variables.region = {}; variables.{{ $region }} = null }"
                     required
                 />
             </label>
@@ -180,7 +180,7 @@
                 <x-rapidez::input
                     name="{{ $prefix }}postcode"
                     v-model="variables.postcode"
-                    v-on:change="$root.$nextTick(() => window.$emit('postcode-change', variables))"
+                    v-on:change="(event) => $root.$nextTick(() => window.$emit('postcode-change', variables, event))"
                     required
                 />
             </label>
@@ -192,7 +192,7 @@
                     <x-rapidez::input
                         name="{{ $prefix }}housenumber"
                         v-model="variables.street[1]"
-                        v-on:change="$root.$nextTick(() => window.$emit('postcode-change', variables))"
+                        v-on:change="(event) => $root.$nextTick(() => window.$emit('postcode-change', variables, event))"
                         required
                     />
                 </label>
