@@ -1,6 +1,15 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.1...master)
+## [5.0.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.1) - 2026-06-16
+
+### Fixed
+
+- Use loading.value (#238)
+- Dispatch postcode-change with event (#239)
+- Re-added steps login (#237)
+- Fix loggedIn.value (#240)
+
 ## [5.0.0](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0) - 2026-04-03
 
 ### Added
