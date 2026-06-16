@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.1...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.2...master)
+## [5.0.2](https://github.com/rapidez/checkout-theme/releases/tag/5.0.2) - 2026-06-16
+
+### Fixed
+
+- Fix hardcoded region_id and country_code (#241)
+
 ## [5.0.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.1) - 2026-06-16
 
 ### Fixed
