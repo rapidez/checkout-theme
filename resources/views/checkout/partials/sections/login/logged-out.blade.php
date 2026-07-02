@@ -7,6 +7,7 @@
                 type="email"
                 v-model.lazy="checkoutLogin.email"
                 v-bind:disabled="window.app.config.globalProperties.loggedIn.value"
+                v-on:change="() => checkoutLogin.go()"
                 class="justify-center"
                 required
                 :placeholder="__('Enter your e-mail address')"
