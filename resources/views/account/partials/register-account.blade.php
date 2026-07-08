@@ -92,7 +92,7 @@
                                         name="taxvat"
                                         type="text"
                                         v-model="variables.taxvat"
-                                        v-on:change="window.$emit('vat-change', $event)"
+                                        v-validate.vat="true"
                                         required
                                     />
                                 </label>
