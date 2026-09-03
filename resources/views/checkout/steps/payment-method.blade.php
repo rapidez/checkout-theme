@@ -20,7 +20,7 @@
         v-slot="{ mutate, variables }"
     >
         <fieldset>
-            <x-rapidez::button.conversion class="relative" type="submit" data-testid="continue" loader>
+            <x-rapidez::button.conversion class="relative" type="submit" data-testid="continue" loader v-on:mousedown.prevent="{{-- Do not remove, this prevents requiring double click for the submit action --}}">
                 @lang('Place order')
             </x-rapidez::button.conversion>
         </fieldset>
