@@ -27,13 +27,12 @@
 
 
 
-## [3.1.4](https://github.com/rapidez/checkout-theme/releases/tag/untagged-9a82e4000f4e0d9e4e91) - 2026-09-10
+## [3.1.4](https://github.com/rapidez/checkout-theme/releases/tag/3.1.4) - 2026-09-10
 
 ### Fixed
 
 - Checkout agreements fix (#200)
 - Add v-on:change to set guest email in cart when changed (#245)
-- Release workflow (f371377)
 
 
 
