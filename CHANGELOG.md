@@ -1,6 +1,101 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/4.6.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.3...master)
+## [5.0.3](https://github.com/rapidez/checkout-theme/releases/tag/untagged-67514da8509240679992) - 2026-09-10
+
+### Fixed
+
+- Use v-validate.vat (#243)
+- Add v-on:change to set guest email in cart when changed (#242)
+- Make logout button type button (#246)
+- Use cart.value everywhere (#248)
+- Fixed double click submit before next (#250)
+- Release workflow (0fc1083)
+
+
+
+## [4.6.1](https://github.com/rapidez/checkout-theme/releases/tag/4.6.1) - 2026-09-10
+
+### Fixed
+
+- Check for cart prices (#224)
+- Add v-on:change to set guest email in cart when changed (#244)
+- Make logout button type button (#247)
+
+
+
+## [3.1.4](https://github.com/rapidez/checkout-theme/releases/tag/3.1.4) - 2026-09-10
+
+### Fixed
+
+- Checkout agreements fix (#200)
+- Add v-on:change to set guest email in cart when changed (#245)
+
+
+
+## [2.12.1](https://github.com/rapidez/checkout-theme/releases/tag/2.12.1) - 2026-09-10
+
+### Fixed
+
+- Cart summary tax checks (#203)
+- Fix address edit title (#231)
+
+
+
+## [5.0.2](https://github.com/rapidez/checkout-theme/releases/tag/5.0.2) - 2026-06-16
+
+### Fixed
+
+- Fix hardcoded region_id and country_code (#241)
+
+## [5.0.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.1) - 2026-06-16
+
+### Fixed
+
+- Use loading.value (#238)
+- Dispatch postcode-change with event (#239)
+- Re-added steps login (#237)
+- Fix loggedIn.value (#240)
+
+## [5.0.0](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0) - 2026-04-03
+
+### Added
+
+- Rapidez v5 support (#218)
+- Rapidez v5 + Playwright fixes (#225)
+- Tailwind 4 update (#234)
+
+### Changed
+
+- Playwright reports in Cloudflare R2 (#226)
+
+### Fixed
+
+- Check for cart prices (#223)
+- Playwright update all screenshots + translations fix (#228)
+
+## [5.0.0-beta.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0-beta.1) - 2026-03-20
+
+### Added
+
+- Rapidez v5 + Playwright fixes (#225)
+- Tailwind 4 update (#234)
+
+### Changed
+
+- Playwright reports in Cloudflare R2 (#226)
+
+### Fixed
+
+- Check for cart prices (#223)
+- Playwright update all screenshots + translations fix (#228)
+
+## [5.0.0-alpha.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0-alpha.1) - 2025-12-11
+
+### Added
+
+- Rapidez v5 support (#218)
+
 ## [4.6.0](https://github.com/rapidez/checkout-theme/releases/tag/4.6.0) - 2025-12-11
 
 ### Changed
