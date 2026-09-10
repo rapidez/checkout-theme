@@ -1,6 +1,46 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.2...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.3...master)
+## [5.0.3](https://github.com/rapidez/checkout-theme/releases/tag/5.0.3) - 2026-09-10
+
+### Fixed
+
+- Use v-validate.vat (#243)
+- Add v-on:change to set guest email in cart when changed (#242)
+- Make logout button type button (#246)
+- Use cart.value everywhere (#248)
+- Fixed double click submit before next (#250)
+
+
+
+## [4.6.1](https://github.com/rapidez/checkout-theme/releases/tag/4.6.1) - 2026-09-10
+
+### Fixed
+
+- Check for cart prices (#224)
+- Add v-on:change to set guest email in cart when changed (#244)
+- Make logout button type button (#247)
+
+
+
+## [3.1.4](https://github.com/rapidez/checkout-theme/releases/tag/3.1.4) - 2026-09-10
+
+### Fixed
+
+- Checkout agreements fix (#200)
+- Add v-on:change to set guest email in cart when changed (#245)
+
+
+
+## [2.12.1](https://github.com/rapidez/checkout-theme/releases/tag/2.12.1) - 2026-09-10
+
+### Fixed
+
+- Cart summary tax checks (#203)
+- Fix address edit title (#231)
+
+
+
 ## [5.0.2](https://github.com/rapidez/checkout-theme/releases/tag/5.0.2) - 2026-06-16
 
 ### Fixed
