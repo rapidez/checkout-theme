@@ -1,6 +1,192 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/3.1.3...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.3...master)
+## [5.0.3](https://github.com/rapidez/checkout-theme/releases/tag/untagged-67514da8509240679992) - 2026-09-10
+
+### Fixed
+
+- Use v-validate.vat (#243)
+- Add v-on:change to set guest email in cart when changed (#242)
+- Make logout button type button (#246)
+- Use cart.value everywhere (#248)
+- Fixed double click submit before next (#250)
+- Release workflow (0fc1083)
+
+
+
+## [4.6.1](https://github.com/rapidez/checkout-theme/releases/tag/untagged-b94b51cca236ed406b67) - 2026-09-10
+
+### Fixed
+
+- Check for cart prices (#224)
+- Playwright reports in Cloudflare R2 (#227)
+- Playwright tests fix (e8bb156)
+- Add v-on:change to set guest email in cart when changed (#244)
+- Make logout button type button (#247)
+- Release workflow (8c7a437)
+
+
+
+## [3.1.4](https://github.com/rapidez/checkout-theme/releases/tag/3.1.4) - 2026-09-10
+
+### Fixed
+
+- Checkout agreements fix (#200)
+- Add v-on:change to set guest email in cart when changed (#245)
+
+
+
+## [2.12.1](https://github.com/rapidez/checkout-theme/releases/tag/2.12.1) - 2026-09-10
+
+### Fixed
+
+- Cart summary tax checks (#203)
+- Fix address edit title (#231)
+
+
+
+## [5.0.2](https://github.com/rapidez/checkout-theme/releases/tag/5.0.2) - 2026-06-16
+
+### Fixed
+
+- Fix hardcoded region_id and country_code (#241)
+
+## [5.0.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.1) - 2026-06-16
+
+### Fixed
+
+- Use loading.value (#238)
+- Dispatch postcode-change with event (#239)
+- Re-added steps login (#237)
+- Fix loggedIn.value (#240)
+
+## [5.0.0](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0) - 2026-04-03
+
+### Added
+
+- Rapidez v5 support (#218)
+- Rapidez v5 + Playwright fixes (#225)
+- Tailwind 4 update (#234)
+
+### Changed
+
+- Playwright reports in Cloudflare R2 (#226)
+
+### Fixed
+
+- Check for cart prices (#223)
+- Playwright update all screenshots + translations fix (#228)
+
+## [5.0.0-beta.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0-beta.1) - 2026-03-20
+
+### Added
+
+- Rapidez v5 + Playwright fixes (#225)
+- Tailwind 4 update (#234)
+
+### Changed
+
+- Playwright reports in Cloudflare R2 (#226)
+
+### Fixed
+
+- Check for cart prices (#223)
+- Playwright update all screenshots + translations fix (#228)
+
+## [5.0.0-alpha.1](https://github.com/rapidez/checkout-theme/releases/tag/5.0.0-alpha.1) - 2025-12-11
+
+### Added
+
+- Rapidez v5 support (#218)
+
+## [4.6.0](https://github.com/rapidez/checkout-theme/releases/tag/4.6.0) - 2025-12-11
+
+### Changed
+
+- Use Tailwind classes instead of JIT (#216)
+
+### Fixed
+
+- Full width newsletter email input + consistent tests fix (#214)
+- Address cards not changing fix (#215)
+- Remove cart item color fix (#217)
+- Allow selected_payment_method to be null (#213)
+- Sidebar slot default (#219)
+- Shipping address fallbacks (#220)
+- Fix future Playwright tests (#222)
+
+## [4.5.0](https://github.com/rapidez/checkout-theme/releases/tag/4.5.0) - 2025-10-28
+
+### Added
+
+- Edit name from account (#210)
+
+### Changed
+
+- Hide token and prefill email in reset password form (#202)
+
+### Fixed
+
+- Playwright Magento version tag (#207)
+- Cart grand total tax check (#204)
+- Playwright publish payment icons (#209)
+- Notifications component in the footer (#212)
+
+## [4.4.1](https://github.com/rapidez/checkout-theme/releases/tag/4.4.1) - 2025-09-30
+
+### Fixed
+
+- Success page login required to view order fallback (#194)
+- package.json name (#206)
+
+## [4.4.0](https://github.com/rapidez/checkout-theme/releases/tag/4.4.0) - 2025-09-27
+
+### Added
+
+- Playwright tests + fixes (#196)
+
+## [4.3.0](https://github.com/rapidez/checkout-theme/releases/tag/4.3.0) - 2025-09-17
+
+### Changed
+
+- Uniform Blade file naming with dashes (#195, #201)
+
+### Fixed
+
+- Success page html markup and style fix (#189)
+- v-cloaks in the checkout (#190)
+- Hide address dropdown in account center (#191)
+- Translation fix (#192)
+- Fix indenting & orientation of the if statement (#197)
+- Remove coupon query fix (#198)
+- Checkout agreements fix (#199)
+
+## [4.2.0](https://github.com/rapidez/checkout-theme/releases/tag/4.2.0) - 2025-08-13
+
+### Changed
+
+- Simplify address cards (#188)
+
+### Fixed
+
+- Prevent cutting icons from the side (#183)
+- Remove duplication and bugfix (#184)
+- Reload Heroicon instead of a char (#186)
+- Fix closing tag (#187)
+- Optional checkout login option fix (#185)
+
+## [4.1.0](https://github.com/rapidez/checkout-theme/releases/tag/4.1.0) - 2025-07-29
+
+### Changed
+
+- Optional checkout login option (#182)
+
+## [4.0.3](https://github.com/rapidez/checkout-theme/releases/tag/4.0.3) - 2025-07-18
+
+### Fixed
+
+- Small bugfixes (#181)
+
 ## [3.1.3](https://github.com/rapidez/checkout-theme/releases/tag/3.1.3) - 2025-07-18
 
 ### Fixed
