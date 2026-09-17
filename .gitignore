@@ -1,6 +1,7 @@
 /vendor
 /composer.lock
 /yarn.lock
+/pnpm-lock.yaml
 
 # Playwright
 .env
