@@ -1,6 +1,15 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.3...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.4...master)
+## [5.0.4](https://github.com/rapidez/checkout-theme/releases/tag/5.0.4) - 2026-10-07
+
+### Fixed
+
+- Playwright tests fix (#249)
+- Fix toggle (#252)
+
+
+
 ## [5.0.3](https://github.com/rapidez/checkout-theme/releases/tag/5.0.3) - 2026-09-10
 
 ### Fixed
