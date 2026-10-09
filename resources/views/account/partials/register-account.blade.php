@@ -82,7 +82,7 @@
                                     id="isb2b"
                                     name="isb2b"
                                     v-model="isOpen"
-                                    v-on:click="toggle"
+                                    v-on:click="toggle()"
                                 >
                                     @lang('This is a business account')
                                 </x-rapidez::input.checkbox>
