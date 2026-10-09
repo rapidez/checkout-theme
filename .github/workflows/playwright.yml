@@ -96,8 +96,9 @@ jobs:
       - name: Copy testing .env
         run: cp ../$PACKAGE/tests/playwright/.env.testing .env
 
+      # Mirror instead of symlink, pnpm skips workspace packages outside the root
       - name: Use Rapidez package from source
-        run: composer config repositories.$PACKAGE path ../$PACKAGE
+        run: composer config repositories.$PACKAGE '{"type":"path","url":"../${{ env.PACKAGE }}","options":{"symlink":false}}'
 
       - name: Make the Magento version available as env variable
         run: echo "MAGENTO_VERSION=${{ matrix.magento-version }}" >> $GITHUB_ENV
@@ -130,12 +131,13 @@ jobs:
         run: php artisan vendor:publish --tag=payment-icons
 
       - name: Install Node dependencies
-        uses: pnpm/setup@v1
+        uses: pnpm/setup@v3
         with:
           version: 11
           runtime: node@lts
           cache: false
           install: true
+          working-directory: rapidez/rapidez
 
       - name: Install Playwright Browsers
         run: pnpm playwright install --with-deps
