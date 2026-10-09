@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.0.4...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.1.0...master)
+## [5.1.0](https://github.com/rapidez/checkout-theme/releases/tag/5.1.0) - 2026-10-09
+
+### Changed
+
+- Use pnpm as package manager (#251)
+
 ## [5.0.4](https://github.com/rapidez/checkout-theme/releases/tag/5.0.4) - 2026-10-07
 
 ### Fixed
