@@ -75,9 +75,9 @@ php artisan vendor:publish --provider="Rapidez\CheckoutTheme\ServiceProvider" --
 ## Browser tests
 
 - Make sure Rapidez with the checkout theme is working in your browser
-- Run the tests with `yarn playwright test`
-- Alternatively, run the tests from a UI with `yarn playwright test --ui`
-- Update the screenshots with `yarn playwright test --update-snapshots`
+- Run the tests with `pnpm playwright test`
+- Alternatively, run the tests from a UI with `pnpm playwright test --ui`
+- Update the screenshots with `pnpm playwright test --update-snapshots`
 
 ## License
 
