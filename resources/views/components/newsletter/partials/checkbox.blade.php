@@ -5,7 +5,7 @@
     'id' => $id,
 ])" v-on:change="() => {
         if (typeof mutate === 'function' && (!{{ (int)$isPartOfAnotherForm }})) { mutate() }
-        if ($root.loggedIn) { $root.user.extension_attributes.is_subscribed={{ $attributes->get('v-model') }} }
+        if ($root.loggedIn.value) { $root.user.value.extension_attributes.is_subscribed={{ $attributes->get('v-model') }} }
     }">
 
     <x-slot:slot class="flex flex-col gap-1">
