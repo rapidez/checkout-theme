@@ -33,7 +33,7 @@
             </div>
         </template>
         <template v-if="cart.value.prices?.discounts?.length">
-            <div v-for="discount in cart.value.fixed_product_taxes">
+            <div v-for="discount in cart.value.prices.discounts">
                 <dt>@{{ discount.label }}</dt>
                 <dd>-@{{ window.price(discount.amount.value) }}</dd>
             </div>
