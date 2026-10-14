@@ -1,1 +1,1 @@
-<x-rapidez-ct::newsletter/>
+<x-rapidez-ct::newsletter v-model="newsletterSubscribe.value"/>
