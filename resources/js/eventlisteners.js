@@ -1,8 +1,8 @@
-import { useLocalStorage } from '@vueuse/core'
+import { useSessionStorage } from '@vueuse/core'
 import { addAfterPlaceOrderHandler } from 'Vendor/rapidez/core/resources/js/stores/usePaymentHandlers'
 import { user } from 'Vendor/rapidez/core/resources/js/stores/useUser'
 
-const newsletterSubscribe = useLocalStorage('newsletter_subscribe', false)
+const newsletterSubscribe = useSessionStorage('newsletter_subscribe', false)
 
 document.addEventListener('vue:loaded', (event) => {
     event.detail.vue.config.globalProperties.newsletterSubscribe = newsletterSubscribe
