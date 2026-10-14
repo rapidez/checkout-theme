@@ -1,4 +1,5 @@
 import { defineAsyncComponent } from 'vue'
+import './eventlisteners'
 
 document.addEventListener('vue:loaded', (event) => {
     const vue = event.detail.vue
