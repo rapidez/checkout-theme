@@ -2,7 +2,7 @@
     <div v-if="data">
         <div :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
             <h2 class="mt-4 mb-2 text-lg font-medium">@lang('Additional address entries')</h2>
-            <div v-if="data?.customer?.additionalAddresses?.length" class="w-full overflow-auto">
+            <div v-if="data?.customer?.additionalAddresses?.length" class="w-full max-w-full overflow-x-auto">
                 <table class="bg-white border p-2 w-full table-auto text-left">
                     <thead>
                         <tr>
@@ -16,7 +16,9 @@
                             <th class="px-4 py-2">@lang('City')</th>
                             <th class="px-4 py-2">@lang('Region')</th>
                             <th class="px-4 py-2">@lang('Country')</th>
-                            <th class="px-4 py-2">@lang('Phone')</th>
+                            @if (Rapidez::config('customer/address/telephone_show', 'opt'))
+                                <th class="px-4 py-2">@lang('Phone')</th>
+                            @endif
                             <th></th>
                             <th></th>
                         </tr>
