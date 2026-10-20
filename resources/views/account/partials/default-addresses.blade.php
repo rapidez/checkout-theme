@@ -5,7 +5,7 @@
         v-bind:set-shipping="data.customer.shipping_address = data.customer.addresses.find(e => e.default_shipping)"
     >
         <x-rapidez-ct::separated-listing tag="div">
-            <template v-if="data.customer.addresses.length">
+            <template v-if="data.customer.addresses.length && (data.customer.shipping_address || data.customer.billing_address)">
                 <template v-if="data.customer.shipping_address?.default_billing || !data.customer.shipping_address || !data.customer.billing_address">
                     <x-rapidez-ct::address v-bind:address="data.customer.shipping_address" shipping billing/>
                 </template>
