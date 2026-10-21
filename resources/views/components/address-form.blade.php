@@ -146,7 +146,7 @@
                 <x-rapidez::input.select.country
                     name="{{ $prefix }}country"
                     v-model="variables.{{ $countryKey }}"
-                    v-on:change="(event) => { window.$emit('rapidez:postcode-change', variables, event); variables.region = {}; variables.{{ $region }} = null }"
+                    v-on:change="(event) => { window.$emit('postcode-change', variables, event); variables.region = {}; variables.{{ $region }} = null }"
                     required
                 />
             </label>
