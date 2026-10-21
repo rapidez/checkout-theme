@@ -28,7 +28,7 @@
                     required
                 />
             </template>
-            <x-rapidez::slideover.global title="agreement" v-bind:id="agreement.checkbox_text" v-bind:title="agreement.name">
+            <x-rapidez::slideover.global v-bind:id="agreement.checkbox_text" v-bind:title="agreement.name">
                 <x-slot:label>
                     <span class="text-sm underline">
                         @{{ agreement.checkbox_text }}
