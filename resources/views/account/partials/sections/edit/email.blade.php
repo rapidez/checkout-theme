@@ -2,7 +2,7 @@
     query="mutation email ($email: String!, $password: String!) { updateCustomerEmail ( email: $email, password: $password ) { customer { email } } }"
     :clear="true"
     :callback="refreshUserInfoCallback"
-    :variables="{ email: user.email }"
+    :variables="{ email: user.value.email }"
     v-slot="{ variables, mutate, mutated }"
 >
     <form class="grid gap-5 grid-cols-2" v-on:submit.prevent="mutate">
