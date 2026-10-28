@@ -16,7 +16,7 @@
                             <th class="px-4 py-2">@lang('City')</th>
                             <th class="px-4 py-2">@lang('Region')</th>
                             <th class="px-4 py-2">@lang('Country')</th>
-                            @if (Rapidez::config('customer/address/telephone_show', 'opt'))
+                            @if (Rapidez::config('customer/address/telephone_show'))
                                 <th class="px-4 py-2">@lang('Phone')</th>
                             @endif
                             <th></th>
