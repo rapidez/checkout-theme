@@ -1,6 +1,24 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.1.0...master)
+[Unreleased changes](https://github.com/rapidez/checkout-theme/compare/5.2.0...5.2.0)
+## [5.2.0](https://github.com/rapidez/checkout-theme/releases/tag/5.2.0) - 2026-11-05
+
+### Added
+
+- Show an error per item in the cart (#262)
+
+### Fixed
+
+- Fix newsletter in cart (#254)
+- Fix discount loop (#255)
+- Don't show default addresses when none are set (#259)
+- Move newsletter to only happen on placeOrder (#257)
+- Added Mage-OS to the Playwright tests (#258)
+- Remove double title on agreements (#261)
+- Fix wrong email, logged in check and postcode-change event (#256)
+- Fix overflowing additional addresses (#260)
+- Fix undefined when payment method is not yet selected (#263)
+
 ## [5.1.0](https://github.com/rapidez/checkout-theme/releases/tag/5.1.0) - 2026-10-09
 
 ### Changed
@@ -25,34 +43,6 @@
 - Make logout button type button (#246)
 - Use cart.value everywhere (#248)
 - Fixed double click submit before next (#250)
-
-
-
-## [4.6.1](https://github.com/rapidez/checkout-theme/releases/tag/4.6.1) - 2026-09-10
-
-### Fixed
-
-- Check for cart prices (#224)
-- Add v-on:change to set guest email in cart when changed (#244)
-- Make logout button type button (#247)
-
-
-
-## [3.1.4](https://github.com/rapidez/checkout-theme/releases/tag/3.1.4) - 2026-09-10
-
-### Fixed
-
-- Checkout agreements fix (#200)
-- Add v-on:change to set guest email in cart when changed (#245)
-
-
-
-## [2.12.1](https://github.com/rapidez/checkout-theme/releases/tag/2.12.1) - 2026-09-10
-
-### Fixed
-
-- Cart summary tax checks (#203)
-- Fix address edit title (#231)
 
 
 
@@ -198,12 +188,6 @@
 
 - Small bugfixes (#181)
 
-## [3.1.3](https://github.com/rapidez/checkout-theme/releases/tag/3.1.3) - 2025-07-18
-
-### Fixed
-
-- Small bugfixes (#180)
-
 ## [4.0.2](https://github.com/rapidez/checkout-theme/releases/tag/4.0.2) - 2025-06-24
 
 ### Fixed
@@ -215,12 +199,6 @@
 ### Fixed
 
 - Typo (#177)
-
-## [3.1.2](https://github.com/rapidez/checkout-theme/releases/tag/3.1.2) - 2025-06-19
-
-### Fixed
-
-- Typo (#176)
 
 ## [4.0.0](https://github.com/rapidez/checkout-theme/releases/tag/4.0.0) - 2025-06-05
 
@@ -252,17 +230,6 @@
 - Fix crosssells (#171)
 - Remove unnecessary translation (#173)
 
-## [2.12.0](https://github.com/rapidez/checkout-theme/releases/tag/2.12.0) - 2025-04-02
-
-### Changed
-
-- Sort countries in country select (#166, #167)
-
-### Fixed
-
-- Default on company_show fix (#169)
-- Fix crosssells (#172)
-
 ## [3.0.0](https://github.com/rapidez/checkout-theme/releases/tag/3.0.0) - 2025-01-29
 
 ### Added
@@ -281,60 +248,6 @@
 - Fix translations (#161)
 
 
-
-## [2.11.2](https://github.com/rapidez/checkout-theme/releases/tag/2.11.2) - 2025-01-08
-
-### Fixed
-
-- Only show label if it has content (#158)
-- Remove double label in country select (#164)
-
-## [2.11.1](https://github.com/rapidez/checkout-theme/releases/tag/2.11.1) - 2024-11-26
-
-### Fixed
-
-- Fix closing tag (#146)
-- Clone address to remove reactivity (#145)
-
-## [2.11.0](https://github.com/rapidez/checkout-theme/releases/tag/2.11.0) - 2024-11-19
-
-### Changed
-
-- Use the resizedPath helper (01eaa98)
-
-## [2.10.0](https://github.com/rapidez/checkout-theme/releases/tag/2.10.0) - 2024-11-19
-
-### Added
-
-- Added default header and footer (#138)
-
-### Changed
-
-- Revert #127 (80fc797)
-
-## [2.9.2](https://github.com/rapidez/checkout-theme/releases/tag/2.9.2) - 2024-11-08
-
-### Fixed
-
-- Input v-cloak fix (#133)
-- Use v-model variable for is_subscribed (#136)
-
-## [2.9.1](https://github.com/rapidez/checkout-theme/releases/tag/2.9.1) - 2024-11-06
-
-### Fixed
-
-- Make sure you actually log in from the checkout (#121)
-
-## [2.9.0](https://github.com/rapidez/checkout-theme/releases/tag/2.9.0) - 2024-11-05
-
-### Added
-
-- VAT check in register page (#129)
-- Disable checkout button and add notice if not in stock (#127)
-
-### Changed
-
-- Changed breakpoints for smaller screens (#124)
 
 ## [2.8.0](https://github.com/rapidez/checkout-theme/releases/tag/2.8.0) - 2024-10-31
 
@@ -441,18 +354,6 @@
 - Use correct item image check (#89)
 - Update remove button to 2.x (#91)
 
-## [1.5.3](https://github.com/rapidez/checkout-theme/releases/tag/1.5.3) - 2024-05-08
-
-### Fixed
-
-- Add addressIndex to loop (#85)
-
-## [1.5.2](https://github.com/rapidez/checkout-theme/releases/tag/1.5.2) - 2024-05-08
-
-### Fixed
-
-- Add mutating slot (#83)
-
 ## [2.1.0](https://github.com/rapidez/checkout-theme/releases/tag/2.1.0) - 2024-05-06
 
 ### Changed
@@ -464,24 +365,6 @@
 - Add "delete" button to address cards (#72)
 - Add fallbacks for address card (#73)
 - Fix attributes error (#76)
-
-## [1.5.1](https://github.com/rapidez/checkout-theme/releases/tag/1.5.1) - 2024-05-06
-
-### Fixed
-
-- Add :$id to newsletter checkbox (#79)
-
-## [1.5.0](https://github.com/rapidez/checkout-theme/releases/tag/1.5.0) - 2024-05-06
-
-### Changed
-
-- Split templates in to smaller views for easier individual overwrites (32ffc93)
-
-### Fixed
-
-- Add "delete" button to address cards (#75)
-- Add fallbacks for address card (#74)
-- Fix attributes error (#77)
 
 ## [2.0.0](https://github.com/rapidez/checkout-theme/releases/tag/2.0.0) - 2024-03-13
 
