@@ -45,7 +45,12 @@
         </div>
     </x-rapidez-ct::separated-listing>
 
-    <x-rapidez::button.conversion :href="route('checkout')" class="flex w-full items-center justify-center gap-1 mt-6" data-testid="checkout">
+    <x-rapidez::button.conversion
+        class="flex w-full items-center justify-center gap-1 mt-6"
+        v-bind:disabled="!canOrder.value || loading.value"
+        v-on:click="window.Turbo.visit(window.url('{{ route('checkout') }}'))"
+        data-testid="checkout"
+    >
         @lang('To checkout')
         <x-heroicon-o-arrow-right class="size-4" />
     </x-rapidez::button.conversion>
