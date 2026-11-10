@@ -38,6 +38,7 @@
                         <x-rapidez::label>@lang('First name')</x-rapidez::label>
                         <x-rapidez::input
                             name="firstname"
+                            autocomplete="given-name"
                             type="text"
                             v-model="variables.firstname"
                             required
@@ -47,6 +48,7 @@
                         <x-rapidez::label>@lang('Last name')</x-rapidez::label>
                         <x-rapidez::input
                             name="lastname"
+                            autocomplete="family-name"
                             type="text"
                             v-model="variables.lastname"
                             required
@@ -56,6 +58,7 @@
                         <x-rapidez::label>@lang('Email')</x-rapidez::label>
                         <x-rapidez::input
                             name="email"
+                            autocomplete="username"
                             type="email"
                             v-model="variables.email"
                             required
@@ -66,6 +69,7 @@
                             <x-rapidez::label>@lang('Password')</x-rapidez::label>
                             <x-rapidez::input.password
                                 name="password"
+                                autocomplete="new-password"
                                 v-model="variables.password"
                                 required
                             />

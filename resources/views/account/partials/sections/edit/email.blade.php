@@ -13,6 +13,7 @@
             <x-rapidez::label>@lang('Email')</x-rapidez::label>
             <x-rapidez::input
                 name="email"
+                autocomplete="email"
                 v-model="variables.email"
                 required
             />
@@ -21,6 +22,7 @@
             <x-rapidez::label>@lang('Password')</x-rapidez::label>
             <x-rapidez::input.password
                 name="password"
+                autocomplete="current-password"
                 v-model="variables.password"
                 required
             />
