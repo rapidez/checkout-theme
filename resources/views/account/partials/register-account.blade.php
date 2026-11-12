@@ -4,6 +4,7 @@
     query="@include('rapidez::account.partials.queries.address-create')"
     :watch="false"
     :variables="{ street: [], default_billing: true, default_shipping: true }"
+    :callback="refreshUserInfoCallback"
     v-slot="{ mutate: createAddress, variables: addressVariables }"
 >
     <x-rapidez::recaptcha location="customer_create"/>
@@ -15,7 +16,6 @@
             await registerCallback(variables, response);
             @if(config('rapidez.checkout-theme.register.create-address'))
                 await createAddress();
-                await refreshUserInfoCallback();
             @endif
         }"
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
