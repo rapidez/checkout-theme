@@ -15,6 +15,7 @@
             await registerCallback(variables, response);
             @if(config('rapidez.checkout-theme.register.create-address'))
                 await createAddress();
+                await refreshUserInfoCallback();
             @endif
         }"
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
