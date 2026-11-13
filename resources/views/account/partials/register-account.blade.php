@@ -4,6 +4,7 @@
     query="@include('rapidez::account.partials.queries.address-create')"
     :watch="false"
     :variables="{ street: [], default_billing: true, default_shipping: true }"
+    :callback="refreshUserInfoCallback"
     v-slot="{ mutate: createAddress, variables: addressVariables }"
 >
     <x-rapidez::recaptcha location="customer_create"/>
