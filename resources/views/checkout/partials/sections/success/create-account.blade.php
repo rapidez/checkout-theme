@@ -20,6 +20,7 @@
                 <x-rapidez::label>@lang('Email')</x-rapidez::label>
                 <x-rapidez::input
                     name="email"
+                    autocomplete="email"
                     type="email"
                     v-bind:value="order.customer_email"
                     disabled
@@ -32,6 +33,7 @@
                 <x-rapidez::label>@lang('Password')</x-rapidez::label>
                 <x-rapidez::input.password
                     name="password"
+                    autocomplete="new-password"
                     v-model="variables.password"
                     required
                 />

@@ -3,6 +3,7 @@
     <x-rapidez::input
         v-bind:value="user.value?.email"
         name="email"
+        autocomplete="email"
         type="email"
         disabled
         class="justify-center"

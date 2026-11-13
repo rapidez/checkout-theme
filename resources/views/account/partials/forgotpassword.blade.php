@@ -16,6 +16,7 @@
             <x-rapidez::label>@lang('Email')</x-rapidez::label>
             <x-rapidez::input
                 name="email"
+                autocomplete="email"
                 type="email"
                 v-model="variables.email"
                 required
