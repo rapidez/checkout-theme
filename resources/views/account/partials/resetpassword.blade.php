@@ -1,7 +1,7 @@
 <graphql-mutation
     v-cloak
     query="mutation reset($email: String!, $token: String!, $password: String!) { resetPassword ( email: $email, resetPasswordToken: $token, newPassword: $password ) }"
-    :variables="{ token: '{{ request()->token }}', email: '{{ request()->email }}' }"
+    :variables="{ token: {{ \Illuminate\Support\Js::from((string) request()->token) }}, email: {{ \Illuminate\Support\Js::from((string) request()->email) }} }"
     :clear="true"
     :notify="{ message: '@lang('Your password has been changed, please login.')' }"
     redirect="{{ route('account.login') }}"
