@@ -8,35 +8,35 @@
                 <div class="flex-1">
                     <label>
                         <x-rapidez::label>@lang('First name')</x-rapidez::label>
-                        <x-rapidez::input name="firstname" v-model="addressVariables.firstname" required />
+                        <x-rapidez::input name="firstname" autocomplete="given-name" v-model="addressVariables.firstname" required />
                     </label>
                 </div>
                 @if(Rapidez::config('customer/address/middlename_show', 0))
                     <div class="flex-1">
                         <label>
                             <x-rapidez::label>@lang('Middle name')</x-rapidez::label>
-                            <x-rapidez::input name="middlename" v-model="addressVariables.middlename" />
+                            <x-rapidez::input name="middlename" autocomplete="additional-name" v-model="addressVariables.middlename" />
                         </label>
                     </div>
                 @endif
                 <div class="flex-1">
                     <label>
                         <x-rapidez::label>@lang('Last name')</x-rapidez::label>
-                        <x-rapidez::input name="lastname" v-model="addressVariables.lastname" required />
+                        <x-rapidez::input name="lastname" autocomplete="family-name" v-model="addressVariables.lastname" required />
                     </label>
                 </div>
             </div>
             @if(Rapidez::config('customer/address/telephone_show', 'req'))
                 <label>
                     <x-rapidez::label>@lang('Telephone')</x-rapidez::label>
-                    <x-rapidez::input name="telephone" v-model="addressVariables.telephone" :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'" />
+                    <x-rapidez::input name="telephone" autocomplete="tel" v-model="addressVariables.telephone" :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'" />
                 </label>
             @endif
 
             @if(Rapidez::config('customer/address/company_show', 'opt'))
                 <label>
                     <x-rapidez::label>@lang('Company')</x-rapidez::label>
-                    <x-rapidez::input name="company" v-model="addressVariables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
+                    <x-rapidez::input name="company" autocomplete="organization" v-model="addressVariables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
                 </label>
             @endif
             @if(Rapidez::config('customer/address/taxvat_show', 0))
@@ -98,6 +98,7 @@
                 <x-rapidez::label>@lang('Postcode')</x-rapidez::label>
                 <x-rapidez::input
                     name="postcode"
+                    autocomplete="postal-code"
                     v-model="addressVariables.postcode"
                     v-on:change="(event) => window.$emit('postcode-change', addressVariables, event)"
                     required
@@ -105,13 +106,14 @@
             </label>
             <label>
                 <x-rapidez::label>@lang('City')</x-rapidez::label>
-                <x-rapidez::input name="city" v-model="addressVariables.city" required />
+                <x-rapidez::input name="city" autocomplete="address-level2" v-model="addressVariables.city" required />
             </label>
             <span class="relative flex flex-col gap-y-1.5 sm:gap-y-2 text-sm mb-3!">
                 <label>
                     <x-rapidez::label>@lang('Country')</x-rapidez::label>
                     <x-rapidez::input.select.country
                         name="country_code"
+                        autocomplete="country"
                         v-model="addressVariables.country_code"
                         class="w-full"
                         v-on:change="(event) => {
@@ -126,6 +128,7 @@
                     <x-rapidez::input.select.region
                         class="exists"
                         name="region"
+                        autocomplete="address-level1"
                         v-model="addressVariables.region.region_id"
                         country="addressVariables.country_code"
                     />

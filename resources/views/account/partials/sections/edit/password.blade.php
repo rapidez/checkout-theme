@@ -11,6 +11,7 @@
             <x-rapidez::label>@lang('Current password')</x-rapidez::label>
             <x-rapidez::input.password
                 name="currentPassword"
+                autocomplete="current-password"
                 v-model="variables.currentPassword"
                 required
             />
@@ -19,6 +20,7 @@
             <x-rapidez::label>@lang('New password')</x-rapidez::label>
             <x-rapidez::input.password
                 name="newPassword"
+                autocomplete="new-password"
                 v-model="variables.newPassword"
                 required
             />

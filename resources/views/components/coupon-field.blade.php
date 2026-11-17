@@ -11,6 +11,7 @@
         <x-rapidez::input
             class="w-60"
             name="couponCode"
+            autocomplete="off"
             :placeholder="__('Coupon code')"
             v-model="variables.coupon_code"
             v-bind:disabled="running"

@@ -4,6 +4,7 @@
             <x-rapidez::label>@lang('Email')</x-rapidez::label>
             <x-rapidez::input
                 name="email"
+                autocomplete="email"
                 type="email"
                 v-model.lazy="checkoutLogin.email"
                 v-bind:disabled="window.app.config.globalProperties.loggedIn.value"
@@ -23,6 +24,7 @@
                 <x-rapidez::label>@lang('Password')</x-rapidez::label>
                 <x-rapidez::input.password
                     name="password"
+                    v-bind:autocomplete="checkoutLogin.createAccount ? 'new-password' : 'current-password'"
                     v-model="checkoutLogin.password"
                     v-bind:required="checkoutLogin.createAccount || !checkoutLogin.allowPasswordless ? 'required' : null"
                     data-testid="password-input"
@@ -43,6 +45,7 @@
                 <x-rapidez::label>@lang('Repeat password')</x-rapidez::label>
                 <x-rapidez::input.password
                     name="password_repeat"
+                    autocomplete="new-password"
                     v-model="checkoutLogin.password_repeat"
                     required
                     data-testid="password-repeat-input"
@@ -52,6 +55,7 @@
                 <x-rapidez::label>@lang('First name')</x-rapidez::label>
                 <x-rapidez::input
                     name="firstname"
+                    autocomplete="given-name"
                     type="text"
                     v-model="checkoutLogin.firstname"
                     required
@@ -62,6 +66,7 @@
                 <x-rapidez::label>@lang('Last name')</x-rapidez::label>
                 <x-rapidez::input
                     name="lastname"
+                    autocomplete="family-name"
                     type="text"
                     v-model="checkoutLogin.lastname"
                     required

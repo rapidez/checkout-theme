@@ -7,17 +7,17 @@
             >
                 <label class="col-span-full {{ Rapidez::config('customer/address/middlename_show') ? 'lg:col-span-3' : 'lg:col-span-4' }}">
                     <x-rapidez::label>@lang('First name')</x-rapidez::label>
-                    <x-rapidez::input name="firstname" v-model="variables.firstname" required />
+                    <x-rapidez::input name="firstname" autocomplete="given-name" v-model="variables.firstname" required />
                 </label>
                 @if(Rapidez::config('customer/address/middlename_show', 0))
                     <label class="col-span-full lg:col-span-2">
                         <x-rapidez::label>@lang('Middle name')</x-rapidez::label>
-                        <x-rapidez::input name="middlename" v-model="variables.middlename" />
+                        <x-rapidez::input name="middlename" autocomplete="additional-name" v-model="variables.middlename" />
                     </label>
                 @endif
                 <label class="col-span-full {{ Rapidez::config('customer/address/middlename_show') ? 'lg:col-span-3' : 'lg:col-span-4' }}">
                     <x-rapidez::label>@lang('Last name')</x-rapidez::label>
-                    <x-rapidez::input name="lastname" v-model="variables.lastname" required/>
+                    <x-rapidez::input name="lastname" autocomplete="family-name" v-model="variables.lastname" required/>
                 </label>
 
                 <div class="flex items-center">
